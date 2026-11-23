@@ -1,0 +1,40 @@
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  line-height: 1;
+  font-family: var(--font-body);
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--color-bg-warm);
+  color: var(--color-primary);
+}
+
+.btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.value {
+  min-width: 36px;
+  text-align: center;
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text);
+  user-select: none;
+}

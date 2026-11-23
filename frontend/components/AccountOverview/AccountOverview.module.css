@@ -1,0 +1,220 @@
+.welcomeBanner {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.ecoBadge {
+  background: var(--color-bg-warm);
+  color: var(--color-primary);
+  border: 1px solid var(--color-secondary);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.statCard {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.statIcon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.statLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.sectionCard {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.viewAllLink {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.orderList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.orderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+  background: var(--color-bg-light);
+  border-radius: var(--radius-lg);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.orderInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.orderId {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+}
+
+.orderDate {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.orderItems {
+  font-size: var(--text-xs);
+  color: var(--color-text);
+  margin-top: 2px;
+}
+
+.orderMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.statusBadge {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.statusDelivered {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.statusProcessing {
+  background: #fff8e1;
+  color: #e65100;
+}
+
+.orderTotal {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+.detailsLink {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.noOrders {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.verifiedTag {
+  font-size: var(--text-xs);
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.addressBox {
+  background: var(--color-bg-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.addressBox strong {
+  color: var(--color-text);
+}
+
+.addressBox p {
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  .welcomeBanner,
+  .sectionCard {
+    padding: var(--space-5);
+  }
+}

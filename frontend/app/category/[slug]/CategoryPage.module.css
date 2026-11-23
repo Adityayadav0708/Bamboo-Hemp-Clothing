@@ -1,0 +1,69 @@
+.banner {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bannerImg {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg-warm);
+}
+
+.bannerImgEl { object-fit: cover; }
+
+.bannerFallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  background: linear-gradient(135deg, var(--color-bg-warm), var(--color-secondary-light));
+}
+
+.bannerOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(41,45,42,0.7) 0%, rgba(41,45,42,0.1) 60%, transparent 100%);
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-7) var(--container-pad);
+  width: 100%;
+}
+
+/* Override breadcrumb colours on dark bg */
+.bannerContent :global(.breadcrumb) a,
+.bannerContent :global(.breadcrumb) span { color: rgba(255,255,255,0.75); }
+
+.bannerTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-3);
+}
+
+.bannerDesc {
+  font-size: var(--text-base);
+  color: rgba(255,255,255,0.8);
+  max-width: 560px;
+  line-height: 1.6;
+  margin-bottom: var(--space-3);
+}
+
+.bannerCount {
+  display: inline-block;
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.15);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(4px);
+}

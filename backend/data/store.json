@@ -1,0 +1,1168 @@
+{
+  "categories": [
+    {
+      "_id": "cat_bamboo_tshirts",
+      "name": "Bamboo T-Shirts",
+      "slug": "bamboo-tshirts",
+      "description": "Ultra-breathable, silky-soft everyday tees engineered from 100% organic bamboo viscose.",
+      "image": "/images/cat-bamboo-tshirts.jpg",
+      "sortOrder": 1,
+      "isActive": true
+    },
+    {
+      "_id": "cat_hemp_tshirts",
+      "name": "Hemp T-Shirts",
+      "slug": "hemp-tshirts",
+      "description": "Durable, naturally textured tees spun from heritage rain-fed hemp and organic cotton.",
+      "image": "/images/cat-hemp-tshirts.jpg",
+      "sortOrder": 2,
+      "isActive": true
+    },
+    {
+      "_id": "cat_mens_innerwear",
+      "name": "Men's Innerwear",
+      "slug": "mens-innerwear",
+      "description": "BreezeBoo™ cooling boxer briefs, trunks, and multipacks with 360° airflow waistband.",
+      "image": "/images/cat-mens-innerwear.jpg",
+      "sortOrder": 3,
+      "isActive": true
+    },
+    {
+      "_id": "cat_womens_innerwear",
+      "name": "Women's Innerwear",
+      "slug": "womens-innerwear",
+      "description": "Weightless wire-free bralettes and seamless high-waist briefs for all-day second-skin comfort.",
+      "image": "/images/cat-womens-innerwear.jpg",
+      "sortOrder": 4,
+      "isActive": true
+    }
+  ],
+  "products": [
+    {
+      "_id": "prod_bamboo_crew",
+      "name": "The Essential Bamboo Crew Neck Tee",
+      "slug": "essential-bamboo-crew-neck-tshirt",
+      "categoryIds": [
+        "cat_bamboo_tshirts"
+      ],
+      "fabricType": "bamboo",
+      "fabricComposition": [
+        {
+          "fibre": "Organic Bamboo Viscose",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "materialDetails": "OEKO-TEX® Standard 100 certified micro-gap bamboo viscose. Hypoallergenic, static-free, and thermo-regulating.",
+      "shortDescription": "Silky smooth, cooling crew neck designed for all-day breathability in hot climates.",
+      "description": "Engineered with round-fibre bamboo filaments, this tee drapes effortlessly without clinging. Features flatlock anti-chafing seams and moisture-wicking technology to keep your skin 2°C cooler throughout the day.",
+      "careInstructions": [
+        "Machine wash gentle 30°C",
+        "Do not bleach",
+        "Dry flat in shade",
+        "Iron on low reverse"
+      ],
+      "images": [
+        {
+          "url": "/images/prod-bamboo-crew-front.jpg",
+          "altText": "Essential Bamboo Crew Neck Tee Flatlay",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/prod-bamboo-crew-model.jpg",
+          "altText": "Essential Bamboo Crew Neck Tee Lifestyle on Model",
+          "isPrimary": false,
+          "sortOrder": 1
+        },
+        {
+          "url": "/images/prod-bamboo-crew-detail.jpg",
+          "altText": "Bamboo Fabric Weave Micro Texture",
+          "isPrimary": false,
+          "sortOrder": 2
+        }
+      ],
+      "tags": [
+        "bestseller",
+        "cooling",
+        "organic",
+        "t-shirt"
+      ],
+      "status": "active",
+      "seo": {
+        "title": "Essential Bamboo Crew Neck T-Shirt | Bamboo & Hemp",
+        "metaDescription": "Shop our signature breathable bamboo crew neck tee. Anti-odor, hypoallergenic, and ultra-soft."
+      },
+      "variants": [
+        {
+          "_id": "var_bcrew_grn_s",
+          "sku": "BH-BTE-GRN-S",
+          "size": "S",
+          "colour": {
+            "name": "Forest Green",
+            "hex": "#1E412D"
+          },
+          "pricePaise": 129900,
+          "compareAtPricePaise": 169900,
+          "stockQuantity": 35,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bcrew_grn_m",
+          "sku": "BH-BTE-GRN-M",
+          "size": "M",
+          "colour": {
+            "name": "Forest Green",
+            "hex": "#1E412D"
+          },
+          "pricePaise": 129900,
+          "compareAtPricePaise": 169900,
+          "stockQuantity": 42,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bcrew_grn_l",
+          "sku": "BH-BTE-GRN-L",
+          "size": "L",
+          "colour": {
+            "name": "Forest Green",
+            "hex": "#1E412D"
+          },
+          "pricePaise": 129900,
+          "compareAtPricePaise": 169900,
+          "stockQuantity": 28,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bcrew_snd_m",
+          "sku": "BH-BTE-SND-M",
+          "size": "M",
+          "colour": {
+            "name": "Natural Sand",
+            "hex": "#E2DCce"
+          },
+          "pricePaise": 129900,
+          "compareAtPricePaise": 169900,
+          "stockQuantity": 18,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bcrew_blk_l",
+          "sku": "BH-BTE-BLK-L",
+          "size": "L",
+          "colour": {
+            "name": "Charcoal Black",
+            "hex": "#2A2E2B"
+          },
+          "pricePaise": 129900,
+          "compareAtPricePaise": 169900,
+          "stockQuantity": 4,
+          "reservedQuantity": 0,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "prod_bamboo_vneck",
+      "name": "Relaxed Bamboo V-Neck Tee",
+      "slug": "relaxed-bamboo-v-neck-tee",
+      "categoryIds": [
+        "cat_bamboo_tshirts"
+      ],
+      "fabricType": "bamboo",
+      "fabricComposition": [
+        {
+          "fibre": "Organic Bamboo Viscose",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "materialDetails": "Breathable, featherlight bamboo jersey that naturally regulates body heat.",
+      "shortDescription": "Refined shallow V-neck silhouette with an airy, fluid drape for versatile layering.",
+      "description": "Tailored for everyday luxury. The silky bamboo texture glides over skin, resisting odors even after intense, warm humid afternoons.",
+      "careInstructions": [
+        "Machine wash cold",
+        "Wash with like colors",
+        "Tumble dry low or air dry"
+      ],
+      "images": [
+        {
+          "url": "/images/prod-bamboo-vneck-front.jpg",
+          "altText": "Relaxed Bamboo V-Neck Tee Front",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/prod-bamboo-vneck-model.jpg",
+          "altText": "Relaxed Bamboo V-Neck Tee on Model",
+          "isPrimary": false,
+          "sortOrder": 1
+        },
+        {
+          "url": "/images/prod-bamboo-vneck-detail.jpg",
+          "altText": "V-Neck Collar & Seam Detail",
+          "isPrimary": false,
+          "sortOrder": 2
+        }
+      ],
+      "tags": [
+        "v-neck",
+        "cooling",
+        "everyday"
+      ],
+      "status": "active",
+      "seo": {
+        "title": "Relaxed Bamboo V-Neck Tee | Sustainable Basics India",
+        "metaDescription": "Silky soft bamboo V-neck tee for men and women."
+      },
+      "variants": [
+        {
+          "_id": "var_bvneck_wht_s",
+          "sku": "BH-BVN-WHT-S",
+          "size": "S",
+          "colour": {
+            "name": "Pure Chalk",
+            "hex": "#F9F8F5"
+          },
+          "pricePaise": 139900,
+          "compareAtPricePaise": 179900,
+          "stockQuantity": 25,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bvneck_wht_m",
+          "sku": "BH-BVN-WHT-M",
+          "size": "M",
+          "colour": {
+            "name": "Pure Chalk",
+            "hex": "#F9F8F5"
+          },
+          "pricePaise": 139900,
+          "compareAtPricePaise": 179900,
+          "stockQuantity": 30,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bvneck_olv_l",
+          "sku": "BH-BVN-OLV-L",
+          "size": "L",
+          "colour": {
+            "name": "Muted Olive",
+            "hex": "#586A55"
+          },
+          "pricePaise": 139900,
+          "compareAtPricePaise": 179900,
+          "stockQuantity": 12,
+          "reservedQuantity": 0,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "prod_hemp_boxy",
+      "name": "Heritage Hemp Boxy Tee",
+      "slug": "heritage-hemp-boxy-tee",
+      "categoryIds": [
+        "cat_hemp_tshirts"
+      ],
+      "fabricType": "hemp_blend",
+      "fabricComposition": [
+        {
+          "fibre": "Heritage Hemp",
+          "percentage": 55
+        },
+        {
+          "fibre": "Organic Cotton",
+          "percentage": 45
+        }
+      ],
+      "materialDetails": "Durable heritage hemp blended with combed organic cotton. Built to soften with every wash.",
+      "shortDescription": "Structured, vintage-weight heavyweight tee with exceptional longevity and UV resistance.",
+      "description": "Hemp fibers possess 3x the tensile strength of regular cotton. Our 55/45 blend offers a sturdy modern boxy silhouette that holds its shape wash after wash.",
+      "careInstructions": [
+        "Machine wash cold 30°C",
+        "Do not tumble dry",
+        "Warm iron if needed"
+      ],
+      "images": [
+        {
+          "url": "/images/prod-hemp-boxy-front.jpg",
+          "altText": "Heritage Hemp Boxy Tee Front View",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/prod-hemp-boxy-model.jpg",
+          "altText": "Heritage Hemp Boxy Tee Model View",
+          "isPrimary": false,
+          "sortOrder": 1
+        },
+        {
+          "url": "/images/prod-hemp-boxy-detail.jpg",
+          "altText": "Heritage Hemp Slub Fabric Close-up",
+          "isPrimary": false,
+          "sortOrder": 2
+        }
+      ],
+      "tags": [
+        "bestseller",
+        "hemp",
+        "heavyweight",
+        "durable"
+      ],
+      "status": "active",
+      "seo": {
+        "title": "Heritage Hemp Boxy Tee | Sustainable Hemp Clothing India",
+        "metaDescription": "Durable heavyweight hemp boxy tee made with 55% hemp and 45% organic cotton."
+      },
+      "variants": [
+        {
+          "_id": "var_hboxy_snd_s",
+          "sku": "BH-HBX-SND-S",
+          "size": "S",
+          "colour": {
+            "name": "Earthy Sand",
+            "hex": "#D7CEBE"
+          },
+          "pricePaise": 169900,
+          "compareAtPricePaise": 219900,
+          "stockQuantity": 20,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_hboxy_snd_m",
+          "sku": "BH-HBX-SND-M",
+          "size": "M",
+          "colour": {
+            "name": "Earthy Sand",
+            "hex": "#D7CEBE"
+          },
+          "pricePaise": 169900,
+          "compareAtPricePaise": 219900,
+          "stockQuantity": 32,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_hboxy_grn_l",
+          "sku": "BH-HBX-GRN-L",
+          "size": "L",
+          "colour": {
+            "name": "Heritage Pine",
+            "hex": "#234938"
+          },
+          "pricePaise": 169900,
+          "compareAtPricePaise": 219900,
+          "stockQuantity": 15,
+          "reservedQuantity": 0,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "prod_hemp_pocket",
+      "name": "Everyday Hemp Pocket Tee",
+      "slug": "everyday-hemp-pocket-tee",
+      "categoryIds": [
+        "cat_hemp_tshirts"
+      ],
+      "fabricType": "hemp_blend",
+      "fabricComposition": [
+        {
+          "fibre": "Heritage Hemp",
+          "percentage": 55
+        },
+        {
+          "fibre": "Organic Cotton",
+          "percentage": 45
+        }
+      ],
+      "materialDetails": "Naturally antimicrobial hemp jersey with reinforced chest pocket detail.",
+      "shortDescription": "Classic chest pocket crew neck crafted from our signature breathable hemp-cotton blend.",
+      "description": "A utilitarian staple designed for warm climates and relaxed weekend styling.",
+      "careInstructions": [
+        "Machine wash cold",
+        "Line dry recommended"
+      ],
+      "images": [
+        {
+          "url": "/images/prod-hemp-pocket-front.jpg",
+          "altText": "Everyday Hemp Pocket Tee Front",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/prod-hemp-pocket-model.jpg",
+          "altText": "Everyday Hemp Pocket Tee on Model",
+          "isPrimary": false,
+          "sortOrder": 1
+        },
+        {
+          "url": "/images/prod-hemp-pocket-detail.jpg",
+          "altText": "Chest Pocket Construction Detail",
+          "isPrimary": false,
+          "sortOrder": 2
+        }
+      ],
+      "tags": [
+        "hemp",
+        "pocket-tee",
+        "casual"
+      ],
+      "status": "active",
+      "seo": {
+        "title": "Everyday Hemp Pocket Tee | Hemp Clothing India",
+        "metaDescription": "Casual pocket tee in breathable hemp-cotton blend."
+      },
+      "variants": [
+        {
+          "_id": "var_hpock_cld_m",
+          "sku": "BH-HPK-CLD-M",
+          "size": "M",
+          "colour": {
+            "name": "Cloud Grey",
+            "hex": "#B8C2B8"
+          },
+          "pricePaise": 159900,
+          "compareAtPricePaise": 199900,
+          "stockQuantity": 22,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_hpock_cld_l",
+          "sku": "BH-HPK-CLD-L",
+          "size": "L",
+          "colour": {
+            "name": "Cloud Grey",
+            "hex": "#B8C2B8"
+          },
+          "pricePaise": 159900,
+          "compareAtPricePaise": 199900,
+          "stockQuantity": 14,
+          "reservedQuantity": 0,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "prod_bamboo_trunk_3pk",
+      "name": "Everyday Bamboo Trunk (3-Pack)",
+      "slug": "everyday-bamboo-trunk-3pack",
+      "categoryIds": [
+        "cat_mens_innerwear"
+      ],
+      "fabricType": "bamboo",
+      "fabricComposition": [
+        {
+          "fibre": "Organic Bamboo Viscose",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "materialDetails": "360° cooling mesh waistband with anti-ride-up contoured pouch. OEKO-TEX certified.",
+      "shortDescription": "Bamboo Cool signature multi-pack trunks: friction-free, sweat-resistant, and ultra-cooling.",
+      "description": "Built for active all-day wear. The no-roll waistband and ergonomic 3D pouch prevent chafing while bamboo viscose wicks sweat 4x faster than cotton. Pack of 3 matching earth tones.",
+      "careInstructions": [
+        "Machine wash gentle 30°C",
+        "Wash darks separately",
+        "Do not tumble dry"
+      ],
+      "images": [
+        {
+          "url": "/images/prod-bamboo-trunk-front.jpg",
+          "altText": "Everyday Bamboo Trunk 3-Pack Boxed Set",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/prod-bamboo-trunk-model.jpg",
+          "altText": "Everyday Bamboo Trunk Multi-Pack Laid Out",
+          "isPrimary": false,
+          "sortOrder": 1
+        },
+        {
+          "url": "/images/prod-bamboo-trunk-detail.jpg",
+          "altText": "Comfort Waistband and Stitching Detail",
+          "isPrimary": false,
+          "sortOrder": 2
+        }
+      ],
+      "tags": [
+        "bestseller",
+        "bundle",
+        "multipack",
+        "innerwear",
+        "cooling"
+      ],
+      "status": "active",
+      "seo": {
+        "title": "Everyday Bamboo Trunk (3-Pack) | Bamboo Innerwear India",
+        "metaDescription": "Bamboo cooling trunks in a value 3-pack. Anti-chafing, moisture wicking, breathable."
+      },
+      "variants": [
+        {
+          "_id": "var_btrunk_trio_s",
+          "sku": "BH-TRK-TRIO-S",
+          "size": "S",
+          "colour": {
+            "name": "Trio Pack (Pine/Moss/Sand)",
+            "hex": "#234938"
+          },
+          "pricePaise": 149900,
+          "compareAtPricePaise": 199900,
+          "stockQuantity": 45,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_btrunk_trio_m",
+          "sku": "BH-TRK-TRIO-M",
+          "size": "M",
+          "colour": {
+            "name": "Trio Pack (Pine/Moss/Sand)",
+            "hex": "#234938"
+          },
+          "pricePaise": 149900,
+          "compareAtPricePaise": 199900,
+          "stockQuantity": 60,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_btrunk_trio_l",
+          "sku": "BH-TRK-TRIO-L",
+          "size": "L",
+          "colour": {
+            "name": "Trio Pack (Pine/Moss/Sand)",
+            "hex": "#234938"
+          },
+          "pricePaise": 149900,
+          "compareAtPricePaise": 199900,
+          "stockQuantity": 38,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_btrunk_trio_xl",
+          "sku": "BH-TRK-TRIO-XL",
+          "size": "XL",
+          "colour": {
+            "name": "Trio Pack (Pine/Moss/Sand)",
+            "hex": "#234938"
+          },
+          "pricePaise": 149900,
+          "compareAtPricePaise": 199900,
+          "stockQuantity": 3,
+          "reservedQuantity": 0,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "prod_bamboo_boxer_brief",
+      "name": "BreezeBoo™ Cooling Boxer Brief",
+      "slug": "breezeboo-cooling-boxer-brief",
+      "categoryIds": [
+        "cat_mens_innerwear"
+      ],
+      "fabricType": "bamboo",
+      "fabricComposition": [
+        {
+          "fibre": "Organic Bamboo Viscose",
+          "percentage": 92
+        },
+        {
+          "fibre": "Spandex",
+          "percentage": 8
+        }
+      ],
+      "materialDetails": "Micro-perforated bamboo mesh for maximum airflow during workouts and tropical humidity.",
+      "shortDescription": "Mid-thigh boxer brief with active mesh panels and frictionless flatlock seams.",
+      "description": "Our most supportive athletic innerwear. The stay-put leg design prevents bunching under formal trousers or athletic shorts.",
+      "careInstructions": [
+        "Machine wash warm",
+        "Air dry in shade"
+      ],
+      "images": [
+        {
+          "url": "/images/prod-bamboo-boxer-front.jpg",
+          "altText": "BreezeBoo Cooling Boxer Brief Flatlay",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/prod-bamboo-boxer-model.jpg",
+          "altText": "BreezeBoo Cooling Boxer Brief Lifestyle",
+          "isPrimary": false,
+          "sortOrder": 1
+        },
+        {
+          "url": "/images/prod-bamboo-boxer-detail.jpg",
+          "altText": "Breathable Mesh Panels Texture",
+          "isPrimary": false,
+          "sortOrder": 2
+        }
+      ],
+      "tags": [
+        "boxer-brief",
+        "cooling",
+        "athletic"
+      ],
+      "status": "active",
+      "seo": {
+        "title": "BreezeBoo Cooling Boxer Brief | Bamboo Cool Apparel India",
+        "metaDescription": "Active cooling boxer briefs made from ultra-soft bamboo mesh."
+      },
+      "variants": [
+        {
+          "_id": "var_bboxer_blk_m",
+          "sku": "BH-BBX-BLK-M",
+          "size": "M",
+          "colour": {
+            "name": "Charcoal Black",
+            "hex": "#1E231E"
+          },
+          "pricePaise": 64900,
+          "compareAtPricePaise": 84900,
+          "stockQuantity": 50,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bboxer_blk_l",
+          "sku": "BH-BBX-BLK-L",
+          "size": "L",
+          "colour": {
+            "name": "Charcoal Black",
+            "hex": "#1E231E"
+          },
+          "pricePaise": 64900,
+          "compareAtPricePaise": 84900,
+          "stockQuantity": 40,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bboxer_grn_m",
+          "sku": "BH-BBX-GRN-M",
+          "size": "M",
+          "colour": {
+            "name": "Botanical Green",
+            "hex": "#2A543B"
+          },
+          "pricePaise": 64900,
+          "compareAtPricePaise": 84900,
+          "stockQuantity": 28,
+          "reservedQuantity": 0,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "prod_bamboo_bralette",
+      "name": "Cloud Bamboo Lounge Bralette",
+      "slug": "cloud-bamboo-lounge-bralette",
+      "categoryIds": [
+        "cat_womens_innerwear"
+      ],
+      "fabricType": "bamboo",
+      "fabricComposition": [
+        {
+          "fibre": "Organic Bamboo Viscose",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "materialDetails": "Double-layered wireless bamboo cup with gentle ribbed underband.",
+      "shortDescription": "Zero-pressure, wire-free lounge bralette engineered for barely-there everyday comfort.",
+      "description": "Designed to eliminate digging underwires and tight elastic bands. Breathable bamboo fabric conforms to your natural shape with gentle non-constrictive support.",
+      "careInstructions": [
+        "Hand wash or delicate machine wash cold",
+        "Dry flat",
+        "Do not iron"
+      ],
+      "images": [
+        {
+          "url": "/images/prod-bamboo-bralette-front.jpg",
+          "altText": "Cloud Bamboo Lounge Bralette Flatlay",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/prod-bamboo-bralette-model.jpg",
+          "altText": "Cloud Bamboo Lounge Bralette on Model",
+          "isPrimary": false,
+          "sortOrder": 1
+        },
+        {
+          "url": "/images/prod-bamboo-bralette-detail.jpg",
+          "altText": "Seamless Ribbed Band Detail",
+          "isPrimary": false,
+          "sortOrder": 2
+        }
+      ],
+      "tags": [
+        "bestseller",
+        "bralette",
+        "wireless",
+        "lounge"
+      ],
+      "status": "active",
+      "seo": {
+        "title": "Cloud Bamboo Lounge Bralette | Wirefree Bamboo Bra India",
+        "metaDescription": "Wireless soft bamboo lounge bralette. Hypoallergenic and second-skin gentle."
+      },
+      "variants": [
+        {
+          "_id": "var_bbral_sage_s",
+          "sku": "BH-BBR-SGE-S",
+          "size": "S",
+          "colour": {
+            "name": "Sage Green",
+            "hex": "#8BA185"
+          },
+          "pricePaise": 119900,
+          "compareAtPricePaise": 159900,
+          "stockQuantity": 24,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bbral_sage_m",
+          "sku": "BH-BBR-SGE-M",
+          "size": "M",
+          "colour": {
+            "name": "Sage Green",
+            "hex": "#8BA185"
+          },
+          "pricePaise": 119900,
+          "compareAtPricePaise": 159900,
+          "stockQuantity": 35,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bbral_snd_m",
+          "sku": "BH-BBR-SND-M",
+          "size": "M",
+          "colour": {
+            "name": "Warm Cream",
+            "hex": "#EBE6DC"
+          },
+          "pricePaise": 119900,
+          "compareAtPricePaise": 159900,
+          "stockQuantity": 20,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bbral_snd_l",
+          "sku": "BH-BBR-SND-L",
+          "size": "L",
+          "colour": {
+            "name": "Warm Cream",
+            "hex": "#EBE6DC"
+          },
+          "pricePaise": 119900,
+          "compareAtPricePaise": 159900,
+          "stockQuantity": 2,
+          "reservedQuantity": 0,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "prod_bamboo_briefs_3pk",
+      "name": "Seamless Bamboo Hipster Brief (3-Pack)",
+      "slug": "seamless-bamboo-hipster-brief-3pack",
+      "categoryIds": [
+        "cat_womens_innerwear"
+      ],
+      "fabricType": "bamboo",
+      "fabricComposition": [
+        {
+          "fibre": "Organic Bamboo Viscose",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "materialDetails": "Laser-cut seamless edges with 100% natural bamboo gusset.",
+      "shortDescription": "Invisible panty lines with ultra-breathable, natural antimicrobial bamboo protection.",
+      "description": "No digging, no pinching, and zero panty lines under fitted trousers or leggings. Naturally hypoallergenic and moisture-absorbing.",
+      "careInstructions": [
+        "Machine wash cold gentle",
+        "Do not tumble dry"
+      ],
+      "images": [
+        {
+          "url": "/images/prod-bamboo-briefs-front.jpg",
+          "altText": "Seamless Bamboo Hipster Brief 3-Pack Flatlay",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/prod-bamboo-briefs-model.jpg",
+          "altText": "Seamless Bamboo Briefs Trio Set",
+          "isPrimary": false,
+          "sortOrder": 1
+        },
+        {
+          "url": "/images/prod-bamboo-briefs-detail.jpg",
+          "altText": "Laser Cut Edge and Gusset Detail",
+          "isPrimary": false,
+          "sortOrder": 2
+        }
+      ],
+      "tags": [
+        "multipack",
+        "seamless",
+        "briefs",
+        "innerwear"
+      ],
+      "status": "active",
+      "seo": {
+        "title": "Seamless Bamboo Hipster Brief (3-Pack) | Bamboo Innerwear",
+        "metaDescription": "Pack of 3 seamless bamboo hipster briefs. Invisible panty lines, hypoallergenic."
+      },
+      "variants": [
+        {
+          "_id": "var_bbrief_trio_s",
+          "sku": "BH-WBR-TRIO-S",
+          "size": "S",
+          "colour": {
+            "name": "Neutral Trio (Sage/Cream/Dusty Rose)",
+            "hex": "#8BA185"
+          },
+          "pricePaise": 99900,
+          "compareAtPricePaise": 139900,
+          "stockQuantity": 40,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bbrief_trio_m",
+          "sku": "BH-WBR-TRIO-M",
+          "size": "M",
+          "colour": {
+            "name": "Neutral Trio (Sage/Cream/Dusty Rose)",
+            "hex": "#8BA185"
+          },
+          "pricePaise": 99900,
+          "compareAtPricePaise": 139900,
+          "stockQuantity": 55,
+          "reservedQuantity": 0,
+          "isActive": true
+        },
+        {
+          "_id": "var_bbrief_trio_l",
+          "sku": "BH-WBR-TRIO-L",
+          "size": "L",
+          "colour": {
+            "name": "Neutral Trio (Sage/Cream/Dusty Rose)",
+            "hex": "#8BA185"
+          },
+          "pricePaise": 99900,
+          "compareAtPricePaise": 139900,
+          "stockQuantity": 30,
+          "reservedQuantity": 0,
+          "isActive": true
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "_id": "user_super_admin",
+      "fullName": "Aditya Pratap Singh",
+      "email": "admin@bamboohemp.com",
+      "normalizedEmail": "admin@bamboohemp.com",
+      "passwordHash": "$2a$10$ogYZ/lfescacjG.1kfaMD.ftSkkUC/vdNLib7A2W4zaaOYztHX5bq",
+      "phone": "+91 98765 43210",
+      "role": "super_admin",
+      "status": "active",
+      "emailVerifiedAt": "2026-11-22T18:44:23.977Z",
+      "createdAt": "2026-11-22T18:44:23.977Z",
+      "addresses": []
+    },
+    {
+      "_id": "user_catalogue_mgr",
+      "fullName": "Catalogue Operations Lead",
+      "email": "catalogue@bamboohemp.com",
+      "normalizedEmail": "catalogue@bamboohemp.com",
+      "passwordHash": "$2a$10$OLT/ZFUDJVUf/JKPsVpqDeeEWsbiaA4iKepen7UM4nF/TnDD2KzLm",
+      "phone": "+91 98765 43211",
+      "role": "catalogue_manager",
+      "status": "active",
+      "emailVerifiedAt": "2026-11-22T18:44:24.085Z",
+      "createdAt": "2026-11-22T18:44:24.085Z",
+      "addresses": []
+    },
+    {
+      "_id": "user_order_mgr",
+      "fullName": "Fulfillment & Logistics Lead",
+      "email": "orders@bamboohemp.com",
+      "normalizedEmail": "orders@bamboohemp.com",
+      "passwordHash": "$2a$10$OYijUHeMg4eFm4SrKDwfaODic13a4p9BpwCai2drkGrDNBvkggKGK",
+      "phone": "+91 98765 43212",
+      "role": "order_manager",
+      "status": "active",
+      "emailVerifiedAt": "2026-11-22T18:44:24.191Z",
+      "createdAt": "2026-11-22T18:44:24.191Z",
+      "addresses": []
+    },
+    {
+      "_id": "user_customer_demo",
+      "fullName": "Rahul Sharma",
+      "email": "customer@example.com",
+      "normalizedEmail": "customer@example.com",
+      "passwordHash": "$2a$10$MuvE0aCgEhFaCUUjkOd9eOJPGPHAaG9AOzSEEiVYrQqMPk3efF9VG",
+      "phone": "+91 91234 56789",
+      "role": "customer",
+      "status": "active",
+      "emailVerifiedAt": "2026-11-22T18:44:24.301Z",
+      "createdAt": "2026-11-22T18:44:24.301Z",
+      "addresses": [
+        {
+          "_id": "addr_1",
+          "recipientName": "Rahul Sharma",
+          "phone": "+91 91234 56789",
+          "addressLine1": "B-402, Green Meadows, Indiranagar",
+          "addressLine2": "100ft Road",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "postalCode": "560038",
+          "country": "India",
+          "isDefault": true
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "_id": "ord_1001",
+      "orderNumber": "BH-2026-9041",
+      "userId": "user_customer_demo",
+      "guestEmail": "customer@example.com",
+      "itemsSnapshot": [
+        {
+          "productId": "prod_bamboo_trunk_3pk",
+          "variantId": "var_btrunk_trio_m",
+          "sku": "BH-TRK-TRIO-M",
+          "name": "Everyday Bamboo Trunk (3-Pack)",
+          "size": "M",
+          "colour": "Trio Pack (Pine/Moss/Sand)",
+          "unitPricePaise": 149900,
+          "quantity": 1,
+          "lineTotalPaise": 149900,
+          "image": "/images/prod-bamboo-trunk-front.jpg"
+        }
+      ],
+      "addressSnapshot": {
+        "recipientName": "Rahul Sharma",
+        "phone": "+91 91234 56789",
+        "addressLine1": "B-402, Green Meadows, Indiranagar",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560038",
+        "country": "India"
+      },
+      "subtotalPaise": 149900,
+      "discountPaise": 0,
+      "shippingPaise": 0,
+      "taxPaise": 7495,
+      "totalPaise": 149900,
+      "currency": "INR",
+      "paymentStatus": "paid",
+      "orderStatus": "delivered",
+      "trackingNumber": "BD-982341201IN",
+      "courierPartner": "BlueDart Express",
+      "statusHistory": [
+        {
+          "status": "pending_payment",
+          "actor": "customer@example.com",
+          "actorRole": "customer",
+          "timestamp": "2026-11-17T18:44:24.301Z"
+        },
+        {
+          "status": "confirmed",
+          "actor": "system",
+          "actorRole": "system",
+          "timestamp": "2026-11-17T18:44:24.301Z"
+        },
+        {
+          "status": "processing",
+          "actor": "orders@bamboohemp.com",
+          "actorRole": "order_manager",
+          "timestamp": "2026-11-18T18:44:24.301Z"
+        },
+        {
+          "status": "packed",
+          "actor": "orders@bamboohemp.com",
+          "actorRole": "order_manager",
+          "timestamp": "2026-11-19T18:44:24.301Z"
+        },
+        {
+          "status": "shipped",
+          "actor": "orders@bamboohemp.com",
+          "actorRole": "order_manager",
+          "note": "Tracking BD-982341201IN",
+          "timestamp": "2026-11-20T18:44:24.301Z"
+        },
+        {
+          "status": "delivered",
+          "actor": "system",
+          "actorRole": "courier_webhook",
+          "timestamp": "2026-11-21T18:44:24.301Z"
+        }
+      ],
+      "createdAt": "2026-11-17T18:44:24.301Z"
+    },
+    {
+      "_id": "ord_1002",
+      "orderNumber": "BH-2026-9042",
+      "userId": "user_customer_demo",
+      "guestEmail": "customer@example.com",
+      "itemsSnapshot": [
+        {
+          "productId": "prod_bamboo_crew",
+          "variantId": "var_bcrew_grn_m",
+          "sku": "BH-BTE-GRN-M",
+          "name": "The Essential Bamboo Crew Neck Tee",
+          "size": "M",
+          "colour": "Forest Green",
+          "unitPricePaise": 129900,
+          "quantity": 1,
+          "lineTotalPaise": 129900,
+          "image": "/images/prod-bamboo-crew-front.jpg"
+        },
+        {
+          "productId": "prod_hemp_boxy",
+          "variantId": "var_hboxy_snd_m",
+          "sku": "BH-HBX-SND-M",
+          "name": "Heritage Hemp Boxy Tee",
+          "size": "M",
+          "colour": "Earthy Sand",
+          "unitPricePaise": 169900,
+          "quantity": 1,
+          "lineTotalPaise": 169900,
+          "image": "/images/prod-hemp-boxy-front.jpg"
+        }
+      ],
+      "addressSnapshot": {
+        "recipientName": "Rahul Sharma",
+        "phone": "+91 91234 56789",
+        "addressLine1": "B-402, Green Meadows, Indiranagar",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560038",
+        "country": "India"
+      },
+      "subtotalPaise": 299800,
+      "discountPaise": 29980,
+      "couponCode": "WELCOME10",
+      "shippingPaise": 0,
+      "taxPaise": 13491,
+      "totalPaise": 269820,
+      "currency": "INR",
+      "paymentStatus": "paid",
+      "orderStatus": "processing",
+      "statusHistory": [
+        {
+          "status": "pending_payment",
+          "actor": "customer@example.com",
+          "actorRole": "customer",
+          "timestamp": "2026-11-22T14:44:24.301Z"
+        },
+        {
+          "status": "confirmed",
+          "actor": "system",
+          "actorRole": "system",
+          "timestamp": "2026-11-22T14:56:24.301Z"
+        },
+        {
+          "status": "processing",
+          "actor": "orders@bamboohemp.com",
+          "actorRole": "order_manager",
+          "timestamp": "2026-11-22T16:44:24.301Z"
+        }
+      ],
+      "createdAt": "2026-11-22T14:44:24.301Z"
+    }
+  ],
+  "inventoryMovements": [],
+  "auditLogs": [
+    {
+      "_id": "audit_1",
+      "actorId": "user_super_admin",
+      "actorEmail": "admin@bamboohemp.com",
+      "actorRole": "super_admin",
+      "action": "catalogue.seed",
+      "resourceType": "Catalogue",
+      "resourceId": "all",
+      "before": null,
+      "after": {
+        "totalProducts": 6,
+        "totalCategories": 4
+      },
+      "createdAt": "2026-11-15T18:44:24.301Z"
+    },
+    {
+      "_id": "audit_2",
+      "actorId": "user_catalogue_mgr",
+      "actorEmail": "catalogue@bamboohemp.com",
+      "actorRole": "catalogue_manager",
+      "action": "product.publish",
+      "resourceType": "Product",
+      "resourceId": "prod_bamboo_trunk_3pk",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "active"
+      },
+      "createdAt": "2026-11-16T18:44:24.301Z"
+    }
+  ],
+  "settings": {
+    "siteName": "Bamboo & Hemp Everyday Essentials",
+    "currency": "INR",
+    "freeShippingThresholdPaise": 99900,
+    "standardShippingFeePaise": 9900,
+    "taxRatePercentage": 5,
+    "lowStockThreshold": 5,
+    "maxCartQuantityPerLine": 10,
+    "supportedCoupons": {
+      "WELCOME10": {
+        "discountPercent": 10,
+        "minCartPaise": 99900
+      },
+      "HEMP20": {
+        "discountPercent": 20,
+        "minCartPaise": 199900
+      }
+    }
+  }
+}

@@ -1,0 +1,330 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.toastNotice {
+  background-color: #1E412D;
+  color: #FFFFFF;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1A201A;
+  margin: 0 0 0.35rem;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: #556255;
+  margin: 0;
+}
+
+.livePulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: #EBF3EA;
+  color: #234938;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+}
+
+/* ── KPI Grid ── */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.kpiCard {
+  background: #FFFFFF;
+  border: 1px solid #E5E9E5;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.kpiCardAlert {
+  border-color: #F0C28A;
+  background-color: #FFFDF9;
+}
+
+.kpiLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6C7A6C;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.kpiValue {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #1A201A;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.kpiTrend {
+  font-size: 0.75rem;
+  color: #234938;
+  font-weight: 600;
+}
+
+.kpiSub {
+  font-size: 0.75rem;
+  color: #6C7A6C;
+}
+
+.kpiBadge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  background: #FEECEB;
+  color: #B42318;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.kpiAlertSub {
+  font-size: 0.75rem;
+  color: #B54708;
+  font-weight: 600;
+}
+
+/* ── Two Column ── */
+.twoCol {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 1.5rem;
+}
+
+.panel {
+  background: #FFFFFF;
+  border: 1px solid #E5E9E5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.panelHeader {
+  padding: 1.125rem 1.5rem;
+  border-bottom: 1px solid #E5E9E5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panelTitle {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1A201A;
+  margin: 0;
+}
+
+.panelLink {
+  font-size: 0.8125rem;
+  color: #234938;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  background-color: #FAFAFA;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6C7A6C;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid #E5E9E5;
+}
+
+.table td {
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid #F0F2F0;
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+
+.orderNum {
+  font-family: monospace;
+  font-weight: 600;
+  color: #1A201A;
+}
+
+.custName {
+  font-weight: 600;
+  color: #1A201A;
+}
+
+.custCity {
+  font-size: 0.75rem;
+  color: #6C7A6C;
+}
+
+.statusPill {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.confirmed {
+  background-color: #EFF8FF;
+  color: #175CD3;
+}
+
+.processing {
+  background-color: #FEF0C7;
+  color: #B54708;
+}
+
+.shipped {
+  background-color: #F4EBFF;
+  color: #6941C6;
+}
+
+.delivered {
+  background-color: #ECFDF3;
+  color: #027A48;
+}
+
+.actionBtn {
+  background-color: #1E412D;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.actionBtn:hover {
+  opacity: 0.9;
+}
+
+.actionBtnSuccess {
+  background-color: #027A48;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.doneText {
+  font-size: 0.75rem;
+  color: #6C7A6C;
+  font-weight: 500;
+}
+
+.skuCode {
+  font-family: monospace;
+  font-size: 0.75rem;
+  background: #F4F8F4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: #234938;
+}
+
+.prodName {
+  font-weight: 500;
+  color: #1A201A;
+}
+
+.prodVar {
+  font-size: 0.75rem;
+  color: #6C7A6C;
+}
+
+.lowStockBadge {
+  background-color: #FEF3F2;
+  color: #B42318;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.restockBtn {
+  background-color: #EBF3EA;
+  color: #234938;
+  border: 1px solid #C2DEC0;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.restockBtn:hover {
+  background-color: #D2E7C8;
+}
+
+/* ── Responsiveness ── */
+@media (max-width: 1024px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+}

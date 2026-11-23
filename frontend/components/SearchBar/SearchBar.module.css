@@ -1,0 +1,95 @@
+.form {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.inputWrap {
+  flex: 1;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  height: 44px;
+  padding: 0 var(--space-4) 0 2.75rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(36, 75, 60, 0.12);
+}
+
+.input::placeholder { color: var(--color-text-muted); }
+
+/* Remove default search clear button in Chrome */
+.input::-webkit-search-cancel-button { display: none; }
+
+.submitBtn {
+  padding: 0 var(--space-5);
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  white-space: nowrap;
+}
+
+.submitBtn:hover { background: var(--color-primary-dark); }
+
+.cancelBtn {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.cancelBtn:hover { color: var(--color-text); }
+
+@media (max-width: 480px) {
+  .form {
+    gap: var(--space-2);
+  }
+  .input {
+    height: 40px;
+    padding: 0 var(--space-3) 0 2.25rem;
+    font-size: var(--text-xs);
+  }
+  .icon {
+    left: var(--space-3);
+  }
+  .submitBtn {
+    height: 40px;
+    padding: 0 var(--space-3);
+    font-size: var(--text-xs);
+  }
+  .cancelBtn {
+    padding: 4px 6px;
+    font-size: var(--text-xs);
+  }
+}

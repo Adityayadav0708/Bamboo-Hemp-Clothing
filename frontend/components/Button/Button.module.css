@@ -1,0 +1,111 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:hover:not(:disabled) { transform: translateY(-1px); }
+.btn:active:not(:disabled) { transform: translateY(0); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ── Variants ── */
+.primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+.primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 4px 14px rgba(36, 75, 60, 0.3);
+}
+
+.secondary {
+  background: var(--color-secondary);
+  color: var(--color-white);
+  border-color: var(--color-secondary);
+}
+.secondary:hover:not(:disabled) {
+  background: var(--color-secondary-light);
+  border-color: var(--color-secondary-light);
+}
+
+.outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.outline:hover:not(:disabled) {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-text);
+  border-color: transparent;
+}
+.ghost:hover:not(:disabled) {
+  background: var(--color-bg-warm);
+  color: var(--color-primary);
+}
+
+.danger {
+  background: var(--color-error);
+  color: var(--color-white);
+  border-color: var(--color-error);
+}
+.danger:hover:not(:disabled) {
+  background: #a93226;
+}
+
+/* ── Sizes ── */
+.sm {
+  padding: 0.4rem 1.1rem;
+  font-size: var(--text-sm);
+}
+.md {
+  padding: 0.65rem 1.6rem;
+  font-size: var(--text-sm);
+}
+.lg {
+  padding: 0.85rem 2.2rem;
+  font-size: var(--text-base);
+}
+
+/* ── Full Width ── */
+.fullWidth { width: 100%; }
+
+/* ── Loading Spinner ── */
+.loading { pointer-events: none; }
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
