@@ -1,11 +1,18 @@
 /**
  * authService.js
  *
- * Authentication API calls: register, login, logout, get current user.
- * Seamlessly integrates with Express + JWT backend while providing safe fallback.
+ * Authentication and customer profile API calls.
+ * Integrates with Express + JWT backend while keeping safe offline fallback.
  */
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+import {
+  API_URL,
+  apiFetch,
+  getAuthToken,
+  getStorageItem,
+  removeStorageItem,
+  setStorageItem,
+} from "./apiClient";
 
 export const ADMIN_ROLES = ["admin", "super_admin"];
 
@@ -13,60 +20,35 @@ export function isAdminRole(role) {
   return ADMIN_ROLES.includes(role);
 }
 
+export function normalizeUser(rawUser = {}, fallback = {}) {
+  const fullName =
+    rawUser.fullName ||
+    rawUser.name ||
+    fallback.fullName ||
+    fallback.name ||
+    (rawUser.email || fallback.email || "member").split("@")[0];
+
+  return {
+    id: rawUser._id || rawUser.id || fallback.id || `usr_${Date.now()}`,
+    name: fullName,
+    fullName,
+    email: rawUser.email || fallback.email || "",
+    role: rawUser.role || fallback.role || "customer",
+    phone: rawUser.phone !== undefined ? rawUser.phone : fallback.phone || "",
+    addresses: Array.isArray(rawUser.addresses)
+      ? rawUser.addresses
+      : fallback.addresses || [],
+  };
+}
+
+export function saveAuthUser(user) {
+  setStorageItem("bh_auth_user", JSON.stringify(user));
+  return user;
+}
+
 export function clearAuthSession() {
   removeStorageItem("bh_auth_token");
   removeStorageItem("bh_auth_user");
-}
-
-function getStorageItem(key) {
-  if (typeof window === "undefined") return null;
-  try {
-    return localStorage.getItem(key);
-  } catch {
-    return null;
-  }
-}
-
-function setStorageItem(key, value) {
-  if (typeof window === "undefined") return;
-  try {
-    localStorage.setItem(key, value);
-  } catch {
-    // Ignore storage quota or access errors
-  }
-}
-
-function removeStorageItem(key) {
-  if (typeof window === "undefined") return;
-  try {
-    localStorage.removeItem(key);
-  } catch {
-    // Ignore storage errors
-  }
-}
-
-async function fetchAPI(endpoint, options = {}) {
-  const token = getStorageItem("bh_auth_token");
-  const headers = {
-    "Content-Type": "application/json",
-    ...(token ? { Authorization: `Bearer ${token}` } : {}),
-    ...options.headers,
-  };
-
-  const res = await fetch(`${API_URL}${endpoint}`, {
-    ...options,
-    headers,
-    credentials: "include",
-  });
-
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) {
-    const errorMsg = data.error?.message || data.message || `Auth error: ${res.status}`;
-    const err = new Error(errorMsg);
-    err.status = res.status;
-    throw err;
-  }
-  return data;
 }
 
 /**
@@ -84,63 +66,40 @@ export async function registerUser(payload) {
   }
 
   if (API_URL) {
-    try {
-      const res = await fetchAPI("/auth/register", {
-        method: "POST",
-        body: JSON.stringify({ fullName, email, password, phone }),
-      });
+    const res = await apiFetch("/auth/register", {
+      method: "POST",
+      body: JSON.stringify({ fullName, email, password, phone }),
+    });
 
-      if (res && res.data) {
-        const rawUser = res.data.user || {};
-        const token = res.data.token;
-        const normalizedUser = {
-          id: rawUser._id || rawUser.id || `usr_${Date.now()}`,
-          name: rawUser.fullName || fullName,
-          fullName: rawUser.fullName || fullName,
-          email: rawUser.email || email,
-          role: rawUser.role || "customer",
-          phone: rawUser.phone || phone,
-          addresses: rawUser.addresses || [],
-        };
-
-        if (token) setStorageItem("bh_auth_token", token);
-        setStorageItem("bh_auth_user", JSON.stringify(normalizedUser));
-
-        return {
-          success: true,
-          token,
-          user: normalizedUser,
-          message: "Your account has been created successfully.",
-        };
-      }
-    } catch (err) {
-      throw err;
+    if (res && res.data) {
+      const token = res.data.token;
+      const normalizedUser = normalizeUser(res.data.user, { fullName, email, phone });
+      if (token) setStorageItem("bh_auth_token", token);
+      saveAuthUser(normalizedUser);
+      return {
+        success: true,
+        token,
+        user: normalizedUser,
+        message: "Your account has been created successfully.",
+      };
     }
   }
 
   // Fallback offline mock registration
   const rawUsers = getStorageItem("bh_registered_users");
   const users = rawUsers ? JSON.parse(rawUsers) : [];
-
-  const existing = users.find((u) => u.email.toLowerCase() === email);
-  if (existing) {
+  if (users.find((u) => u.email.toLowerCase() === email)) {
     throw new Error("An account with this email address already exists.");
   }
 
-  const newUser = {
-    id: `usr_${Date.now()}`,
-    name: fullName,
-    fullName: fullName,
-    email: email,
-    role: "customer",
-    phone: phone,
-    addresses: [],
-    createdAt: new Date().toISOString(),
-  };
+  const newUser = normalizeUser(
+    { id: `usr_${Date.now()}`, fullName, email, phone, role: "customer", addresses: [] },
+    {}
+  );
 
-  users.push({ ...newUser, password });
+  users.push({ ...newUser, password, createdAt: new Date().toISOString() });
   setStorageItem("bh_registered_users", JSON.stringify(users));
-  setStorageItem("bh_auth_user", JSON.stringify(newUser));
+  saveAuthUser(newUser);
 
   return {
     success: true,
@@ -162,65 +121,48 @@ export async function loginUser(payload) {
   }
 
   if (API_URL) {
-    try {
-      const res = await fetchAPI("/auth/login", {
-        method: "POST",
-        body: JSON.stringify({ email, password }),
-      });
+    const res = await apiFetch("/auth/login", {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+    });
 
-      if (res && res.data) {
-        const rawUser = res.data.user || {};
-        const token = res.data.token;
-        const normalizedUser = {
-          id: rawUser._id || rawUser.id || `usr_${Date.now()}`,
-          name: rawUser.fullName || rawUser.name || email.split("@")[0],
-          fullName: rawUser.fullName || rawUser.name,
-          email: rawUser.email || email,
-          role: rawUser.role || "customer",
-          phone: rawUser.phone || "",
-          addresses: rawUser.addresses || [],
-        };
-
-        if (token) setStorageItem("bh_auth_token", token);
-        setStorageItem("bh_auth_user", JSON.stringify(normalizedUser));
-
-        return {
-          success: true,
-          token,
-          user: normalizedUser,
-        };
-      }
-    } catch (err) {
-      throw err;
+    if (res && res.data) {
+      const token = res.data.token;
+      const normalizedUser = normalizeUser(res.data.user, { email });
+      if (token) setStorageItem("bh_auth_token", token);
+      saveAuthUser(normalizedUser);
+      return {
+        success: true,
+        token,
+        user: normalizedUser,
+      };
     }
   }
 
   // Fallback offline credentials
   if (email === "admin@bamboohemp.com" && password === "Admin@12345") {
-    const adminUser = {
-      id: "usr_admin_001",
-      name: "Aditya Yadav (Store Owner)",
-      fullName: "Aditya Yadav (Store Owner)",
-      email: "admin@bamboohemp.com",
-      role: "admin",
-      phone: "+91 9876543210",
-      addresses: [],
-    };
-    setStorageItem("bh_auth_user", JSON.stringify(adminUser));
+    const adminUser = saveAuthUser(
+      normalizeUser({
+        id: "usr_admin_001",
+        fullName: "Aditya Yadav (Store Owner)",
+        email: "admin@bamboohemp.com",
+        role: "admin",
+        phone: "+91 9876543210",
+      })
+    );
     return { success: true, user: adminUser };
   }
 
   if (email === "customer@bamboohemp.com" && password === "Customer@12345") {
-    const customerUser = {
-      id: "usr_customer_001",
-      name: "Priya Sharma",
-      fullName: "Priya Sharma",
-      email: "customer@bamboohemp.com",
-      role: "customer",
-      phone: "+91 9123456789",
-      addresses: [],
-    };
-    setStorageItem("bh_auth_user", JSON.stringify(customerUser));
+    const customerUser = saveAuthUser(
+      normalizeUser({
+        id: "usr_customer_001",
+        fullName: "Priya Sharma",
+        email: "customer@bamboohemp.com",
+        role: "customer",
+        phone: "+91 9123456789",
+      })
+    );
     return { success: true, user: customerUser };
   }
 
@@ -231,41 +173,27 @@ export async function loginUser(payload) {
     if (matched.password !== password) {
       throw new Error("Invalid email address or password. Please verify your credentials and try again.");
     }
-    const safeUser = {
-      id: matched.id,
-      name: matched.name,
-      fullName: matched.fullName || matched.name,
-      email: matched.email,
-      role: matched.role || "customer",
-      phone: matched.phone || "",
-      addresses: matched.addresses || [],
-    };
-    setStorageItem("bh_auth_user", JSON.stringify(safeUser));
+    const safeUser = saveAuthUser(normalizeUser(matched));
     return { success: true, user: safeUser };
   }
 
-  // Seamless fallback for user testing
   const namePart = email.split("@")[0].replace(/[._-]/g, " ");
-  const formattedName = namePart
-    .split(" ")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ") || "Member";
+  const formattedName =
+    namePart
+      .split(" ")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" ") || "Member";
 
-  const sessionUser = {
-    id: `usr_${Date.now()}`,
-    name: formattedName,
-    fullName: formattedName,
-    email: email,
-    role: email.includes("admin") ? "admin" : "customer",
-    phone: "",
-    addresses: [],
-  };
+  const sessionUser = saveAuthUser(
+    normalizeUser({
+      id: `usr_${Date.now()}`,
+      fullName: formattedName,
+      email,
+      role: email.includes("admin") ? "admin" : "customer",
+    })
+  );
 
-  setStorageItem("bh_auth_user", JSON.stringify(sessionUser));
-  return {
-    success: true,
-    user: sessionUser,
-  };
+  return { success: true, user: sessionUser };
 }
 
 /**
@@ -275,7 +203,7 @@ export async function logoutUser() {
   clearAuthSession();
   if (API_URL) {
     try {
-      await fetchAPI("/auth/logout", { method: "POST" });
+      await apiFetch("/auth/logout", { method: "POST" });
     } catch {
       // Ignore network errors on logout
     }
@@ -288,7 +216,7 @@ export async function logoutUser() {
  */
 export async function getCurrentUser() {
   if (API_URL) {
-    const token = getStorageItem("bh_auth_token");
+    const token = getAuthToken();
     if (!token) {
       // Never trust stale cached user metadata when API auth is active without a JWT
       removeStorageItem("bh_auth_user");
@@ -296,20 +224,9 @@ export async function getCurrentUser() {
     }
 
     try {
-      const res = await fetchAPI("/auth/me");
+      const res = await apiFetch("/auth/me");
       if (res && res.data && res.data.user) {
-        const rawUser = res.data.user;
-        const normalizedUser = {
-          id: rawUser._id || rawUser.id,
-          name: rawUser.fullName || rawUser.name,
-          fullName: rawUser.fullName || rawUser.name,
-          email: rawUser.email,
-          role: rawUser.role || "customer",
-          phone: rawUser.phone || "",
-          addresses: rawUser.addresses || [],
-        };
-        setStorageItem("bh_auth_user", JSON.stringify(normalizedUser));
-        return normalizedUser;
+        return saveAuthUser(normalizeUser(res.data.user));
       }
     } catch (err) {
       if (err?.status === 401 || err?.status === 403) {
@@ -333,14 +250,12 @@ export async function getCurrentUser() {
 
 /**
  * Request a password reset email.
- * Note: Nodemailer email dispatch is deferred for future integration.
- * Gracefully confirms the request without throwing errors.
  * @param {{ email: string }} payload
  */
 export async function forgotPassword(payload) {
   if (API_URL) {
     try {
-      await fetchAPI("/auth/forgot-password", {
+      await apiFetch("/auth/forgot-password", {
         method: "POST",
         body: JSON.stringify(payload),
       });
@@ -355,18 +270,27 @@ export async function forgotPassword(payload) {
 }
 
 /**
- * Update user profile.
- * @param {Object} payload
+ * Update customer profile (fullName, phone).
+ * @param {{ fullName?: string, name?: string, phone?: string }} payload
  */
 export async function updateProfile(payload) {
-  if (!API_URL) {
-    const current = (await getCurrentUser()) || {};
-    const updated = { ...current, ...payload };
-    setStorageItem("bh_auth_user", JSON.stringify(updated));
-    return { success: true, user: updated };
+  const cleanPayload = {
+    fullName: (payload.fullName ?? payload.name ?? "").trim(),
+    phone: (payload.phone ?? "").trim(),
+  };
+
+  if (API_URL && getAuthToken()) {
+    const res = await apiFetch("/auth/profile", {
+      method: "PUT",
+      body: JSON.stringify(cleanPayload),
+    });
+    if (res && res.data && res.data.user) {
+      const normalized = saveAuthUser(normalizeUser(res.data.user));
+      return { success: true, user: normalized };
+    }
   }
-  return fetchAPI("/auth/profile", {
-    method: "PUT",
-    body: JSON.stringify(payload),
-  });
+
+  const current = (await getCurrentUser()) || {};
+  const updated = saveAuthUser(normalizeUser({ ...current, ...cleanPayload }));
+  return { success: true, user: updated };
 }

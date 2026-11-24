@@ -8,8 +8,10 @@ export default function CheckoutSummary({
   subtotal,
   deliveryFee,
   codFee = 0,
+  discount = 0,
+  couponCode = "",
 }) {
-  const finalTotal = subtotal + deliveryFee + codFee;
+  const finalTotal = Math.max(0, subtotal - discount + deliveryFee + codFee);
 
   return (
     <div className={styles.card}>
@@ -59,6 +61,13 @@ export default function CheckoutSummary({
           <span>Subtotal</span>
           <span>{formatPrice(subtotal)}</span>
         </div>
+
+        {discount > 0 && (
+          <div className={styles.row} style={{ color: "var(--color-success)", fontWeight: 600 }}>
+            <span>Discount{couponCode ? ` (${couponCode})` : ""}</span>
+            <span>-{formatPrice(discount)}</span>
+          </div>
+        )}
 
         <div className={styles.row}>
           <span>Shipping</span>

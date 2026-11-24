@@ -1,12 +1,10 @@
 import OrderHistoryList from "@/components/OrderHistoryList";
-import { getUserOrders } from "@/services/api/orderService";
 
 export const metadata = {
   title: "My Orders – Bamboo & Hemp Everyday Essentials",
-  description: "Track and review all your past and active orders. [Placeholder]",
+  description: "Track and review all your past and active orders.",
 };
 
-export default async function OrdersPage() {
-  const orders = await getUserOrders();
-  return <OrderHistoryList orders={orders} />;
+export default function OrdersPage() {
+  return <OrderHistoryList />;
 }

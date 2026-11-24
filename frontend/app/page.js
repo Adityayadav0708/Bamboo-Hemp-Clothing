@@ -9,6 +9,8 @@ import FeaturedCollection from "@/components/FeaturedCollection";
 import Testimonials from "@/components/Testimonials";
 import NewsletterSection from "@/components/NewsletterSection";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Bamboo & Hemp Everyday Essentials | Sustainable Clothing India",
   description:

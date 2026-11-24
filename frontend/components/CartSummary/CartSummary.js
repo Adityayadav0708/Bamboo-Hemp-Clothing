@@ -3,33 +3,52 @@ import { useState } from "react";
 import Link from "next/link";
 import Button from "@/components/Button";
 import { formatPrice } from "@/utils/formatters";
+import { useCart } from "@/hooks/useCart";
 import styles from "./CartSummary.module.css";
 
 const FREE_SHIPPING_THRESHOLD = 999;
 const STANDARD_SHIPPING_FEE = 99;
+const SUPPORTED_COUPONS = {
+  BAMBOO10: { discountPercent: 10, minSubtotal: 999 },
+  WELCOME10: { discountPercent: 10, minSubtotal: 999 },
+  HEMP20: { discountPercent: 20, minSubtotal: 1999 },
+};
 
 export default function CartSummary({ subtotal, itemCount }) {
-  const [couponCode, setCouponCode] = useState("");
-  const [discountPercent, setDiscountPercent] = useState(0);
+  const { couponCode: savedCoupon, setCouponCode: setSavedCoupon } = useCart();
+  const [couponInput, setCouponInput] = useState(savedCoupon || "");
   const [couponMsg, setCouponMsg] = useState(null);
 
-  const isFreeShipping = subtotal >= FREE_SHIPPING_THRESHOLD;
+  const activeCoupon = savedCoupon ? SUPPORTED_COUPONS[savedCoupon] : null;
+  const discountPercent =
+    activeCoupon && subtotal >= activeCoupon.minSubtotal ? activeCoupon.discountPercent : 0;
+
+  const isFreeShipping = Math.max(0, subtotal - Math.round((subtotal * discountPercent) / 100)) >= FREE_SHIPPING_THRESHOLD;
   const shippingFee = isFreeShipping || subtotal === 0 ? 0 : STANDARD_SHIPPING_FEE;
   const discountAmount = Math.round((subtotal * discountPercent) / 100);
   const total = Math.max(0, subtotal - discountAmount + shippingFee);
-  const amountToFreeShipping = FREE_SHIPPING_THRESHOLD - subtotal;
+  const amountToFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
 
   function handleApplyCoupon(e) {
     e.preventDefault();
-    const code = couponCode.trim().toUpperCase();
+    const code = couponInput.trim().toUpperCase();
     if (!code) return;
 
-    if (code === "BAMBOO10") {
-      setDiscountPercent(10);
-      setCouponMsg({ type: "success", text: "Code BAMBOO10 applied: 10% discount!" });
-    } else {
-      setCouponMsg({ type: "error", text: "Invalid coupon code. Try BAMBOO10" });
+    const match = SUPPORTED_COUPONS[code];
+    if (!match) {
+      setCouponMsg({ type: "error", text: "Invalid coupon code. Try WELCOME10, BAMBOO10, or HEMP20." });
+      return;
     }
+    if (subtotal < match.minSubtotal) {
+      setCouponMsg({
+        type: "error",
+        text: `Code ${code} requires a minimum order of ${formatPrice(match.minSubtotal)}.`,
+      });
+      return;
+    }
+
+    setSavedCoupon(code);
+    setCouponMsg({ type: "success", text: `Code ${code} applied: ${match.discountPercent}% discount!` });
   }
 
   return (
@@ -68,7 +87,7 @@ export default function CartSummary({ subtotal, itemCount }) {
 
         {discountAmount > 0 && (
           <div className={`${styles.row} ${styles.discountRow}`}>
-            <span>Discount (10%)</span>
+            <span>Discount ({discountPercent}% · {savedCoupon})</span>
             <span>-{formatPrice(discountAmount)}</span>
           </div>
         )}
@@ -97,9 +116,9 @@ export default function CartSummary({ subtotal, itemCount }) {
           <input
             type="text"
             className={styles.couponInput}
-            placeholder="Promo code (e.g. BAMBOO10)"
-            value={couponCode}
-            onChange={(e) => setCouponCode(e.target.value)}
+            placeholder="Promo code (e.g. WELCOME10)"
+            value={couponInput}
+            onChange={(e) => setCouponInput(e.target.value)}
           />
           <button type="submit" className={styles.couponBtn}>
             Apply

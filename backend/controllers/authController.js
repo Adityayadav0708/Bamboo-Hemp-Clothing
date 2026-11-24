@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const { User } = require('../models');
 const store = require('../services/storeService');
 const { JWT_SECRET } = require('../middleware/auth');
+const { formatAddresses } = require('./customerController');
 
 const signToken = (user) => {
   const id = user._id ? user._id.toString() : user.id;
@@ -13,6 +14,17 @@ const signToken = (user) => {
     { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }
   );
 };
+
+function formatUserResponse(user) {
+  return {
+    _id: user._id ? user._id.toString() : user.id,
+    fullName: user.fullName,
+    email: user.email,
+    role: user.role || 'customer',
+    phone: user.phone || '',
+    addresses: formatAddresses(user.addresses || [])
+  };
+}
 
 const register = async (req, res, next) => {
   try {
@@ -33,7 +45,6 @@ const register = async (req, res, next) => {
 
     const cleanEmail = email.toLowerCase().trim();
 
-    // 1. Try MongoDB if connected
     if (mongoose.connection.readyState === 1) {
       const existing = await User.findOne({ email: cleanEmail });
       if (existing) {
@@ -46,7 +57,7 @@ const register = async (req, res, next) => {
       const user = await User.create({
         fullName: fullName.trim(),
         email: cleanEmail,
-        password, // Handled by pre-save bcrypt hook in User model
+        password,
         phone: phone || '',
         role: 'customer'
       });
@@ -54,37 +65,16 @@ const register = async (req, res, next) => {
       const token = signToken(user);
       return res.status(201).json({
         success: true,
-        data: {
-          token,
-          user: {
-            _id: user._id.toString(),
-            fullName: user.fullName,
-            email: user.email,
-            role: user.role,
-            phone: user.phone,
-            addresses: user.addresses || []
-          }
-        }
+        data: { token, user: formatUserResponse(user) }
       });
     }
 
-    // 2. Fallback to in-memory store
     const user = store.createUser({ fullName, email: cleanEmail, password, phone });
     const token = signToken(user);
 
     return res.status(201).json({
       success: true,
-      data: {
-        token,
-        user: {
-          _id: user._id,
-          fullName: user.fullName,
-          email: user.email,
-          role: user.role,
-          phone: user.phone,
-          addresses: user.addresses || []
-        }
-      }
+      data: { token, user: formatUserResponse(user) }
     });
   } catch (err) {
     if (err.message && err.message.includes('already exists')) {
@@ -109,7 +99,6 @@ const login = async (req, res, next) => {
 
     const cleanEmail = email.toLowerCase().trim();
 
-    // 1. Try MongoDB if connected
     if (mongoose.connection.readyState === 1) {
       const user = await User.findOne({ email: cleanEmail });
       if (user) {
@@ -118,23 +107,12 @@ const login = async (req, res, next) => {
           const token = signToken(user);
           return res.json({
             success: true,
-            data: {
-              token,
-              user: {
-                _id: user._id.toString(),
-                fullName: user.fullName,
-                email: user.email,
-                role: user.role,
-                phone: user.phone,
-                addresses: user.addresses || []
-              }
-            }
+            data: { token, user: formatUserResponse(user) }
           });
         }
       }
     }
 
-    // 2. Check fallback store
     const user = store.getUserByEmail(cleanEmail);
     if (!user) {
       return res.status(401).json({
@@ -155,17 +133,7 @@ const login = async (req, res, next) => {
     const token = signToken(user);
     return res.json({
       success: true,
-      data: {
-        token,
-        user: {
-          _id: user._id,
-          fullName: user.fullName,
-          email: user.email,
-          role: user.role,
-          phone: user.phone,
-          addresses: user.addresses || []
-        }
-      }
+      data: { token, user: formatUserResponse(user) }
     });
   } catch (err) {
     next(err);
@@ -173,24 +141,65 @@ const login = async (req, res, next) => {
 };
 
 const getMe = async (req, res) => {
-  const user = req.user;
   return res.json({
     success: true,
     data: {
-      user: {
-        _id: user._id ? user._id.toString() : user.id,
-        fullName: user.fullName,
-        email: user.email,
-        role: user.role,
-        phone: user.phone || '',
-        addresses: user.addresses || []
-      }
+      user: formatUserResponse(req.user)
     }
   });
+};
+
+const updateProfile = async (req, res, next) => {
+  try {
+    const { fullName, phone } = req.body;
+    if (fullName !== undefined && fullName.trim().length < 2) {
+      return res.status(400).json({
+        success: false,
+        error: { code: 'INVALID_NAME', message: 'Full name must be at least 2 characters.' }
+      });
+    }
+
+    const userId = req.user._id ? req.user._id.toString() : req.user.id;
+
+    if (mongoose.connection.readyState === 1 && mongoose.Types.ObjectId.isValid(userId)) {
+      const updates = {};
+      if (fullName !== undefined) updates.fullName = fullName.trim();
+      if (phone !== undefined) updates.phone = phone.trim();
+
+      const updatedUser = await User.findByIdAndUpdate(
+        userId,
+        { $set: updates },
+        { new: true, runValidators: true }
+      ).select('-password');
+
+      if (updatedUser) {
+        return res.json({
+          success: true,
+          data: { user: formatUserResponse(updatedUser) }
+        });
+      }
+    }
+
+    const updated = store.updateUserProfile(userId, { fullName, phone });
+    if (!updated) {
+      return res.status(404).json({
+        success: false,
+        error: { code: 'NOT_FOUND', message: 'User profile not found.' }
+      });
+    }
+
+    return res.json({
+      success: true,
+      data: { user: formatUserResponse(updated) }
+    });
+  } catch (err) {
+    next(err);
+  }
 };
 
 module.exports = {
   register,
   login,
-  getMe
+  getMe,
+  updateProfile
 };

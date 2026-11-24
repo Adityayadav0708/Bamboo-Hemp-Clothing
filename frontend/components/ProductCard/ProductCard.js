@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import PriceDisplay from "@/components/PriceDisplay";
 import { useCart } from "@/hooks/useCart";
+import { findMatchingVariantId } from "@/services/api/productService";
 import styles from "./ProductCard.module.css";
 
 const BADGE_MAP = {
@@ -32,7 +33,8 @@ export default function ProductCard({ product }) {
     const defaultColor = product.colors?.[0]?.slug;
     if (!defaultSize || !defaultColor) return;
 
-    addItem(product, 1, defaultSize, defaultColor);
+    const variantId = findMatchingVariantId(product, defaultSize, defaultColor);
+    addItem({ ...product, variantId }, 1, defaultSize, defaultColor);
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   }

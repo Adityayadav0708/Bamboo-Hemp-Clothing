@@ -248,7 +248,7 @@ export default function CheckoutForm({
           loading={loading}
           disabled={loading}
         >
-          Place Order (Test Mode)
+          Place Order
         </Button>
         <p className={styles.legalNotice}>
           By placing your order, you agree to our Terms &amp; Conditions and Return Policy.

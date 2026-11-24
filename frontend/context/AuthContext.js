@@ -4,8 +4,7 @@
  * AuthContext.js
  *
  * Global authentication state using React Context API.
- * Manages current user, loading state, login/logout actions.
- * Communicates with authService which calls the Express backend.
+ * Manages current user, profile updates, saved addresses state sync, and session handling.
  */
 
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
@@ -16,16 +15,17 @@ import {
   loginUser,
   logoutUser,
   registerUser,
+  saveAuthUser,
+  updateProfile as updateProfileAPI,
 } from "@/services/api/authService";
 
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // true while checking session
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Check if user is already logged in on app load
   useEffect(() => {
     async function checkSession() {
       try {
@@ -90,6 +90,23 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
+  const updateProfile = useCallback(async (payload) => {
+    const res = await updateProfileAPI(payload);
+    if (res?.user) {
+      setUser(res.user);
+    }
+    return res;
+  }, []);
+
+  const syncAddresses = useCallback((addresses) => {
+    setUser((prev) => {
+      if (!prev) return prev;
+      const updated = { ...prev, addresses: Array.isArray(addresses) ? addresses : [] };
+      saveAuthUser(updated);
+      return updated;
+    });
+  }, []);
+
   const clearError = useCallback(() => setError(null), []);
 
   const value = {
@@ -101,6 +118,8 @@ export function AuthProvider({ children }) {
     login,
     register,
     logout,
+    updateProfile,
+    syncAddresses,
     clearError,
   };
 

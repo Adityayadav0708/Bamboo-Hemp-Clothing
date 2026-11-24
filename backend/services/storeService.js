@@ -502,6 +502,7 @@ class StoreService {
       maxCartQuantityPerLine: 10,
       supportedCoupons: {
         'WELCOME10': { discountPercent: 10, minCartPaise: 99900 },
+        'BAMBOO10': { discountPercent: 10, minCartPaise: 99900 },
         'HEMP20': { discountPercent: 20, minCartPaise: 199900 }
       }
     };
@@ -516,6 +517,7 @@ class StoreService {
         this.categories = data.categories || INITIAL_CATEGORIES;
         this.products = data.products || INITIAL_PRODUCTS;
         this.users = data.users || INITIAL_USERS;
+        this.carts = new Map(Object.entries(data.carts || {}));
         this.orders = data.orders || INITIAL_ORDERS;
         this.inventoryMovements = data.inventoryMovements || [];
         this.auditLogs = data.auditLogs || INITIAL_AUDIT_LOGS;
@@ -530,6 +532,7 @@ class StoreService {
     this.categories = INITIAL_CATEGORIES;
     this.products = INITIAL_PRODUCTS;
     this.users = INITIAL_USERS;
+    this.carts = new Map();
     this.orders = INITIAL_ORDERS;
     this.auditLogs = INITIAL_AUDIT_LOGS;
     this.persist();
@@ -543,6 +546,7 @@ class StoreService {
         categories: this.categories,
         products: this.products,
         users: this.users,
+        carts: Object.fromEntries(this.carts),
         orders: this.orders,
         inventoryMovements: this.inventoryMovements,
         auditLogs: this.auditLogs,
@@ -554,22 +558,42 @@ class StoreService {
   }
 
   // ── Categories ──
+  _formatCategoryWithCount(cat) {
+    if (!cat) return null;
+    const catIdStr = cat._id ? cat._id.toString() : '';
+    const count = this.products.filter(
+      p => p.status === 'active' && Array.isArray(p.categoryIds) && p.categoryIds.some(cid => cid.toString() === catIdStr)
+    ).length;
+    return {
+      ...cat,
+      shortName: cat.shortName || cat.name.replace('T-Shirts', 'Tees'),
+      productCount: count
+    };
+  }
+
   getCategories() {
-    return this.categories.filter(c => c.isActive).sort((a, b) => a.sortOrder - b.sortOrder);
+    return this.categories
+      .filter(c => c.isActive !== false)
+      .sort((a, b) => (a.displayOrder ?? a.sortOrder ?? 0) - (b.displayOrder ?? b.sortOrder ?? 0))
+      .map(c => this._formatCategoryWithCount(c));
   }
 
   getCategoryBySlug(slug) {
-    return this.categories.find(c => c.slug === slug);
+    const cat = this.categories.find(c => c.slug === slug && c.isActive !== false);
+    return this._formatCategoryWithCount(cat);
   }
 
   // ── Products ──
-  getProducts({ categorySlug, fabricType, size, color, sort = 'newest', page = 1, limit = 20, search } = {}) {
+  getProducts({ categorySlug, fabricType, size, color, minPrice, maxPrice, sort = 'default', page = 1, limit = 50, search } = {}) {
     let items = this.products.filter(p => p.status === 'active');
 
     if (categorySlug) {
       const cat = this.getCategoryBySlug(categorySlug);
       if (cat) {
-        items = items.filter(p => p.categoryIds && p.categoryIds.includes(cat._id));
+        const catIdStr = cat._id.toString();
+        items = items.filter(p => p.categoryIds && p.categoryIds.some(cid => cid.toString() === catIdStr));
+      } else {
+        items = [];
       }
     }
 
@@ -582,45 +606,58 @@ class StoreService {
       items = items.filter(p =>
         (p.name && p.name.toLowerCase().includes(q)) ||
         (p.description && p.description.toLowerCase().includes(q)) ||
+        (p.shortDescription && p.shortDescription.toLowerCase().includes(q)) ||
+        (p.materialDetails && p.materialDetails.toLowerCase().includes(q)) ||
         (p.tags && Array.isArray(p.tags) && p.tags.some(t => typeof t === 'string' && t.toLowerCase().includes(q)))
       );
     }
 
     if (size) {
-      items = items.filter(p => p.variants && p.variants.some(v => v.size.toLowerCase() === size.toLowerCase() && v.isActive));
+      items = items.filter(p => p.variants && p.variants.some(v => v.size?.toLowerCase() === size.toLowerCase() && v.isActive !== false));
     }
 
     if (color) {
+      const colorSlug = this._normalizeSlug(color);
       items = items.filter(p => p.variants && p.variants.some(v => {
-        const cName = v.colour?.name || v.color?.name || (typeof v.colour === 'string' ? v.colour : '');
-        return cName.toLowerCase().includes(color.toLowerCase());
+        if (v.isActive === false) return false;
+        const cName = this._getVariantColorName(v);
+        return this._normalizeSlug(cName) === colorSlug || cName.toLowerCase().includes(color.toLowerCase());
       }));
     }
 
+    const minP = minPrice !== undefined && minPrice !== '' ? Number(minPrice) : null;
+    const maxP = maxPrice !== undefined && maxPrice !== '' ? Number(maxPrice) : null;
+    if (minP !== null && !Number.isNaN(minP)) {
+      items = items.filter(p => this._getVariantPriceRupees(p.variants?.[0]) >= minP);
+    }
+    if (maxP !== null && !Number.isNaN(maxP)) {
+      items = items.filter(p => this._getVariantPriceRupees(p.variants?.[0]) <= maxP);
+    }
+
     // Sorting
-    if (sort === 'price_asc') {
-      items.sort((a, b) => (a.variants[0]?.pricePaise || 0) - (b.variants[0]?.pricePaise || 0));
-    } else if (sort === 'price_desc') {
-      items.sort((a, b) => (b.variants[0]?.pricePaise || 0) - (a.variants[0]?.pricePaise || 0));
-    } else if (sort === 'popular') {
-      items.sort((a, b) => {
-        const bPop = b.tags && Array.isArray(b.tags) && b.tags.includes('bestseller') ? 1 : 0;
-        const aPop = a.tags && Array.isArray(a.tags) && a.tags.includes('bestseller') ? 1 : 0;
-        return bPop - aPop;
-      });
+    if (sort === 'price_asc' || sort === 'price-asc') {
+      items.sort((a, b) => this._getVariantPriceRupees(a.variants?.[0]) - this._getVariantPriceRupees(b.variants?.[0]));
+    } else if (sort === 'price_desc' || sort === 'price-desc') {
+      items.sort((a, b) => this._getVariantPriceRupees(b.variants?.[0]) - this._getVariantPriceRupees(a.variants?.[0]));
+    } else if (sort === 'rating') {
+      items.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+    } else if (sort === 'popular' || sort === 'popularity') {
+      items.sort((a, b) => (b.reviewsCount || 0) - (a.reviewsCount || 0));
     }
 
     const total = items.length;
-    const startIndex = (page - 1) * limit;
-    const paginated = items.slice(startIndex, startIndex + limit);
+    const pageNum = Math.max(1, Number(page) || 1);
+    const limitNum = Math.max(1, Number(limit) || 50);
+    const startIndex = (pageNum - 1) * limitNum;
+    const paginated = items.slice(startIndex, startIndex + limitNum);
 
     return {
       products: paginated,
       pagination: {
-        page: Number(page),
-        limit: Number(limit),
+        page: pageNum,
+        limit: limitNum,
         totalItems: total,
-        totalPages: Math.ceil(total / limit)
+        totalPages: Math.ceil(total / limitNum)
       }
     };
   }
@@ -643,40 +680,109 @@ class StoreService {
     return null;
   }
 
+  _normalizeSlug(val = '') {
+    return val.toString().trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  }
+
+  _getVariantPriceRupees(v) {
+    if (v?.price !== undefined && v?.price !== null) return Number(v.price);
+    if (v?.pricePaise !== undefined && v?.pricePaise !== null) return Number(v.pricePaise) / 100;
+    return 990;
+  }
+
+  _getVariantStock(v) {
+    if (v?.inventoryCount !== undefined && v?.inventoryCount !== null) return Number(v.inventoryCount);
+    if (v?.stockQuantity !== undefined && v?.stockQuantity !== null) return Number(v.stockQuantity);
+    return 50;
+  }
+
+  _getVariantColorName(v) {
+    return v?.color?.name || v?.colour?.name || (typeof v?.colour === 'string' ? v.colour : '') || (typeof v?.color === 'string' ? v.color : '') || 'Natural';
+  }
+
+  findVariantForProduct({ variantId, productId, slug, size, color } = {}) {
+    if (variantId) {
+      const byId = this.getVariantById(variantId);
+      if (byId) return byId;
+    }
+
+    let product = null;
+    if (slug) product = this.getProductBySlug(slug);
+    if (!product && productId) product = this.getProductById(productId);
+    if (!product || !product.variants?.length) return null;
+
+    const activeVariants = product.variants.filter(v => v.isActive !== false);
+    const pool = activeVariants.length ? activeVariants : product.variants;
+    const targetColorSlug = color ? this._normalizeSlug(color) : '';
+
+    let matched = pool.find(v => {
+      const sizeMatch = !size || v.size?.toLowerCase() === size.toLowerCase();
+      const colorMatch = !targetColorSlug || this._normalizeSlug(this._getVariantColorName(v)) === targetColorSlug;
+      return sizeMatch && colorMatch;
+    });
+
+    if (!matched && size) {
+      matched = pool.find(v => v.size?.toLowerCase() === size.toLowerCase());
+    }
+
+    return { product, variant: matched || pool[0] };
+  }
+
   // ── Cart Operations ──
   getCart(identifier) {
     if (!this.carts.has(identifier)) {
       this.carts.set(identifier, { items: [] });
     }
     const cart = this.carts.get(identifier);
+    if (!cart || !Array.isArray(cart.items)) {
+      this.carts.set(identifier, { items: [] });
+    }
 
-    // Hydrate cart lines with current product truth
     const hydratedLines = [];
     let subtotalPaise = 0;
 
-    for (const line of cart.items) {
-      const match = this.getVariantById(line.variantId);
-      if (!match || !match.variant.isActive || match.product.status !== 'active') {
-        continue; // drop discontinued/inactive
+    for (const line of this.carts.get(identifier).items) {
+      const match = this.findVariantForProduct({
+        variantId: line.variantId,
+        slug: line.slug,
+        productId: line.productId,
+        size: line.size,
+        color: line.color
+      });
+      if (!match || match.variant.isActive === false || match.product.status !== 'active') {
+        continue;
       }
-      const unitPrice = match.variant.pricePaise;
-      const lineTotal = unitPrice * line.quantity;
-      subtotalPaise += lineTotal;
+
+      const unitPriceRupees = this._getVariantPriceRupees(match.variant);
+      const unitPricePaise = Math.round(unitPriceRupees * 100);
+      const lineTotalPaise = unitPricePaise * line.quantity;
+      subtotalPaise += lineTotalPaise;
+
+      const colorName = this._getVariantColorName(match.variant);
+      const colorSlug = line.color || this._normalizeSlug(colorName);
+      const vId = match.variant._id.toString();
 
       hydratedLines.push({
-        variantId: match.variant._id,
-        productId: match.product._id,
+        itemId: vId,
+        cartKey: `${match.product.slug}__${match.variant.size}__${this._normalizeSlug(colorSlug)}`,
+        variantId: vId,
+        productId: match.product._id.toString(),
+        slug: match.product.slug,
         productSlug: match.product.slug,
         name: match.product.name,
         size: match.variant.size,
-        colour: match.variant.colour,
+        color: colorSlug,
+        colorName,
+        colour: match.variant.color || match.variant.colour,
         sku: match.variant.sku,
-        unitPricePaise: unitPrice,
-        compareAtPricePaise: match.variant.compareAtPricePaise,
+        price: unitPriceRupees,
+        unitPricePaise,
+        compareAtPricePaise: (match.variant.mrp ? match.variant.mrp * 100 : match.variant.compareAtPricePaise) || unitPricePaise,
         quantity: line.quantity,
-        lineTotalPaise: lineTotal,
-        image: match.product.images[0]?.url || '',
-        availableStock: Math.max(0, match.variant.stockQuantity - match.variant.reservedQuantity)
+        subtotal: unitPriceRupees * line.quantity,
+        lineTotalPaise,
+        image: match.product.images?.[0]?.url || '',
+        availableStock: Math.max(0, this._getVariantStock(match.variant) - (match.variant.reservedQuantity || 0))
       });
     }
 
@@ -684,10 +790,13 @@ class StoreService {
     const shippingPaise = subtotalPaise >= freeShip || subtotalPaise === 0 ? 0 : this.settings.standardShippingFeePaise;
     const taxPaise = Math.round(subtotalPaise * (this.settings.taxRatePercentage / 100));
     const totalPaise = subtotalPaise + shippingPaise;
+    const subtotal = Math.round(subtotalPaise / 100);
 
     return {
+      cartId: identifier,
       items: hydratedLines,
       itemCount: hydratedLines.reduce((acc, it) => acc + it.quantity, 0),
+      subtotal,
       subtotalPaise,
       shippingPaise,
       taxPaise,
@@ -696,65 +805,165 @@ class StoreService {
     };
   }
 
-  addToCart(identifier, { variantId, quantity = 1 }) {
-    const match = this.getVariantById(variantId);
-    if (!match) throw new Error('Variant not found');
-    if (!match.variant.isActive || match.product.status !== 'active') throw new Error('Product variant is unavailable');
+  _matchesCartLine(line, itemId) {
+    if (!line || !itemId) return false;
+    const target = itemId.toString();
+    const colorSlug = this._normalizeSlug(line.color || '');
+    return (
+      (line.variantId && line.variantId.toString() === target) ||
+      `${line.slug}__${line.size}__${colorSlug}` === target ||
+      `${line.productId}__${line.size}__${colorSlug}` === target
+    );
+  }
 
-    const available = match.variant.stockQuantity - match.variant.reservedQuantity;
+  addToCart(identifier, { variantId, productId, slug, size, color, quantity = 1 }) {
+    const match = this.findVariantForProduct({ variantId, productId, slug, size, color });
+    if (!match) throw new Error('Product variant not found');
+    if (match.variant.isActive === false || match.product.status !== 'active') {
+      throw new Error('Product variant is unavailable');
+    }
+
+    const available = this._getVariantStock(match.variant) - (match.variant.reservedQuantity || 0);
     if (available <= 0) throw new Error('Item is currently out of stock');
 
     if (!this.carts.has(identifier)) {
       this.carts.set(identifier, { items: [] });
     }
     const cart = this.carts.get(identifier);
-    const existing = cart.items.find(it => it.variantId === variantId);
+    const resolvedVariantId = match.variant._id.toString();
+    const existing = cart.items.find(it => it.variantId && it.variantId.toString() === resolvedVariantId);
+
+    const qtyNum = Math.max(1, parseInt(quantity, 10) || 1);
+    const maxQty = this.settings.maxCartQuantityPerLine || 10;
 
     if (existing) {
-      const newQty = existing.quantity + quantity;
-      if (newQty > this.settings.maxCartQuantityPerLine) {
-        throw new Error(`Maximum ${this.settings.maxCartQuantityPerLine} units allowed per item`);
+      const newQty = existing.quantity + qtyNum;
+      if (newQty > maxQty) {
+        throw new Error(`Maximum ${maxQty} units allowed per item`);
       }
       if (newQty > available) {
         throw new Error(`Only ${available} units available in stock`);
       }
       existing.quantity = newQty;
     } else {
-      if (quantity > available) throw new Error(`Only ${available} units available in stock`);
-      cart.items.push({ variantId, quantity: Math.min(quantity, 10), addedAt: new Date() });
+      if (qtyNum > available) throw new Error(`Only ${available} units available in stock`);
+      cart.items.push({
+        variantId: resolvedVariantId,
+        productId: match.product._id.toString(),
+        slug: match.product.slug,
+        size: match.variant.size,
+        color: color || this._normalizeSlug(this._getVariantColorName(match.variant)),
+        quantity: Math.min(qtyNum, maxQty),
+        addedAt: new Date()
+      });
     }
 
+    this.persist();
     return this.getCart(identifier);
   }
 
-  updateCartItem(identifier, { variantId, quantity }) {
+  updateCartItem(identifier, { itemId, variantId, quantity, newSize, newColor }) {
     if (!this.carts.has(identifier)) return this.getCart(identifier);
     const cart = this.carts.get(identifier);
+    const lookupKey = (itemId || variantId || '').toString();
+    const idx = cart.items.findIndex(x => this._matchesCartLine(x, lookupKey));
+    if (idx === -1) return this.getCart(identifier);
 
-    if (quantity <= 0) {
-      cart.items = cart.items.filter(it => it.variantId !== variantId);
-    } else {
-      const it = cart.items.find(x => x.variantId === variantId);
-      if (it) {
-        it.quantity = Math.min(Math.max(1, quantity), this.settings.maxCartQuantityPerLine);
+    const current = cart.items[idx];
+    if (quantity !== undefined && quantity <= 0) {
+      cart.items.splice(idx, 1);
+      this.persist();
+      return this.getCart(identifier);
+    }
+
+    if (newSize || newColor) {
+      const nextMatch = this.findVariantForProduct({
+        slug: current.slug,
+        productId: current.productId,
+        size: newSize || current.size,
+        color: newColor || current.color
+      });
+      if (nextMatch) {
+        const nextVarId = nextMatch.variant._id.toString();
+        const mergeTarget = cart.items.find((x, i) => i !== idx && x.variantId?.toString() === nextVarId);
+        const targetQty = quantity !== undefined ? quantity : current.quantity;
+        const maxQty = this.settings.maxCartQuantityPerLine || 10;
+        if (mergeTarget) {
+          mergeTarget.quantity = Math.min(mergeTarget.quantity + targetQty, maxQty);
+          cart.items.splice(idx, 1);
+        } else {
+          current.variantId = nextVarId;
+          current.size = nextMatch.variant.size;
+          current.color = newColor || current.color;
+          current.quantity = Math.min(Math.max(1, targetQty), maxQty);
+        }
+        this.persist();
+        return this.getCart(identifier);
       }
     }
+
+    if (quantity !== undefined) {
+      const maxQty = this.settings.maxCartQuantityPerLine || 10;
+      current.quantity = Math.min(Math.max(1, quantity), maxQty);
+    }
+
+    this.persist();
     return this.getCart(identifier);
   }
 
-  removeFromCart(identifier, variantId) {
+  removeFromCart(identifier, itemId) {
     if (!this.carts.has(identifier)) return this.getCart(identifier);
     const cart = this.carts.get(identifier);
-    cart.items = cart.items.filter(it => it.variantId !== variantId);
+    cart.items = cart.items.filter(it => !this._matchesCartLine(it, itemId));
+    this.persist();
+    return this.getCart(identifier);
+  }
+
+  syncCart(identifier, incomingItems = []) {
+    if (!Array.isArray(incomingItems)) return this.getCart(identifier);
+    if (!this.carts.has(identifier)) {
+      this.carts.set(identifier, { items: [] });
+    }
+    const cart = this.carts.get(identifier);
+    const maxQty = this.settings.maxCartQuantityPerLine || 10;
+
+    for (const raw of incomingItems) {
+      const match = this.findVariantForProduct({
+        variantId: raw.variantId,
+        productId: raw.productId,
+        slug: raw.slug,
+        size: raw.size,
+        color: raw.color
+      });
+      if (!match) continue;
+      const vId = match.variant._id.toString();
+      const qty = Math.min(Math.max(1, parseInt(raw.quantity, 10) || 1), maxQty);
+      const existing = cart.items.find(it => it.variantId?.toString() === vId);
+      if (existing) {
+        existing.quantity = Math.min(Math.max(existing.quantity, qty), maxQty);
+      } else {
+        cart.items.push({
+          variantId: vId,
+          productId: match.product._id.toString(),
+          slug: match.product.slug,
+          size: match.variant.size,
+          color: raw.color || this._normalizeSlug(this._getVariantColorName(match.variant)),
+          quantity: qty,
+          addedAt: new Date()
+        });
+      }
+    }
+    this.persist();
     return this.getCart(identifier);
   }
 
   clearCart(identifier) {
     this.carts.set(identifier, { items: [] });
+    this.persist();
   }
 
   // ── Checkout & Orders ──
-  calculateQuote(items, couponCode = null) {
+  calculateQuote(items, couponCode = null, { deliveryMethod = 'standard', paymentMethod = '' } = {}) {
     let subtotalRupees = 0;
     const validatedItems = [];
 
@@ -767,35 +976,45 @@ class StoreService {
       let pImage = it.image || '';
       let prodId = it.productId;
       let varId = it.variantId;
+      let pSlug = it.slug || 'bamboo-product';
 
-      if (it.variantId) {
-        const match = this.getVariantById(it.variantId);
-        if (match) {
-          prodId = match.product._id;
-          varId = match.variant._id;
-          pSku = match.variant.sku;
-          pName = match.product.name;
-          pSize = match.variant.size;
-          pColor = match.variant.colour?.name || match.variant.color?.name || pColor;
-          unitPrice = match.variant.price !== undefined ? match.variant.price : (match.variant.pricePaise ? match.variant.pricePaise / 100 : unitPrice);
-          pImage = match.product.images?.[0]?.url || pImage;
-        }
+      const match = this.findVariantForProduct({
+        variantId: it.variantId,
+        productId: it.productId,
+        slug: it.slug,
+        size: it.size,
+        color: pColor
+      });
+      if (match) {
+        prodId = match.product._id;
+        varId = match.variant._id;
+        pSlug = match.product.slug || pSlug;
+        pSku = match.variant.sku || pSku;
+        pName = match.product.name;
+        pSize = match.variant.size;
+        pColor = this._getVariantColorName(match.variant) || pColor;
+        unitPrice = this._getVariantPriceRupees(match.variant);
+        pImage = match.product.images?.[0]?.url || pImage;
       }
 
       unitPrice = unitPrice || 990;
-      const lineTotal = unitPrice * (it.quantity || 1);
+      const qty = Math.max(1, parseInt(it.quantity, 10) || 1);
+      const lineTotal = unitPrice * qty;
       subtotalRupees += lineTotal;
 
       validatedItems.push({
         productId: prodId,
         variantId: varId,
         sku: pSku,
+        slug: pSlug,
         name: pName,
         size: pSize,
+        color: pColor,
         colour: pColor,
+        price: unitPrice,
         unitPriceRupees: unitPrice,
         unitPricePaise: unitPrice * 100,
-        quantity: it.quantity || 1,
+        quantity: qty,
         lineTotalRupees: lineTotal,
         lineTotalPaise: lineTotal * 100,
         image: pImage
@@ -803,16 +1022,20 @@ class StoreService {
     }
 
     let discountRupees = 0;
-    if (couponCode && this.settings.supportedCoupons[couponCode.toUpperCase()]) {
-      const c = this.settings.supportedCoupons[couponCode.toUpperCase()];
+    const normalizedCoupon = couponCode ? couponCode.trim().toUpperCase() : '';
+    if (normalizedCoupon && this.settings.supportedCoupons[normalizedCoupon]) {
+      const c = this.settings.supportedCoupons[normalizedCoupon];
       if (subtotalRupees >= (c.minCartPaise ? c.minCartPaise / 100 : 999)) {
         discountRupees = Math.round(subtotalRupees * (c.discountPercent / 100));
       }
     }
 
     const freeShipRupees = this.settings.freeShippingThresholdPaise ? this.settings.freeShippingThresholdPaise / 100 : 999;
-    const shippingFeeRupees = (subtotalRupees - discountRupees) >= freeShipRupees ? 0 : 99;
-    const finalPayableRupees = Math.max(0, subtotalRupees - discountRupees + shippingFeeRupees);
+    const shippingFeeRupees = deliveryMethod === 'express'
+      ? 149
+      : (subtotalRupees - discountRupees >= freeShipRupees || subtotalRupees === 0 ? 0 : 99);
+    const codFeeRupees = paymentMethod === 'cod' ? 49 : 0;
+    const finalPayableRupees = Math.max(0, subtotalRupees - discountRupees + shippingFeeRupees + codFeeRupees);
 
     return {
       items: validatedItems,
@@ -822,47 +1045,80 @@ class StoreService {
       discountPaise: discountRupees * 100,
       shippingFeeRupees,
       shippingPaise: shippingFeeRupees * 100,
+      codFeeRupees,
+      codFeePaise: codFeeRupees * 100,
+      deliveryMethod,
       finalPayableRupees,
       totalPaise: finalPayableRupees * 100,
-      couponCode,
+      couponCode: normalizedCoupon,
       currency: 'INR'
     };
   }
 
-  createOrder({ userId, guestEmail, items, address, deliveryInstructions, couponCode, paymentMethod = 'mock' }) {
-    const quote = this.calculateQuote(items, couponCode);
+  createOrder({
+    userId,
+    guestEmail,
+    items,
+    address,
+    deliveryInstructions,
+    couponCode,
+    deliveryMethod = 'standard',
+    paymentMethod = 'Cash on Delivery (COD)',
+    orderNumber: customOrderNumber = null
+  }) {
+    const quote = this.calculateQuote(items, couponCode, { deliveryMethod, paymentMethod });
 
-    // Atomically reserve inventory & verify stock if tracked
+    // Atomically verify & decrement tracked variant stock
     for (const it of quote.items) {
-      const match = this.getVariantById(it.variantId);
+      const match = this.findVariantForProduct({
+        variantId: it.variantId,
+        productId: it.productId,
+        slug: it.slug,
+        size: it.size,
+        color: it.color
+      });
       if (match && match.variant) {
-        const stock = match.variant.inventoryCount !== undefined ? match.variant.inventoryCount : match.variant.stockQuantity;
-        if (stock !== undefined && stock < it.quantity) {
+        const stock = this._getVariantStock(match.variant);
+        if (stock < it.quantity) {
           throw new Error(`Insufficient stock for ${match.product.name} (${match.variant.size})`);
+        }
+        if (match.variant.inventoryCount !== undefined) {
+          match.variant.inventoryCount = stock - it.quantity;
+        }
+        if (match.variant.stockQuantity !== undefined) {
+          match.variant.stockQuantity = stock - it.quantity;
         }
       }
     }
 
-    const orderNumber = `BH-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+    const orderNumber = customOrderNumber || `BH-${Date.now().toString().slice(-6)}`;
     const newOrder = {
       _id: `ord_${Date.now()}_${Math.random().toString(36).substring(7)}`,
       orderNumber,
       userId: userId || null,
       guestEmail: guestEmail || (userId ? this.getUserById(userId)?.email : null),
+      items: quote.items,
       itemsSnapshot: quote.items,
+      shippingAddress: address,
       addressSnapshot: address,
       deliveryInstructions: deliveryInstructions || '',
+      deliveryMethod,
+      subtotal: quote.subtotalRupees,
       subtotalPaise: quote.subtotalPaise,
       subtotalRupees: quote.subtotalRupees,
+      discount: quote.discountRupees,
       discountPaise: quote.discountPaise,
       discountRupees: quote.discountRupees,
       couponCode: quote.couponCode,
+      shippingFee: quote.shippingFeeRupees,
       shippingPaise: quote.shippingPaise,
       shippingFeeRupees: quote.shippingFeeRupees,
+      codFee: quote.codFeeRupees,
       totalPaise: quote.totalPaise,
       totalAmount: quote.finalPayableRupees,
       currency: 'INR',
-      paymentStatus: 'Paid',
+      paymentMethod,
+      paymentStatus: 'Pending',
       orderStatus: 'Placed',
       trackingNumber: `BD-${Math.floor(100000000 + Math.random() * 900000000)}IN`,
       courierPartner: 'BlueDart Express',
@@ -1009,7 +1265,109 @@ class StoreService {
   }
 
   getUserById(userId) {
-    return this.users.find(u => u._id === userId);
+    if (!userId) return null;
+    const idStr = userId.toString();
+    return this.users.find(u => u._id && u._id.toString() === idStr);
+  }
+
+  _ensureAddressIds(user) {
+    if (!user.addresses) user.addresses = [];
+    user.addresses = user.addresses.map((addr, idx) => ({
+      ...addr,
+      _id: addr._id ? addr._id.toString() : `addr_${idx}_${Date.now()}`
+    }));
+  }
+
+  updateUserProfile(userId, { fullName, phone }) {
+    const user = this.getUserById(userId);
+    if (!user) return null;
+    if (fullName !== undefined) user.fullName = fullName.trim();
+    if (phone !== undefined) user.phone = phone.trim();
+    this.persist();
+    return user;
+  }
+
+  getUserAddresses(userId) {
+    const user = this.getUserById(userId);
+    if (!user) return [];
+    this._ensureAddressIds(user);
+    return user.addresses;
+  }
+
+  addUserAddress(userId, addressData) {
+    const user = this.getUserById(userId);
+    if (!user) throw new Error('User not found');
+    this._ensureAddressIds(user);
+
+    const makeDefault = addressData.isDefault === true || user.addresses.length === 0;
+    if (makeDefault) {
+      user.addresses.forEach(a => { a.isDefault = false; });
+    }
+
+    const newAddr = {
+      _id: `addr_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
+      recipientName: addressData.recipientName.trim(),
+      addressLine1: addressData.addressLine1.trim(),
+      addressLine2: (addressData.addressLine2 || '').trim(),
+      city: addressData.city.trim(),
+      state: addressData.state.trim(),
+      postalCode: addressData.postalCode.trim(),
+      country: (addressData.country || 'India').trim(),
+      phone: (addressData.phone || '').trim(),
+      isDefault: makeDefault
+    };
+
+    user.addresses.push(newAddr);
+    this.persist();
+    return { address: newAddr, addresses: user.addresses };
+  }
+
+  updateUserAddress(userId, addressId, updates) {
+    const user = this.getUserById(userId);
+    if (!user) throw new Error('User not found');
+    this._ensureAddressIds(user);
+
+    const idx = user.addresses.findIndex(a => a._id.toString() === addressId.toString());
+    if (idx === -1) return null;
+
+    if (updates.isDefault === true) {
+      user.addresses.forEach(a => { a.isDefault = false; });
+    }
+
+    const target = user.addresses[idx];
+    const allowed = ['recipientName', 'addressLine1', 'addressLine2', 'city', 'state', 'postalCode', 'country', 'phone', 'isDefault'];
+    for (const key of allowed) {
+      if (updates[key] !== undefined) {
+        target[key] = typeof updates[key] === 'string' ? updates[key].trim() : updates[key];
+      }
+    }
+
+    // Ensure at least one default remains
+    if (!user.addresses.some(a => a.isDefault) && user.addresses.length > 0) {
+      user.addresses[0].isDefault = true;
+    }
+
+    this.persist();
+    return { address: target, addresses: user.addresses };
+  }
+
+  deleteUserAddress(userId, addressId) {
+    const user = this.getUserById(userId);
+    if (!user) throw new Error('User not found');
+    this._ensureAddressIds(user);
+
+    const idx = user.addresses.findIndex(a => a._id.toString() === addressId.toString());
+    if (idx === -1) return null;
+
+    const wasDefault = user.addresses[idx].isDefault;
+    user.addresses.splice(idx, 1);
+
+    if (wasDefault && user.addresses.length > 0) {
+      user.addresses[0].isDefault = true;
+    }
+
+    this.persist();
+    return user.addresses;
   }
 
   createUser({ fullName, email, password, role = 'customer', phone = '' }) {

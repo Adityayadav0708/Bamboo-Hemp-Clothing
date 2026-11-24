@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Button from "@/components/Button";
-import { MOCK_PRODUCTS } from "@/data/products";
+import { getAllProducts } from "@/services/api/productService";
 import styles from "./FeaturedCollection.module.css";
 
-export default function FeaturedCollection() {
-  // Show hemp t-shirts and daily innerwear
-  const featured = MOCK_PRODUCTS.filter((p) => p.category === "hemp-tshirts" || p.category === "bamboo-tshirts").slice(0, 3);
+export default async function FeaturedCollection() {
+  const { products } = await getAllProducts({ limit: 20 });
+  const featured = products
+    .filter((p) => p.category === "hemp-tshirts" || p.category === "bamboo-tshirts")
+    .slice(0, 3);
 
   return (
     <section
@@ -29,7 +31,7 @@ export default function FeaturedCollection() {
 
         <div className={styles.imageGrid}>
           {featured.map((p, i) => (
-            <div key={p.id} className={`${styles.imgCard} ${i === 0 ? styles.imgCardLarge : ""}`}>
+            <div key={p.id || p.slug} className={`${styles.imgCard} ${i === 0 ? styles.imgCardLarge : ""}`}>
               <div className={styles.imgWrap}>
                 <Image
                   src={p.images[0]}

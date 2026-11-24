@@ -1,34 +1,55 @@
-/* ── HeroSection — BambooCoolApparel Full-Width Style ── */
+/* ── HeroSection — Full-Bleed Responsive Lifestyle Hero ── */
 
 .hero {
-  background-color: #FFFFFF;
-  overflow: hidden;
-  width: 100%;
   position: relative;
-}
-
-/* Full-width image block with text overlay on left */
-.container {
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
   width: 100%;
-}
-
-.inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 580px;
-}
-
-/* ── Left Content Panel ── */
-.content {
+  min-height: clamp(480px, 46vw, 620px);
+  background-color: #EBE0D3;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 4rem 4rem 4rem 7vw;
-  background-color: #F5F2ED;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Desktop / Laptop background image canvas */
+.mediaWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #DFCBB5;
+}
+
+.img {
+  object-fit: cover;
+  object-position: right center;
+}
+
+/* Soft warm gradient over left wall only so text stays crisp without dulling subjects */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(235, 224, 211, 0.94) 0%,
+    rgba(235, 224, 211, 0.78) 32%,
+    rgba(235, 224, 211, 0.2) 52%,
+    rgba(235, 224, 211, 0) 68%
+  );
+  pointer-events: none;
+}
+
+.container {
   position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.content {
+  max-width: 500px;
+  padding: 3.5rem 0;
 }
 
 .eyebrow {
@@ -37,17 +58,17 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #767676;
-  margin-bottom: 1.25rem;
+  color: #5C574F;
+  margin-bottom: 1rem;
   display: block;
 }
 
 .heading {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.5rem, 4vw, 4.25rem);
+  font-size: clamp(2.5rem, 4.2vw, 4.25rem);
   font-weight: 400;
   font-style: italic;
-  line-height: 1.1;
+  line-height: 1.08;
   color: #1A1A1A;
   margin-bottom: 1.25rem;
   letter-spacing: -0.01em;
@@ -57,9 +78,9 @@
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.65;
-  color: #5A5A5A;
-  margin-bottom: 2.25rem;
-  max-width: 400px;
+  color: #3D3A35;
+  margin-bottom: 2rem;
+  max-width: 430px;
 }
 
 .ctaGroup {
@@ -73,7 +94,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #2B5741;
+  background-color: #244B3C;
   color: #FFFFFF;
   padding: 0.9rem 2rem;
   border-radius: 4px;
@@ -82,20 +103,20 @@
   font-weight: 500;
   letter-spacing: 0.03em;
   text-decoration: none;
-  transition: background-color 200ms ease;
+  transition: background-color 200ms ease, transform 150ms ease;
   white-space: nowrap;
 }
 
 .primaryBtn:hover {
-  background-color: #1E3D2F;
+  background-color: #1A382C;
 }
 
 .secondaryBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
-  color: #2B5741;
+  background-color: rgba(255, 255, 255, 0.72);
+  color: #244B3C;
   padding: 0.9rem 2rem;
   border-radius: 4px;
   font-family: var(--font-body);
@@ -103,75 +124,75 @@
   font-weight: 500;
   letter-spacing: 0.03em;
   text-decoration: none;
-  border: 1.5px solid #2B5741;
+  border: 1.5px solid #244B3C;
   transition: background-color 200ms ease, color 200ms ease;
   white-space: nowrap;
 }
 
 .secondaryBtn:hover {
-  background-color: #2B5741;
+  background-color: #244B3C;
   color: #FFFFFF;
 }
 
-/* ── Right Image Panel ── */
-.imageWrap {
-  position: relative;
-  overflow: hidden;
-  background-color: #EAE6DF;
-}
-
-.imgContainer {
-  position: absolute;
-  inset: 0;
-}
-
-.img {
-  object-fit: cover;
-  object-position: center top;
-}
-
-/* ── Responsive ── */
-@media (max-width: 900px) {
-  .inner {
-    grid-template-columns: 1fr;
+/* ── Tablet & Mobile Stack ── */
+@media (max-width: 899px) {
+  .hero {
     min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #EFE6DB;
   }
 
-  .imageWrap {
-    aspect-ratio: 4 / 3;
-    position: relative;
-    min-height: 320px;
-  }
-
-  .imgContainer {
+  .mediaWrap {
     position: relative;
     width: 100%;
-    height: 100%;
-    min-height: 320px;
+    height: clamp(270px, 60vw, 420px);
+    inset: auto;
+  }
+
+  .img {
+    object-position: 82% 18%;
+  }
+
+  .scrim {
+    display: none;
+  }
+
+  .container {
+    padding: 0 var(--container-pad);
   }
 
   .content {
-    padding: 3rem 2rem;
-    order: 2;
+    max-width: 100%;
+    padding: 2.25rem 0 2.75rem;
   }
 
-  .imageWrap {
-    order: 1;
+  .description {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 640px) {
+  .mediaWrap {
+    height: clamp(250px, 72vw, 340px);
+  }
+
+  .img {
+    object-position: 84% 16%;
+  }
+
   .content {
-    padding: 2.5rem 1.25rem;
+    padding: 1.75rem 0 2.25rem;
   }
 
   .heading {
-    font-size: clamp(2rem, 7vw, 2.75rem);
+    font-size: clamp(2.1rem, 8vw, 2.75rem);
+    margin-bottom: 0.9rem;
   }
 
   .description {
     font-size: 0.9375rem;
-    max-width: 100%;
+    margin-bottom: 1.5rem;
   }
 
   .ctaGroup {
@@ -180,15 +201,14 @@
 
   .primaryBtn,
   .secondaryBtn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.875rem;
     width: 100%;
-    justify-content: center;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.875rem;
   }
 }
 
 @media (max-width: 400px) {
-  .content {
-    padding: 2rem 1rem;
+  .mediaWrap {
+    height: 240px;
   }
 }

@@ -10,28 +10,26 @@ import ProductGrid from "@/components/ProductGrid";
 import Breadcrumb from "@/components/Breadcrumb";
 import Button from "@/components/Button";
 import { useCart } from "@/hooks/useCart";
+import { findMatchingVariantId } from "@/services/api/productService";
 import styles from "./ProductDetailsClient.module.css";
 
 export default function ProductDetailsClient({ product, relatedProducts = [] }) {
   const { addItem } = useCart();
 
-  const [selectedSize, setSelectedSize] = useState(product.sizes?.[0] || "");
-  const [selectedColor, setSelectedColor] = useState(product.colors?.[0]?.slug || "");
+  const [selectedSizeState, setSelectedSize] = useState(product.sizes?.[0] || "");
+  const [selectedColorState, setSelectedColor] = useState(product.colors?.[0]?.slug || "");
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
   const [activeTab, setActiveTab] = useState("description");
   const [openFaq, setOpenFaq] = useState(0);
   const [showStickyBar, setShowStickyBar] = useState(false);
 
-  // Keep variant selection synced if product changes
-  useEffect(() => {
-    if (product.sizes?.length > 0 && (!selectedSize || !product.sizes.includes(selectedSize))) {
-      setSelectedSize(product.sizes[0]);
-    }
-    if (product.colors?.length > 0 && (!selectedColor || !product.colors.some((c) => c.slug === selectedColor))) {
-      setSelectedColor(product.colors[0].slug);
-    }
-  }, [product.id, product.slug, product.sizes, product.colors, selectedSize, selectedColor]);
+  const selectedSize =
+    product.sizes?.includes(selectedSizeState) ? selectedSizeState : product.sizes?.[0] || "";
+  const selectedColor =
+    product.colors?.some((c) => c.slug === selectedColorState)
+      ? selectedColorState
+      : product.colors?.[0]?.slug || "";
 
   const currentColorObj = product.colors?.find((c) => c.slug === selectedColor) || product.colors?.[0];
 
@@ -47,7 +45,8 @@ export default function ProductDetailsClient({ product, relatedProducts = [] }) 
   function handleAddToCart() {
     const sizeToUse = selectedSize || product.sizes?.[0] || "M";
     const colorToUse = selectedColor || product.colors?.[0]?.slug || "standard";
-    const success = addItem(product, quantity, sizeToUse, colorToUse);
+    const variantId = findMatchingVariantId(product, sizeToUse, colorToUse);
+    const success = addItem({ ...product, variantId }, quantity, sizeToUse, colorToUse);
     if (success) {
       setAdded(true);
       setTimeout(() => setAdded(false), 2500);
@@ -448,7 +447,7 @@ export default function ProductDetailsClient({ product, relatedProducts = [] }) 
               {product.reviews.map((rev, idx) => (
                 <div key={idx} className={styles.reviewCard}>
                   <div className={styles.reviewStars}>{"★".repeat(rev.rating || 5)}</div>
-                  <h4 className={styles.reviewTitle}>"{rev.title}"</h4>
+                  <h4 className={styles.reviewTitle}>&ldquo;{rev.title}&rdquo;</h4>
                   <p className={styles.reviewComment}>{rev.comment}</p>
                   <div className={styles.reviewFooter}>
                     <div>

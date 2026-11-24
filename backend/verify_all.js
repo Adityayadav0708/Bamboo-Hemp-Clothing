@@ -288,6 +288,68 @@ async function verifyAll() {
         `Customer has ${history.data?.length} order(s)`
       );
 
+      // ──────────────────────────────────────────────────────────
+      // 4. CART PERSISTENCE, PROFILE & SAVED ADDRESS CRUD
+      // ──────────────────────────────────────────────────────────
+      console.log('\n📌 PHASE 4: CART SYNC, PROFILE UPDATE & ADDRESS CRUD');
+
+      const custHeaders = {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${custToken}`
+      };
+
+      const resCartSync = await fetch(`${BASE}/cart/sync`, {
+        method: 'POST',
+        headers: custHeaders,
+        body: JSON.stringify({
+          items: [{ slug: 'bamboo-round-neck-tshirt-men', size: 'M', color: 'pitch-black', quantity: 1 }]
+        })
+      });
+      const cartSync = await resCartSync.json();
+      check(
+        'Server Cart Sync (/cart/sync)',
+        resCartSync.status === 200 && cartSync.data?.itemCount >= 1,
+        `Synced ${cartSync.data?.itemCount} item(s), Subtotal ₹${cartSync.data?.subtotal}`
+      );
+
+      await fetch(`${BASE}/cart`, { method: 'DELETE', headers: custHeaders });
+
+      const resProf = await fetch(`${BASE}/auth/profile`, {
+        method: 'PUT',
+        headers: custHeaders,
+        body: JSON.stringify({ fullName: 'Priya Sharma', phone: '+91 9123456789' })
+      });
+      const profData = await resProf.json();
+      check(
+        'Customer Profile Update (PUT /auth/profile)',
+        resProf.status === 200 && profData.data?.user?.fullName === 'Priya Sharma',
+        `Updated: ${profData.data?.user?.fullName}`
+      );
+
+      const resAddrPost = await fetch(`${BASE}/customer/addresses`, {
+        method: 'POST',
+        headers: custHeaders,
+        body: JSON.stringify({
+          recipientName: 'Priya Work',
+          addressLine1: '99 Residency Road',
+          city: 'Bengaluru',
+          state: 'Karnataka',
+          postalCode: '560025',
+          phone: '9123456789',
+          isDefault: false
+        })
+      });
+      const addrPostData = await resAddrPost.json();
+      const newAddrId = addrPostData.data?.address?._id;
+      const resAddrDel = newAddrId
+        ? await fetch(`${BASE}/customer/addresses/${newAddrId}`, { method: 'DELETE', headers: custHeaders })
+        : null;
+      check(
+        'Customer Addresses CRUD (POST + DELETE /customer/addresses)',
+        resAddrPost.status === 201 && !!newAddrId && resAddrDel?.status === 200,
+        `Created & cleaned up address ${newAddrId}`
+      );
+
       console.log('\n================================================================');
       console.log(`🎯 AUDIT RESULTS: ${passed}/${total} TESTS PASSED (${Math.round((passed / total) * 100)}%)`);
       console.log('================================================================');

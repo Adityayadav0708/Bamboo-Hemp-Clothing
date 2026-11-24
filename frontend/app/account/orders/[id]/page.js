@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import OrderDetailView from "@/components/OrderDetailView";
 import { getOrderById } from "@/services/api/orderService";
 
@@ -19,11 +18,11 @@ export async function generateMetadata({ params }) {
 
 export default async function OrderDetailPage({ params }) {
   const { id } = await params;
+  let initialOrder = null;
   try {
-    const order = await getOrderById(id);
-    if (!order) notFound();
-    return <OrderDetailView order={order} />;
+    initialOrder = await getOrderById(id);
   } catch {
-    notFound();
+    initialOrder = null;
   }
+  return <OrderDetailView orderId={id} order={initialOrder} />;
 }

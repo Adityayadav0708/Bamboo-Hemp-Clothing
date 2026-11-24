@@ -1,56 +1,71 @@
 /**
  * cartService.js
  *
- * Cart API calls for syncing cart with the backend.
- * During development the CartContext manages cart client-side only.
- * When backend is ready these functions are called to sync.
+ * Cart API calls for syncing shopping cart state with the Express backend.
  */
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+import { API_URL, apiFetch } from "./apiClient";
 
-async function fetchAPI(endpoint, options = {}) {
-  const res = await fetch(`${API_URL}${endpoint}`, {
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
-    ...options,
-  });
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.message || `Cart API error: ${res.status}`);
-  return data;
-}
-
-/** Fetch the user's server-side cart (after login). */
+/** Fetch the user's or guest's server-side cart. */
 export async function getCart() {
-  if (!API_URL) return null; // Client-side cart only in mock mode
-  return fetchAPI("/cart");
+  if (!API_URL) return null;
+  const res = await apiFetch("/cart");
+  return res?.data || null;
 }
 
-/** Add an item to the cart. */
-export async function addToCart({ productId, quantity, size, color }) {
+/** Merge guest/localStorage cart items into the active server cart (e.g. on login). */
+export async function syncCart(items = []) {
   if (!API_URL) return null;
-  return fetchAPI("/cart", {
+  const res = await apiFetch("/cart/sync", {
     method: "POST",
-    body: JSON.stringify({ productId, quantity, size, color }),
+    body: JSON.stringify({ items }),
   });
+  return res?.data || null;
 }
 
-/** Update a cart item's quantity. */
-export async function updateCartItem(itemId, quantity) {
+/** Add an item (by variantId or product slug/size/color) to the server cart. */
+export async function addToCart({ productId, variantId, slug, name, image, size, color, price, quantity = 1 }) {
   if (!API_URL) return null;
-  return fetchAPI(`/cart/${itemId}`, {
-    method: "PUT",
-    body: JSON.stringify({ quantity }),
+  const res = await apiFetch("/cart/items", {
+    method: "POST",
+    body: JSON.stringify({
+      productId,
+      variantId,
+      slug,
+      name,
+      image,
+      size,
+      color,
+      price,
+      quantity,
+    }),
   });
+  return res?.data || null;
 }
 
-/** Remove an item from the cart. */
+/** Update a cart item's quantity or variant options. */
+export async function updateCartItem(itemId, updates) {
+  if (!API_URL) return null;
+  const payload = typeof updates === "number" ? { quantity: updates } : updates;
+  const res = await apiFetch(`/cart/items/${encodeURIComponent(itemId)}`, {
+    method: "PATCH",
+    body: JSON.stringify(payload),
+  });
+  return res?.data || null;
+}
+
+/** Remove an item from the server cart. */
 export async function removeCartItem(itemId) {
   if (!API_URL) return null;
-  return fetchAPI(`/cart/${itemId}`, { method: "DELETE" });
+  const res = await apiFetch(`/cart/items/${encodeURIComponent(itemId)}`, {
+    method: "DELETE",
+  });
+  return res?.data || null;
 }
 
-/** Clear the entire cart. */
-export async function clearCart() {
+/** Clear the entire server cart. */
+export async function clearCartAPI() {
   if (!API_URL) return null;
-  return fetchAPI("/cart", { method: "DELETE" });
+  const res = await apiFetch("/cart", { method: "DELETE" });
+  return res?.data || null;
 }

@@ -1,9 +1,11 @@
 "use client";
+import { useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
 import { isAdminRole } from "@/services/api/authService";
 import Breadcrumb from "@/components/Breadcrumb";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import styles from "./AccountLayout.module.css";
 
 const NAV_ITEMS = [
@@ -14,10 +16,28 @@ const NAV_ITEMS = [
 
 export default function AccountLayout({ children, activeTab = "Dashboard" }) {
   const pathname = usePathname();
-  const { user, logout } = useAuth();
+  const router = useRouter();
+  const { user, isAuthenticated, loading, logout } = useAuth();
 
-  const displayName = user?.fullName || user?.name || "Demo Customer";
-  const displayEmail = user?.email || "demo@example.com";
+  useEffect(() => {
+    if (!loading && !isAuthenticated) {
+      router.replace("/login");
+    }
+  }, [loading, isAuthenticated, router]);
+
+  if (loading || !isAuthenticated) {
+    return (
+      <div className={styles.guardScreen}>
+        <LoadingSpinner size="lg" label="Checking account session…" />
+        <p className={styles.guardText}>
+          {loading ? "Loading your account…" : "Redirecting to sign in…"}
+        </p>
+      </div>
+    );
+  }
+
+  const displayName = user?.fullName || user?.name || "Customer";
+  const displayEmail = user?.email || "";
 
   const navItems = [
     ...NAV_ITEMS,
@@ -32,9 +52,7 @@ export default function AccountLayout({ children, activeTab = "Dashboard" }) {
         <Breadcrumb items={[{ label: "Account", href: "/account" }, { label: activeTab }]} />
 
         <div className={styles.layout}>
-          {/* Sidebar */}
           <aside className={styles.sidebar}>
-            {/* User Profile Card */}
             <div className={styles.userCard}>
               <div className={styles.avatar}>
                 {displayName.charAt(0).toUpperCase()}
@@ -45,7 +63,6 @@ export default function AccountLayout({ children, activeTab = "Dashboard" }) {
               </div>
             </div>
 
-            {/* Navigation links */}
             <nav className={styles.nav}>
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
@@ -72,7 +89,6 @@ export default function AccountLayout({ children, activeTab = "Dashboard" }) {
             </nav>
           </aside>
 
-          {/* Main Content Area */}
           <main className={styles.mainContent}>{children}</main>
         </div>
       </div>

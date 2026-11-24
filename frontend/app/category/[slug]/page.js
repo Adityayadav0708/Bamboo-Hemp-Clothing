@@ -1,24 +1,24 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { getCategoryBySlug } from "@/data/categories";
-import { getProductsByCategory } from "@/data/products";
+import {
+  getAllCategories,
+  getCategoryBySlugAPI,
+  getProductsByCategoryAPI,
+} from "@/services/api/productService";
 import ShopPageClient from "@/components/ShopPageClient";
 import Breadcrumb from "@/components/Breadcrumb";
 import styles from "./CategoryPage.module.css";
 
-// Generate static params for all known category slugs
-export function generateStaticParams() {
-  return [
-    { slug: "bamboo-tshirts" },
-    { slug: "hemp-tshirts" },
-    { slug: "mens-innerwear" },
-    { slug: "womens-innerwear" },
-  ];
+export const dynamic = "force-dynamic";
+
+export async function generateStaticParams() {
+  const categories = await getAllCategories();
+  return categories.map((cat) => ({ slug: cat.slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const cat = getCategoryBySlug(slug);
+  const cat = await getCategoryBySlugAPI(slug);
   if (!cat) return { title: "Category Not Found" };
   return {
     title: `${cat.name} – Bamboo & Hemp`,
@@ -28,10 +28,15 @@ export async function generateMetadata({ params }) {
 
 export default async function CategoryPage({ params }) {
   const { slug } = await params;
-  const category = getCategoryBySlug(slug);
+  const [category, categories, productResult] = await Promise.all([
+    getCategoryBySlugAPI(slug),
+    getAllCategories(),
+    getProductsByCategoryAPI(slug),
+  ]);
+
   if (!category) notFound();
 
-  const products = getProductsByCategory(slug);
+  const products = productResult.products || [];
 
   return (
     <div>
@@ -59,8 +64,14 @@ export default async function CategoryPage({ params }) {
         </div>
       </div>
 
-      {/* Product grid with filters (reuses ShopPageClient filtered to this category) */}
-      <ShopPageClient initialCategory={slug} />
+      {/* Product grid with filters synced to live catalogue API */}
+      <ShopPageClient
+        key={slug}
+        initialCategory={slug}
+        initialCategories={categories}
+        initialProducts={products}
+        initialTotal={productResult.total ?? products.length}
+      />
     </div>
   );
 }

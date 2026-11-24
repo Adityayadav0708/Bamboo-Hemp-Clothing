@@ -1,12 +1,43 @@
 "use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import AccountLayout from "@/components/AccountLayout";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import { useAuth } from "@/hooks/useAuth";
+import { getUserOrders } from "@/services/api/orderService";
 import { formatPrice, formatDate } from "@/utils/formatters";
 import { getProductBySlug } from "@/data/products";
 import styles from "./OrderHistoryList.module.css";
 
-export default function OrderHistoryList({ orders = [] }) {
+export default function OrderHistoryList({ orders: initialOrders = null }) {
+  const { user } = useAuth();
+  const [ordersState, setOrdersState] = useState({
+    loadedForId: null,
+    list: initialOrders || [],
+  });
+
+  useEffect(() => {
+    const uid = user?.id;
+    if (!uid) return;
+    let cancelled = false;
+    getUserOrders()
+      .then((list) => {
+        if (!cancelled) {
+          setOrdersState({ loadedForId: uid, list: Array.isArray(list) ? list : [] });
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setOrdersState({ loadedForId: uid, list: [] });
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [user?.id]);
+
+  const orders = ordersState.list;
+  const loading = !initialOrders && Boolean(user?.id) && ordersState.loadedForId !== user.id;
+
   return (
     <AccountLayout activeTab="My Orders">
       <div className={styles.header}>
@@ -16,7 +47,11 @@ export default function OrderHistoryList({ orders = [] }) {
         </p>
       </div>
 
-      {orders.length === 0 ? (
+      {loading ? (
+        <div className={styles.emptyCard}>
+          <LoadingSpinner size="md" label="Loading orders…" />
+        </div>
+      ) : orders.length === 0 ? (
         <div className={styles.emptyCard}>
           <span className={styles.emptyIcon}>📦</span>
           <h3>No Orders Found</h3>
@@ -29,7 +64,6 @@ export default function OrderHistoryList({ orders = [] }) {
         <div className={styles.ordersList}>
           {orders.map((order) => (
             <div key={order.id} className={styles.orderCard}>
-              {/* Order Header */}
               <div className={styles.cardHead}>
                 <div className={styles.headLeft}>
                   <div>
@@ -49,7 +83,7 @@ export default function OrderHistoryList({ orders = [] }) {
                 <div className={styles.headRight}>
                   <span
                     className={`${styles.badge} ${
-                      order.status === "Delivered"
+                      order.status?.toLowerCase() === "delivered"
                         ? styles.badgeDelivered
                         : styles.badgeProcessing
                     }`}
@@ -62,16 +96,18 @@ export default function OrderHistoryList({ orders = [] }) {
                 </div>
               </div>
 
-              {/* Order Items Preview */}
               <div className={styles.itemsPreview}>
-                {order.items.map((item) => {
+                {order.items.map((item, idx) => {
                   const p = item.slug ? getProductBySlug(item.slug) : null;
                   const itemImg =
                     p?.images?.[0] ||
                     (item.image && !item.image.includes("placeholder") ? item.image : null) ||
                     "/images/products/heelium-men-tee-black.png";
                   return (
-                    <div key={item.productId} className={styles.previewItem}>
+                    <div
+                      key={`${order.id}-${item.productId || item.slug}-${item.size}-${idx}`}
+                      className={styles.previewItem}
+                    >
                       <div className={styles.thumbWrap}>
                         <Image
                           src={itemImg}

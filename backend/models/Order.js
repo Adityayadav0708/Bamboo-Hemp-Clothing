@@ -68,6 +68,14 @@ const orderSchema = new mongoose.Schema(
       type: Number,
       default: 0
     },
+    codFee: {
+      type: Number,
+      default: 0
+    },
+    deliveryMethod: {
+      type: String,
+      default: 'standard'
+    },
     discount: {
       type: Number,
       default: 0

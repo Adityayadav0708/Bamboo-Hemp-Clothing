@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const authController = require('../controllers/authController');
+const customerController = require('../controllers/customerController');
 const catalogueController = require('../controllers/catalogueController');
 const cartController = require('../controllers/cartController');
 const orderController = require('../controllers/orderController');
@@ -17,6 +18,7 @@ router.get('/version', (req, res) => res.json({ success: true, version: '2.0.0',
 router.post('/auth/register', authController.register);
 router.post('/auth/login', authController.login);
 router.get('/auth/me', requireAuth, authController.getMe);
+router.put('/auth/profile', requireAuth, authController.updateProfile);
 router.post('/auth/forgot-password', (req, res) => {
   res.json({
     success: true,
@@ -27,19 +29,27 @@ router.post('/auth/logout', (req, res) => {
   res.json({ success: true, message: 'Logged out successfully.' });
 });
 
+// ── Customer Addresses CRUD ──
+router.get('/customer/addresses', requireAuth, customerController.getAddresses);
+router.post('/customer/addresses', requireAuth, customerController.addAddress);
+router.put('/customer/addresses/:addressId', requireAuth, customerController.updateAddress);
+router.delete('/customer/addresses/:addressId', requireAuth, customerController.deleteAddress);
+
 // ── Public Catalogue APIs (Section 53) ──
 router.get('/categories', catalogueController.getCategories);
+router.get('/categories/:slug', catalogueController.getCategoryBySlug);
 router.get('/products', catalogueController.getProducts);
 router.get('/products/search', catalogueController.searchProducts);
 router.get('/products/:slug', catalogueController.getProductBySlug);
 router.get('/products/:productId/related', catalogueController.getRelatedProducts);
 
 // ── Cart APIs (Section 53) ──
-router.get('/cart', cartController.getCart);
-router.post('/cart/items', cartController.addItem);
-router.patch('/cart/items/:itemId', cartController.updateItem);
-router.delete('/cart/items/:itemId', cartController.removeItem);
-router.delete('/cart', cartController.clearCart);
+router.get('/cart', optionalAuth, cartController.getCart);
+router.post('/cart/sync', optionalAuth, cartController.syncCart);
+router.post('/cart/items', optionalAuth, cartController.addItem);
+router.patch('/cart/items/:itemId', optionalAuth, cartController.updateItem);
+router.delete('/cart/items/:itemId', optionalAuth, cartController.removeItem);
+router.delete('/cart', optionalAuth, cartController.clearCart);
 
 // ── Checkout & Orders (Section 53) ──
 router.post('/checkout/quote', optionalAuth, orderController.quoteCheckout);

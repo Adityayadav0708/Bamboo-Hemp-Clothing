@@ -1,14 +1,15 @@
 "use client";
 import styles from "./FilterSidebar.module.css";
 
-const SIZES  = ["XS", "S", "M", "L", "XL", "XXL"];
-const COLORS = [
+const SIZES = ["XS", "S", "M", "L", "XL", "2XL"];
+const DEFAULT_COLORS = [
+  { name: "Pitch Black", slug: "pitch-black", hex: "#1A1A1A" },
+  { name: "Charcoal Grey", slug: "charcoal-grey", hex: "#4A4D4A" },
+  { name: "Navy Blue", slug: "navy-blue", hex: "#1E2B4D" },
+  { name: "Cloud White", slug: "cloud-white", hex: "#FAF9F5" },
   { name: "Forest Green", slug: "forest-green", hex: "#244B3C" },
   { name: "Sage Green", slug: "sage-green", hex: "#9BAF95" },
-  { name: "Warm Beige", slug: "warm-beige", hex: "#E9E1D2" },
-  { name: "Off White", slug: "off-white", hex: "#FAF9F5" },
-  { name: "Charcoal", slug: "charcoal", hex: "#292D2A" },
-  { name: "Natural", slug: "natural", hex: "#C8B89A" },
+  { name: "Natural Sand", slug: "natural-sand", hex: "#E2DCCE" },
 ];
 const PRICE_RANGES = [
   { label: "Under ₹800", min: 0, max: 800 },
@@ -17,12 +18,28 @@ const PRICE_RANGES = [
   { label: "Above ₹1,600", min: 1600, max: 10000 },
 ];
 
-export default function FilterSidebar({ filters, onChange, categories = [], onReset }) {
+export default function FilterSidebar({
+  filters,
+  onChange,
+  categories = [],
+  availableColors = null,
+  onReset,
+}) {
+  const colorOptions =
+    Array.isArray(availableColors) && availableColors.length > 0
+      ? availableColors
+      : DEFAULT_COLORS;
+
   function set(key, value) {
     onChange({ ...filters, [key]: filters[key] === value ? "" : value });
   }
   function setPrice(min, max) {
-    onChange({ ...filters, minPrice: min, maxPrice: max });
+    const isSame = filters.minPrice === min && filters.maxPrice === max;
+    onChange({
+      ...filters,
+      minPrice: isSame ? 0 : min,
+      maxPrice: isSame ? 10000 : max,
+    });
   }
 
   const hasActive = Object.entries(filters).some(([k, v]) =>
@@ -47,7 +64,7 @@ export default function FilterSidebar({ filters, onChange, categories = [], onRe
             onClick={() => set("category", cat.slug)}
             aria-pressed={filters.category === cat.slug}
           >
-            {cat.shortName}
+            {cat.shortName || cat.name}
           </button>
         ))}
       </FilterGroup>
@@ -69,7 +86,7 @@ export default function FilterSidebar({ filters, onChange, categories = [], onRe
       {/* Color */}
       <FilterGroup title="Colour">
         <div className={styles.colorRow}>
-          {COLORS.map((c) => (
+          {colorOptions.map((c) => (
             <button
               key={c.slug}
               className={`${styles.colorDot} ${filters.color === c.slug ? styles.colorActive : ""}`}

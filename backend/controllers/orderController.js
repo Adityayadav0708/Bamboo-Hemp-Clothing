@@ -2,9 +2,13 @@ const mongoose = require('mongoose');
 const { Order, Product, Variant, Cart } = require('../models');
 const store = require('../services/storeService');
 
-const quoteCheckout = (req, res, next) => {
+function toSlug(val = '') {
+  return val.toString().trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+const quoteCheckout = (req, res) => {
   try {
-    const { items, couponCode } = req.body;
+    const { items, couponCode, deliveryMethod = 'standard', paymentMethod = '' } = req.body;
     if (!items || !items.length) {
       return res.status(400).json({
         success: false,
@@ -12,7 +16,7 @@ const quoteCheckout = (req, res, next) => {
       });
     }
 
-    const quote = store.calculateQuote(items, couponCode);
+    const quote = store.calculateQuote(items, couponCode, { deliveryMethod, paymentMethod });
     res.json({
       success: true,
       data: quote
@@ -25,9 +29,61 @@ const quoteCheckout = (req, res, next) => {
   }
 };
 
-const createOrder = async (req, res, next) => {
+async function resolveMongoLineItem(item) {
+  let product = null;
+  let variant = null;
+
+  if (item.variantId && mongoose.Types.ObjectId.isValid(item.variantId)) {
+    variant = await Variant.findById(item.variantId).lean();
+    if (variant) product = await Product.findById(variant.productId).lean();
+  }
+  if (!product && item.slug) {
+    product = await Product.findOne({ slug: item.slug }).lean();
+  }
+  if (!product && item.productId && mongoose.Types.ObjectId.isValid(item.productId)) {
+    product = await Product.findById(item.productId).lean();
+  }
+
+  if (product && !variant) {
+    const variants = await Variant.find({ productId: product._id }).lean();
+    const colorSlug = item.color ? toSlug(item.color) : '';
+    variant = variants.find((v) => {
+      const sizeMatch = !item.size || v.size?.toLowerCase() === item.size.toLowerCase();
+      const colorMatch = !colorSlug || toSlug(v.color?.name || '') === colorSlug;
+      return sizeMatch && colorMatch;
+    }) || variants.find((v) => !item.size || v.size?.toLowerCase() === item.size.toLowerCase()) || variants[0];
+  }
+
+  const unitPrice = variant?.price ?? item.price ?? 990;
+  const qty = Math.max(1, parseInt(item.quantity, 10) || 1);
+
+  return {
+    productId: product?._id || new mongoose.Types.ObjectId(),
+    variantId: variant?._id || new mongoose.Types.ObjectId(),
+    hasRealVariant: Boolean(variant?._id),
+    name: product?.name || item.name || 'Bamboo Essential',
+    slug: product?.slug || item.slug || 'bamboo-product',
+    image: product?.images?.[0]?.url || item.image || '',
+    size: variant?.size || item.size || 'M',
+    color: variant?.color?.name || (typeof item.color === 'string' ? item.color : (item.color?.name || '')),
+    price: unitPrice,
+    quantity: qty,
+    subtotal: unitPrice * qty
+  };
+}
+
+const createOrder = async (req, res) => {
   try {
-    const { items, address, deliveryInstructions, couponCode, paymentMethod, guestEmail } = req.body;
+    const {
+      items,
+      address,
+      deliveryInstructions,
+      couponCode,
+      deliveryMethod = 'standard',
+      paymentMethod = 'Cash on Delivery (COD)',
+      guestEmail
+    } = req.body;
+
     if (!items || !items.length) {
       return res.status(400).json({
         success: false,
@@ -45,56 +101,55 @@ const createOrder = async (req, res, next) => {
     const email = guestEmail || (req.user ? req.user.email : 'guest@example.com');
     const orderNumber = `BH-${Date.now().toString().slice(-6)}`;
 
-    // Quote calculation
-    const quote = store.calculateQuote(items, couponCode);
-
-    // 1. If MongoDB is connected, save Order document
     let orderDoc = null;
     if (mongoose.connection.readyState === 1) {
       try {
+        const resolvedItems = await Promise.all(items.map(resolveMongoLineItem));
+        const quote = store.calculateQuote(resolvedItems, couponCode, { deliveryMethod, paymentMethod });
+
         orderDoc = await Order.create({
           orderNumber,
           userId: userId && mongoose.Types.ObjectId.isValid(userId) ? userId : null,
           guestEmail: email,
-          items: items.map(it => ({
-            productId: it.productId && mongoose.Types.ObjectId.isValid(it.productId) ? it.productId : new mongoose.Types.ObjectId(),
-            variantId: it.variantId && mongoose.Types.ObjectId.isValid(it.variantId) ? it.variantId : new mongoose.Types.ObjectId(),
-            name: it.name || 'Bamboo Essential',
-            slug: it.slug || 'bamboo-product',
-            image: it.image || '',
-            size: it.size || 'M',
-            color: typeof it.color === 'string' ? it.color : (it.color?.name || ''),
-            price: it.price || 999,
-            quantity: it.quantity || 1,
-            subtotal: (it.price || 999) * (it.quantity || 1)
-          })),
+          items: resolvedItems.map(({ hasRealVariant, ...rest }) => rest),
           shippingAddress: {
             recipientName: address.recipientName,
             addressLine1: address.addressLine1,
             addressLine2: address.addressLine2 || '',
             city: address.city,
             state: address.state || 'Karnataka',
-            postalCode: address.postalCode,
+            postalCode: String(address.postalCode),
             country: address.country || 'India',
             phone: address.phone || ''
           },
-          subtotal: quote.subtotalRupees || (quote.subtotalPaise ? quote.subtotalPaise / 100 : 999),
-          shippingFee: quote.shippingFeeRupees || 0,
-          discount: quote.discountRupees || 0,
-          totalAmount: quote.finalPayableRupees || (quote.finalPayablePaise ? quote.finalPayablePaise / 100 : 999),
+          subtotal: quote.subtotalRupees,
+          shippingFee: quote.shippingFeeRupees,
+          codFee: quote.codFeeRupees,
+          deliveryMethod,
+          discount: quote.discountRupees,
+          totalAmount: quote.finalPayableRupees,
           currency: 'INR',
-          paymentMethod: paymentMethod || 'Cash on Delivery (COD)',
+          paymentMethod,
           paymentStatus: 'Pending',
           orderStatus: 'Placed',
           deliveryInstructions: deliveryInstructions || '',
-          couponCode: couponCode || ''
+          couponCode: quote.couponCode || ''
         });
+
+        // Decrement variant inventory in MongoDB
+        for (const it of resolvedItems) {
+          if (it.hasRealVariant) {
+            await Variant.updateOne(
+              { _id: it.variantId, inventoryCount: { $gte: it.quantity } },
+              { $inc: { inventoryCount: -it.quantity } }
+            );
+          }
+        }
       } catch (err) {
         console.warn('[MongoDB Order Error, using store fallback]:', err.message);
       }
     }
 
-    // 2. Also register in store fallback for instant memory consistency
     const fallbackOrder = store.createOrder({
       userId,
       guestEmail: email,
@@ -102,12 +157,18 @@ const createOrder = async (req, res, next) => {
       address,
       deliveryInstructions,
       couponCode,
-      paymentMethod: paymentMethod || 'Cash on Delivery (COD)'
+      deliveryMethod,
+      paymentMethod,
+      orderNumber
     });
 
     const guestHeader = req.headers['x-guest-token'] || req.headers['x-cart-token'] || 'guest_default_session';
     const cartId = req.user ? `user_${userId}` : `guest_${guestHeader}`;
     store.clearCart(cartId);
+
+    if (mongoose.connection.readyState === 1) {
+      await Cart.updateOne({ cartId }, { $set: { items: [], subtotal: 0, itemCount: 0 } }).catch(() => {});
+    }
 
     res.status(201).json({
       success: true,

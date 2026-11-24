@@ -1,4 +1,5 @@
 import ShopPageClient from "@/components/ShopPageClient";
+import { getAllCategories, getAllProducts, searchProductsAPI } from "@/services/api/productService";
 
 export const metadata = {
   title: "Shop All – Bamboo & Hemp Sustainable Clothing",
@@ -9,5 +10,19 @@ export const metadata = {
 export default async function ShopPage({ searchParams }) {
   const sp = await searchParams;
   const search = sp?.search || "";
-  return <ShopPageClient initialSearch={search} />;
+
+  const [categories, productResult] = await Promise.all([
+    getAllCategories(),
+    search ? searchProductsAPI(search) : getAllProducts(),
+  ]);
+
+  return (
+    <ShopPageClient
+      key={search}
+      initialSearch={search}
+      initialCategories={categories}
+      initialProducts={productResult.products || []}
+      initialTotal={productResult.total ?? 0}
+    />
+  );
 }
