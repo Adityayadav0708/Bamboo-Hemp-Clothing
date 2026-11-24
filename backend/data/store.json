@@ -134,7 +134,7 @@
           "inventoryCount": 60,
           "lowStockThreshold": 10,
           "isActive": true,
-          "stockQuantity": null
+          "stockQuantity": 25
         },
         {
           "_id": "6b0596630c9ad5a03095e462",
@@ -3895,6 +3895,53 @@
   ],
   "orders": [
     {
+      "_id": "ord_1795541290299_b6euh",
+      "orderNumber": "BH-2026-4066",
+      "userId": "6b0596630c9ad5a03095e45d",
+      "guestEmail": "customer@bamboohemp.com",
+      "itemsSnapshot": [
+        {
+          "productId": "6b0596630c9ad5a03095e45e",
+          "variantId": "6b0596630c9ad5a03095e460",
+          "sku": "BAMBOO-R-S-PIT",
+          "name": "Bamboo Round Neck T-shirt for Men",
+          "size": "S",
+          "colour": "Pitch Black",
+          "unitPriceRupees": 990,
+          "unitPricePaise": 99000,
+          "quantity": 1,
+          "lineTotalRupees": 990,
+          "lineTotalPaise": 99000,
+          "image": "/images/products/heelium-men-tee-black.png"
+        }
+      ],
+      "addressSnapshot": {
+        "recipientName": "Priya Sharma",
+        "addressLine1": "42 Lotus Enclave",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560038",
+        "country": "India",
+        "phone": "+91 9123456789"
+      },
+      "deliveryInstructions": "",
+      "subtotalPaise": 99000,
+      "subtotalRupees": 990,
+      "discountPaise": 0,
+      "discountRupees": 0,
+      "couponCode": null,
+      "shippingPaise": 9900,
+      "shippingFeeRupees": 99,
+      "totalPaise": 108900,
+      "totalAmount": 1089,
+      "currency": "INR",
+      "paymentStatus": "Paid",
+      "orderStatus": "Placed",
+      "trackingNumber": "BD-352756245IN",
+      "courierPartner": "BlueDart Express",
+      "createdAt": "2026-11-24T17:28:10.299Z"
+    },
+    {
       "_id": "ord_1795528303671_p6e5ts",
       "orderNumber": "BH-2026-9436",
       "userId": "6b0596630c9ad5a03095e45d",
@@ -3936,13 +3983,35 @@
       "totalAmount": 1089,
       "currency": "INR",
       "paymentStatus": "Paid",
-      "orderStatus": "Placed",
+      "orderStatus": "shipped",
       "trackingNumber": "BD-987996657IN",
       "courierPartner": "BlueDart Express",
-      "createdAt": "2026-11-24T13:51:43.671Z"
+      "createdAt": "2026-11-24T13:51:43.671Z",
+      "statusHistory": [
+        {
+          "status": "shipped",
+          "actor": "admin",
+          "actorRole": "order_manager",
+          "note": "Dispatched via BlueDart Express Air",
+          "timestamp": "2026-11-24T17:28:10.195Z"
+        }
+      ]
     }
   ],
   "inventoryMovements": [
+    {
+      "_id": "inv_1795541290173_02x9c5",
+      "variantId": "6b0596630c9ad5a03095e460",
+      "sku": "BAMBOO-R-S-PIT",
+      "movementType": "purchase_receipt",
+      "quantityChange": 25,
+      "quantityBefore": null,
+      "quantityAfter": 25,
+      "reason": "purchase_receipt",
+      "referenceType": "admin_adjustment",
+      "actorName": "admin",
+      "createdAt": "2026-11-24T17:28:10.173Z"
+    },
     {
       "_id": "inv_1795528303550_4966u",
       "variantId": "6b0596630c9ad5a03095e460",
@@ -3957,6 +4026,36 @@
     }
   ],
   "auditLogs": [
+    {
+      "_id": "aud_1795541290195",
+      "actorRole": "order_manager",
+      "action": "order.status_update",
+      "resourceType": "Order",
+      "resourceId": "BH-2026-9436",
+      "before": {
+        "status": "shipped"
+      },
+      "after": {
+        "status": "shipped",
+        "note": "Dispatched via BlueDart Express Air"
+      },
+      "createdAt": "2026-11-24T17:28:10.195Z"
+    },
+    {
+      "_id": "aud_1795541290173",
+      "actorRole": "catalogue_manager",
+      "action": "stock.adjust",
+      "resourceType": "Variant",
+      "resourceId": "BAMBOO-R-S-PIT",
+      "before": {
+        "stockQuantity": null
+      },
+      "after": {
+        "stockQuantity": 25,
+        "reason": "purchase_receipt"
+      },
+      "createdAt": "2026-11-24T17:28:10.173Z"
+    },
     {
       "_id": "aud_1795528303551",
       "actorRole": "catalogue_manager",
