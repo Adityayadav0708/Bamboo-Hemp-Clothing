@@ -1,43 +1,66 @@
 const mongoose = require('mongoose');
 
-const CartItemSchema = new mongoose.Schema({
-  variantId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Variant',
-    required: true
+const cartItemSchema = new mongoose.Schema(
+  {
+    productId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Product',
+      required: true
+    },
+    variantId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Variant',
+      required: true
+    },
+    name: { type: String, required: true },
+    slug: { type: String, required: true },
+    image: { type: String, default: '' },
+    size: { type: String, required: true },
+    color: { type: String, default: '' },
+    price: { type: Number, required: true, min: 0 },
+    quantity: {
+      type: Number,
+      required: true,
+      min: [1, 'Quantity must be at least 1'],
+      default: 1
+    }
   },
-  quantity: {
-    type: Number,
-    required: true,
-    min: [1, 'Quantity must be at least 1'],
-    max: [10, 'Maximum 10 units per line allowed'],
-    default: 1
-  },
-  addedAt: {
-    type: Date,
-    default: Date.now
-  }
-}, { _id: true });
+  { _id: false }
+);
 
-const CartSchema = new mongoose.Schema({
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    default: null,
-    index: true
+const cartSchema = new mongoose.Schema(
+  {
+    cartId: {
+      type: String,
+      required: true,
+      unique: true,
+      index: true
+    },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      default: null
+    },
+    items: [cartItemSchema],
+    subtotal: {
+      type: Number,
+      default: 0
+    },
+    itemCount: {
+      type: Number,
+      default: 0
+    }
   },
-  guestTokenHash: {
-    type: String,
-    default: null,
-    index: true
-  },
-  items: [CartItemSchema],
-  expiresAt: {
-    type: Date,
-    default: () => new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) // 30 days
+  {
+    timestamps: true
   }
-}, {
-  timestamps: true
+);
+
+// Recalculate totals before saving
+cartSchema.pre('save', function (next) {
+  this.itemCount = this.items.reduce((sum, item) => sum + item.quantity, 0);
+  this.subtotal = this.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  next();
 });
 
-module.exports = mongoose.models.Cart || mongoose.model('Cart', CartSchema);
+module.exports = mongoose.models.Cart || mongoose.model('Cart', cartSchema);
