@@ -12,6 +12,11 @@ export default function AdminInventoryPage() {
 
   useEffect(() => {
     setData(api.getAdminData());
+    if (typeof api.syncWithBackend === "function") {
+      api.syncWithBackend().then((fresh) => {
+        if (fresh) setData(fresh);
+      });
+    }
   }, []);
 
   const handleApplyAdjustment = () => {

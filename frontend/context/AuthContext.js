@@ -39,7 +39,7 @@ export function AuthProvider({ children }) {
     try {
       const data = await loginUser({ email, password });
       setUser(data.user);
-      return { success: true };
+      return { success: true, user: data.user };
     } catch (err) {
       setError(err.message);
       return { success: false, error: err.message };
@@ -54,7 +54,7 @@ export function AuthProvider({ children }) {
     try {
       const data = await registerUser({ name, email, password });
       setUser(data.user);
-      return { success: true };
+      return { success: true, user: data.user };
     } catch (err) {
       setError(err.message);
       return { success: false, error: err.message };

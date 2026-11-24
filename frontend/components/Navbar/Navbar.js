@@ -116,6 +116,25 @@ export default function Navbar() {
               </svg>
             </Link>
 
+            {/* Admin Console Shortcut for Admins */}
+            {(user?.role === "admin" || user?.role === "super_admin") && (
+              <Link
+                href="/admin"
+                className={styles.accountCircleBtn}
+                title="Admin Console"
+                aria-label="Admin Console"
+                style={{
+                  background: "#234938",
+                  color: "#FAF9F5",
+                  fontWeight: 700,
+                  fontSize: "0.6875rem",
+                  letterSpacing: "0.5px",
+                }}
+              >
+                ADM
+              </Link>
+            )}
+
             {/* Mobile hamburger */}
             <button
               className={styles.hamburger}

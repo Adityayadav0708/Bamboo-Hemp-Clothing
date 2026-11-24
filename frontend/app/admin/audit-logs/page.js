@@ -8,6 +8,11 @@ export default function AdminAuditLogsPage() {
 
   useEffect(() => {
     setData(api.getAdminData());
+    if (typeof api.syncWithBackend === "function") {
+      api.syncWithBackend().then((fresh) => {
+        if (fresh) setData(fresh);
+      });
+    }
   }, []);
 
   if (!data) return <div>Loading Audit Logs...</div>;

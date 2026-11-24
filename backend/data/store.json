@@ -1,7 +1,7 @@
 {
   "categories": [
     {
-      "_id": "6b05836fbcb6b6b43c132531",
+      "_id": "6b0596630c9ad5a03095e453",
       "name": "Bamboo T-Shirts",
       "slug": "bamboo-tshirts",
       "description": "Ultra-soft bamboo round neck and polo T-shirts — 3x softer than cotton, anti-odor, and engineered for all-day comfort in tropical climates.",
@@ -11,7 +11,7 @@
       "isActive": true
     },
     {
-      "_id": "6b05836fbcb6b6b43c13253c",
+      "_id": "6b0596630c9ad5a03095e455",
       "name": "Hemp T-Shirts",
       "slug": "hemp-tshirts",
       "description": "Structured, durable, and naturally breathable. Spun from heritage rain-fed Himalayan hemp and organic cotton that softens with every wash.",
@@ -21,7 +21,7 @@
       "isActive": true
     },
     {
-      "_id": "6b05836fbcb6b6b43c13253e",
+      "_id": "6b0596630c9ad5a03095e457",
       "name": "Men's Innerwear",
       "slug": "mens-innerwear",
       "description": "Bamboo trunks, boxers, and briefs designed for anti-chafing, moisture-wicking comfort with 360° micro-mesh cooling waistbands.",
@@ -31,7 +31,7 @@
       "isActive": true
     },
     {
-      "_id": "6b05836fbcb6b6b43c132541",
+      "_id": "6b0596630c9ad5a03095e459",
       "name": "Women's Innerwear",
       "slug": "womens-innerwear",
       "description": "Gentle on skin, kind to the earth. Breathable bamboo bikini briefs, full-coverage briefs, and racerback tops for weightless daily wear.",
@@ -43,11 +43,11 @@
   ],
   "products": [
     {
-      "_id": "6b05836fbcb6b6b43c132546",
+      "_id": "6b0596630c9ad5a03095e45e",
       "name": "Bamboo Round Neck T-shirt for Men",
       "slug": "bamboo-round-neck-tshirt-men",
       "categoryIds": [
-        "6b05836fbcb6b6b43c132531"
+        "6b0596630c9ad5a03095e453"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -121,8 +121,8 @@
       ],
       "variants": [
         {
-          "_id": "6b05836fbcb6b6b43c132548",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e460",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-S-PIT",
           "size": "S",
           "color": {
@@ -134,11 +134,11 @@
           "inventoryCount": 60,
           "lowStockThreshold": 10,
           "isActive": true,
-          "stockQuantity": 50
+          "stockQuantity": null
         },
         {
-          "_id": "6b05836fbcb6b6b43c13254a",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e462",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-S-CHA",
           "size": "S",
           "color": {
@@ -152,8 +152,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13254c",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e464",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-S-NAV",
           "size": "S",
           "color": {
@@ -167,8 +167,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13254e",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e466",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-S-CLO",
           "size": "S",
           "color": {
@@ -182,8 +182,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132550",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e468",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-M-PIT",
           "size": "M",
           "color": {
@@ -197,8 +197,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132552",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e46a",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-M-CHA",
           "size": "M",
           "color": {
@@ -212,8 +212,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132554",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e46c",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-M-NAV",
           "size": "M",
           "color": {
@@ -227,8 +227,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132556",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e46e",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-M-CLO",
           "size": "M",
           "color": {
@@ -242,8 +242,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132558",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e470",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-L-PIT",
           "size": "L",
           "color": {
@@ -257,8 +257,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13255a",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e472",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-L-CHA",
           "size": "L",
           "color": {
@@ -272,8 +272,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13255c",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e474",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-L-NAV",
           "size": "L",
           "color": {
@@ -287,8 +287,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13255e",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e476",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-L-CLO",
           "size": "L",
           "color": {
@@ -302,8 +302,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132560",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e478",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-XL-PIT",
           "size": "XL",
           "color": {
@@ -317,8 +317,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132562",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e47a",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-XL-CHA",
           "size": "XL",
           "color": {
@@ -332,8 +332,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132564",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e47c",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-XL-NAV",
           "size": "XL",
           "color": {
@@ -347,8 +347,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132566",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e47e",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-XL-CLO",
           "size": "XL",
           "color": {
@@ -362,8 +362,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132568",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e480",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-2XL-PIT",
           "size": "2XL",
           "color": {
@@ -377,8 +377,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13256a",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e482",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-2XL-CHA",
           "size": "2XL",
           "color": {
@@ -392,8 +392,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13256c",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e484",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-2XL-NAV",
           "size": "2XL",
           "color": {
@@ -407,8 +407,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13256e",
-          "productId": "6b05836fbcb6b6b43c132546",
+          "_id": "6b0596630c9ad5a03095e486",
+          "productId": "6b0596630c9ad5a03095e45e",
           "sku": "BAMBOO-R-2XL-CLO",
           "size": "2XL",
           "color": {
@@ -424,11 +424,11 @@
       ]
     },
     {
-      "_id": "6b05836fbcb6b6b43c132570",
+      "_id": "6b0596630c9ad5a03095e488",
       "name": "Bamboo Polo T-shirt for Men",
       "slug": "bamboo-polo-tshirt-men",
       "categoryIds": [
-        "6b05836fbcb6b6b43c132531"
+        "6b0596630c9ad5a03095e453"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -482,8 +482,8 @@
       ],
       "variants": [
         {
-          "_id": "6b05836fbcb6b6b43c132572",
-          "productId": "6b05836fbcb6b6b43c132570",
+          "_id": "6b0596630c9ad5a03095e48a",
+          "productId": "6b0596630c9ad5a03095e488",
           "sku": "BAMBOO-P-S-OBS",
           "size": "S",
           "color": {
@@ -497,8 +497,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132574",
-          "productId": "6b05836fbcb6b6b43c132570",
+          "_id": "6b0596630c9ad5a03095e48c",
+          "productId": "6b0596630c9ad5a03095e488",
           "sku": "BAMBOO-P-S-FOR",
           "size": "S",
           "color": {
@@ -512,8 +512,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132576",
-          "productId": "6b05836fbcb6b6b43c132570",
+          "_id": "6b0596630c9ad5a03095e48e",
+          "productId": "6b0596630c9ad5a03095e488",
           "sku": "BAMBOO-P-M-OBS",
           "size": "M",
           "color": {
@@ -527,8 +527,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132578",
-          "productId": "6b05836fbcb6b6b43c132570",
+          "_id": "6b0596630c9ad5a03095e490",
+          "productId": "6b0596630c9ad5a03095e488",
           "sku": "BAMBOO-P-M-FOR",
           "size": "M",
           "color": {
@@ -542,8 +542,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13257a",
-          "productId": "6b05836fbcb6b6b43c132570",
+          "_id": "6b0596630c9ad5a03095e492",
+          "productId": "6b0596630c9ad5a03095e488",
           "sku": "BAMBOO-P-L-OBS",
           "size": "L",
           "color": {
@@ -557,8 +557,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13257c",
-          "productId": "6b05836fbcb6b6b43c132570",
+          "_id": "6b0596630c9ad5a03095e494",
+          "productId": "6b0596630c9ad5a03095e488",
           "sku": "BAMBOO-P-L-FOR",
           "size": "L",
           "color": {
@@ -572,8 +572,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13257e",
-          "productId": "6b05836fbcb6b6b43c132570",
+          "_id": "6b0596630c9ad5a03095e496",
+          "productId": "6b0596630c9ad5a03095e488",
           "sku": "BAMBOO-P-XL-OBS",
           "size": "XL",
           "color": {
@@ -587,8 +587,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132580",
-          "productId": "6b05836fbcb6b6b43c132570",
+          "_id": "6b0596630c9ad5a03095e498",
+          "productId": "6b0596630c9ad5a03095e488",
           "sku": "BAMBOO-P-XL-FOR",
           "size": "XL",
           "color": {
@@ -602,8 +602,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132582",
-          "productId": "6b05836fbcb6b6b43c132570",
+          "_id": "6b0596630c9ad5a03095e49a",
+          "productId": "6b0596630c9ad5a03095e488",
           "sku": "BAMBOO-P-2XL-OBS",
           "size": "2XL",
           "color": {
@@ -617,8 +617,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132584",
-          "productId": "6b05836fbcb6b6b43c132570",
+          "_id": "6b0596630c9ad5a03095e49c",
+          "productId": "6b0596630c9ad5a03095e488",
           "sku": "BAMBOO-P-2XL-FOR",
           "size": "2XL",
           "color": {
@@ -634,11 +634,11 @@
       ]
     },
     {
-      "_id": "6b05836fbcb6b6b43c132586",
+      "_id": "6b0596630c9ad5a03095e49e",
       "name": "Bamboo Women's Round Neck T-shirt",
       "slug": "bamboo-round-neck-tshirt-women",
       "categoryIds": [
-        "6b05836fbcb6b6b43c132531"
+        "6b0596630c9ad5a03095e453"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -692,8 +692,8 @@
       ],
       "variants": [
         {
-          "_id": "6b05836fbcb6b6b43c132588",
-          "productId": "6b05836fbcb6b6b43c132586",
+          "_id": "6b0596630c9ad5a03095e4a0",
+          "productId": "6b0596630c9ad5a03095e49e",
           "sku": "BAMBOO-R-XS-PRI",
           "size": "XS",
           "color": {
@@ -707,8 +707,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13258a",
-          "productId": "6b05836fbcb6b6b43c132586",
+          "_id": "6b0596630c9ad5a03095e4a2",
+          "productId": "6b0596630c9ad5a03095e49e",
           "sku": "BAMBOO-R-XS-DEE",
           "size": "XS",
           "color": {
@@ -722,8 +722,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13258c",
-          "productId": "6b05836fbcb6b6b43c132586",
+          "_id": "6b0596630c9ad5a03095e4a4",
+          "productId": "6b0596630c9ad5a03095e49e",
           "sku": "BAMBOO-R-S-PRI",
           "size": "S",
           "color": {
@@ -737,8 +737,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13258e",
-          "productId": "6b05836fbcb6b6b43c132586",
+          "_id": "6b0596630c9ad5a03095e4a6",
+          "productId": "6b0596630c9ad5a03095e49e",
           "sku": "BAMBOO-R-S-DEE",
           "size": "S",
           "color": {
@@ -752,8 +752,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132590",
-          "productId": "6b05836fbcb6b6b43c132586",
+          "_id": "6b0596630c9ad5a03095e4a8",
+          "productId": "6b0596630c9ad5a03095e49e",
           "sku": "BAMBOO-R-M-PRI",
           "size": "M",
           "color": {
@@ -767,8 +767,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132592",
-          "productId": "6b05836fbcb6b6b43c132586",
+          "_id": "6b0596630c9ad5a03095e4aa",
+          "productId": "6b0596630c9ad5a03095e49e",
           "sku": "BAMBOO-R-M-DEE",
           "size": "M",
           "color": {
@@ -782,8 +782,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132594",
-          "productId": "6b05836fbcb6b6b43c132586",
+          "_id": "6b0596630c9ad5a03095e4ac",
+          "productId": "6b0596630c9ad5a03095e49e",
           "sku": "BAMBOO-R-L-PRI",
           "size": "L",
           "color": {
@@ -797,8 +797,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132596",
-          "productId": "6b05836fbcb6b6b43c132586",
+          "_id": "6b0596630c9ad5a03095e4ae",
+          "productId": "6b0596630c9ad5a03095e49e",
           "sku": "BAMBOO-R-L-DEE",
           "size": "L",
           "color": {
@@ -812,8 +812,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c132598",
-          "productId": "6b05836fbcb6b6b43c132586",
+          "_id": "6b0596630c9ad5a03095e4b0",
+          "productId": "6b0596630c9ad5a03095e49e",
           "sku": "BAMBOO-R-XL-PRI",
           "size": "XL",
           "color": {
@@ -827,8 +827,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c13259a",
-          "productId": "6b05836fbcb6b6b43c132586",
+          "_id": "6b0596630c9ad5a03095e4b2",
+          "productId": "6b0596630c9ad5a03095e49e",
           "sku": "BAMBOO-R-XL-DEE",
           "size": "XL",
           "color": {
@@ -844,11 +844,11 @@
       ]
     },
     {
-      "_id": "6b05836fbcb6b6b43c13259c",
+      "_id": "6b0596630c9ad5a03095e4b4",
       "name": "Bamboo Racerback Tank Top for Women",
       "slug": "bamboo-racerback-tank-top-women",
       "categoryIds": [
-        "6b05836fbcb6b6b43c132541"
+        "6b0596630c9ad5a03095e459"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -892,8 +892,8 @@
       ],
       "variants": [
         {
-          "_id": "6b05836fbcb6b6b43c13259e",
-          "productId": "6b05836fbcb6b6b43c13259c",
+          "_id": "6b0596630c9ad5a03095e4b6",
+          "productId": "6b0596630c9ad5a03095e4b4",
           "sku": "BAMBOO-R-XS-CER",
           "size": "XS",
           "color": {
@@ -907,8 +907,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c1325a0",
-          "productId": "6b05836fbcb6b6b43c13259c",
+          "_id": "6b0596630c9ad5a03095e4b8",
+          "productId": "6b0596630c9ad5a03095e4b4",
           "sku": "BAMBOO-R-S-CER",
           "size": "S",
           "color": {
@@ -922,8 +922,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c1325a2",
-          "productId": "6b05836fbcb6b6b43c13259c",
+          "_id": "6b0596630c9ad5a03095e4ba",
+          "productId": "6b0596630c9ad5a03095e4b4",
           "sku": "BAMBOO-R-M-CER",
           "size": "M",
           "color": {
@@ -937,8 +937,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c1325a4",
-          "productId": "6b05836fbcb6b6b43c13259c",
+          "_id": "6b0596630c9ad5a03095e4bc",
+          "productId": "6b0596630c9ad5a03095e4b4",
           "sku": "BAMBOO-R-L-CER",
           "size": "L",
           "color": {
@@ -952,8 +952,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c1325a6",
-          "productId": "6b05836fbcb6b6b43c13259c",
+          "_id": "6b0596630c9ad5a03095e4be",
+          "productId": "6b0596630c9ad5a03095e4b4",
           "sku": "BAMBOO-R-XL-CER",
           "size": "XL",
           "color": {
@@ -969,11 +969,11 @@
       ]
     },
     {
-      "_id": "6b05836fbcb6b6b43c1325a8",
+      "_id": "6b0596630c9ad5a03095e4c0",
       "name": "Heritage Himalayan Hemp Boxy Tee",
       "slug": "heritage-hemp-boxy-tee",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253c"
+        "6b0596630c9ad5a03095e455"
       ],
       "fabricType": "hemp",
       "fabricComposition": [
@@ -1027,8 +1027,8 @@
       ],
       "variants": [
         {
-          "_id": "6b05836fbcb6b6b43c1325aa",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4c2",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-S-NAT",
           "size": "S",
           "color": {
@@ -1042,8 +1042,8 @@
           "isActive": true
         },
         {
-          "_id": "6b05836fbcb6b6b43c1325ac",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4c4",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-S-FOR",
           "size": "S",
           "color": {
@@ -1057,8 +1057,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325ae",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4c6",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-S-EAR",
           "size": "S",
           "color": {
@@ -1072,8 +1072,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325b0",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4c8",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-M-NAT",
           "size": "M",
           "color": {
@@ -1087,8 +1087,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325b2",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4ca",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-M-FOR",
           "size": "M",
           "color": {
@@ -1102,8 +1102,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325b4",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4cc",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-M-EAR",
           "size": "M",
           "color": {
@@ -1117,8 +1117,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325b6",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4ce",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-L-NAT",
           "size": "L",
           "color": {
@@ -1132,8 +1132,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325b8",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4d0",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-L-FOR",
           "size": "L",
           "color": {
@@ -1147,8 +1147,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325ba",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4d2",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-L-EAR",
           "size": "L",
           "color": {
@@ -1162,8 +1162,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325bc",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4d4",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-XL-NAT",
           "size": "XL",
           "color": {
@@ -1177,8 +1177,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325be",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4d6",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-XL-FOR",
           "size": "XL",
           "color": {
@@ -1192,8 +1192,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325c0",
-          "productId": "6b05836fbcb6b6b43c1325a8",
+          "_id": "6b0596630c9ad5a03095e4d8",
+          "productId": "6b0596630c9ad5a03095e4c0",
           "sku": "HERITAGE-XL-EAR",
           "size": "XL",
           "color": {
@@ -1209,11 +1209,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c1325c2",
+      "_id": "6b0596630c9ad5a03095e4da",
       "name": "Himalayan Hemp Classic Crew Tee",
       "slug": "himalayan-hemp-classic-crew",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253c"
+        "6b0596630c9ad5a03095e455"
       ],
       "fabricType": "hemp",
       "fabricComposition": [
@@ -1263,8 +1263,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c1325c4",
-          "productId": "6b058370bcb6b6b43c1325c2",
+          "_id": "6b0596630c9ad5a03095e4dc",
+          "productId": "6b0596630c9ad5a03095e4da",
           "sku": "HIMALAYA-S-PIN",
           "size": "S",
           "color": {
@@ -1278,8 +1278,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325c6",
-          "productId": "6b058370bcb6b6b43c1325c2",
+          "_id": "6b0596630c9ad5a03095e4de",
+          "productId": "6b0596630c9ad5a03095e4da",
           "sku": "HIMALAYA-S-RAW",
           "size": "S",
           "color": {
@@ -1293,8 +1293,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325c8",
-          "productId": "6b058370bcb6b6b43c1325c2",
+          "_id": "6b0596630c9ad5a03095e4e0",
+          "productId": "6b0596630c9ad5a03095e4da",
           "sku": "HIMALAYA-M-PIN",
           "size": "M",
           "color": {
@@ -1308,8 +1308,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325ca",
-          "productId": "6b058370bcb6b6b43c1325c2",
+          "_id": "6b0596630c9ad5a03095e4e2",
+          "productId": "6b0596630c9ad5a03095e4da",
           "sku": "HIMALAYA-M-RAW",
           "size": "M",
           "color": {
@@ -1323,8 +1323,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325cc",
-          "productId": "6b058370bcb6b6b43c1325c2",
+          "_id": "6b0596630c9ad5a03095e4e4",
+          "productId": "6b0596630c9ad5a03095e4da",
           "sku": "HIMALAYA-L-PIN",
           "size": "L",
           "color": {
@@ -1338,8 +1338,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325ce",
-          "productId": "6b058370bcb6b6b43c1325c2",
+          "_id": "6b0596630c9ad5a03095e4e6",
+          "productId": "6b0596630c9ad5a03095e4da",
           "sku": "HIMALAYA-L-RAW",
           "size": "L",
           "color": {
@@ -1353,8 +1353,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325d0",
-          "productId": "6b058370bcb6b6b43c1325c2",
+          "_id": "6b0596630c9ad5a03095e4e8",
+          "productId": "6b0596630c9ad5a03095e4da",
           "sku": "HIMALAYA-XL-PIN",
           "size": "XL",
           "color": {
@@ -1368,8 +1368,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325d2",
-          "productId": "6b058370bcb6b6b43c1325c2",
+          "_id": "6b0596630c9ad5a03095e4ea",
+          "productId": "6b0596630c9ad5a03095e4da",
           "sku": "HIMALAYA-XL-RAW",
           "size": "XL",
           "color": {
@@ -1383,8 +1383,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325d4",
-          "productId": "6b058370bcb6b6b43c1325c2",
+          "_id": "6b0596630c9ad5a03095e4ec",
+          "productId": "6b0596630c9ad5a03095e4da",
           "sku": "HIMALAYA-2XL-PIN",
           "size": "2XL",
           "color": {
@@ -1398,8 +1398,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325d6",
-          "productId": "6b058370bcb6b6b43c1325c2",
+          "_id": "6b0596630c9ad5a03095e4ee",
+          "productId": "6b0596630c9ad5a03095e4da",
           "sku": "HIMALAYA-2XL-RAW",
           "size": "2XL",
           "color": {
@@ -1415,11 +1415,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c1325d8",
+      "_id": "6b0596630c9ad5a03095e4f0",
       "name": "Organic Himalayan Hemp Native Crew T-Shirt",
       "slug": "organic-hemp-crew-tshirt",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253c"
+        "6b0596630c9ad5a03095e455"
       ],
       "fabricType": "hemp",
       "fabricComposition": [
@@ -1481,8 +1481,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c1325da",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e4f2",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--S-EAR",
           "size": "S",
           "color": {
@@ -1496,8 +1496,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325dc",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e4f4",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--S-DES",
           "size": "S",
           "color": {
@@ -1511,8 +1511,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325de",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e4f6",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--S-MOU",
           "size": "S",
           "color": {
@@ -1526,8 +1526,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325e0",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e4f8",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--M-EAR",
           "size": "M",
           "color": {
@@ -1541,8 +1541,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325e2",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e4fa",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--M-DES",
           "size": "M",
           "color": {
@@ -1556,8 +1556,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325e4",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e4fc",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--M-MOU",
           "size": "M",
           "color": {
@@ -1571,8 +1571,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325e6",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e4fe",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--L-EAR",
           "size": "L",
           "color": {
@@ -1586,8 +1586,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325e8",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e500",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--L-DES",
           "size": "L",
           "color": {
@@ -1601,8 +1601,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325ea",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e502",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--L-MOU",
           "size": "L",
           "color": {
@@ -1616,8 +1616,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325ec",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e504",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--XL-EAR",
           "size": "XL",
           "color": {
@@ -1631,8 +1631,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325ee",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e506",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--XL-DES",
           "size": "XL",
           "color": {
@@ -1646,8 +1646,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325f0",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e508",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--XL-MOU",
           "size": "XL",
           "color": {
@@ -1661,8 +1661,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325f2",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e50a",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--2XL-EAR",
           "size": "2XL",
           "color": {
@@ -1676,8 +1676,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325f4",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e50c",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--2XL-DES",
           "size": "2XL",
           "color": {
@@ -1691,8 +1691,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325f6",
-          "productId": "6b058370bcb6b6b43c1325d8",
+          "_id": "6b0596630c9ad5a03095e50e",
+          "productId": "6b0596630c9ad5a03095e4f0",
           "sku": "ORGANIC--2XL-MOU",
           "size": "2XL",
           "color": {
@@ -1708,11 +1708,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c1325f8",
+      "_id": "6b0596630c9ad5a03095e510",
       "name": "Hemp Graphic T-Shirt – Retro Aviator Edition",
       "slug": "hemp-graphic-tshirt-retro-aviator",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253c"
+        "6b0596630c9ad5a03095e455"
       ],
       "fabricType": "hemp",
       "fabricComposition": [
@@ -1774,8 +1774,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c1325fa",
-          "productId": "6b058370bcb6b6b43c1325f8",
+          "_id": "6b0596630c9ad5a03095e512",
+          "productId": "6b0596630c9ad5a03095e510",
           "sku": "HEMP-GRA-S-WAS",
           "size": "S",
           "color": {
@@ -1789,8 +1789,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325fc",
-          "productId": "6b058370bcb6b6b43c1325f8",
+          "_id": "6b0596630c9ad5a03095e514",
+          "productId": "6b0596630c9ad5a03095e510",
           "sku": "HEMP-GRA-S-VIN",
           "size": "S",
           "color": {
@@ -1804,8 +1804,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1325fe",
-          "productId": "6b058370bcb6b6b43c1325f8",
+          "_id": "6b0596630c9ad5a03095e516",
+          "productId": "6b0596630c9ad5a03095e510",
           "sku": "HEMP-GRA-M-WAS",
           "size": "M",
           "color": {
@@ -1819,8 +1819,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132600",
-          "productId": "6b058370bcb6b6b43c1325f8",
+          "_id": "6b0596630c9ad5a03095e518",
+          "productId": "6b0596630c9ad5a03095e510",
           "sku": "HEMP-GRA-M-VIN",
           "size": "M",
           "color": {
@@ -1834,8 +1834,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132602",
-          "productId": "6b058370bcb6b6b43c1325f8",
+          "_id": "6b0596630c9ad5a03095e51a",
+          "productId": "6b0596630c9ad5a03095e510",
           "sku": "HEMP-GRA-L-WAS",
           "size": "L",
           "color": {
@@ -1849,8 +1849,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132604",
-          "productId": "6b058370bcb6b6b43c1325f8",
+          "_id": "6b0596630c9ad5a03095e51c",
+          "productId": "6b0596630c9ad5a03095e510",
           "sku": "HEMP-GRA-L-VIN",
           "size": "L",
           "color": {
@@ -1864,8 +1864,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132606",
-          "productId": "6b058370bcb6b6b43c1325f8",
+          "_id": "6b0596630c9ad5a03095e51e",
+          "productId": "6b0596630c9ad5a03095e510",
           "sku": "HEMP-GRA-XL-WAS",
           "size": "XL",
           "color": {
@@ -1879,8 +1879,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132608",
-          "productId": "6b058370bcb6b6b43c1325f8",
+          "_id": "6b0596630c9ad5a03095e520",
+          "productId": "6b0596630c9ad5a03095e510",
           "sku": "HEMP-GRA-XL-VIN",
           "size": "XL",
           "color": {
@@ -1894,8 +1894,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13260a",
-          "productId": "6b058370bcb6b6b43c1325f8",
+          "_id": "6b0596630c9ad5a03095e522",
+          "productId": "6b0596630c9ad5a03095e510",
           "sku": "HEMP-GRA-2XL-WAS",
           "size": "2XL",
           "color": {
@@ -1909,8 +1909,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13260c",
-          "productId": "6b058370bcb6b6b43c1325f8",
+          "_id": "6b0596630c9ad5a03095e524",
+          "productId": "6b0596630c9ad5a03095e510",
           "sku": "HEMP-GRA-2XL-VIN",
           "size": "2XL",
           "color": {
@@ -1926,11 +1926,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c13260e",
+      "_id": "6b0596630c9ad5a03095e526",
       "name": "Oversized Hemp T-Shirt – Dino Edition",
       "slug": "eco-friendly-oversized-hemp-tshirt-dino",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253c"
+        "6b0596630c9ad5a03095e455"
       ],
       "fabricType": "hemp",
       "fabricComposition": [
@@ -1992,8 +1992,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c132610",
-          "productId": "6b058370bcb6b6b43c13260e",
+          "_id": "6b0596630c9ad5a03095e528",
+          "productId": "6b0596630c9ad5a03095e526",
           "sku": "ECO-FRIE-S-ONY",
           "size": "S",
           "color": {
@@ -2007,8 +2007,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132612",
-          "productId": "6b058370bcb6b6b43c13260e",
+          "_id": "6b0596630c9ad5a03095e52a",
+          "productId": "6b0596630c9ad5a03095e526",
           "sku": "ECO-FRIE-S-CLO",
           "size": "S",
           "color": {
@@ -2022,8 +2022,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132614",
-          "productId": "6b058370bcb6b6b43c13260e",
+          "_id": "6b0596630c9ad5a03095e52c",
+          "productId": "6b0596630c9ad5a03095e526",
           "sku": "ECO-FRIE-M-ONY",
           "size": "M",
           "color": {
@@ -2037,8 +2037,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132616",
-          "productId": "6b058370bcb6b6b43c13260e",
+          "_id": "6b0596630c9ad5a03095e52e",
+          "productId": "6b0596630c9ad5a03095e526",
           "sku": "ECO-FRIE-M-CLO",
           "size": "M",
           "color": {
@@ -2052,8 +2052,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132618",
-          "productId": "6b058370bcb6b6b43c13260e",
+          "_id": "6b0596630c9ad5a03095e530",
+          "productId": "6b0596630c9ad5a03095e526",
           "sku": "ECO-FRIE-L-ONY",
           "size": "L",
           "color": {
@@ -2067,8 +2067,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13261a",
-          "productId": "6b058370bcb6b6b43c13260e",
+          "_id": "6b0596630c9ad5a03095e532",
+          "productId": "6b0596630c9ad5a03095e526",
           "sku": "ECO-FRIE-L-CLO",
           "size": "L",
           "color": {
@@ -2082,8 +2082,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13261c",
-          "productId": "6b058370bcb6b6b43c13260e",
+          "_id": "6b0596630c9ad5a03095e534",
+          "productId": "6b0596630c9ad5a03095e526",
           "sku": "ECO-FRIE-XL-ONY",
           "size": "XL",
           "color": {
@@ -2097,8 +2097,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13261e",
-          "productId": "6b058370bcb6b6b43c13260e",
+          "_id": "6b0596630c9ad5a03095e536",
+          "productId": "6b0596630c9ad5a03095e526",
           "sku": "ECO-FRIE-XL-CLO",
           "size": "XL",
           "color": {
@@ -2112,8 +2112,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132620",
-          "productId": "6b058370bcb6b6b43c13260e",
+          "_id": "6b0596630c9ad5a03095e538",
+          "productId": "6b0596630c9ad5a03095e526",
           "sku": "ECO-FRIE-2XL-ONY",
           "size": "2XL",
           "color": {
@@ -2127,8 +2127,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132622",
-          "productId": "6b058370bcb6b6b43c13260e",
+          "_id": "6b0596630c9ad5a03095e53a",
+          "productId": "6b0596630c9ad5a03095e526",
           "sku": "ECO-FRIE-2XL-CLO",
           "size": "2XL",
           "color": {
@@ -2144,11 +2144,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c132624",
+      "_id": "6b0596630c9ad5a03095e53c",
       "name": "Men's Hemp Everyday Crew Tee – Be Strong Edition",
       "slug": "mens-hemp-round-neck-tshirt-be-strong",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253c"
+        "6b0596630c9ad5a03095e455"
       ],
       "fabricType": "hemp",
       "fabricComposition": [
@@ -2210,8 +2210,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c132626",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e53e",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-S-PIN",
           "size": "S",
           "color": {
@@ -2225,8 +2225,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132628",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e540",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-S-EAR",
           "size": "S",
           "color": {
@@ -2240,8 +2240,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13262a",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e542",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-S-DEE",
           "size": "S",
           "color": {
@@ -2255,8 +2255,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13262c",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e544",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-M-PIN",
           "size": "M",
           "color": {
@@ -2270,8 +2270,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13262e",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e546",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-M-EAR",
           "size": "M",
           "color": {
@@ -2285,8 +2285,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132630",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e548",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-M-DEE",
           "size": "M",
           "color": {
@@ -2300,8 +2300,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132632",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e54a",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-L-PIN",
           "size": "L",
           "color": {
@@ -2315,8 +2315,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132634",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e54c",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-L-EAR",
           "size": "L",
           "color": {
@@ -2330,8 +2330,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132636",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e54e",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-L-DEE",
           "size": "L",
           "color": {
@@ -2345,8 +2345,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132638",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e550",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-XL-PIN",
           "size": "XL",
           "color": {
@@ -2360,8 +2360,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13263a",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e552",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-XL-EAR",
           "size": "XL",
           "color": {
@@ -2375,8 +2375,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13263c",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e554",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-XL-DEE",
           "size": "XL",
           "color": {
@@ -2390,8 +2390,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13263e",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e556",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-2XL-PIN",
           "size": "2XL",
           "color": {
@@ -2405,8 +2405,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132640",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e558",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-2XL-EAR",
           "size": "2XL",
           "color": {
@@ -2420,8 +2420,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132642",
-          "productId": "6b058370bcb6b6b43c132624",
+          "_id": "6b0596630c9ad5a03095e55a",
+          "productId": "6b0596630c9ad5a03095e53c",
           "sku": "MENS-HEM-2XL-DEE",
           "size": "2XL",
           "color": {
@@ -2437,11 +2437,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c132644",
+      "_id": "6b0596630c9ad5a03095e55c",
       "name": "Oversized Hemp Graphic Tee – Japanese Dragon Edition",
       "slug": "oversized-hemp-japanese-dragon-tshirt",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253c"
+        "6b0596630c9ad5a03095e455"
       ],
       "fabricType": "hemp",
       "fabricComposition": [
@@ -2503,8 +2503,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c132646",
-          "productId": "6b058370bcb6b6b43c132644",
+          "_id": "6b0596630c9ad5a03095e55e",
+          "productId": "6b0596630c9ad5a03095e55c",
           "sku": "OVERSIZE-S-PLU",
           "size": "S",
           "color": {
@@ -2518,8 +2518,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132648",
-          "productId": "6b058370bcb6b6b43c132644",
+          "_id": "6b0596630c9ad5a03095e560",
+          "productId": "6b0596630c9ad5a03095e55c",
           "sku": "OVERSIZE-S-WAS",
           "size": "S",
           "color": {
@@ -2533,8 +2533,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13264a",
-          "productId": "6b058370bcb6b6b43c132644",
+          "_id": "6b0596630c9ad5a03095e562",
+          "productId": "6b0596630c9ad5a03095e55c",
           "sku": "OVERSIZE-M-PLU",
           "size": "M",
           "color": {
@@ -2548,8 +2548,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13264c",
-          "productId": "6b058370bcb6b6b43c132644",
+          "_id": "6b0596630c9ad5a03095e564",
+          "productId": "6b0596630c9ad5a03095e55c",
           "sku": "OVERSIZE-M-WAS",
           "size": "M",
           "color": {
@@ -2563,8 +2563,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13264e",
-          "productId": "6b058370bcb6b6b43c132644",
+          "_id": "6b0596630c9ad5a03095e566",
+          "productId": "6b0596630c9ad5a03095e55c",
           "sku": "OVERSIZE-L-PLU",
           "size": "L",
           "color": {
@@ -2578,8 +2578,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132650",
-          "productId": "6b058370bcb6b6b43c132644",
+          "_id": "6b0596630c9ad5a03095e568",
+          "productId": "6b0596630c9ad5a03095e55c",
           "sku": "OVERSIZE-L-WAS",
           "size": "L",
           "color": {
@@ -2593,8 +2593,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132652",
-          "productId": "6b058370bcb6b6b43c132644",
+          "_id": "6b0596630c9ad5a03095e56a",
+          "productId": "6b0596630c9ad5a03095e55c",
           "sku": "OVERSIZE-XL-PLU",
           "size": "XL",
           "color": {
@@ -2608,8 +2608,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132654",
-          "productId": "6b058370bcb6b6b43c132644",
+          "_id": "6b0596630c9ad5a03095e56c",
+          "productId": "6b0596630c9ad5a03095e55c",
           "sku": "OVERSIZE-XL-WAS",
           "size": "XL",
           "color": {
@@ -2623,8 +2623,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132656",
-          "productId": "6b058370bcb6b6b43c132644",
+          "_id": "6b0596630c9ad5a03095e56e",
+          "productId": "6b0596630c9ad5a03095e55c",
           "sku": "OVERSIZE-2XL-PLU",
           "size": "2XL",
           "color": {
@@ -2638,8 +2638,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132658",
-          "productId": "6b058370bcb6b6b43c132644",
+          "_id": "6b0596630c9ad5a03095e570",
+          "productId": "6b0596630c9ad5a03095e55c",
           "sku": "OVERSIZE-2XL-WAS",
           "size": "2XL",
           "color": {
@@ -2655,11 +2655,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c13265a",
+      "_id": "6b0596630c9ad5a03095e572",
       "name": "Oversized Hemp Graphic Tee – Better Days Ahead",
       "slug": "oversized-unisex-hemp-graphic-tee-better-days",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253c"
+        "6b0596630c9ad5a03095e455"
       ],
       "fabricType": "hemp",
       "fabricComposition": [
@@ -2721,8 +2721,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c13265c",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e574",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-XS-CAR",
           "size": "XS",
           "color": {
@@ -2736,8 +2736,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13265e",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e576",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-XS-DUS",
           "size": "XS",
           "color": {
@@ -2751,8 +2751,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132660",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e578",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-S-CAR",
           "size": "S",
           "color": {
@@ -2766,8 +2766,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132662",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e57a",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-S-DUS",
           "size": "S",
           "color": {
@@ -2781,8 +2781,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132664",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e57c",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-M-CAR",
           "size": "M",
           "color": {
@@ -2796,8 +2796,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132666",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e57e",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-M-DUS",
           "size": "M",
           "color": {
@@ -2811,8 +2811,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132668",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e580",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-L-CAR",
           "size": "L",
           "color": {
@@ -2826,8 +2826,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13266a",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e582",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-L-DUS",
           "size": "L",
           "color": {
@@ -2841,8 +2841,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13266c",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e584",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-XL-CAR",
           "size": "XL",
           "color": {
@@ -2856,8 +2856,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13266e",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e586",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-XL-DUS",
           "size": "XL",
           "color": {
@@ -2871,8 +2871,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132670",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e588",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-2XL-CAR",
           "size": "2XL",
           "color": {
@@ -2886,8 +2886,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132672",
-          "productId": "6b058370bcb6b6b43c13265a",
+          "_id": "6b0596630c9ad5a03095e58a",
+          "productId": "6b0596630c9ad5a03095e572",
           "sku": "OVERSIZE-2XL-DUS",
           "size": "2XL",
           "color": {
@@ -2903,11 +2903,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c132674",
+      "_id": "6b0596630c9ad5a03095e58c",
       "name": "Minimalist Embroidered Hemp-Cotton T-Shirt",
       "slug": "organic-hemp-cotton-minimalist-tee",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253c"
+        "6b0596630c9ad5a03095e455"
       ],
       "fabricType": "hemp",
       "fabricComposition": [
@@ -2969,8 +2969,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c132676",
-          "productId": "6b058370bcb6b6b43c132674",
+          "_id": "6b0596630c9ad5a03095e58e",
+          "productId": "6b0596630c9ad5a03095e58c",
           "sku": "ORGANIC--S-OAT",
           "size": "S",
           "color": {
@@ -2984,8 +2984,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132678",
-          "productId": "6b058370bcb6b6b43c132674",
+          "_id": "6b0596630c9ad5a03095e590",
+          "productId": "6b0596630c9ad5a03095e58c",
           "sku": "ORGANIC--S-SAG",
           "size": "S",
           "color": {
@@ -2999,8 +2999,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13267a",
-          "productId": "6b058370bcb6b6b43c132674",
+          "_id": "6b0596630c9ad5a03095e592",
+          "productId": "6b0596630c9ad5a03095e58c",
           "sku": "ORGANIC--M-OAT",
           "size": "M",
           "color": {
@@ -3014,8 +3014,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13267c",
-          "productId": "6b058370bcb6b6b43c132674",
+          "_id": "6b0596630c9ad5a03095e594",
+          "productId": "6b0596630c9ad5a03095e58c",
           "sku": "ORGANIC--M-SAG",
           "size": "M",
           "color": {
@@ -3029,8 +3029,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13267e",
-          "productId": "6b058370bcb6b6b43c132674",
+          "_id": "6b0596630c9ad5a03095e596",
+          "productId": "6b0596630c9ad5a03095e58c",
           "sku": "ORGANIC--L-OAT",
           "size": "L",
           "color": {
@@ -3044,8 +3044,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132680",
-          "productId": "6b058370bcb6b6b43c132674",
+          "_id": "6b0596630c9ad5a03095e598",
+          "productId": "6b0596630c9ad5a03095e58c",
           "sku": "ORGANIC--L-SAG",
           "size": "L",
           "color": {
@@ -3059,8 +3059,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132682",
-          "productId": "6b058370bcb6b6b43c132674",
+          "_id": "6b0596630c9ad5a03095e59a",
+          "productId": "6b0596630c9ad5a03095e58c",
           "sku": "ORGANIC--XL-OAT",
           "size": "XL",
           "color": {
@@ -3074,8 +3074,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132684",
-          "productId": "6b058370bcb6b6b43c132674",
+          "_id": "6b0596630c9ad5a03095e59c",
+          "productId": "6b0596630c9ad5a03095e58c",
           "sku": "ORGANIC--XL-SAG",
           "size": "XL",
           "color": {
@@ -3089,8 +3089,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132686",
-          "productId": "6b058370bcb6b6b43c132674",
+          "_id": "6b0596630c9ad5a03095e59e",
+          "productId": "6b0596630c9ad5a03095e58c",
           "sku": "ORGANIC--2XL-OAT",
           "size": "2XL",
           "color": {
@@ -3104,8 +3104,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132688",
-          "productId": "6b058370bcb6b6b43c132674",
+          "_id": "6b0596630c9ad5a03095e5a0",
+          "productId": "6b0596630c9ad5a03095e58c",
           "sku": "ORGANIC--2XL-SAG",
           "size": "2XL",
           "color": {
@@ -3121,11 +3121,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c13268a",
+      "_id": "6b0596630c9ad5a03095e5a2",
       "name": "Heavyweight Hemp Nature Edition T-Shirt",
       "slug": "heavyweight-hemp-nature-edition-tee",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253c"
+        "6b0596630c9ad5a03095e455"
       ],
       "fabricType": "hemp",
       "fabricComposition": [
@@ -3187,8 +3187,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c13268c",
-          "productId": "6b058370bcb6b6b43c13268a",
+          "_id": "6b0596630c9ad5a03095e5a4",
+          "productId": "6b0596630c9ad5a03095e5a2",
           "sku": "HEAVYWEI-S-CHA",
           "size": "S",
           "color": {
@@ -3202,8 +3202,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13268e",
-          "productId": "6b058370bcb6b6b43c13268a",
+          "_id": "6b0596630c9ad5a03095e5a6",
+          "productId": "6b0596630c9ad5a03095e5a2",
           "sku": "HEAVYWEI-S-DEE",
           "size": "S",
           "color": {
@@ -3217,8 +3217,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132690",
-          "productId": "6b058370bcb6b6b43c13268a",
+          "_id": "6b0596630c9ad5a03095e5a8",
+          "productId": "6b0596630c9ad5a03095e5a2",
           "sku": "HEAVYWEI-M-CHA",
           "size": "M",
           "color": {
@@ -3232,8 +3232,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132692",
-          "productId": "6b058370bcb6b6b43c13268a",
+          "_id": "6b0596630c9ad5a03095e5aa",
+          "productId": "6b0596630c9ad5a03095e5a2",
           "sku": "HEAVYWEI-M-DEE",
           "size": "M",
           "color": {
@@ -3247,8 +3247,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132694",
-          "productId": "6b058370bcb6b6b43c13268a",
+          "_id": "6b0596630c9ad5a03095e5ac",
+          "productId": "6b0596630c9ad5a03095e5a2",
           "sku": "HEAVYWEI-L-CHA",
           "size": "L",
           "color": {
@@ -3262,8 +3262,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132696",
-          "productId": "6b058370bcb6b6b43c13268a",
+          "_id": "6b0596630c9ad5a03095e5ae",
+          "productId": "6b0596630c9ad5a03095e5a2",
           "sku": "HEAVYWEI-L-DEE",
           "size": "L",
           "color": {
@@ -3277,8 +3277,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c132698",
-          "productId": "6b058370bcb6b6b43c13268a",
+          "_id": "6b0596630c9ad5a03095e5b0",
+          "productId": "6b0596630c9ad5a03095e5a2",
           "sku": "HEAVYWEI-XL-CHA",
           "size": "XL",
           "color": {
@@ -3292,8 +3292,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13269a",
-          "productId": "6b058370bcb6b6b43c13268a",
+          "_id": "6b0596630c9ad5a03095e5b2",
+          "productId": "6b0596630c9ad5a03095e5a2",
           "sku": "HEAVYWEI-XL-DEE",
           "size": "XL",
           "color": {
@@ -3307,8 +3307,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13269c",
-          "productId": "6b058370bcb6b6b43c13268a",
+          "_id": "6b0596630c9ad5a03095e5b4",
+          "productId": "6b0596630c9ad5a03095e5a2",
           "sku": "HEAVYWEI-2XL-CHA",
           "size": "2XL",
           "color": {
@@ -3322,8 +3322,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c13269e",
-          "productId": "6b058370bcb6b6b43c13268a",
+          "_id": "6b0596630c9ad5a03095e5b6",
+          "productId": "6b0596630c9ad5a03095e5a2",
           "sku": "HEAVYWEI-2XL-DEE",
           "size": "2XL",
           "color": {
@@ -3339,11 +3339,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c1326a0",
+      "_id": "6b0596630c9ad5a03095e5b8",
       "name": "Bamboo Underwear Trunk for Men (Pack of 3)",
       "slug": "bamboo-underwear-trunk-men-pack3",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253e"
+        "6b0596630c9ad5a03095e457"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -3391,8 +3391,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c1326a2",
-          "productId": "6b058370bcb6b6b43c1326a0",
+          "_id": "6b0596630c9ad5a03095e5ba",
+          "productId": "6b0596630c9ad5a03095e5b8",
           "sku": "BAMBOO-U-S-TRI",
           "size": "S",
           "color": {
@@ -3406,8 +3406,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326a4",
-          "productId": "6b058370bcb6b6b43c1326a0",
+          "_id": "6b0596630c9ad5a03095e5bc",
+          "productId": "6b0596630c9ad5a03095e5b8",
           "sku": "BAMBOO-U-M-TRI",
           "size": "M",
           "color": {
@@ -3421,8 +3421,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326a6",
-          "productId": "6b058370bcb6b6b43c1326a0",
+          "_id": "6b0596630c9ad5a03095e5be",
+          "productId": "6b0596630c9ad5a03095e5b8",
           "sku": "BAMBOO-U-L-TRI",
           "size": "L",
           "color": {
@@ -3436,8 +3436,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326a8",
-          "productId": "6b058370bcb6b6b43c1326a0",
+          "_id": "6b0596630c9ad5a03095e5c0",
+          "productId": "6b0596630c9ad5a03095e5b8",
           "sku": "BAMBOO-U-XL-TRI",
           "size": "XL",
           "color": {
@@ -3451,8 +3451,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326aa",
-          "productId": "6b058370bcb6b6b43c1326a0",
+          "_id": "6b0596630c9ad5a03095e5c2",
+          "productId": "6b0596630c9ad5a03095e5b8",
           "sku": "BAMBOO-U-2XL-TRI",
           "size": "2XL",
           "color": {
@@ -3468,11 +3468,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c1326ac",
+      "_id": "6b0596630c9ad5a03095e5c4",
       "name": "Bamboo Underwear Trunk for Men (Single)",
       "slug": "bamboo-underwear-trunk-men-pack1",
       "categoryIds": [
-        "6b05836fbcb6b6b43c13253e"
+        "6b0596630c9ad5a03095e457"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -3516,8 +3516,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c1326ae",
-          "productId": "6b058370bcb6b6b43c1326ac",
+          "_id": "6b0596630c9ad5a03095e5c6",
+          "productId": "6b0596630c9ad5a03095e5c4",
           "sku": "BAMBOO-U-S-CLA",
           "size": "S",
           "color": {
@@ -3531,8 +3531,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326b0",
-          "productId": "6b058370bcb6b6b43c1326ac",
+          "_id": "6b0596630c9ad5a03095e5c8",
+          "productId": "6b0596630c9ad5a03095e5c4",
           "sku": "BAMBOO-U-M-CLA",
           "size": "M",
           "color": {
@@ -3546,8 +3546,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326b2",
-          "productId": "6b058370bcb6b6b43c1326ac",
+          "_id": "6b0596630c9ad5a03095e5ca",
+          "productId": "6b0596630c9ad5a03095e5c4",
           "sku": "BAMBOO-U-L-CLA",
           "size": "L",
           "color": {
@@ -3561,8 +3561,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326b4",
-          "productId": "6b058370bcb6b6b43c1326ac",
+          "_id": "6b0596630c9ad5a03095e5cc",
+          "productId": "6b0596630c9ad5a03095e5c4",
           "sku": "BAMBOO-U-XL-CLA",
           "size": "XL",
           "color": {
@@ -3576,8 +3576,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326b6",
-          "productId": "6b058370bcb6b6b43c1326ac",
+          "_id": "6b0596630c9ad5a03095e5ce",
+          "productId": "6b0596630c9ad5a03095e5c4",
           "sku": "BAMBOO-U-2XL-CLA",
           "size": "2XL",
           "color": {
@@ -3593,11 +3593,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c1326b8",
+      "_id": "6b0596630c9ad5a03095e5d0",
       "name": "Bamboo Bikini Underwear for Women (Pack of 2)",
       "slug": "bamboo-bikini-underwear-women-pack2",
       "categoryIds": [
-        "6b05836fbcb6b6b43c132541"
+        "6b0596630c9ad5a03095e459"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -3645,8 +3645,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c1326ba",
-          "productId": "6b058370bcb6b6b43c1326b8",
+          "_id": "6b0596630c9ad5a03095e5d2",
+          "productId": "6b0596630c9ad5a03095e5d0",
           "sku": "BAMBOO-B-XS-DUO",
           "size": "XS",
           "color": {
@@ -3660,8 +3660,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326bc",
-          "productId": "6b058370bcb6b6b43c1326b8",
+          "_id": "6b0596630c9ad5a03095e5d4",
+          "productId": "6b0596630c9ad5a03095e5d0",
           "sku": "BAMBOO-B-S-DUO",
           "size": "S",
           "color": {
@@ -3675,8 +3675,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326be",
-          "productId": "6b058370bcb6b6b43c1326b8",
+          "_id": "6b0596630c9ad5a03095e5d6",
+          "productId": "6b0596630c9ad5a03095e5d0",
           "sku": "BAMBOO-B-M-DUO",
           "size": "M",
           "color": {
@@ -3690,8 +3690,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326c0",
-          "productId": "6b058370bcb6b6b43c1326b8",
+          "_id": "6b0596630c9ad5a03095e5d8",
+          "productId": "6b0596630c9ad5a03095e5d0",
           "sku": "BAMBOO-B-L-DUO",
           "size": "L",
           "color": {
@@ -3705,8 +3705,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326c2",
-          "productId": "6b058370bcb6b6b43c1326b8",
+          "_id": "6b0596630c9ad5a03095e5da",
+          "productId": "6b0596630c9ad5a03095e5d0",
           "sku": "BAMBOO-B-XL-DUO",
           "size": "XL",
           "color": {
@@ -3722,11 +3722,11 @@
       ]
     },
     {
-      "_id": "6b058370bcb6b6b43c1326c4",
+      "_id": "6b0596630c9ad5a03095e5dc",
       "name": "Bamboo Underwear Brief for Women (Pack of 3)",
       "slug": "bamboo-brief-women-pack3",
       "categoryIds": [
-        "6b05836fbcb6b6b43c132541"
+        "6b0596630c9ad5a03095e459"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -3770,8 +3770,8 @@
       ],
       "variants": [
         {
-          "_id": "6b058370bcb6b6b43c1326c6",
-          "productId": "6b058370bcb6b6b43c1326c4",
+          "_id": "6b0596630c9ad5a03095e5de",
+          "productId": "6b0596630c9ad5a03095e5dc",
           "sku": "BAMBOO-B-XS-EVE",
           "size": "XS",
           "color": {
@@ -3785,8 +3785,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326c8",
-          "productId": "6b058370bcb6b6b43c1326c4",
+          "_id": "6b0596630c9ad5a03095e5e0",
+          "productId": "6b0596630c9ad5a03095e5dc",
           "sku": "BAMBOO-B-S-EVE",
           "size": "S",
           "color": {
@@ -3800,8 +3800,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326ca",
-          "productId": "6b058370bcb6b6b43c1326c4",
+          "_id": "6b0596630c9ad5a03095e5e2",
+          "productId": "6b0596630c9ad5a03095e5dc",
           "sku": "BAMBOO-B-M-EVE",
           "size": "M",
           "color": {
@@ -3815,8 +3815,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326cc",
-          "productId": "6b058370bcb6b6b43c1326c4",
+          "_id": "6b0596630c9ad5a03095e5e4",
+          "productId": "6b0596630c9ad5a03095e5dc",
           "sku": "BAMBOO-B-L-EVE",
           "size": "L",
           "color": {
@@ -3830,8 +3830,8 @@
           "isActive": true
         },
         {
-          "_id": "6b058370bcb6b6b43c1326ce",
-          "productId": "6b058370bcb6b6b43c1326c4",
+          "_id": "6b0596630c9ad5a03095e5e6",
+          "productId": "6b0596630c9ad5a03095e5dc",
           "sku": "BAMBOO-B-XL-EVE",
           "size": "XL",
           "color": {
@@ -3849,10 +3849,10 @@
   ],
   "users": [
     {
-      "_id": "6b05836fbcb6b6b43c132544",
+      "_id": "6b0596630c9ad5a03095e45c",
       "fullName": "Aditya Yadav (Store Owner)",
       "email": "admin@bamboohemp.com",
-      "password": "$2a$10$2lF58BIYkZYKEzNShYM49OQ.3edzs0P4c1FYmMy/WPRPuEUUZVZuu",
+      "password": "$2a$10$cvI3WzLNhw2RsX6jyRnGouV8d87Gumqc9bLrm63verExCAhJmNC36",
       "role": "admin",
       "phone": "+91 9876543210",
       "isVerified": true,
@@ -3871,10 +3871,10 @@
       ]
     },
     {
-      "_id": "6b05836fbcb6b6b43c132545",
+      "_id": "6b0596630c9ad5a03095e45d",
       "fullName": "Priya Sharma",
       "email": "customer@bamboohemp.com",
-      "password": "$2a$10$1w37gw5KO9BfoQCs232LZOwI7znBfAOl/1Wlk2r6SdF2Es/rk8H5K",
+      "password": "$2a$10$CnQYCci3tYYl2/2jI8Wn/eSUPkl0MJZjyNr7odbaOzcWBZXiRxVNe",
       "role": "customer",
       "phone": "+91 9123456789",
       "isVerified": true,
@@ -3895,14 +3895,14 @@
   ],
   "orders": [
     {
-      "_id": "ord_1795524725419_q9msk",
-      "orderNumber": "BH-2026-3330",
-      "userId": "6b05836fbcb6b6b43c132545",
+      "_id": "ord_1795528303671_p6e5ts",
+      "orderNumber": "BH-2026-9436",
+      "userId": "6b0596630c9ad5a03095e45d",
       "guestEmail": "customer@bamboohemp.com",
       "itemsSnapshot": [
         {
-          "productId": "6b05836fbcb6b6b43c132546",
-          "variantId": "6b05836fbcb6b6b43c132548",
+          "productId": "6b0596630c9ad5a03095e45e",
+          "variantId": "6b0596630c9ad5a03095e460",
           "sku": "BAMBOO-R-S-PIT",
           "name": "Bamboo Round Neck T-shirt for Men",
           "size": "S",
@@ -3937,247 +3937,15 @@
       "currency": "INR",
       "paymentStatus": "Paid",
       "orderStatus": "Placed",
-      "trackingNumber": "BD-227405207IN",
+      "trackingNumber": "BD-987996657IN",
       "courierPartner": "BlueDart Express",
-      "createdAt": "2026-11-24T12:52:05.419Z"
-    },
-    {
-      "_id": "ord_1795524645620_ankkx",
-      "orderNumber": "BH-2026-9455",
-      "userId": "6b05836fbcb6b6b43c132545",
-      "guestEmail": "customer@bamboohemp.com",
-      "itemsSnapshot": [
-        {
-          "productId": "6b05836fbcb6b6b43c132546",
-          "variantId": "6b05836fbcb6b6b43c132548",
-          "sku": "BAMBOO-R-S-PIT",
-          "name": "Bamboo Round Neck T-shirt for Men",
-          "size": "S",
-          "colour": "Pitch Black",
-          "unitPriceRupees": 990,
-          "unitPricePaise": 99000,
-          "quantity": 1,
-          "lineTotalRupees": 990,
-          "lineTotalPaise": 99000,
-          "image": "/images/products/heelium-men-tee-black.png"
-        }
-      ],
-      "addressSnapshot": {
-        "recipientName": "Priya Sharma",
-        "addressLine1": "42 Lotus Enclave",
-        "city": "Bengaluru",
-        "state": "Karnataka",
-        "postalCode": "560038",
-        "country": "India",
-        "phone": "+91 9123456789"
-      },
-      "deliveryInstructions": "",
-      "subtotalPaise": 99000,
-      "subtotalRupees": 990,
-      "discountPaise": 0,
-      "discountRupees": 0,
-      "couponCode": null,
-      "shippingPaise": 9900,
-      "shippingFeeRupees": 99,
-      "totalPaise": 108900,
-      "totalAmount": 1089,
-      "currency": "INR",
-      "paymentStatus": "Paid",
-      "orderStatus": "shipped",
-      "trackingNumber": "BD-475035946IN",
-      "courierPartner": "BlueDart Express",
-      "createdAt": "2026-11-24T12:50:45.620Z",
-      "statusHistory": [
-        {
-          "status": "shipped",
-          "actor": "admin",
-          "actorRole": "order_manager",
-          "note": "Dispatched via BlueDart Express Air",
-          "timestamp": "2026-11-24T12:52:05.316Z"
-        }
-      ]
-    },
-    {
-      "_id": "ord_1795524609599_1gsx8",
-      "orderNumber": "BH-2026-2499",
-      "userId": "6b05836fbcb6b6b43c132545",
-      "guestEmail": "customer@bamboohemp.com",
-      "itemsSnapshot": [
-        {
-          "productId": "6b05836fbcb6b6b43c132546",
-          "variantId": "6b05836fbcb6b6b43c132548",
-          "sku": "BAMBOO-R-S-PIT",
-          "name": "Bamboo Round Neck T-shirt for Men",
-          "size": "S",
-          "colour": "Pitch Black",
-          "unitPriceRupees": 990,
-          "unitPricePaise": 99000,
-          "quantity": 1,
-          "lineTotalRupees": 990,
-          "lineTotalPaise": 99000,
-          "image": "/images/products/heelium-men-tee-black.png"
-        }
-      ],
-      "addressSnapshot": {
-        "recipientName": "Priya Sharma",
-        "addressLine1": "42 Lotus Enclave",
-        "city": "Bengaluru",
-        "state": "Karnataka",
-        "postalCode": "560038",
-        "country": "India",
-        "phone": "+91 9123456789"
-      },
-      "deliveryInstructions": "",
-      "subtotalPaise": 99000,
-      "subtotalRupees": 990,
-      "discountPaise": 0,
-      "discountRupees": 0,
-      "couponCode": null,
-      "shippingPaise": 9900,
-      "shippingFeeRupees": 99,
-      "totalPaise": 108900,
-      "totalAmount": 1089,
-      "currency": "INR",
-      "paymentStatus": "Paid",
-      "orderStatus": "shipped",
-      "trackingNumber": "BD-516281578IN",
-      "courierPartner": "BlueDart Express",
-      "createdAt": "2026-11-24T12:50:09.599Z",
-      "statusHistory": [
-        {
-          "status": "shipped",
-          "actor": "admin",
-          "actorRole": "order_manager",
-          "note": "Dispatched via BlueDart Express Air",
-          "timestamp": "2026-11-24T12:50:45.521Z"
-        }
-      ]
-    },
-    {
-      "_id": "ord_1795523910323_sxj5zq",
-      "orderNumber": "BH-2026-5200",
-      "userId": "6b05854621f85d1b70737a2a",
-      "guestEmail": "test_user_1795523909974@bamboohemp.com",
-      "itemsSnapshot": [
-        {
-          "productId": "6b05836fbcb6b6b43c132546",
-          "variantId": "6b05836fbcb6b6b43c132548",
-          "sku": "BAMBOO-R-S-PIT",
-          "name": "Bamboo Round Neck T-shirt for Men",
-          "size": "S",
-          "colour": "Pitch Black",
-          "unitPriceRupees": 990,
-          "unitPricePaise": 99000,
-          "quantity": 2,
-          "lineTotalRupees": 1980,
-          "lineTotalPaise": 198000,
-          "image": "/images/products/heelium-men-tee-black.png"
-        }
-      ],
-      "addressSnapshot": {
-        "recipientName": "Test Developer",
-        "addressLine1": "123 Green Lane",
-        "city": "Bengaluru",
-        "state": "Karnataka",
-        "postalCode": "560001",
-        "country": "India",
-        "phone": "+91 9999900000"
-      },
-      "deliveryInstructions": "",
-      "subtotalPaise": 198000,
-      "subtotalRupees": 1980,
-      "discountPaise": 0,
-      "discountRupees": 0,
-      "couponCode": null,
-      "shippingPaise": 0,
-      "shippingFeeRupees": 0,
-      "totalPaise": 198000,
-      "totalAmount": 1980,
-      "currency": "INR",
-      "paymentStatus": "Paid",
-      "orderStatus": "shipped",
-      "trackingNumber": "BD-579551477IN",
-      "courierPartner": "BlueDart Express",
-      "createdAt": "2026-11-24T12:38:30.323Z"
-    },
-    {
-      "_id": "ord_1795523860502_894r4p",
-      "orderNumber": "BH-2026-8725",
-      "userId": null,
-      "guestEmail": "guest@example.com",
-      "itemsSnapshot": [
-        {
-          "productId": "6b05836fbcb6b6b43c132546",
-          "variantId": "6b05836fbcb6b6b43c132548",
-          "sku": "BAMBOO-R-S-PIT",
-          "name": "Bamboo Round Neck T-shirt for Men",
-          "size": "S",
-          "colour": "Pitch Black",
-          "unitPriceRupees": 990,
-          "unitPricePaise": 99000,
-          "quantity": 2,
-          "lineTotalRupees": 1980,
-          "lineTotalPaise": 198000,
-          "image": "/images/products/heelium-men-tee-black.png"
-        }
-      ],
-      "addressSnapshot": {
-        "recipientName": "Test Developer",
-        "addressLine1": "123 Green Lane",
-        "city": "Bengaluru",
-        "state": "Karnataka",
-        "postalCode": "560001",
-        "country": "India",
-        "phone": "+91 9999900000"
-      },
-      "deliveryInstructions": "",
-      "subtotalPaise": 198000,
-      "subtotalRupees": 1980,
-      "discountPaise": 0,
-      "discountRupees": 0,
-      "couponCode": null,
-      "shippingPaise": 0,
-      "shippingFeeRupees": 0,
-      "totalPaise": 198000,
-      "totalAmount": 1980,
-      "currency": "INR",
-      "paymentStatus": "Paid",
-      "orderStatus": "Placed",
-      "trackingNumber": "BD-537692392IN",
-      "courierPartner": "BlueDart Express",
-      "createdAt": "2026-11-24T12:37:40.502Z"
+      "createdAt": "2026-11-24T13:51:43.671Z"
     }
   ],
   "inventoryMovements": [
     {
-      "_id": "inv_1795524725300_fd3x5p",
-      "variantId": "6b05836fbcb6b6b43c132548",
-      "sku": "BAMBOO-R-S-PIT",
-      "movementType": "purchase_receipt",
-      "quantityChange": 25,
-      "quantityBefore": 25,
-      "quantityAfter": 50,
-      "reason": "purchase_receipt",
-      "referenceType": "admin_adjustment",
-      "actorName": "admin",
-      "createdAt": "2026-11-24T12:52:05.300Z"
-    },
-    {
-      "_id": "inv_1795524645507_rhz28i",
-      "variantId": "6b05836fbcb6b6b43c132548",
-      "sku": "BAMBOO-R-S-PIT",
-      "movementType": "purchase_receipt",
-      "quantityChange": 25,
-      "quantityBefore": null,
-      "quantityAfter": 25,
-      "reason": "purchase_receipt",
-      "referenceType": "admin_adjustment",
-      "actorName": "admin",
-      "createdAt": "2026-11-24T12:50:45.507Z"
-    },
-    {
-      "_id": "inv_1795524609470_fovgnnr",
-      "variantId": "6b05836fbcb6b6b43c132548",
+      "_id": "inv_1795528303550_4966u",
+      "variantId": "6b0596630c9ad5a03095e460",
       "sku": "BAMBOO-R-S-PIT",
       "movementType": "purchase_receipt",
       "quantityChange": 25,
@@ -4185,72 +3953,12 @@
       "reason": "purchase_receipt",
       "referenceType": "admin_adjustment",
       "actorName": "admin",
-      "createdAt": "2026-11-24T12:50:09.470Z"
+      "createdAt": "2026-11-24T13:51:43.550Z"
     }
   ],
   "auditLogs": [
     {
-      "_id": "aud_1795524725316",
-      "actorRole": "order_manager",
-      "action": "order.status_update",
-      "resourceType": "Order",
-      "resourceId": "BH-2026-9455",
-      "before": {
-        "status": "shipped"
-      },
-      "after": {
-        "status": "shipped",
-        "note": "Dispatched via BlueDart Express Air"
-      },
-      "createdAt": "2026-11-24T12:52:05.316Z"
-    },
-    {
-      "_id": "aud_1795524725300",
-      "actorRole": "catalogue_manager",
-      "action": "stock.adjust",
-      "resourceType": "Variant",
-      "resourceId": "BAMBOO-R-S-PIT",
-      "before": {
-        "stockQuantity": 25
-      },
-      "after": {
-        "stockQuantity": 50,
-        "reason": "purchase_receipt"
-      },
-      "createdAt": "2026-11-24T12:52:05.300Z"
-    },
-    {
-      "_id": "aud_1795524645521",
-      "actorRole": "order_manager",
-      "action": "order.status_update",
-      "resourceType": "Order",
-      "resourceId": "BH-2026-2499",
-      "before": {
-        "status": "shipped"
-      },
-      "after": {
-        "status": "shipped",
-        "note": "Dispatched via BlueDart Express Air"
-      },
-      "createdAt": "2026-11-24T12:50:45.521Z"
-    },
-    {
-      "_id": "aud_1795524645507",
-      "actorRole": "catalogue_manager",
-      "action": "stock.adjust",
-      "resourceType": "Variant",
-      "resourceId": "BAMBOO-R-S-PIT",
-      "before": {
-        "stockQuantity": null
-      },
-      "after": {
-        "stockQuantity": 25,
-        "reason": "purchase_receipt"
-      },
-      "createdAt": "2026-11-24T12:50:45.507Z"
-    },
-    {
-      "_id": "aud_1795524609470",
+      "_id": "aud_1795528303551",
       "actorRole": "catalogue_manager",
       "action": "stock.adjust",
       "resourceType": "Variant",
@@ -4260,7 +3968,7 @@
         "stockQuantity": null,
         "reason": "purchase_receipt"
       },
-      "createdAt": "2026-11-24T12:50:09.470Z"
+      "createdAt": "2026-11-24T13:51:43.551Z"
     },
     {
       "_id": "audit_1",
@@ -4275,7 +3983,7 @@
         "totalProducts": 6,
         "totalCategories": 4
       },
-      "createdAt": "2026-11-17T12:37:39.783Z"
+      "createdAt": "2026-11-17T13:51:42.771Z"
     },
     {
       "_id": "audit_2",
@@ -4291,7 +3999,7 @@
       "after": {
         "status": "active"
       },
-      "createdAt": "2026-11-18T12:37:39.783Z"
+      "createdAt": "2026-11-18T13:51:42.771Z"
     }
   ],
   "settings": {

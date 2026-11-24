@@ -12,6 +12,11 @@ export default function AdminOrdersPage() {
 
   useEffect(() => {
     setData(api.getAdminData());
+    if (typeof api.syncWithBackend === "function") {
+      api.syncWithBackend().then((fresh) => {
+        if (fresh) setData(fresh);
+      });
+    }
   }, []);
 
   const handleTransition = (orderId, newStatus) => {

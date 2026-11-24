@@ -42,7 +42,11 @@ export default function LoginForm() {
 
     const res = await login(formData.email, formData.password);
     if (res.success) {
-      router.push("/account");
+      if (res.user?.role === "admin" || res.user?.role === "super_admin") {
+        router.push("/admin");
+      } else {
+        router.push("/account");
+      }
     }
   }
 
@@ -55,7 +59,11 @@ export default function LoginForm() {
       const res = await login(email, "SecurePass123!");
       setSocialLoading(null);
       if (res.success) {
-        router.push("/account");
+        if (res.user?.role === "admin" || res.user?.role === "super_admin") {
+          router.push("/admin");
+        } else {
+          router.push("/account");
+        }
       }
     }, 600);
   }
@@ -68,6 +76,25 @@ export default function LoginForm() {
         <p className={styles.subtitle}>
           Sign in to access your orders, saved addresses, and member-exclusive perks.
         </p>
+
+        <div style={{
+          marginTop: "1rem",
+          padding: "0.75rem 1rem",
+          background: "#F4F6F4",
+          border: "1px solid #D6E0D6",
+          borderRadius: "8px",
+          fontSize: "0.8125rem",
+          lineHeight: "1.4",
+          textAlign: "left"
+        }}>
+          <div style={{ fontWeight: 600, color: "#1E412D", marginBottom: "4px" }}>Test Credentials for Company Review:</div>
+          <div style={{ color: "#3A453A" }}>
+            🛡️ <strong>Admin:</strong> <code>admin@bamboohemp.com</code> / <code>Admin@12345</code>
+          </div>
+          <div style={{ color: "#3A453A", marginTop: "2px" }}>
+            👤 <strong>Customer:</strong> <code>customer@bamboohemp.com</code> / <code>Customer@12345</code>
+          </div>
+        </div>
       </div>
 
       {error && (

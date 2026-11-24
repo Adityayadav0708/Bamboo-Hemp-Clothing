@@ -580,9 +580,9 @@ class StoreService {
     if (search) {
       const q = search.toLowerCase().trim();
       items = items.filter(p =>
-        p.name.toLowerCase().includes(q) ||
-        p.description.toLowerCase().includes(q) ||
-        p.tags.some(t => t.toLowerCase().includes(q))
+        (p.name && p.name.toLowerCase().includes(q)) ||
+        (p.description && p.description.toLowerCase().includes(q)) ||
+        (p.tags && Array.isArray(p.tags) && p.tags.some(t => typeof t === 'string' && t.toLowerCase().includes(q)))
       );
     }
 
@@ -591,7 +591,10 @@ class StoreService {
     }
 
     if (color) {
-      items = items.filter(p => p.variants && p.variants.some(v => v.colour.name.toLowerCase().includes(color.toLowerCase())));
+      items = items.filter(p => p.variants && p.variants.some(v => {
+        const cName = v.colour?.name || v.color?.name || (typeof v.colour === 'string' ? v.colour : '');
+        return cName.toLowerCase().includes(color.toLowerCase());
+      }));
     }
 
     // Sorting
@@ -600,7 +603,11 @@ class StoreService {
     } else if (sort === 'price_desc') {
       items.sort((a, b) => (b.variants[0]?.pricePaise || 0) - (a.variants[0]?.pricePaise || 0));
     } else if (sort === 'popular') {
-      items.sort((a, b) => (b.tags.includes('bestseller') ? 1 : 0) - (a.tags.includes('bestseller') ? 1 : 0));
+      items.sort((a, b) => {
+        const bPop = b.tags && Array.isArray(b.tags) && b.tags.includes('bestseller') ? 1 : 0;
+        const aPop = a.tags && Array.isArray(a.tags) && a.tags.includes('bestseller') ? 1 : 0;
+        return bPop - aPop;
+      });
     }
 
     const total = items.length;
@@ -997,7 +1004,8 @@ class StoreService {
   // ── User Management ──
   getUserByEmail(email) {
     if (!email) return null;
-    return this.users.find(u => u.normalizedEmail === email.toLowerCase().trim());
+    const clean = email.toLowerCase().trim();
+    return this.users.find(u => (u.normalizedEmail || u.email || '').toLowerCase().trim() === clean);
   }
 
   getUserById(userId) {

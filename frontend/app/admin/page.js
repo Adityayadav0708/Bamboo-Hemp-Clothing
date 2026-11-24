@@ -10,6 +10,11 @@ export default function AdminOverviewPage() {
 
   useEffect(() => {
     setData(api.getAdminData());
+    if (typeof api.syncWithBackend === "function") {
+      api.syncWithBackend().then((fresh) => {
+        if (fresh) setData(fresh);
+      });
+    }
   }, []);
 
   const handleStatusChange = (orderId, newStatus) => {

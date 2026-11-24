@@ -15,8 +15,15 @@ export default function AccountLayout({ children, activeTab = "Dashboard" }) {
   const pathname = usePathname();
   const { user, logout } = useAuth();
 
-  const displayName = user?.name || "Demo Customer";
+  const displayName = user?.fullName || user?.name || "Demo Customer";
   const displayEmail = user?.email || "demo@example.com";
+
+  const navItems = [
+    ...NAV_ITEMS,
+    ...(user?.role === "admin" || user?.role === "super_admin"
+      ? [{ label: "Admin Console", href: "/admin", icon: "🛡️" }]
+      : []),
+  ];
 
   return (
     <div className={styles.wrapper}>
@@ -39,7 +46,7 @@ export default function AccountLayout({ children, activeTab = "Dashboard" }) {
 
             {/* Navigation links */}
             <nav className={styles.nav}>
-              {NAV_ITEMS.map((item) => {
+              {navItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
                   <Link

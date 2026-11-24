@@ -17,6 +17,15 @@ router.get('/version', (req, res) => res.json({ success: true, version: '2.0.0',
 router.post('/auth/register', authController.register);
 router.post('/auth/login', authController.login);
 router.get('/auth/me', requireAuth, authController.getMe);
+router.post('/auth/forgot-password', (req, res) => {
+  res.json({
+    success: true,
+    message: 'If an account matches this email, password reset instructions have been sent.'
+  });
+});
+router.post('/auth/logout', (req, res) => {
+  res.json({ success: true, message: 'Logged out successfully.' });
+});
 
 // ── Public Catalogue APIs (Section 53) ──
 router.get('/categories', catalogueController.getCategories);

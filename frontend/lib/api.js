@@ -275,6 +275,101 @@ export const api = {
     return getStorage("bh_admin_data", INITIAL_ADMIN_DATA);
   },
 
+  syncWithBackend: async () => {
+    if (!API_BASE || typeof window === "undefined") return null;
+    try {
+      const token = localStorage.getItem("bh_auth_token");
+      const headers = {
+        "Content-Type": "application/json",
+        ...(token ? { Authorization: `Bearer ${token}` } : {})
+      };
+
+      const [resMetrics, resProds, resInv, resOrders, resLogs] = await Promise.allSettled([
+        fetch(`${API_BASE}/admin/metrics`, { headers }).then(r => r.json()),
+        fetch(`${API_BASE}/admin/products`, { headers }).then(r => r.json()),
+        fetch(`${API_BASE}/admin/inventory`, { headers }).then(r => r.json()),
+        fetch(`${API_BASE}/admin/orders`, { headers }).then(r => r.json()),
+        fetch(`${API_BASE}/admin/audit-logs`, { headers }).then(r => r.json())
+      ]);
+
+      const data = getStorage("bh_admin_data", INITIAL_ADMIN_DATA);
+
+      if (resMetrics.status === "fulfilled" && resMetrics.value?.success && resMetrics.value.data) {
+        data.kpi = {
+          grossSalesPaise: resMetrics.value.data.grossSalesPaise || data.kpi.grossSalesPaise,
+          totalOrders: resMetrics.value.data.totalOrders !== undefined ? resMetrics.value.data.totalOrders : data.kpi.totalOrders,
+          pendingFulfillmentCount: resMetrics.value.data.pendingFulfillmentCount !== undefined ? resMetrics.value.data.pendingFulfillmentCount : data.kpi.pendingFulfillmentCount,
+          lowStockCount: resMetrics.value.data.lowStockCount !== undefined ? resMetrics.value.data.lowStockCount : data.kpi.lowStockCount,
+        };
+      }
+
+      if (resProds.status === "fulfilled" && resProds.value?.success && Array.isArray(resProds.value.data) && resProds.value.data.length > 0) {
+        data.products = resProds.value.data.map(p => ({
+          id: p._id || p.id,
+          name: p.name,
+          slug: p.slug,
+          category: Array.isArray(p.categoryIds) ? p.categoryIds[0] : (p.category || 'bamboo-tshirts'),
+          fabricType: p.fabricType || 'bamboo',
+          fabricComposition: Array.isArray(p.fabricComposition) ? p.fabricComposition : [{ material: 'Bamboo Viscose', percentage: 95 }, { material: 'Elastane', percentage: 5 }],
+          pricePaise: p.variants?.[0]?.pricePaise || 99000,
+          compareAtPricePaise: p.variants?.[0]?.compareAtPricePaise || 169900,
+          status: p.status || 'active',
+          image: p.images?.[0]?.url || '/images/products/heelium-men-tee-black.png',
+          variantsCount: p.variants?.length || 4,
+          totalStock: (p.variants || []).reduce((acc, v) => acc + (v.stockQuantity || 0), 0)
+        }));
+      }
+
+      if (resInv.status === "fulfilled" && resInv.value?.success && Array.isArray(resInv.value.data) && resInv.value.data.length > 0) {
+        data.inventory = resInv.value.data.map(v => ({
+          id: v.variantId || v._id,
+          sku: v.sku,
+          productName: v.productName || 'Bamboo Essential',
+          size: v.size,
+          colour: v.colour?.name || v.color?.name || (typeof v.colour === 'string' ? v.colour : 'Natural'),
+          stockQuantity: v.stockQuantity,
+          reservedQuantity: v.reservedQuantity || 0,
+          threshold: 5,
+          pricePaise: v.pricePaise || 99000
+        }));
+      }
+
+      if (resOrders.status === "fulfilled" && resOrders.value?.success && Array.isArray(resOrders.value.data) && resOrders.value.data.length > 0) {
+        data.orders = resOrders.value.data.map(o => ({
+          id: o._id || o.id,
+          orderNumber: o.orderNumber || o._id,
+          customerName: o.addressSnapshot?.recipientName || o.shippingAddress?.recipientName || o.customerName || 'Customer',
+          customerEmail: o.guestEmail || o.customerEmail || 'customer@example.com',
+          phone: o.shippingAddress?.phone || o.phone || '',
+          totalPaise: o.totalAmount ? Math.round(o.totalAmount * 100) : (o.totalPaise || 149900),
+          paymentStatus: (o.paymentStatus || 'paid').toLowerCase(),
+          orderStatus: (o.orderStatus || 'confirmed').toLowerCase(),
+          shippingCity: `${o.shippingAddress?.city || 'Bengaluru'}, ${o.shippingAddress?.state || 'Karnataka'}`,
+          itemSummary: (o.items || []).map(i => `${i.name} (${i.size}) x ${i.quantity}`).join(', ') || '1 Item',
+          createdAt: o.createdAt || new Date().toISOString()
+        }));
+      }
+
+      if (resLogs.status === "fulfilled" && resLogs.value?.success && Array.isArray(resLogs.value.data) && resLogs.value.data.length > 0) {
+        data.auditLogs = resLogs.value.data.map(l => ({
+          id: l._id || l.id,
+          timestamp: l.createdAt || l.timestamp,
+          actorRole: l.actorRole || 'admin',
+          actorEmail: l.actorEmail || l.actor || 'admin@bamboohemp.com',
+          action: l.action,
+          resourceType: l.resourceType || 'Resource',
+          resourceId: l.resourceId || '',
+          summary: l.summary || `${l.action} on ${l.resourceType} (${l.resourceId})`
+        }));
+      }
+
+      setStorage("bh_admin_data", data);
+      return data;
+    } catch {
+      return null;
+    }
+  },
+
   updateOrderStatus: (orderId, newStatus) => {
     const data = getStorage("bh_admin_data", INITIAL_ADMIN_DATA);
     const order = data.orders.find((o) => o.id === orderId);
@@ -287,7 +382,7 @@ export const api = {
       id: `log-${Date.now()}`,
       timestamp: new Date().toISOString(),
       actorRole: "super_admin",
-      actorEmail: "admin@bamboohemp.in",
+      actorEmail: "admin@bamboohemp.com",
       action: "order.status_transition",
       resourceType: "Order",
       resourceId: orderId,
@@ -295,6 +390,19 @@ export const api = {
     });
 
     setStorage("bh_admin_data", data);
+
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("bh_auth_token");
+      fetch(`${API_BASE}/admin/orders/${orderId}/status`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {})
+        },
+        body: JSON.stringify({ status: newStatus })
+      }).catch(() => {});
+    }
+
     return order;
   },
 
@@ -313,7 +421,7 @@ export const api = {
       id: `log-${Date.now()}`,
       timestamp: new Date().toISOString(),
       actorRole: "order_manager",
-      actorEmail: "admin@bamboohemp.in",
+      actorEmail: "admin@bamboohemp.com",
       action: "inventory.stock_adjustment",
       resourceType: "Variant",
       resourceId: variantId,
@@ -321,6 +429,19 @@ export const api = {
     });
 
     setStorage("bh_admin_data", data);
+
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("bh_auth_token");
+      fetch(`${API_BASE}/admin/inventory/adjustments`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {})
+        },
+        body: JSON.stringify({ variantId, changeAmount: delta, reason })
+      }).catch(() => {});
+    }
+
     return variant;
   },
 
@@ -334,7 +455,7 @@ export const api = {
       id: `log-${Date.now()}`,
       timestamp: new Date().toISOString(),
       actorRole: "catalogue_manager",
-      actorEmail: "admin@bamboohemp.in",
+      actorEmail: "admin@bamboohemp.com",
       action: "product.price_update",
       resourceType: "Product",
       resourceId: productId,
