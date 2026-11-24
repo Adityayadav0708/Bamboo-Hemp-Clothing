@@ -249,7 +249,7 @@ export default function ProductDetailsClient({ product, relatedProducts = [] }) 
                     <p className={styles.specLabel}>Fabric Blend:</p>
                     <p className={styles.fabricCompositionText}>{product.fabric}</p>
                     <p className={styles.ecoPill}>
-                      🌿 Certified OEKO-TEX Standard 100 · Non-toxic &amp; skin-friendly dyes
+                      🌿 Non-toxic &amp; skin-friendly natural dyes
                     </p>
                   </div>
                 )}

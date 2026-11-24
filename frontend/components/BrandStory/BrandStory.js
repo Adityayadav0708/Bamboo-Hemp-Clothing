@@ -18,8 +18,8 @@ export default function BrandStory() {
             />
           </div>
           <div className={styles.statCard} aria-hidden="true">
-            <strong>100% Organic</strong>
-            <span>OEKO-TEX Certified Fibers</span>
+            <strong>100% Natural</strong>
+            <span>Eco-Friendly Natural Fibers</span>
           </div>
         </div>
 

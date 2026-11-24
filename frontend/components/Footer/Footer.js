@@ -40,7 +40,7 @@ export default function Footer() {
         <div className={styles.certContainer}>
           <div className={styles.certItem}>
             <span>🌿</span>
-            <span>OEKO-TEX® Standard 100 Certified</span>
+            <span>100% Natural &amp; Skin-Friendly</span>
           </div>
           <div className={styles.certItem}>
             <span>❄️</span>

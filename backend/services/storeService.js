@@ -56,7 +56,7 @@ const INITIAL_PRODUCTS = [
       { fibre: 'Organic Bamboo Viscose', percentage: 95 },
       { fibre: 'Elastane', percentage: 5 }
     ],
-    materialDetails: 'OEKO-TEX® Standard 100 certified micro-gap bamboo viscose. Hypoallergenic, static-free, and thermo-regulating.',
+    materialDetails: 'Pure micro-gap bamboo viscose. Hypoallergenic, static-free, and thermo-regulating.',
     shortDescription: 'Silky smooth, cooling crew neck designed for all-day breathability in hot climates.',
     description: 'Engineered with round-fibre bamboo filaments, this tee drapes effortlessly without clinging. Features flatlock anti-chafing seams and moisture-wicking technology to keep your skin 2°C cooler throughout the day.',
     careInstructions: ['Machine wash gentle 30°C', 'Do not bleach', 'Dry flat in shade', 'Iron on low reverse'],
@@ -173,7 +173,7 @@ const INITIAL_PRODUCTS = [
       { fibre: 'Organic Bamboo Viscose', percentage: 95 },
       { fibre: 'Elastane', percentage: 5 }
     ],
-    materialDetails: '360° cooling mesh waistband with anti-ride-up contoured pouch. OEKO-TEX certified.',
+    materialDetails: '360° cooling mesh waistband with anti-ride-up contoured pouch. Hypoallergenic & skin-friendly.',
     shortDescription: 'Bamboo Cool signature multi-pack trunks: friction-free, sweat-resistant, and ultra-cooling.',
     description: 'Built for active all-day wear. The no-roll waistband and ergonomic 3D pouch prevent chafing while bamboo viscose wicks sweat 4x faster than cotton. Pack of 3 matching earth tones.',
     careInstructions: ['Machine wash gentle 30°C', 'Wash darks separately', 'Do not tumble dry'],

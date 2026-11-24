@@ -79,7 +79,7 @@ export default function AboutPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "var(--space-6)", textAlign: "left" }}>
             <div>
               <strong style={{ fontSize: "var(--text-base)", color: "var(--color-secondary)", display: "block", marginBottom: "4px" }}>01. Zero Harsh Toxins</strong>
-              <p style={{ fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.8)", margin: 0 }}>OEKO-TEX Standard certified dyes and closed-loop non-toxic washing.</p>
+              <p style={{ fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.8)", margin: 0 }}>Safe, skin-friendly dyes and closed-loop non-toxic washing.</p>
             </div>
             <div>
               <strong style={{ fontSize: "var(--text-base)", color: "var(--color-secondary)", display: "block", marginBottom: "4px" }}>02. Plastic-Free Packaging</strong>

@@ -2191,7 +2191,7 @@ export const MOCK_PRODUCTS = [
       ],
     },
     faqs: [
-      { q: "Is this suitable for sensitive or allergy-prone skin?", a: "Yes. Bamboo viscose is dermatologically tested, OEKO-TEX certified, and naturally non-irritating." },
+      { q: "Is this suitable for sensitive or allergy-prone skin?", a: "Yes. Bamboo viscose is naturally hypoallergenic, gentle on skin, and non-irritating." },
     ],
   },
 ];
