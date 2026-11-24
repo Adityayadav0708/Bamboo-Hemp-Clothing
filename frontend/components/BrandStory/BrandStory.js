@@ -10,7 +10,7 @@ export default function BrandStory() {
         <div className={styles.imageWrap}>
           <div className={styles.imgContainer}>
             <Image
-              src="/images/hd/brand_story_hd.jpg"
+              src="/images/home/hd/brand_story_hd.jpg"
               alt="Crafting sustainable bamboo and hemp everyday essentials in India"
               fill
               className={styles.img}

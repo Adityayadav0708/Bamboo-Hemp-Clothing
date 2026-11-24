@@ -40,7 +40,7 @@ export const MOCK_PRODUCTS = [
       tag: "KNOW WHAT YOU'RE WEARING",
       headline: "Three fibres. One considered blend.",
       subtext: "Bamboo for a soft feel. Cotton for structure. Spandex for movement. The difference is the blend—not simply swapping one fibre for another.",
-      image: "/images/features/fabric_blend_macro.jpg",
+      image: "/images/products/features/fabric_blend_macro.jpg",
       breakdown: [
         { percent: "67%", fiber: "Bamboo", role: "soft feel" },
         { percent: "28%", fiber: "Cotton", role: "structure" },
@@ -53,21 +53,21 @@ export const MOCK_PRODUCTS = [
         title: "A closer neckline. A neater fit.",
         desc: "Our specially constructed neck rib sits closer around your neck. It helps keep the neckline centred, instead of leaving a wide opening that hangs to one side.",
         tag: "Specially constructed, close-fitting neck rib",
-        image: "/images/features/neckline_detail.png",
+        image: "/images/products/features/neckline_detail.png",
       },
       {
         num: "02",
         title: "Reach. Bend. Keep moving.",
         desc: "A tee shouldn't make everyday movement feel restrictive. Four-way stretch gives the fabric room to move with you.",
         tag: "Bamboo softness, with spandex for stretch",
-        image: "/images/features/stretch_detail.jpg",
+        image: "/images/products/features/stretch_detail.jpg",
       },
     ],
     stylingNote: {
       tag: "MAKE IT PART OF YOUR EVERYDAY",
       headline: "One easy layer. More ways to wear it.",
       subtext: "Black, blue, grey or white. Wear it on its own with jeans, or layer it under an open shirt. The same soft bamboo blend in every colour.",
-      image: "/images/features/hangers_colorways.png",
+      image: "/images/products/features/hangers_colorways.png",
     },
     fitGuide: {
       headline: "Find your everyday fit.",
@@ -132,7 +132,7 @@ export const MOCK_PRODUCTS = [
       tag: "KNOW WHAT YOU'RE WEARING",
       headline: "Structured pique. Natural bamboo sheen.",
       subtext: "70% bamboo yarn provides silky thermal management, while tightly spun cotton maintains a crisp, non-collapsing placket and collar.",
-      image: "/images/features/fabric_blend_macro.jpg",
+      image: "/images/products/features/fabric_blend_macro.jpg",
       breakdown: [
         { percent: "70%", fiber: "Bamboo Viscose", role: "cooling breathability" },
         { percent: "25%", fiber: "Organic Cotton", role: "collar structure" },
@@ -152,14 +152,14 @@ export const MOCK_PRODUCTS = [
         title: "Side-split vents for mobility.",
         desc: "Tailored hem with subtle side slits allows seamless tucking or casual untucked wear.",
         tag: "Reinforced bar-tack side slits",
-        image: "/images/features/stretch_detail.jpg",
+        image: "/images/products/features/stretch_detail.jpg",
       },
     ],
     stylingNote: {
       tag: "WORK TO WEEKEND",
       headline: "Elevated comfort for every setting.",
       subtext: "Wear it under a blazer for weekday meetings or pair it with chinos for weekend dining.",
-      image: "/images/features/hangers_colorways.png",
+      image: "/images/products/features/hangers_colorways.png",
     },
     fitGuide: {
       headline: "Polo Size Guide",
@@ -212,7 +212,7 @@ export const MOCK_PRODUCTS = [
       tag: "KNOW WHAT YOU'RE WEARING",
       headline: "Fluid drape. Unmatched softness.",
       subtext: "Designed with smooth, round fiber cross-sections that eliminate surface friction against sensitive skin.",
-      image: "/images/features/fabric_blend_macro.jpg",
+      image: "/images/products/features/fabric_blend_macro.jpg",
       breakdown: [
         { percent: "68%", fiber: "Bamboo Viscose", role: "weightless drape" },
         { percent: "27%", fiber: "Organic Cotton", role: "opaque coverage" },
@@ -232,14 +232,14 @@ export const MOCK_PRODUCTS = [
         title: "Non-see-through knit.",
         desc: "Woven at optimal GSM to ensure complete opacity in Pristine White while retaining airflow.",
         tag: "180 GSM cloud-weight knit",
-        image: "/images/features/stretch_detail.jpg",
+        image: "/images/products/features/stretch_detail.jpg",
       },
     ],
     stylingNote: {
       tag: "EFFORTLESS STYLING",
       headline: "The foundational layer you'll reach for daily.",
       subtext: "Pairs seamlessly with linen trousers, high-waisted denim, or worn loosely around the home.",
-      image: "/images/features/hangers_colorways.png",
+      image: "/images/products/features/hangers_colorways.png",
     },
     fitGuide: {
       headline: "Women's T-Shirt Sizing",
@@ -288,7 +288,7 @@ export const MOCK_PRODUCTS = [
       tag: "KNOW WHAT YOU'RE WEARING",
       headline: "Fluid motion. Second-skin comfort.",
       subtext: "95% bamboo viscose blended with 5% spandex for flexible shape retention throughout yoga, active movement, and sleep.",
-      image: "/images/features/fabric_blend_macro.jpg",
+      image: "/images/products/features/fabric_blend_macro.jpg",
       breakdown: [
         { percent: "95%", fiber: "Bamboo Viscose", role: "cooling hand-feel" },
         { percent: "5%", fiber: "Spandex", role: "4-way contour stretch" },
@@ -307,7 +307,7 @@ export const MOCK_PRODUCTS = [
       tag: "ACTIVE & LOUNGE",
       headline: "Cooling base layer.",
       subtext: "Designed to layer under sheer tops or wear standalone in warm weather.",
-      image: "/images/features/hangers_colorways.png",
+      image: "/images/products/features/hangers_colorways.png",
     },
     fitGuide: {
       headline: "Tank Top Fit Guide",
@@ -337,8 +337,8 @@ export const MOCK_PRODUCTS = [
     originalPrice: 2299,
     currency: "INR",
     images: [
-      "/images/bestseller_2.png",
-      "/images/hd/neutral_tee_hd.jpg",
+      "/images/home/bestseller_2.png",
+      "/images/home/hd/neutral_tee_hd.jpg",
     ],
     colors: [
       { name: "Natural Sand", hex: "#D9D1C2", slug: "natural-sand" },
@@ -360,7 +360,7 @@ export const MOCK_PRODUCTS = [
       tag: "KNOW WHAT YOU'RE WEARING",
       headline: "Two regenerative bast fibres. Built to outlast.",
       subtext: "Himalayan hemp bast fibers provide unmatched tensile strength and UV blocking. Organic cotton softens the hand-feel from wear one.",
-      image: "/images/hd/linen_texture_hd.jpg",
+      image: "/images/home/hd/linen_texture_hd.jpg",
       breakdown: [
         { percent: "55%", fiber: "Himalayan Hemp", role: "tensile strength & UPF 50+" },
         { percent: "45%", fiber: "Organic Cotton", role: "familiar soft structure" },
@@ -372,21 +372,21 @@ export const MOCK_PRODUCTS = [
         title: "Reinforced double-needle hem.",
         desc: "Built with heavy-duty organic thread that will not twist, torque, or fray.",
         tag: "4x stronger than commercial cotton",
-        image: "/images/bestseller_2.png",
+        image: "/images/home/bestseller_2.png",
       },
       {
         num: "02",
         title: "Naturally antimicrobial bast core.",
         desc: "Hemp fibers naturally resist mold, bacteria, and odors, meaning fewer washes per wear.",
         tag: "Rain-fed Himalayan crop, zero pesticides",
-        image: "/images/hd/neutral_tee_hd.jpg",
+        image: "/images/home/hd/neutral_tee_hd.jpg",
       },
     ],
     stylingNote: {
       tag: "HEIRLOOM DURABILITY",
       headline: "Relaxed drop-shoulder boxy cut.",
       subtext: "Structured drape that holds its silhouette without clinging in humid weather.",
-      image: "/images/hd/folded_tees_hd.jpg",
+      image: "/images/home/hd/folded_tees_hd.jpg",
     },
     fitGuide: {
       headline: "Hemp Boxy Fit Guide",
@@ -414,8 +414,8 @@ export const MOCK_PRODUCTS = [
     originalPrice: 1999,
     currency: "INR",
     images: [
-      "/images/hd/green_tee_hd.jpg",
-      "/images/hd/folded_tees_hd.jpg",
+      "/images/home/hd/green_tee_hd.jpg",
+      "/images/home/hd/folded_tees_hd.jpg",
     ],
     colors: [
       { name: "Pine Green", hex: "#244B3C", slug: "pine-green" },
@@ -436,7 +436,7 @@ export const MOCK_PRODUCTS = [
       tag: "KNOW WHAT YOU'RE WEARING",
       headline: "Pure bast performance.",
       subtext: "Grown naturally in the Himalayan foothills using 70% less water than industrial cotton.",
-      image: "/images/hd/green_tee_hd.jpg",
+      image: "/images/home/hd/green_tee_hd.jpg",
       breakdown: [
         { percent: "55%", fiber: "Hemp Bast", role: "heat dissipation" },
         { percent: "45%", fiber: "Organic Cotton", role: "pure softness" },
@@ -448,14 +448,14 @@ export const MOCK_PRODUCTS = [
         title: "Reinforced collar band.",
         desc: "Retains its clean circular shape wash after wash.",
         tag: "Shape-lock crew neck rib",
-        image: "/images/hd/folded_tees_hd.jpg",
+        image: "/images/home/hd/folded_tees_hd.jpg",
       },
     ],
     stylingNote: {
       tag: "TIMELESS CREW",
       headline: "Built for lifetime wear.",
       subtext: "Earthy botanical tones that look natural in every season.",
-      image: "/images/hd/folded_tees_hd.jpg",
+      image: "/images/home/hd/folded_tees_hd.jpg",
     },
     fitGuide: {
       headline: "Crew Neck Sizing",
@@ -527,7 +527,7 @@ export const MOCK_PRODUCTS = [
     tag: "KNOW WHAT YOU'RE WEARING",
     headline: "100% Pure Himalayan bast fiber. Zero compromise.",
     subtext: "Grown in high-altitude terrain with rain-fed irrigation. Naturally antibacterial, moisture-wicking, and breathable in warm Indian climates.",
-    image: "/images/features/fabric_blend_macro.jpg",
+    image: "/images/products/features/fabric_blend_macro.jpg",
     breakdown: [
       {
         percent: "100%",
@@ -566,7 +566,7 @@ export const MOCK_PRODUCTS = [
     tag: "EARTHY ELEVATION",
     headline: "Earth-toned drape for effortless layering.",
     subtext: "Earthy hues inspired by the mountain terrain. Wear it solo with washed denim or layered under an unbuttoned overshirt.",
-    image: "/images/features/hangers_colorways.png"
+    image: "/images/products/features/hangers_colorways.png"
   },
   fitGuide: {
     headline: "Native Crew Sizing",
@@ -704,7 +704,7 @@ export const MOCK_PRODUCTS = [
     tag: "KNOW WHAT YOU'RE WEARING",
     headline: "Hemp durability. Organic cotton softness.",
     subtext: "55% hemp bast provides structural drape and anti-odor longevity, while 45% organic ring-spun cotton delivers immediate everyday comfort.",
-    image: "/images/features/fabric_blend_macro.jpg",
+    image: "/images/products/features/fabric_blend_macro.jpg",
     breakdown: [
       {
         percent: "55%",
@@ -743,7 +743,7 @@ export const MOCK_PRODUCTS = [
     tag: "STREETWEAR VERSATILITY",
     headline: "Effortless casual styling with edge.",
     subtext: "Pair with cargo trousers, relaxed chinos, or summer shorts. Clean silhouette with standout vintage eyewear graphic.",
-    image: "/images/features/hangers_colorways.png"
+    image: "/images/products/features/hangers_colorways.png"
   },
   fitGuide: {
     headline: "Graphic Tee Fit Guide",
@@ -881,7 +881,7 @@ export const MOCK_PRODUCTS = [
     tag: "KNOW WHAT YOU'RE WEARING",
     headline: "60% Bast Hemp. 200 GSM Heavyweight drape.",
     subtext: "Dense yet breathable open cellular weave that falls straight and boxy, providing superior structural presence without clinging.",
-    image: "/images/features/fabric_blend_macro.jpg",
+    image: "/images/products/features/fabric_blend_macro.jpg",
     breakdown: [
       {
         percent: "60%",
@@ -920,7 +920,7 @@ export const MOCK_PRODUCTS = [
     tag: "STREETWEAR CAPSULE",
     headline: "Bold illustration with heavyweight drape.",
     subtext: "Style with wide-leg trousers, baggy jeans, or over a long-sleeve base layer for an elevated urban aesthetic.",
-    image: "/images/features/hangers_colorways.png"
+    image: "/images/products/features/hangers_colorways.png"
   },
   fitGuide: {
     headline: "Oversized Fit Guide",
@@ -1063,7 +1063,7 @@ export const MOCK_PRODUCTS = [
     tag: "KNOW WHAT YOU'RE WEARING",
     headline: "55% Mountain Hemp. 45% Organic Cotton.",
     subtext: "Natural thermal regulation that keeps skin cool in high humidity. Himalayan hemp bast fibers actively resist odor bacteria.",
-    image: "/images/features/fabric_blend_macro.jpg",
+    image: "/images/products/features/fabric_blend_macro.jpg",
     breakdown: [
       {
         percent: "55%",
@@ -1102,7 +1102,7 @@ export const MOCK_PRODUCTS = [
     tag: "DAILY ESSENTIAL",
     headline: "The tee that works as hard as you do.",
     subtext: "Deep natural forest and earth tones that look sharp with dark jeans or khaki chinos.",
-    image: "/images/features/hangers_colorways.png"
+    image: "/images/products/features/hangers_colorways.png"
   },
   fitGuide: {
     headline: "Everyday Crew Sizing",
@@ -1240,7 +1240,7 @@ export const MOCK_PRODUCTS = [
     tag: "KNOW WHAT YOU'RE WEARING",
     headline: "Intricate artwork on 200 GSM bast knit.",
     subtext: "Combines high-detail precision illustration with heavy-gauge bast durability. Will not pill or degrade across years of wear.",
-    image: "/images/features/fabric_blend_macro.jpg",
+    image: "/images/products/features/fabric_blend_macro.jpg",
     breakdown: [
       {
         percent: "55%",
@@ -1279,7 +1279,7 @@ export const MOCK_PRODUCTS = [
     tag: "ARTISAN STREETWEAR",
     headline: "Statement graphic with an earthy soul.",
     subtext: "Pair with relaxed sage trousers, light wash denim, or layered over a turtleneck in cooler months.",
-    image: "/images/features/hangers_colorways.png"
+    image: "/images/products/features/hangers_colorways.png"
   },
   fitGuide: {
     headline: "Dragon Boxy Sizing",
@@ -1418,7 +1418,7 @@ export const MOCK_PRODUCTS = [
     tag: "KNOW WHAT YOU'RE WEARING",
     headline: "Unisex silhouette. Regenerative bast blend.",
     subtext: "Designed to be worn by anyone, anywhere. Pre-washed with biodegradable enzymes to ensure maximum softness straight out of the box.",
-    image: "/images/features/fabric_blend_macro.jpg",
+    image: "/images/products/features/fabric_blend_macro.jpg",
     breakdown: [
       {
         percent: "55%",
@@ -1457,7 +1457,7 @@ export const MOCK_PRODUCTS = [
     tag: "RETRO STREETWEAR",
     headline: "Laidback confidence for everyday wear.",
     subtext: "Caramel brown hue pairs seamlessly with black cargo pants, light chinos, or denim skirts.",
-    image: "/images/features/hangers_colorways.png"
+    image: "/images/products/features/hangers_colorways.png"
   },
   fitGuide: {
     headline: "Unisex Oversized Sizing",
@@ -1601,7 +1601,7 @@ export const MOCK_PRODUCTS = [
     tag: "KNOW WHAT YOU'RE WEARING",
     headline: "Understated elegance. Pure bast breathability.",
     subtext: "Lightweight 180 GSM heather jersey with subtle natural nep texture that shows the organic character of Himalayan hemp.",
-    image: "/images/features/fabric_blend_macro.jpg",
+    image: "/images/products/features/fabric_blend_macro.jpg",
     breakdown: [
       {
         percent: "55%",
@@ -1640,7 +1640,7 @@ export const MOCK_PRODUCTS = [
     tag: "QUIET LUXURY",
     headline: "The understated essential for every capsule wardrobe.",
     subtext: "Dress it up under an unstructured blazer or pair down with linen shorts for weekend leisure.",
-    image: "/images/features/hangers_colorways.png"
+    image: "/images/products/features/hangers_colorways.png"
   },
   fitGuide: {
     headline: "Minimalist Crew Fit Guide",
@@ -1778,7 +1778,7 @@ export const MOCK_PRODUCTS = [
     tag: "KNOW WHAT YOU'RE WEARING",
     headline: "210 GSM Heavyweight bast. Extreme durability.",
     subtext: "Our densest hemp blend. Built for outdoor expeditions, travel, and rugged daily wear with UPF 50+ ultraviolet protection.",
-    image: "/images/features/fabric_blend_macro.jpg",
+    image: "/images/products/features/fabric_blend_macro.jpg",
     breakdown: [
       {
         percent: "55%",
@@ -1817,7 +1817,7 @@ export const MOCK_PRODUCTS = [
     tag: "OUTDOOR HERITAGE",
     headline: "Rugged durability with a modern conscience.",
     subtext: "Designed for mountain trails, road trips, and urban weekends. Pair with heavy denim or utility cargos.",
-    image: "/images/features/hangers_colorways.png"
+    image: "/images/products/features/hangers_colorways.png"
   },
   fitGuide: {
     headline: "Heavyweight Tee Sizing",
@@ -2208,7 +2208,7 @@ export function getProductBySlug(slug) {
         tag: "KNOW WHAT YOU'RE WEARING",
         headline: "Three fibres. One considered blend.",
         subtext: "Bamboo for a soft feel. Cotton for structure. Spandex for movement. The difference is the blend—not simply swapping one fibre for another.",
-        image: "/images/features/fabric_blend_macro.jpg",
+        image: "/images/products/features/fabric_blend_macro.jpg",
         breakdown: [
           { percent: "67%", fiber: "Bamboo", role: "soft feel" },
           { percent: "28%", fiber: "Cotton", role: "structure" },
@@ -2221,21 +2221,21 @@ export function getProductBySlug(slug) {
           title: "A closer neckline. A neater fit.",
           desc: "Our specially constructed neck rib sits closer around your neck. It helps keep the neckline centred, instead of leaving a wide opening that hangs to one side.",
           tag: "Specially constructed, close-fitting neck rib",
-          image: "/images/features/neckline_detail.png",
+          image: "/images/products/features/neckline_detail.png",
         },
         {
           num: "02",
           title: "Reach. Bend. Keep moving.",
           desc: "A tee shouldn't make everyday movement feel restrictive. Four-way stretch gives the fabric room to move with you.",
           tag: "Bamboo softness, with spandex for stretch",
-          image: "/images/features/stretch_detail.jpg",
+          image: "/images/products/features/stretch_detail.jpg",
         },
       ];
       p.stylingNote = {
         tag: "MAKE IT PART OF YOUR EVERYDAY",
         headline: "One easy layer. More ways to wear it.",
         subtext: "Black, blue, grey or white. Wear it on its own with jeans, or layer it under an open shirt.",
-        image: "/images/features/hangers_colorways.png",
+        image: "/images/products/features/hangers_colorways.png",
       };
       p.fitGuide = {
         headline: "Find your everyday fit.",
@@ -2257,7 +2257,7 @@ export function getProductBySlug(slug) {
         tag: "KNOW WHAT YOU'RE WEARING",
         headline: "Two regenerative bast fibres. Built to outlast.",
         subtext: "Himalayan hemp for unmatched durability and tensile strength. Organic cotton for familiar soft comfort. The natural cellular structure breathes freely in humid warmth.",
-        image: "/images/features/fabric_blend_macro.jpg",
+        image: "/images/products/features/fabric_blend_macro.jpg",
         breakdown: [
           { percent: "55%", fiber: "Himalayan Hemp", role: "tensile strength & UPF 50+" },
           { percent: "45%", fiber: "Organic Cotton", role: "soft structure & drape" },
@@ -2277,14 +2277,14 @@ export function getProductBySlug(slug) {
           title: "Pre-softened bast fiber weave.",
           desc: "Hemp bast fibers undergo a natural eco-enzyme softening process so it feels gentle against skin from day one, breaking in gracefully after every laundry cycle.",
           tag: "Naturally anti-microbial & UV blocking",
-          image: "/images/features/neckline_detail.png",
+          image: "/images/products/features/neckline_detail.png",
         },
       ];
       p.stylingNote = {
         tag: "HEIRLOOM DURABILITY",
         headline: "Relaxed drop-shoulder cut. More ways to style.",
         subtext: "Wear it solo on humid weekends or layer under a chore jacket. The dense natural drape holds clean lines without clinging.",
-        image: "/images/features/hangers_colorways.png",
+        image: "/images/products/features/hangers_colorways.png",
       };
       p.fitGuide = {
         headline: "Hemp Everyday Fit Guide",
@@ -2309,7 +2309,7 @@ export function getProductBySlug(slug) {
         tag: "KNOW WHAT YOU'RE WEARING",
         headline: "Micro-vented bamboo knit. Zero friction.",
         subtext: "Pure bamboo viscose delivers 3x the moisture absorption of cotton, paired with 5% elastane for an anatomical contour that moves seamlessly without bunching.",
-        image: "/images/features/fabric_blend_macro.jpg",
+        image: "/images/products/features/fabric_blend_macro.jpg",
         breakdown: [
           { percent: "95%", fiber: "Bamboo Viscose", role: "cooling & anti-odor" },
           { percent: "5%", fiber: "Elastane", role: "flexible stay-down hold" },
@@ -2329,14 +2329,14 @@ export function getProductBySlug(slug) {
           title: "Ergonomic 3D contour pouch.",
           desc: "Anatomically sculpted cup provides gentle support without restriction or compression, keeping you cool, dry, and friction-free all day.",
           tag: "4-way anti-ride-up leg construction",
-          image: "/images/features/stretch_detail.jpg",
+          image: "/images/products/features/stretch_detail.jpg",
         },
       ];
       p.stylingNote = {
         tag: "ALL-DAY INVISIBLE COMFORT",
         headline: "Your first layer should be your best layer.",
         subtext: "Engineered for 16-hour workdays, high-intensity workouts, and humid commutes with zero ride-up legs.",
-        image: "/images/features/hangers_colorways.png",
+        image: "/images/products/features/hangers_colorways.png",
       };
       p.fitGuide = {
         headline: "Men's Innerwear Fit Guide",
@@ -2361,7 +2361,7 @@ export function getProductBySlug(slug) {
         tag: "KNOW WHAT YOU'RE WEARING",
         headline: "Weightless second skin. Pure hypoallergenic comfort.",
         subtext: "Silky bamboo viscose protects sensitive skin from chafing, moisture buildup, and bacterial irritation, delivering cloud-like softness from dawn till dusk.",
-        image: "/images/features/fabric_blend_macro.jpg",
+        image: "/images/products/features/fabric_blend_macro.jpg",
         breakdown: [
           { percent: "95%", fiber: "Bamboo Viscose", role: "gentle breathability" },
           { percent: "5%", fiber: "Elastane", role: "no-pinch recovery" },
@@ -2381,14 +2381,14 @@ export function getProductBySlug(slug) {
           title: "100% Bamboo breathable gusset.",
           desc: "A double-layered, unbleached pure bamboo lining that breathes naturally and prevents moisture accumulation, providing clinical-level comfort.",
           tag: "Hypoallergenic double-layer bamboo lining",
-          image: "/images/features/stretch_detail.jpg",
+          image: "/images/products/features/stretch_detail.jpg",
         },
       ];
       p.stylingNote = {
         tag: "EVERYDAY HYGIENE & COMFORT",
         headline: "The ultimate second skin for all-day wear.",
         subtext: "Feels weightless from morning workouts to bedtime without digging, chafing, or shifting.",
-        image: "/images/features/hangers_colorways.png",
+        image: "/images/products/features/hangers_colorways.png",
       };
       p.fitGuide = {
         headline: "Women's Fit & Sizing Guide",

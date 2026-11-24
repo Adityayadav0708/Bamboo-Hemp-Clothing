@@ -14,7 +14,7 @@ const CATEGORIES = [
     id: "hemp-tshirts",
     name: "Hemp T-Shirts",
     slug: "hemp-tshirts",
-    image: "/images/bestseller_2.png",
+    image: "/images/home/bestseller_2.png",
   },
   {
     id: "mens-innerwear",

@@ -8,7 +8,7 @@ export const MOCK_CATEGORIES = [
     shortName: "Bamboo Tees",
     description:
       "Discover our range of ultra-soft bamboo round neck and polo T-shirts — 3x softer than cotton, anti-odor, and engineered for all-day comfort.",
-    bannerImage: "/images/category-bamboo-banner.jpg",
+    bannerImage: "/images/categories/category-bamboo-banner.jpg",
     cardImage: "/images/products/heelium-men-tee-black.png",
     productCount: 4,
     featured: true,
@@ -20,8 +20,8 @@ export const MOCK_CATEGORIES = [
     shortName: "Hemp Tees",
     description:
       "Structured, durable, and naturally breathable. Our heritage Himalayan hemp T-shirts get softer with every single wash.",
-    bannerImage: "/images/category-hemp-banner.jpg",
-    cardImage: "/images/bestseller_2.png",
+    bannerImage: "/images/categories/category-hemp-banner.jpg",
+    cardImage: "/images/home/bestseller_2.png",
     productCount: 2,
     featured: true,
   },
@@ -32,7 +32,7 @@ export const MOCK_CATEGORIES = [
     shortName: "Men's Innerwear",
     description:
       "Bamboo trunks, boxers, and briefs designed for anti-chafing, moisture-wicking comfort with micro-mesh cooling waistbands.",
-    bannerImage: "/images/category-mens-banner.jpg",
+    bannerImage: "/images/categories/category-mens-banner.jpg",
     cardImage: "/images/products/heelium-men-trunk-pack3.jpg",
     productCount: 10,
     featured: true,
@@ -44,7 +44,7 @@ export const MOCK_CATEGORIES = [
     shortName: "Women's Innerwear",
     description:
       "Gentle on skin, kind to the earth. Breathable bamboo bikini briefs, full-coverage briefs, and racerback tops for weightless daily wear.",
-    bannerImage: "/images/category-womens-banner.jpg",
+    bannerImage: "/images/categories/category-womens-banner.jpg",
     cardImage: "/images/products/heelium-women-bikini-pack2.webp",
     productCount: 6,
     featured: true,

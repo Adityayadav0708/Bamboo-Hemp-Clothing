@@ -31,7 +31,7 @@ export default function HeroSection() {
           <div className={styles.imageWrap}>
             <div className={styles.imgContainer}>
               <Image
-                src="/images/hero_models.png"
+                src="/images/home/hero_models.png"
                 alt="Models wearing breathable bamboo and hemp everyday essentials"
                 fill
                 priority

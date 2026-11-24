@@ -34,7 +34,7 @@ export default function AboutPage() {
           <div style={{ background: "var(--color-white)", border: "1px solid var(--color-border)", borderRadius: "var(--radius-2xl)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
             <div style={{ position: "relative", width: "100%", height: "220px" }}>
               <Image
-                src="/images/about-bamboo.jpg"
+                src="/images/about/about-bamboo.jpg"
                 alt="Organic bamboo textile and fiber"
                 fill
                 style={{ objectFit: "cover" }}
@@ -54,7 +54,7 @@ export default function AboutPage() {
           <div style={{ background: "var(--color-white)", border: "1px solid var(--color-border)", borderRadius: "var(--radius-2xl)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
             <div style={{ position: "relative", width: "100%", height: "220px" }}>
               <Image
-                src="/images/about-hemp.jpg"
+                src="/images/about/about-hemp.jpg"
                 alt="Heritage Himalayan hemp textile and fabric"
                 fill
                 style={{ objectFit: "cover" }}

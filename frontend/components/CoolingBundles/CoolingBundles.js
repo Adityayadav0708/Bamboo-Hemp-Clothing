@@ -48,7 +48,7 @@ const BUNDLES = [
     price: "₹2,699",
     originalPrice: "₹4,598",
     savings: "SAVE ₹1,899",
-    image: "/images/bestseller_2.png",
+    image: "/images/home/bestseller_2.png",
     slug: "heritage-hemp-boxy-tee",
     perItem: "₹1,349 / piece",
     features: [

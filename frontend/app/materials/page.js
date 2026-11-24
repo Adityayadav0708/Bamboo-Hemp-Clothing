@@ -30,7 +30,7 @@ export default function MaterialsPage() {
             <article className={styles.materialCard}>
               <div className={styles.imgWrap}>
                 <Image
-                  src="/images/about-bamboo.jpg"
+                  src="/images/about/about-bamboo.jpg"
                   alt="Organic Bamboo Weave"
                   fill
                   className={styles.cardImg}
@@ -67,7 +67,7 @@ export default function MaterialsPage() {
             <article className={styles.materialCard}>
               <div className={styles.imgWrap}>
                 <Image
-                  src="/images/about-hemp.jpg"
+                  src="/images/about/about-hemp.jpg"
                   alt="Himalayan Heritage Hemp Fibers"
                   fill
                   className={styles.cardImg}

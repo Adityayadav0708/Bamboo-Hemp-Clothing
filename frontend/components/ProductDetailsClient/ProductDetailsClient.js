@@ -321,7 +321,7 @@ export default function ProductDetailsClient({ product, relatedProducts = [] }) 
             <div className={styles.materialGrid}>
               <div className={styles.materialImageCard}>
                 <img
-                  src={product.materialStory.image || "/images/features/fabric_blend_macro.jpg"}
+                  src={product.materialStory.image || "/images/products/features/fabric_blend_macro.jpg"}
                   alt="Fabric weave macro detail"
                   className={styles.materialImg}
                   loading="lazy"
@@ -367,7 +367,7 @@ export default function ProductDetailsClient({ product, relatedProducts = [] }) 
               </div>
               <div className={styles.stylingMedia}>
                 <img
-                  src={product.stylingNote.image || "/images/features/hangers_colorways.png"}
+                  src={product.stylingNote.image || "/images/products/features/hangers_colorways.png"}
                   alt="Styling versatility"
                   className={styles.stylingImg}
                   loading="lazy"

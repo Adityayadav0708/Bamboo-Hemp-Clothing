@@ -59,7 +59,7 @@ const INITIAL_ADMIN_DATA = {
       pricePaise: 149900,
       compareAtPricePaise: 229900,
       status: "active",
-      image: "/images/bestseller_2.png",
+      image: "/images/home/bestseller_2.png",
       variantsCount: 4,
       totalStock: 42,
     },

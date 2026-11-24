@@ -20,7 +20,7 @@ const BESTSELLERS = [
     price: "₹1,499",
     originalPrice: "₹2,299",
     material: "55% Hemp / 45% Organic Cotton",
-    image: "/images/bestseller_2.png",
+    image: "/images/home/bestseller_2.png",
     slug: "heritage-hemp-boxy-tee",
     colors: ["#D9D1C2", "#2E4D3E", "#333533"],
   },
