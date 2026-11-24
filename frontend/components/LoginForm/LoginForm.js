@@ -6,6 +6,7 @@ import FormInput from "@/components/FormInput";
 import Button from "@/components/Button";
 import ErrorMessage from "@/components/ErrorMessage";
 import { useAuth } from "@/hooks/useAuth";
+import { isAdminRole } from "@/services/api/authService";
 import { validateEmail, validatePassword } from "@/utils/validators";
 import styles from "./LoginForm.module.css";
 
@@ -42,7 +43,7 @@ export default function LoginForm() {
 
     const res = await login(formData.email, formData.password);
     if (res.success) {
-      if (res.user?.role === "admin" || res.user?.role === "super_admin") {
+      if (isAdminRole(res.user?.role)) {
         router.push("/admin");
       } else {
         router.push("/account");
@@ -59,7 +60,7 @@ export default function LoginForm() {
       const res = await login(email, "SecurePass123!");
       setSocialLoading(null);
       if (res.success) {
-        if (res.user?.role === "admin" || res.user?.role === "super_admin") {
+        if (isAdminRole(res.user?.role)) {
           router.push("/admin");
         } else {
           router.push("/account");

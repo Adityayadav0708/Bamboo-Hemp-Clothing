@@ -1,6 +1,9 @@
 "use client";
+import { useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useAuth } from "@/hooks/useAuth";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import styles from "./AdminLayout.module.css";
 
 const ADMIN_LINKS = [
@@ -11,8 +14,54 @@ const ADMIN_LINKS = [
   { label: "Audit Logs", href: "/admin/audit-logs", icon: "🛡️" },
 ];
 
+function getInitials(name = "") {
+  return (
+    name
+      .replace(/\(.*?\)/g, "")
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((word) => word[0].toUpperCase())
+      .join("") || "A"
+  );
+}
+
 export default function AdminLayout({ children }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const { user, isAuthenticated, isAdmin, loading, logout } = useAuth();
+
+  useEffect(() => {
+    if (loading) return;
+    if (!isAuthenticated) {
+      router.replace("/login");
+    } else if (!isAdmin) {
+      router.replace("/account");
+    }
+  }, [loading, isAuthenticated, isAdmin, router]);
+
+  // Gate rendering before auth verification completes to prevent unauthorized UI flashes or API calls
+  if (loading || !isAuthenticated || !isAdmin) {
+    return (
+      <div className={styles.guardScreen}>
+        <LoadingSpinner
+          size="lg"
+          label={loading ? "Verifying administrator session…" : "Redirecting…"}
+        />
+        <p className={styles.guardText}>
+          {loading
+            ? "Verifying administrator access…"
+            : !isAuthenticated
+            ? "Authentication required. Redirecting to sign in…"
+            : "Access restricted. Redirecting to your account…"}
+        </p>
+      </div>
+    );
+  }
+
+  const initials = getInitials(user?.fullName || user?.name || user?.email);
+  const roleLabel = (user?.role || "admin").toUpperCase();
 
   return (
     <div className={styles.wrapper}>
@@ -23,14 +72,19 @@ export default function AdminLayout({ children }) {
             <span className={styles.logoBadge}>BH</span>
             <span className={styles.brandTitle}>Admin Console</span>
           </Link>
-          <span className={styles.roleTag}>SUPER_ADMIN</span>
+          <span className={styles.roleTag}>{roleLabel}</span>
         </div>
 
         <div className={styles.userControls}>
           <Link href="/" className={styles.storefrontLink}>
             &larr; View Storefront
           </Link>
-          <div className={styles.avatar}>AY</div>
+          <div className={styles.avatar} title={user?.email || "Administrator"}>
+            {initials}
+          </div>
+          <button type="button" onClick={logout} className={styles.logoutBtn}>
+            Sign Out
+          </button>
         </div>
       </header>
 

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
+import { isAdminRole } from "@/services/api/authService";
 import Breadcrumb from "@/components/Breadcrumb";
 import styles from "./AccountLayout.module.css";
 
@@ -20,7 +21,7 @@ export default function AccountLayout({ children, activeTab = "Dashboard" }) {
 
   const navItems = [
     ...NAV_ITEMS,
-    ...(user?.role === "admin" || user?.role === "super_admin"
+    ...(isAdminRole(user?.role)
       ? [{ label: "Admin Console", href: "/admin", icon: "🛡️" }]
       : []),
   ];

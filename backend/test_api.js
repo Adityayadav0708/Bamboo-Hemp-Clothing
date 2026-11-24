@@ -150,11 +150,30 @@ async function runTests() {
       const custOrders = await resCustOrders.json();
       assert(resCustOrders.status === 200 && custOrders.data?.length > 0, `GET /api/v1/customer/orders retrieved ${custOrders.data?.length} order(s) for customer`);
 
-      // 12. Admin Metrics
-      console.log('\n--- 12. Admin Metrics ---');
-      const resMetrics = await fetch(`${BASE}/admin/metrics`);
+      // 12. Admin Route Security & Metrics
+      console.log('\n--- 12. Admin Route Protection & Metrics ---');
+      const resUnauthMetrics = await fetch(`${BASE}/admin/metrics`);
+      assert(resUnauthMetrics.status === 401, `Unauthenticated GET /api/v1/admin/metrics rejected with 401 (got ${resUnauthMetrics.status})`);
+
+      const resCustMetrics = await fetch(`${BASE}/admin/metrics`, {
+        headers: { Authorization: `Bearer ${authToken}` }
+      });
+      assert(resCustMetrics.status === 403, `Customer GET /api/v1/admin/metrics rejected with 403 (got ${resCustMetrics.status})`);
+
+      const resAdminLogin = await fetch(`${BASE}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: 'admin@bamboohemp.com', password: 'Admin@12345' })
+      });
+      const adminLoginData = await resAdminLogin.json();
+      const adminToken = adminLoginData.data?.token;
+      assert(resAdminLogin.status === 200 && !!adminToken, 'Admin login issues valid admin JWT token');
+
+      const resMetrics = await fetch(`${BASE}/admin/metrics`, {
+        headers: { Authorization: `Bearer ${adminToken}` }
+      });
       const metrics = await resMetrics.json();
-      assert(resMetrics.status === 200 && metrics.success === true, `GET /api/v1/admin/metrics returns store analytics`);
+      assert(resMetrics.status === 200 && metrics.success === true, `Authenticated admin GET /api/v1/admin/metrics returns store analytics`);
 
       console.log('\n=======================================================');
       console.log(`📊 Test Summary: ${passed} passed, ${failed} failed.`);

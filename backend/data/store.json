@@ -134,7 +134,7 @@
           "inventoryCount": 60,
           "lowStockThreshold": 10,
           "isActive": true,
-          "stockQuantity": 25
+          "stockQuantity": 50
         },
         {
           "_id": "6b0596630c9ad5a03095e462",
@@ -3895,6 +3895,109 @@
   ],
   "orders": [
     {
+      "_id": "ord_1795544496892_lc8ie9",
+      "orderNumber": "BH-2026-8194",
+      "userId": "6b05836fbcb6b6b43c132545",
+      "guestEmail": "customer@bamboohemp.com",
+      "itemsSnapshot": [
+        {
+          "productId": "6b05836fbcb6b6b43c132546",
+          "variantId": "6b05836fbcb6b6b43c132548",
+          "sku": "BH-ITEM",
+          "name": "Bamboo Round Neck T-shirt for Men",
+          "size": "M",
+          "colour": "",
+          "unitPriceRupees": 990,
+          "unitPricePaise": 99000,
+          "quantity": 1,
+          "lineTotalRupees": 990,
+          "lineTotalPaise": 99000,
+          "image": ""
+        }
+      ],
+      "addressSnapshot": {
+        "recipientName": "Priya Sharma",
+        "addressLine1": "42 Lotus Enclave",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560038",
+        "country": "India",
+        "phone": "+91 9123456789"
+      },
+      "deliveryInstructions": "",
+      "subtotalPaise": 99000,
+      "subtotalRupees": 990,
+      "discountPaise": 0,
+      "discountRupees": 0,
+      "couponCode": null,
+      "shippingPaise": 9900,
+      "shippingFeeRupees": 99,
+      "totalPaise": 108900,
+      "totalAmount": 1089,
+      "currency": "INR",
+      "paymentStatus": "Paid",
+      "orderStatus": "Placed",
+      "trackingNumber": "BD-283290377IN",
+      "courierPartner": "BlueDart Express",
+      "createdAt": "2026-11-24T18:21:36.892Z"
+    },
+    {
+      "_id": "ord_1795544493239_gu0eke",
+      "orderNumber": "BH-2026-4756",
+      "userId": "6b05d5acf04f22dfdd4403e9",
+      "guestEmail": "test_user_1795544492856@bamboohemp.com",
+      "itemsSnapshot": [
+        {
+          "productId": "6b05836fbcb6b6b43c132546",
+          "variantId": "6b05836fbcb6b6b43c132548",
+          "sku": "BH-ITEM",
+          "name": "Bamboo Round Neck T-shirt for Men",
+          "size": "M",
+          "colour": "",
+          "unitPriceRupees": 990,
+          "unitPricePaise": 99000,
+          "quantity": 2,
+          "lineTotalRupees": 1980,
+          "lineTotalPaise": 198000,
+          "image": ""
+        }
+      ],
+      "addressSnapshot": {
+        "recipientName": "Test Developer",
+        "addressLine1": "123 Green Lane",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560001",
+        "country": "India",
+        "phone": "+91 9999900000"
+      },
+      "deliveryInstructions": "",
+      "subtotalPaise": 198000,
+      "subtotalRupees": 1980,
+      "discountPaise": 0,
+      "discountRupees": 0,
+      "couponCode": null,
+      "shippingPaise": 0,
+      "shippingFeeRupees": 0,
+      "totalPaise": 198000,
+      "totalAmount": 1980,
+      "currency": "INR",
+      "paymentStatus": "Paid",
+      "orderStatus": "shipped",
+      "trackingNumber": "BD-944844585IN",
+      "courierPartner": "BlueDart Express",
+      "createdAt": "2026-11-24T18:21:33.239Z",
+      "statusHistory": [
+        {
+          "status": "shipped",
+          "actor": "admin@bamboohemp.com",
+          "actorRole": "admin",
+          "note": "Dispatched via BlueDart Express Air",
+          "timestamp": "2026-11-24T18:21:36.787Z"
+        }
+      ]
+    },
+    {
       "_id": "ord_1795541290299_b6euh",
       "orderNumber": "BH-2026-4066",
       "userId": "6b0596630c9ad5a03095e45d",
@@ -4000,6 +4103,19 @@
   ],
   "inventoryMovements": [
     {
+      "_id": "inv_1795544496768_9rnwwi",
+      "variantId": "6b0596630c9ad5a03095e460",
+      "sku": "BAMBOO-R-S-PIT",
+      "movementType": "purchase_receipt",
+      "quantityChange": 25,
+      "quantityBefore": 25,
+      "quantityAfter": 50,
+      "reason": "purchase_receipt",
+      "referenceType": "admin_adjustment",
+      "actorName": "admin@bamboohemp.com",
+      "createdAt": "2026-11-24T18:21:36.768Z"
+    },
+    {
       "_id": "inv_1795541290173_02x9c5",
       "variantId": "6b0596630c9ad5a03095e460",
       "sku": "BAMBOO-R-S-PIT",
@@ -4026,6 +4142,36 @@
     }
   ],
   "auditLogs": [
+    {
+      "_id": "aud_1795544496787",
+      "actorRole": "admin",
+      "action": "order.status_update",
+      "resourceType": "Order",
+      "resourceId": "BH-2026-4756",
+      "before": {
+        "status": "shipped"
+      },
+      "after": {
+        "status": "shipped",
+        "note": "Dispatched via BlueDart Express Air"
+      },
+      "createdAt": "2026-11-24T18:21:36.787Z"
+    },
+    {
+      "_id": "aud_1795544496768",
+      "actorRole": "catalogue_manager",
+      "action": "stock.adjust",
+      "resourceType": "Variant",
+      "resourceId": "BAMBOO-R-S-PIT",
+      "before": {
+        "stockQuantity": 25
+      },
+      "after": {
+        "stockQuantity": 50,
+        "reason": "purchase_receipt"
+      },
+      "createdAt": "2026-11-24T18:21:36.768Z"
+    },
     {
       "_id": "aud_1795541290195",
       "actorRole": "order_manager",

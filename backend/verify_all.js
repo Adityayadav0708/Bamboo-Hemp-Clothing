@@ -89,12 +89,31 @@ async function verifyAll() {
       );
 
       // ──────────────────────────────────────────────────────────
-      // 2. ADMIN PORTAL ENDPOINTS TESTS
+      // 2. ADMIN PORTAL ENDPOINTS TESTS & ROUTE PROTECTION
       // ──────────────────────────────────────────────────────────
-      console.log('\n📌 PHASE 2: ADMIN PORTAL BACKEND CAPABILITIES');
+      console.log('\n📌 PHASE 2: ADMIN PORTAL BACKEND CAPABILITIES & ROUTE PROTECTION');
+
+      // Security Checks: Unauthenticated & Non-Admin Access Blocked
+      const resNoAuthAdmin = await fetch(`${BASE}/admin/metrics`);
+      check(
+        'Security: Unauthenticated request to /admin/metrics blocked (401)',
+        resNoAuthAdmin.status === 401,
+        `HTTP ${resNoAuthAdmin.status}`
+      );
+
+      const resCustAdmin = await fetch(`${BASE}/admin/metrics`, {
+        headers: { Authorization: `Bearer ${custToken}` }
+      });
+      check(
+        'Security: Customer token rejected on /admin/metrics (403 Forbidden)',
+        resCustAdmin.status === 403,
+        `HTTP ${resCustAdmin.status}`
+      );
+
+      const adminAuthHeaders = { Authorization: `Bearer ${adminToken}` };
 
       // Test 5: Admin Dashboard Metrics
-      const resMetrics = await fetch(`${BASE}/admin/metrics`);
+      const resMetrics = await fetch(`${BASE}/admin/metrics`, { headers: adminAuthHeaders });
       const metrics = await resMetrics.json();
       check(
         'Admin KPI Overview (/admin/metrics)',
@@ -103,7 +122,7 @@ async function verifyAll() {
       );
 
       // Test 6: Admin Products Listing
-      const resAdminProds = await fetch(`${BASE}/admin/products`);
+      const resAdminProds = await fetch(`${BASE}/admin/products`, { headers: adminAuthHeaders });
       const adminProds = await resAdminProds.json();
       check(
         'Admin Products Catalogue (/admin/products)',
@@ -112,7 +131,7 @@ async function verifyAll() {
       );
 
       // Test 7: Admin Inventory Listing
-      const resInv = await fetch(`${BASE}/admin/inventory`);
+      const resInv = await fetch(`${BASE}/admin/inventory`, { headers: adminAuthHeaders });
       const invData = await resInv.json();
       const firstVariant = invData.data?.[0];
       check(
@@ -128,7 +147,7 @@ async function verifyAll() {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${adminToken}`
+            ...adminAuthHeaders
           },
           body: JSON.stringify({
             variantId: firstVariant.variantId || firstVariant.id || firstVariant._id,
@@ -146,7 +165,7 @@ async function verifyAll() {
       }
 
       // Test 9: Admin Orders Listing
-      const resAdminOrders = await fetch(`${BASE}/admin/orders`);
+      const resAdminOrders = await fetch(`${BASE}/admin/orders`, { headers: adminAuthHeaders });
       const adminOrders = await resAdminOrders.json();
       check(
         'Admin Orders Console (/admin/orders)',
@@ -161,7 +180,7 @@ async function verifyAll() {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${adminToken}`
+            ...adminAuthHeaders
           },
           body: JSON.stringify({
             status: 'shipped',
@@ -177,7 +196,7 @@ async function verifyAll() {
       }
 
       // Test 11: Admin Immutable Audit Logs
-      const resAudit = await fetch(`${BASE}/admin/audit-logs`);
+      const resAudit = await fetch(`${BASE}/admin/audit-logs`, { headers: adminAuthHeaders });
       const auditData = await resAudit.json();
       check(
         'Admin Audit Logs Trail (/admin/audit-logs)',

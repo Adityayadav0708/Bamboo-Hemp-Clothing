@@ -270,6 +270,23 @@ function setStorage(key, val) {
   } catch (e) {}
 }
 
+async function fetchAdminJson(path, options = {}) {
+  if (!API_BASE || typeof window === "undefined") return null;
+  const token = localStorage.getItem("bh_auth_token");
+  const headers = {
+    "Content-Type": "application/json",
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    ...options.headers,
+  };
+
+  const res = await fetch(`${API_BASE}${path}`, { ...options, headers });
+  if (res.status === 401 || res.status === 403) {
+    window.dispatchEvent(new Event("bh:unauthorized"));
+    return null;
+  }
+  return res.json().catch(() => null);
+}
+
 export const api = {
   getAdminData: () => {
     return getStorage("bh_admin_data", INITIAL_ADMIN_DATA);
@@ -278,19 +295,18 @@ export const api = {
   syncWithBackend: async () => {
     if (!API_BASE || typeof window === "undefined") return null;
     try {
-      const token = localStorage.getItem("bh_auth_token");
-      const headers = {
-        "Content-Type": "application/json",
-        ...(token ? { Authorization: `Bearer ${token}` } : {})
-      };
-
       const [resMetrics, resProds, resInv, resOrders, resLogs] = await Promise.allSettled([
-        fetch(`${API_BASE}/admin/metrics`, { headers }).then(r => r.json()),
-        fetch(`${API_BASE}/admin/products`, { headers }).then(r => r.json()),
-        fetch(`${API_BASE}/admin/inventory`, { headers }).then(r => r.json()),
-        fetch(`${API_BASE}/admin/orders`, { headers }).then(r => r.json()),
-        fetch(`${API_BASE}/admin/audit-logs`, { headers }).then(r => r.json())
+        fetchAdminJson("/admin/metrics"),
+        fetchAdminJson("/admin/products"),
+        fetchAdminJson("/admin/inventory"),
+        fetchAdminJson("/admin/orders"),
+        fetchAdminJson("/admin/audit-logs")
       ]);
+
+      const anySuccess = [resMetrics, resProds, resInv, resOrders, resLogs].some(
+        r => r.status === "fulfilled" && r.value?.success
+      );
+      if (!anySuccess) return null;
 
       const data = getStorage("bh_admin_data", INITIAL_ADMIN_DATA);
 
@@ -391,17 +407,10 @@ export const api = {
 
     setStorage("bh_admin_data", data);
 
-    if (typeof window !== "undefined") {
-      const token = localStorage.getItem("bh_auth_token");
-      fetch(`${API_BASE}/admin/orders/${orderId}/status`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          ...(token ? { Authorization: `Bearer ${token}` } : {})
-        },
-        body: JSON.stringify({ status: newStatus })
-      }).catch(() => {});
-    }
+    fetchAdminJson(`/admin/orders/${orderId}/status`, {
+      method: "PATCH",
+      body: JSON.stringify({ status: newStatus })
+    }).catch(() => {});
 
     return order;
   },
@@ -430,17 +439,10 @@ export const api = {
 
     setStorage("bh_admin_data", data);
 
-    if (typeof window !== "undefined") {
-      const token = localStorage.getItem("bh_auth_token");
-      fetch(`${API_BASE}/admin/inventory/adjustments`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          ...(token ? { Authorization: `Bearer ${token}` } : {})
-        },
-        body: JSON.stringify({ variantId, changeAmount: delta, reason })
-      }).catch(() => {});
-    }
+    fetchAdminJson(`/admin/inventory/adjustments`, {
+      method: "POST",
+      body: JSON.stringify({ variantId, changeAmount: delta, reason })
+    }).catch(() => {});
 
     return variant;
   },

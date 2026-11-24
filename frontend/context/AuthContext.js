@@ -9,7 +9,14 @@
  */
 
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
-import { getCurrentUser, loginUser, logoutUser, registerUser } from "@/services/api/authService";
+import {
+  clearAuthSession,
+  getCurrentUser,
+  isAdminRole,
+  loginUser,
+  logoutUser,
+  registerUser,
+} from "@/services/api/authService";
 
 const AuthContext = createContext(null);
 
@@ -31,6 +38,16 @@ export function AuthProvider({ children }) {
       }
     }
     checkSession();
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const handleUnauthorized = () => {
+      clearAuthSession();
+      setUser(null);
+    };
+    window.addEventListener("bh:unauthorized", handleUnauthorized);
+    return () => window.removeEventListener("bh:unauthorized", handleUnauthorized);
   }, []);
 
   const login = useCallback(async (email, password) => {
@@ -78,6 +95,7 @@ export function AuthProvider({ children }) {
   const value = {
     user,
     isAuthenticated: !!user,
+    isAdmin: isAdminRole(user?.role),
     loading,
     error,
     login,

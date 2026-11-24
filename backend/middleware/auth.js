@@ -88,9 +88,12 @@ const optionalAuth = (req, res, next) => {
   next();
 };
 
+const requireAdmin = [requireAuth, requireRole(['admin', 'super_admin'])];
+
 module.exports = {
   requireAuth,
   optionalAuth,
   requireRole,
+  requireAdmin,
   JWT_SECRET
 };

@@ -7,6 +7,17 @@
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
+export const ADMIN_ROLES = ["admin", "super_admin"];
+
+export function isAdminRole(role) {
+  return ADMIN_ROLES.includes(role);
+}
+
+export function clearAuthSession() {
+  removeStorageItem("bh_auth_token");
+  removeStorageItem("bh_auth_user");
+}
+
 function getStorageItem(key) {
   if (typeof window === "undefined") return null;
   try {
@@ -51,7 +62,9 @@ async function fetchAPI(endpoint, options = {}) {
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
     const errorMsg = data.error?.message || data.message || `Auth error: ${res.status}`;
-    throw new Error(errorMsg);
+    const err = new Error(errorMsg);
+    err.status = res.status;
+    throw err;
   }
   return data;
 }
@@ -259,8 +272,7 @@ export async function loginUser(payload) {
  * Log out the current user.
  */
 export async function logoutUser() {
-  removeStorageItem("bh_auth_token");
-  removeStorageItem("bh_auth_user");
+  clearAuthSession();
   if (API_URL) {
     try {
       await fetchAPI("/auth/logout", { method: "POST" });
@@ -277,26 +289,34 @@ export async function logoutUser() {
 export async function getCurrentUser() {
   if (API_URL) {
     const token = getStorageItem("bh_auth_token");
-    if (token) {
-      try {
-        const res = await fetchAPI("/auth/me");
-        if (res && res.data && res.data.user) {
-          const rawUser = res.data.user;
-          const normalizedUser = {
-            id: rawUser._id || rawUser.id,
-            name: rawUser.fullName || rawUser.name,
-            fullName: rawUser.fullName || rawUser.name,
-            email: rawUser.email,
-            role: rawUser.role || "customer",
-            phone: rawUser.phone || "",
-            addresses: rawUser.addresses || [],
-          };
-          setStorageItem("bh_auth_user", JSON.stringify(normalizedUser));
-          return normalizedUser;
-        }
-      } catch {
-        // Fall back to stored session if server check fails
+    if (!token) {
+      // Never trust stale cached user metadata when API auth is active without a JWT
+      removeStorageItem("bh_auth_user");
+      return null;
+    }
+
+    try {
+      const res = await fetchAPI("/auth/me");
+      if (res && res.data && res.data.user) {
+        const rawUser = res.data.user;
+        const normalizedUser = {
+          id: rawUser._id || rawUser.id,
+          name: rawUser.fullName || rawUser.name,
+          fullName: rawUser.fullName || rawUser.name,
+          email: rawUser.email,
+          role: rawUser.role || "customer",
+          phone: rawUser.phone || "",
+          addresses: rawUser.addresses || [],
+        };
+        setStorageItem("bh_auth_user", JSON.stringify(normalizedUser));
+        return normalizedUser;
       }
+    } catch (err) {
+      if (err?.status === 401 || err?.status === 403) {
+        clearAuthSession();
+        return null;
+      }
+      // Fall back to stored session only on transient network/server outage
     }
   }
 

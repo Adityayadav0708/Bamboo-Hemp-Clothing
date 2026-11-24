@@ -6,7 +6,7 @@ const catalogueController = require('../controllers/catalogueController');
 const cartController = require('../controllers/cartController');
 const orderController = require('../controllers/orderController');
 const adminController = require('../controllers/adminController');
-const { requireAuth, optionalAuth, requireRole } = require('../middleware/auth');
+const { requireAuth, optionalAuth, requireAdmin } = require('../middleware/auth');
 
 // ── System / Health Endpoints (Section 53) ──
 router.get('/health', (req, res) => res.json({ success: true, status: 'healthy', timestamp: new Date() }));
@@ -49,27 +49,33 @@ router.get('/customer/orders/:orderId', optionalAuth, orderController.getOrderBy
 router.post('/customer/orders/:orderId/cancel', optionalAuth, orderController.cancelOrder);
 
 // ── Admin APIs (Section 50, 53) ──
+// Enforce JWT authentication and admin/super_admin role for all /admin/* endpoints
+const adminRouter = express.Router();
+adminRouter.use(requireAdmin);
+
 // Dashboard KPI
-router.get('/admin/metrics', adminController.getDashboardMetrics);
+adminRouter.get('/metrics', adminController.getDashboardMetrics);
 
 // Product & Category Management
-router.get('/admin/products', adminController.getAdminProducts);
-router.post('/admin/products', adminController.createProduct);
-router.patch('/admin/products/:id', adminController.updateProduct);
-router.post('/admin/products/:id/publish', adminController.publishProduct);
-router.post('/admin/products/:id/archive', adminController.archiveProduct);
+adminRouter.get('/products', adminController.getAdminProducts);
+adminRouter.post('/products', adminController.createProduct);
+adminRouter.patch('/products/:id', adminController.updateProduct);
+adminRouter.post('/products/:id/publish', adminController.publishProduct);
+adminRouter.post('/products/:id/archive', adminController.archiveProduct);
 
 // Inventory Management
-router.get('/admin/inventory', adminController.getAdminInventory);
-router.post('/admin/inventory/adjustments', adminController.adjustStock);
+adminRouter.get('/inventory', adminController.getAdminInventory);
+adminRouter.post('/inventory/adjustments', adminController.adjustStock);
 
 // Order Operations
-router.get('/admin/orders', adminController.getAdminOrders);
-router.get('/admin/orders/:id', adminController.getAdminOrderById);
-router.patch('/admin/orders/:id/status', adminController.updateAdminOrderStatus);
+adminRouter.get('/orders', adminController.getAdminOrders);
+adminRouter.get('/orders/:id', adminController.getAdminOrderById);
+adminRouter.patch('/orders/:id/status', adminController.updateAdminOrderStatus);
 
 // Audit & Settings
-router.get('/admin/audit-logs', adminController.getAdminAuditLogs);
-router.get('/admin/settings', adminController.getAdminSettings);
+adminRouter.get('/audit-logs', adminController.getAdminAuditLogs);
+adminRouter.get('/settings', adminController.getAdminSettings);
+
+router.use('/admin', adminRouter);
 
 module.exports = router;
