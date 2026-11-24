@@ -1,49 +1,53 @@
 {
   "categories": [
     {
-      "_id": "cat_bamboo_tshirts",
+      "_id": "6b05836fbcb6b6b43c132531",
       "name": "Bamboo T-Shirts",
       "slug": "bamboo-tshirts",
-      "description": "Ultra-breathable, silky-soft everyday tees engineered from 100% organic bamboo viscose.",
-      "image": "/images/cat-bamboo-tshirts.jpg",
-      "sortOrder": 1,
+      "description": "Ultra-soft bamboo round neck and polo T-shirts — 3x softer than cotton, anti-odor, and engineered for all-day comfort in tropical climates.",
+      "bannerImage": "/images/categories/category-bamboo-banner.jpg",
+      "cardImage": "/images/products/heelium-men-tee-black.png",
+      "displayOrder": 1,
       "isActive": true
     },
     {
-      "_id": "cat_hemp_tshirts",
+      "_id": "6b05836fbcb6b6b43c13253c",
       "name": "Hemp T-Shirts",
       "slug": "hemp-tshirts",
-      "description": "Durable, naturally textured tees spun from heritage rain-fed hemp and organic cotton.",
-      "image": "/images/cat-hemp-tshirts.jpg",
-      "sortOrder": 2,
+      "description": "Structured, durable, and naturally breathable. Spun from heritage rain-fed Himalayan hemp and organic cotton that softens with every wash.",
+      "bannerImage": "/images/categories/category-hemp-banner.jpg",
+      "cardImage": "/images/home/bestseller_2.png",
+      "displayOrder": 2,
       "isActive": true
     },
     {
-      "_id": "cat_mens_innerwear",
+      "_id": "6b05836fbcb6b6b43c13253e",
       "name": "Men's Innerwear",
       "slug": "mens-innerwear",
-      "description": "BreezeBoo™ cooling boxer briefs, trunks, and multipacks with 360° airflow waistband.",
-      "image": "/images/cat-mens-innerwear.jpg",
-      "sortOrder": 3,
+      "description": "Bamboo trunks, boxers, and briefs designed for anti-chafing, moisture-wicking comfort with 360° micro-mesh cooling waistbands.",
+      "bannerImage": "/images/categories/category-mens-banner.jpg",
+      "cardImage": "/images/products/heelium-men-trunk-pack3.jpg",
+      "displayOrder": 3,
       "isActive": true
     },
     {
-      "_id": "cat_womens_innerwear",
+      "_id": "6b05836fbcb6b6b43c132541",
       "name": "Women's Innerwear",
       "slug": "womens-innerwear",
-      "description": "Weightless wire-free bralettes and seamless high-waist briefs for all-day second-skin comfort.",
-      "image": "/images/cat-womens-innerwear.jpg",
-      "sortOrder": 4,
+      "description": "Gentle on skin, kind to the earth. Breathable bamboo bikini briefs, full-coverage briefs, and racerback tops for weightless daily wear.",
+      "bannerImage": "/images/categories/category-womens-banner.jpg",
+      "cardImage": "/images/products/heelium-women-bikini-pack2.webp",
+      "displayOrder": 4,
       "isActive": true
     }
   ],
   "products": [
     {
-      "_id": "prod_bamboo_crew",
-      "name": "The Essential Bamboo Crew Neck Tee",
-      "slug": "essential-bamboo-crew-neck-tshirt",
+      "_id": "6b05836fbcb6b6b43c132546",
+      "name": "Bamboo Round Neck T-shirt for Men",
+      "slug": "bamboo-round-neck-tshirt-men",
       "categoryIds": [
-        "cat_bamboo_tshirts"
+        "6b05836fbcb6b6b43c132531"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -56,125 +60,374 @@
           "percentage": 5
         }
       ],
-      "materialDetails": "Pure micro-gap bamboo viscose. Hypoallergenic, static-free, and thermo-regulating.",
-      "shortDescription": "Silky smooth, cooling crew neck designed for all-day breathability in hot climates.",
-      "description": "Engineered with round-fibre bamboo filaments, this tee drapes effortlessly without clinging. Features flatlock anti-chafing seams and moisture-wicking technology to keep your skin 2°C cooler throughout the day.",
+      "shortDescription": "Crafted from premium bamboo viscose, this round-neck t-shirt is 3x softer than conventional cotton. Features 4-way stretch, active moisture-wicking, a",
+      "description": "Crafted from premium bamboo viscose, this round-neck t-shirt is 3x softer than conventional cotton. Features 4-way stretch, active moisture-wicking, and naturally anti-bacterial bamboo kun bio-agents that keep you odor-free in Indian heat.",
+      "materialDetails": "67% Bamboo Viscose, 28% Organic Cotton, 5% Spandex",
       "careInstructions": [
-        "Machine wash gentle 30°C",
-        "Do not bleach",
-        "Dry flat in shade",
-        "Iron on low reverse"
+        "Machine wash cold gentle cycle with mild detergent. Do not bleach. Air dry in shade or tumble dry low."
       ],
+      "badge": "Bestseller",
       "images": [
         {
-          "url": "/images/prod-bamboo-crew-front.jpg",
-          "altText": "Essential Bamboo Crew Neck Tee Flatlay",
+          "url": "/images/products/heelium-men-tee-black.png",
+          "altText": "Bamboo Round Neck T-shirt for Men image 1",
           "isPrimary": true,
           "sortOrder": 0
         },
         {
-          "url": "/images/prod-bamboo-crew-model.jpg",
-          "altText": "Essential Bamboo Crew Neck Tee Lifestyle on Model",
+          "url": "/images/products/heelium-men-tee-grey.png",
+          "altText": "Bamboo Round Neck T-shirt for Men image 2",
           "isPrimary": false,
           "sortOrder": 1
         },
         {
-          "url": "/images/prod-bamboo-crew-detail.jpg",
-          "altText": "Bamboo Fabric Weave Micro Texture",
+          "url": "/images/products/heelium-men-tee-blue.png",
+          "altText": "Bamboo Round Neck T-shirt for Men image 3",
           "isPrimary": false,
           "sortOrder": 2
+        },
+        {
+          "url": "/images/products/heelium-men-tee-white.png",
+          "altText": "Bamboo Round Neck T-shirt for Men image 4",
+          "isPrimary": false,
+          "sortOrder": 3
         }
       ],
-      "tags": [
-        "bestseller",
-        "cooling",
-        "organic",
-        "t-shirt"
-      ],
+      "rating": 4.81,
+      "reviewsCount": 342,
       "status": "active",
-      "seo": {
-        "title": "Essential Bamboo Crew Neck T-Shirt | Bamboo & Hemp",
-        "metaDescription": "Shop our signature breathable bamboo crew neck tee. Anti-odor, hypoallergenic, and ultra-soft."
+      "materialStory": {
+        "title": "Three fibres. One considered blend.",
+        "content": "Bamboo for a soft feel. Cotton for structure. Spandex for movement. The difference is the blend—not simply swapping one fibre for another.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
       },
+      "faqs": [
+        {
+          "q": "What is the fabric composition?",
+          "a": "67% Bamboo Viscose, 28% Organic Cotton, and 5% Spandex. Woven for a silky second-skin hand feel with structure and flexible recovery."
+        },
+        {
+          "q": "How does bamboo compare to ordinary cotton in summer?",
+          "a": "Bamboo fibers have microscopic cross-gaps that absorb and evaporate moisture 3x faster than cotton, keeping your skin 2° to 3° cooler in hot and humid weather."
+        },
+        {
+          "q": "How should I care for it?",
+          "a": "Machine wash cold on a gentle cycle. Wash with like colors. Avoid chlorine bleach. Hang to air dry in shade or tumble dry on delicate low."
+        },
+        {
+          "q": "Can I return or exchange if the fit isn't right?",
+          "a": "Yes! We offer a 15-day doorstep return and size exchange policy across India on all unwashed, tagged garments."
+        }
+      ],
       "variants": [
         {
-          "_id": "var_bcrew_grn_s",
-          "sku": "BH-BTE-GRN-S",
+          "_id": "6b05836fbcb6b6b43c132548",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-S-PIT",
           "size": "S",
-          "colour": {
-            "name": "Forest Green",
-            "hex": "#1E412D"
+          "color": {
+            "name": "Pitch Black",
+            "hex": "#1A1A1A"
           },
-          "pricePaise": 129900,
-          "compareAtPricePaise": 169900,
-          "stockQuantity": 35,
-          "reservedQuantity": 0,
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_bcrew_grn_m",
-          "sku": "BH-BTE-GRN-M",
+          "_id": "6b05836fbcb6b6b43c13254a",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-S-CHA",
+          "size": "S",
+          "color": {
+            "name": "Charcoal Grey",
+            "hex": "#4A4D4A"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13254c",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-S-NAV",
+          "size": "S",
+          "color": {
+            "name": "Navy Blue",
+            "hex": "#1E2B4D"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13254e",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-S-CLO",
+          "size": "S",
+          "color": {
+            "name": "Cloud White",
+            "hex": "#FAF9F5"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132550",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-M-PIT",
           "size": "M",
-          "colour": {
-            "name": "Forest Green",
-            "hex": "#1E412D"
+          "color": {
+            "name": "Pitch Black",
+            "hex": "#1A1A1A"
           },
-          "pricePaise": 129900,
-          "compareAtPricePaise": 169900,
-          "stockQuantity": 42,
-          "reservedQuantity": 0,
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_bcrew_grn_l",
-          "sku": "BH-BTE-GRN-L",
-          "size": "L",
-          "colour": {
-            "name": "Forest Green",
-            "hex": "#1E412D"
-          },
-          "pricePaise": 129900,
-          "compareAtPricePaise": 169900,
-          "stockQuantity": 28,
-          "reservedQuantity": 0,
-          "isActive": true
-        },
-        {
-          "_id": "var_bcrew_snd_m",
-          "sku": "BH-BTE-SND-M",
+          "_id": "6b05836fbcb6b6b43c132552",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-M-CHA",
           "size": "M",
-          "colour": {
-            "name": "Natural Sand",
-            "hex": "#E2DCce"
+          "color": {
+            "name": "Charcoal Grey",
+            "hex": "#4A4D4A"
           },
-          "pricePaise": 129900,
-          "compareAtPricePaise": 169900,
-          "stockQuantity": 18,
-          "reservedQuantity": 0,
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_bcrew_blk_l",
-          "sku": "BH-BTE-BLK-L",
-          "size": "L",
-          "colour": {
-            "name": "Charcoal Black",
-            "hex": "#2A2E2B"
+          "_id": "6b05836fbcb6b6b43c132554",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-M-NAV",
+          "size": "M",
+          "color": {
+            "name": "Navy Blue",
+            "hex": "#1E2B4D"
           },
-          "pricePaise": 129900,
-          "compareAtPricePaise": 169900,
-          "stockQuantity": 4,
-          "reservedQuantity": 0,
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132556",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-M-CLO",
+          "size": "M",
+          "color": {
+            "name": "Cloud White",
+            "hex": "#FAF9F5"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132558",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-L-PIT",
+          "size": "L",
+          "color": {
+            "name": "Pitch Black",
+            "hex": "#1A1A1A"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13255a",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-L-CHA",
+          "size": "L",
+          "color": {
+            "name": "Charcoal Grey",
+            "hex": "#4A4D4A"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13255c",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-L-NAV",
+          "size": "L",
+          "color": {
+            "name": "Navy Blue",
+            "hex": "#1E2B4D"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13255e",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-L-CLO",
+          "size": "L",
+          "color": {
+            "name": "Cloud White",
+            "hex": "#FAF9F5"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132560",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-XL-PIT",
+          "size": "XL",
+          "color": {
+            "name": "Pitch Black",
+            "hex": "#1A1A1A"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132562",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-XL-CHA",
+          "size": "XL",
+          "color": {
+            "name": "Charcoal Grey",
+            "hex": "#4A4D4A"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132564",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-XL-NAV",
+          "size": "XL",
+          "color": {
+            "name": "Navy Blue",
+            "hex": "#1E2B4D"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132566",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-XL-CLO",
+          "size": "XL",
+          "color": {
+            "name": "Cloud White",
+            "hex": "#FAF9F5"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132568",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-2XL-PIT",
+          "size": "2XL",
+          "color": {
+            "name": "Pitch Black",
+            "hex": "#1A1A1A"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13256a",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-2XL-CHA",
+          "size": "2XL",
+          "color": {
+            "name": "Charcoal Grey",
+            "hex": "#4A4D4A"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13256c",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-2XL-NAV",
+          "size": "2XL",
+          "color": {
+            "name": "Navy Blue",
+            "hex": "#1E2B4D"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13256e",
+          "productId": "6b05836fbcb6b6b43c132546",
+          "sku": "BAMBOO-R-2XL-CLO",
+          "size": "2XL",
+          "color": {
+            "name": "Cloud White",
+            "hex": "#FAF9F5"
+          },
+          "mrp": 1999,
+          "price": 990,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         }
       ]
     },
     {
-      "_id": "prod_bamboo_vneck",
-      "name": "Relaxed Bamboo V-Neck Tee",
-      "slug": "relaxed-bamboo-v-neck-tee",
+      "_id": "6b05836fbcb6b6b43c132570",
+      "name": "Bamboo Polo T-shirt for Men",
+      "slug": "bamboo-polo-tshirt-men",
       "categoryIds": [
-        "cat_bamboo_tshirts"
+        "6b05836fbcb6b6b43c132531"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -187,288 +440,544 @@
           "percentage": 5
         }
       ],
-      "materialDetails": "Breathable, featherlight bamboo jersey that naturally regulates body heat.",
-      "shortDescription": "Refined shallow V-neck silhouette with an airy, fluid drape for versatile layering.",
-      "description": "Tailored for everyday luxury. The silky bamboo texture glides over skin, resisting odors even after intense, warm humid afternoons.",
+      "shortDescription": "A tailored collar polo t-shirt with ribbed cuffs and subtle bamboo luster. Naturally thermoregulating to maintain personal comfort from office hours t",
+      "description": "A tailored collar polo t-shirt with ribbed cuffs and subtle bamboo luster. Naturally thermoregulating to maintain personal comfort from office hours through evening leisure.",
+      "materialDetails": "70% Bamboo Viscose, 25% Cotton, 5% Elastane",
       "careInstructions": [
-        "Machine wash cold",
-        "Wash with like colors",
-        "Tumble dry low or air dry"
+        "Machine wash cold inside out. Flat dry recommended. Warm iron if needed."
       ],
+      "badge": "Premium Weave",
       "images": [
         {
-          "url": "/images/prod-bamboo-vneck-front.jpg",
-          "altText": "Relaxed Bamboo V-Neck Tee Front",
+          "url": "/images/products/heelium-men-polo-black.png",
+          "altText": "Bamboo Polo T-shirt for Men image 1",
           "isPrimary": true,
           "sortOrder": 0
         },
         {
-          "url": "/images/prod-bamboo-vneck-model.jpg",
-          "altText": "Relaxed Bamboo V-Neck Tee on Model",
+          "url": "/images/products/heelium-men-polo-teal.webp",
+          "altText": "Bamboo Polo T-shirt for Men image 2",
           "isPrimary": false,
           "sortOrder": 1
-        },
-        {
-          "url": "/images/prod-bamboo-vneck-detail.jpg",
-          "altText": "V-Neck Collar & Seam Detail",
-          "isPrimary": false,
-          "sortOrder": 2
         }
       ],
-      "tags": [
-        "v-neck",
-        "cooling",
-        "everyday"
-      ],
+      "rating": 4.89,
+      "reviewsCount": 156,
       "status": "active",
-      "seo": {
-        "title": "Relaxed Bamboo V-Neck Tee | Sustainable Basics India",
-        "metaDescription": "Silky soft bamboo V-neck tee for men and women."
+      "materialStory": {
+        "title": "Structured pique. Natural bamboo sheen.",
+        "content": "70% bamboo yarn provides silky thermal management, while tightly spun cotton maintains a crisp, non-collapsing placket and collar.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
       },
+      "faqs": [
+        {
+          "q": "Does the collar curl after washing?",
+          "a": "No. The collar is woven with a high-density interlining that retains its crisp fold through repeated wash cycles."
+        },
+        {
+          "q": "Is it suitable for humid climates?",
+          "a": "Yes! Bamboo viscose absorbs sweat instantly, keeping you fresh and sweat-stain-free throughout the day."
+        }
+      ],
       "variants": [
         {
-          "_id": "var_bvneck_wht_s",
-          "sku": "BH-BVN-WHT-S",
+          "_id": "6b05836fbcb6b6b43c132572",
+          "productId": "6b05836fbcb6b6b43c132570",
+          "sku": "BAMBOO-P-S-OBS",
           "size": "S",
-          "colour": {
-            "name": "Pure Chalk",
-            "hex": "#F9F8F5"
+          "color": {
+            "name": "Obsidian Black",
+            "hex": "#1A1A1A"
           },
-          "pricePaise": 139900,
-          "compareAtPricePaise": 179900,
-          "stockQuantity": 25,
-          "reservedQuantity": 0,
+          "mrp": 2499,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_bvneck_wht_m",
-          "sku": "BH-BVN-WHT-M",
+          "_id": "6b05836fbcb6b6b43c132574",
+          "productId": "6b05836fbcb6b6b43c132570",
+          "sku": "BAMBOO-P-S-FOR",
+          "size": "S",
+          "color": {
+            "name": "Forest Teal",
+            "hex": "#1E4B45"
+          },
+          "mrp": 2499,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132576",
+          "productId": "6b05836fbcb6b6b43c132570",
+          "sku": "BAMBOO-P-M-OBS",
           "size": "M",
-          "colour": {
-            "name": "Pure Chalk",
-            "hex": "#F9F8F5"
+          "color": {
+            "name": "Obsidian Black",
+            "hex": "#1A1A1A"
           },
-          "pricePaise": 139900,
-          "compareAtPricePaise": 179900,
-          "stockQuantity": 30,
-          "reservedQuantity": 0,
+          "mrp": 2499,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_bvneck_olv_l",
-          "sku": "BH-BVN-OLV-L",
-          "size": "L",
-          "colour": {
-            "name": "Muted Olive",
-            "hex": "#586A55"
+          "_id": "6b05836fbcb6b6b43c132578",
+          "productId": "6b05836fbcb6b6b43c132570",
+          "sku": "BAMBOO-P-M-FOR",
+          "size": "M",
+          "color": {
+            "name": "Forest Teal",
+            "hex": "#1E4B45"
           },
-          "pricePaise": 139900,
-          "compareAtPricePaise": 179900,
-          "stockQuantity": 12,
-          "reservedQuantity": 0,
+          "mrp": 2499,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13257a",
+          "productId": "6b05836fbcb6b6b43c132570",
+          "sku": "BAMBOO-P-L-OBS",
+          "size": "L",
+          "color": {
+            "name": "Obsidian Black",
+            "hex": "#1A1A1A"
+          },
+          "mrp": 2499,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13257c",
+          "productId": "6b05836fbcb6b6b43c132570",
+          "sku": "BAMBOO-P-L-FOR",
+          "size": "L",
+          "color": {
+            "name": "Forest Teal",
+            "hex": "#1E4B45"
+          },
+          "mrp": 2499,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13257e",
+          "productId": "6b05836fbcb6b6b43c132570",
+          "sku": "BAMBOO-P-XL-OBS",
+          "size": "XL",
+          "color": {
+            "name": "Obsidian Black",
+            "hex": "#1A1A1A"
+          },
+          "mrp": 2499,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132580",
+          "productId": "6b05836fbcb6b6b43c132570",
+          "sku": "BAMBOO-P-XL-FOR",
+          "size": "XL",
+          "color": {
+            "name": "Forest Teal",
+            "hex": "#1E4B45"
+          },
+          "mrp": 2499,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132582",
+          "productId": "6b05836fbcb6b6b43c132570",
+          "sku": "BAMBOO-P-2XL-OBS",
+          "size": "2XL",
+          "color": {
+            "name": "Obsidian Black",
+            "hex": "#1A1A1A"
+          },
+          "mrp": 2499,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132584",
+          "productId": "6b05836fbcb6b6b43c132570",
+          "sku": "BAMBOO-P-2XL-FOR",
+          "size": "2XL",
+          "color": {
+            "name": "Forest Teal",
+            "hex": "#1E4B45"
+          },
+          "mrp": 2499,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         }
       ]
     },
     {
-      "_id": "prod_hemp_boxy",
-      "name": "Heritage Hemp Boxy Tee",
+      "_id": "6b05836fbcb6b6b43c132586",
+      "name": "Bamboo Women's Round Neck T-shirt",
+      "slug": "bamboo-round-neck-tshirt-women",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c132531"
+      ],
+      "fabricType": "bamboo",
+      "fabricComposition": [
+        {
+          "fibre": "Organic Bamboo Viscose",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "A feather-light, relaxed silhouette round neck t-shirt designed specifically for all-day breathability. Micro-porous bamboo fibers eliminate skin irri",
+      "description": "A feather-light, relaxed silhouette round neck t-shirt designed specifically for all-day breathability. Micro-porous bamboo fibers eliminate skin irritation and keep you cool.",
+      "materialDetails": "68% Bamboo Viscose, 27% Organic Cotton, 5% Spandex",
+      "careInstructions": [
+        "Gentle machine wash cold. Do not tumble dry. Iron on low heat."
+      ],
+      "badge": "Second-Skin",
+      "images": [
+        {
+          "url": "/images/products/heelium-women-tee-white.png",
+          "altText": "Bamboo Women's Round Neck T-shirt image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/products/heelium-women-tee-blue.png",
+          "altText": "Bamboo Women's Round Neck T-shirt image 2",
+          "isPrimary": false,
+          "sortOrder": 1
+        }
+      ],
+      "rating": 4.85,
+      "reviewsCount": 219,
+      "status": "active",
+      "materialStory": {
+        "title": "Fluid drape. Unmatched softness.",
+        "content": "Designed with smooth, round fiber cross-sections that eliminate surface friction against sensitive skin.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
+      },
+      "faqs": [
+        {
+          "q": "Is the white t-shirt see-through?",
+          "a": "No. The 68/27/5 yarn ratio provides full opacity while keeping the t-shirt weightless and breathable."
+        },
+        {
+          "q": "How does it feel against sensitive skin?",
+          "a": "Bamboo fibers are naturally hypoallergenic and round, meaning zero friction or allergic reactions even on sensitive skin."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b05836fbcb6b6b43c132588",
+          "productId": "6b05836fbcb6b6b43c132586",
+          "sku": "BAMBOO-R-XS-PRI",
+          "size": "XS",
+          "color": {
+            "name": "Pristine White",
+            "hex": "#FFFFFF"
+          },
+          "mrp": 1999,
+          "price": 999,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13258a",
+          "productId": "6b05836fbcb6b6b43c132586",
+          "sku": "BAMBOO-R-XS-DEE",
+          "size": "XS",
+          "color": {
+            "name": "Deep Navy",
+            "hex": "#1A2744"
+          },
+          "mrp": 1999,
+          "price": 999,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13258c",
+          "productId": "6b05836fbcb6b6b43c132586",
+          "sku": "BAMBOO-R-S-PRI",
+          "size": "S",
+          "color": {
+            "name": "Pristine White",
+            "hex": "#FFFFFF"
+          },
+          "mrp": 1999,
+          "price": 999,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13258e",
+          "productId": "6b05836fbcb6b6b43c132586",
+          "sku": "BAMBOO-R-S-DEE",
+          "size": "S",
+          "color": {
+            "name": "Deep Navy",
+            "hex": "#1A2744"
+          },
+          "mrp": 1999,
+          "price": 999,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132590",
+          "productId": "6b05836fbcb6b6b43c132586",
+          "sku": "BAMBOO-R-M-PRI",
+          "size": "M",
+          "color": {
+            "name": "Pristine White",
+            "hex": "#FFFFFF"
+          },
+          "mrp": 1999,
+          "price": 999,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132592",
+          "productId": "6b05836fbcb6b6b43c132586",
+          "sku": "BAMBOO-R-M-DEE",
+          "size": "M",
+          "color": {
+            "name": "Deep Navy",
+            "hex": "#1A2744"
+          },
+          "mrp": 1999,
+          "price": 999,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132594",
+          "productId": "6b05836fbcb6b6b43c132586",
+          "sku": "BAMBOO-R-L-PRI",
+          "size": "L",
+          "color": {
+            "name": "Pristine White",
+            "hex": "#FFFFFF"
+          },
+          "mrp": 1999,
+          "price": 999,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132596",
+          "productId": "6b05836fbcb6b6b43c132586",
+          "sku": "BAMBOO-R-L-DEE",
+          "size": "L",
+          "color": {
+            "name": "Deep Navy",
+            "hex": "#1A2744"
+          },
+          "mrp": 1999,
+          "price": 999,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c132598",
+          "productId": "6b05836fbcb6b6b43c132586",
+          "sku": "BAMBOO-R-XL-PRI",
+          "size": "XL",
+          "color": {
+            "name": "Pristine White",
+            "hex": "#FFFFFF"
+          },
+          "mrp": 1999,
+          "price": 999,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c13259a",
+          "productId": "6b05836fbcb6b6b43c132586",
+          "sku": "BAMBOO-R-XL-DEE",
+          "size": "XL",
+          "color": {
+            "name": "Deep Navy",
+            "hex": "#1A2744"
+          },
+          "mrp": 1999,
+          "price": 999,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b05836fbcb6b6b43c13259c",
+      "name": "Bamboo Racerback Tank Top for Women",
+      "slug": "bamboo-racerback-tank-top-women",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c132541"
+      ],
+      "fabricType": "bamboo",
+      "fabricComposition": [
+        {
+          "fibre": "Organic Bamboo Viscose",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "A buttery-soft bamboo racerback tank top providing non-restrictive 360° airflow. Ideal as a base layer or light lounge top with flatlock stitching tha",
+      "description": "A buttery-soft bamboo racerback tank top providing non-restrictive 360° airflow. Ideal as a base layer or light lounge top with flatlock stitching that prevents chafing.",
+      "materialDetails": "95% Bamboo Viscose, 5% Spandex",
+      "careInstructions": [
+        "Machine wash cold gentle. Wash with like colors. Line dry."
+      ],
+      "badge": "Anti-Chafing",
+      "images": [
+        {
+          "url": "/images/products/heelium-women-tank-blue.png",
+          "altText": "Bamboo Racerback Tank Top for Women image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        }
+      ],
+      "rating": 4.74,
+      "reviewsCount": 98,
+      "status": "active",
+      "materialStory": {
+        "title": "Fluid motion. Second-skin comfort.",
+        "content": "95% bamboo viscose blended with 5% spandex for flexible shape retention throughout yoga, active movement, and sleep.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
+      },
+      "faqs": [
+        {
+          "q": "Can I wear this for workouts?",
+          "a": "Absolutely. The natural bamboo kun antimicrobial properties eliminate body odor even during intense sweat sessions."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b05836fbcb6b6b43c13259e",
+          "productId": "6b05836fbcb6b6b43c13259c",
+          "sku": "BAMBOO-R-XS-CER",
+          "size": "XS",
+          "color": {
+            "name": "Cerulean Blue",
+            "hex": "#2A4B7C"
+          },
+          "mrp": 1299,
+          "price": 699,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c1325a0",
+          "productId": "6b05836fbcb6b6b43c13259c",
+          "sku": "BAMBOO-R-S-CER",
+          "size": "S",
+          "color": {
+            "name": "Cerulean Blue",
+            "hex": "#2A4B7C"
+          },
+          "mrp": 1299,
+          "price": 699,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c1325a2",
+          "productId": "6b05836fbcb6b6b43c13259c",
+          "sku": "BAMBOO-R-M-CER",
+          "size": "M",
+          "color": {
+            "name": "Cerulean Blue",
+            "hex": "#2A4B7C"
+          },
+          "mrp": 1299,
+          "price": 699,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c1325a4",
+          "productId": "6b05836fbcb6b6b43c13259c",
+          "sku": "BAMBOO-R-L-CER",
+          "size": "L",
+          "color": {
+            "name": "Cerulean Blue",
+            "hex": "#2A4B7C"
+          },
+          "mrp": 1299,
+          "price": 699,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b05836fbcb6b6b43c1325a6",
+          "productId": "6b05836fbcb6b6b43c13259c",
+          "sku": "BAMBOO-R-XL-CER",
+          "size": "XL",
+          "color": {
+            "name": "Cerulean Blue",
+            "hex": "#2A4B7C"
+          },
+          "mrp": 1299,
+          "price": 699,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b05836fbcb6b6b43c1325a8",
+      "name": "Heritage Himalayan Hemp Boxy Tee",
       "slug": "heritage-hemp-boxy-tee",
       "categoryIds": [
-        "cat_hemp_tshirts"
+        "6b05836fbcb6b6b43c13253c"
       ],
-      "fabricType": "hemp_blend",
+      "fabricType": "hemp",
       "fabricComposition": [
         {
           "fibre": "Heritage Hemp",
-          "percentage": 55
-        },
-        {
-          "fibre": "Organic Cotton",
-          "percentage": 45
-        }
-      ],
-      "materialDetails": "Durable heritage hemp blended with combed organic cotton. Built to soften with every wash.",
-      "shortDescription": "Structured, vintage-weight heavyweight tee with exceptional longevity and UV resistance.",
-      "description": "Hemp fibers possess 3x the tensile strength of regular cotton. Our 55/45 blend offers a sturdy modern boxy silhouette that holds its shape wash after wash.",
-      "careInstructions": [
-        "Machine wash cold 30°C",
-        "Do not tumble dry",
-        "Warm iron if needed"
-      ],
-      "images": [
-        {
-          "url": "/images/prod-hemp-boxy-front.jpg",
-          "altText": "Heritage Hemp Boxy Tee Front View",
-          "isPrimary": true,
-          "sortOrder": 0
-        },
-        {
-          "url": "/images/prod-hemp-boxy-model.jpg",
-          "altText": "Heritage Hemp Boxy Tee Model View",
-          "isPrimary": false,
-          "sortOrder": 1
-        },
-        {
-          "url": "/images/prod-hemp-boxy-detail.jpg",
-          "altText": "Heritage Hemp Slub Fabric Close-up",
-          "isPrimary": false,
-          "sortOrder": 2
-        }
-      ],
-      "tags": [
-        "bestseller",
-        "hemp",
-        "heavyweight",
-        "durable"
-      ],
-      "status": "active",
-      "seo": {
-        "title": "Heritage Hemp Boxy Tee | Sustainable Hemp Clothing India",
-        "metaDescription": "Durable heavyweight hemp boxy tee made with 55% hemp and 45% organic cotton."
-      },
-      "variants": [
-        {
-          "_id": "var_hboxy_snd_s",
-          "sku": "BH-HBX-SND-S",
-          "size": "S",
-          "colour": {
-            "name": "Earthy Sand",
-            "hex": "#D7CEBE"
-          },
-          "pricePaise": 169900,
-          "compareAtPricePaise": 219900,
-          "stockQuantity": 20,
-          "reservedQuantity": 0,
-          "isActive": true
-        },
-        {
-          "_id": "var_hboxy_snd_m",
-          "sku": "BH-HBX-SND-M",
-          "size": "M",
-          "colour": {
-            "name": "Earthy Sand",
-            "hex": "#D7CEBE"
-          },
-          "pricePaise": 169900,
-          "compareAtPricePaise": 219900,
-          "stockQuantity": 32,
-          "reservedQuantity": 0,
-          "isActive": true
-        },
-        {
-          "_id": "var_hboxy_grn_l",
-          "sku": "BH-HBX-GRN-L",
-          "size": "L",
-          "colour": {
-            "name": "Heritage Pine",
-            "hex": "#234938"
-          },
-          "pricePaise": 169900,
-          "compareAtPricePaise": 219900,
-          "stockQuantity": 15,
-          "reservedQuantity": 0,
-          "isActive": true
-        }
-      ]
-    },
-    {
-      "_id": "prod_hemp_pocket",
-      "name": "Everyday Hemp Pocket Tee",
-      "slug": "everyday-hemp-pocket-tee",
-      "categoryIds": [
-        "cat_hemp_tshirts"
-      ],
-      "fabricType": "hemp_blend",
-      "fabricComposition": [
-        {
-          "fibre": "Heritage Hemp",
-          "percentage": 55
-        },
-        {
-          "fibre": "Organic Cotton",
-          "percentage": 45
-        }
-      ],
-      "materialDetails": "Naturally antimicrobial hemp jersey with reinforced chest pocket detail.",
-      "shortDescription": "Classic chest pocket crew neck crafted from our signature breathable hemp-cotton blend.",
-      "description": "A utilitarian staple designed for warm climates and relaxed weekend styling.",
-      "careInstructions": [
-        "Machine wash cold",
-        "Line dry recommended"
-      ],
-      "images": [
-        {
-          "url": "/images/prod-hemp-pocket-front.jpg",
-          "altText": "Everyday Hemp Pocket Tee Front",
-          "isPrimary": true,
-          "sortOrder": 0
-        },
-        {
-          "url": "/images/prod-hemp-pocket-model.jpg",
-          "altText": "Everyday Hemp Pocket Tee on Model",
-          "isPrimary": false,
-          "sortOrder": 1
-        },
-        {
-          "url": "/images/prod-hemp-pocket-detail.jpg",
-          "altText": "Chest Pocket Construction Detail",
-          "isPrimary": false,
-          "sortOrder": 2
-        }
-      ],
-      "tags": [
-        "hemp",
-        "pocket-tee",
-        "casual"
-      ],
-      "status": "active",
-      "seo": {
-        "title": "Everyday Hemp Pocket Tee | Hemp Clothing India",
-        "metaDescription": "Casual pocket tee in breathable hemp-cotton blend."
-      },
-      "variants": [
-        {
-          "_id": "var_hpock_cld_m",
-          "sku": "BH-HPK-CLD-M",
-          "size": "M",
-          "colour": {
-            "name": "Cloud Grey",
-            "hex": "#B8C2B8"
-          },
-          "pricePaise": 159900,
-          "compareAtPricePaise": 199900,
-          "stockQuantity": 22,
-          "reservedQuantity": 0,
-          "isActive": true
-        },
-        {
-          "_id": "var_hpock_cld_l",
-          "sku": "BH-HPK-CLD-L",
-          "size": "L",
-          "colour": {
-            "name": "Cloud Grey",
-            "hex": "#B8C2B8"
-          },
-          "pricePaise": 159900,
-          "compareAtPricePaise": 199900,
-          "stockQuantity": 14,
-          "reservedQuantity": 0,
-          "isActive": true
-        }
-      ]
-    },
-    {
-      "_id": "prod_bamboo_trunk_3pk",
-      "name": "Everyday Bamboo Trunk (3-Pack)",
-      "slug": "everyday-bamboo-trunk-3pack",
-      "categoryIds": [
-        "cat_mens_innerwear"
-      ],
-      "fabricType": "bamboo",
-      "fabricComposition": [
-        {
-          "fibre": "Organic Bamboo Viscose",
           "percentage": 95
         },
         {
@@ -476,211 +985,2364 @@
           "percentage": 5
         }
       ],
-      "materialDetails": "360° cooling mesh waistband with anti-ride-up contoured pouch. Hypoallergenic & skin-friendly.",
-      "shortDescription": "Bamboo Cool signature multi-pack trunks: friction-free, sweat-resistant, and ultra-cooling.",
-      "description": "Built for active all-day wear. The no-roll waistband and ergonomic 3D pouch prevent chafing while bamboo viscose wicks sweat 4x faster than cotton. Pack of 3 matching earth tones.",
+      "shortDescription": "Crafted from rain-fed Himalayan hemp bast fibers blended with organic cotton. Hemp is 4x more durable than conventional cotton, naturally UV protectiv",
+      "description": "Crafted from rain-fed Himalayan hemp bast fibers blended with organic cotton. Hemp is 4x more durable than conventional cotton, naturally UV protective (UPF 50+), and gets softer with every single wash.",
+      "materialDetails": "55% Himalayan Heritage Hemp, 45% Organic Cotton",
       "careInstructions": [
-        "Machine wash gentle 30°C",
-        "Wash darks separately",
-        "Do not tumble dry"
+        "Machine wash cold with mild detergent. Hang to dry in shade. Naturally wrinkle-relaxing."
       ],
+      "badge": "Gets Softer Every Wash",
       "images": [
         {
-          "url": "/images/prod-bamboo-trunk-front.jpg",
-          "altText": "Everyday Bamboo Trunk 3-Pack Boxed Set",
+          "url": "/images/home/bestseller_2.png",
+          "altText": "Heritage Himalayan Hemp Boxy Tee image 1",
           "isPrimary": true,
           "sortOrder": 0
         },
         {
-          "url": "/images/prod-bamboo-trunk-model.jpg",
-          "altText": "Everyday Bamboo Trunk Multi-Pack Laid Out",
+          "url": "/images/home/hd/neutral_tee_hd.jpg",
+          "altText": "Heritage Himalayan Hemp Boxy Tee image 2",
           "isPrimary": false,
           "sortOrder": 1
-        },
-        {
-          "url": "/images/prod-bamboo-trunk-detail.jpg",
-          "altText": "Comfort Waistband and Stitching Detail",
-          "isPrimary": false,
-          "sortOrder": 2
         }
       ],
-      "tags": [
-        "bestseller",
-        "bundle",
-        "multipack",
-        "innerwear",
-        "cooling"
-      ],
+      "rating": 4.92,
+      "reviewsCount": 184,
       "status": "active",
-      "seo": {
-        "title": "Everyday Bamboo Trunk (3-Pack) | Bamboo Innerwear India",
-        "metaDescription": "Bamboo cooling trunks in a value 3-pack. Anti-chafing, moisture wicking, breathable."
+      "materialStory": {
+        "title": "Two regenerative bast fibres. Built to outlast.",
+        "content": "Himalayan hemp bast fibers provide unmatched tensile strength and UV blocking. Organic cotton softens the hand-feel from wear one.",
+        "image": "/images/home/hd/linen_texture_hd.jpg"
       },
+      "faqs": [
+        {
+          "q": "Is hemp rough against the skin?",
+          "a": "Not at all. We blend 55% Himalayan bast hemp with 45% combed organic cotton, giving it a soft, linen-like feel that gets noticeably softer with every single wash cycle."
+        },
+        {
+          "q": "Does hemp shrink?",
+          "a": "Our hemp fabrics are pre-washed and pre-shrunk before stitching, guaranteeing minimal to zero shrinkage when washed in cold water."
+        }
+      ],
       "variants": [
         {
-          "_id": "var_btrunk_trio_s",
-          "sku": "BH-TRK-TRIO-S",
+          "_id": "6b05836fbcb6b6b43c1325aa",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-S-NAT",
           "size": "S",
-          "colour": {
-            "name": "Trio Pack (Pine/Moss/Sand)",
-            "hex": "#234938"
+          "color": {
+            "name": "Natural Sand",
+            "hex": "#D9D1C2"
           },
-          "pricePaise": 149900,
-          "compareAtPricePaise": 199900,
-          "stockQuantity": 45,
-          "reservedQuantity": 0,
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_btrunk_trio_m",
-          "sku": "BH-TRK-TRIO-M",
+          "_id": "6b05836fbcb6b6b43c1325ac",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-S-FOR",
+          "size": "S",
+          "color": {
+            "name": "Forest Moss",
+            "hex": "#2E4D3E"
+          },
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325ae",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-S-EAR",
+          "size": "S",
+          "color": {
+            "name": "Earthy Charcoal",
+            "hex": "#333533"
+          },
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325b0",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-M-NAT",
           "size": "M",
-          "colour": {
-            "name": "Trio Pack (Pine/Moss/Sand)",
-            "hex": "#234938"
+          "color": {
+            "name": "Natural Sand",
+            "hex": "#D9D1C2"
           },
-          "pricePaise": 149900,
-          "compareAtPricePaise": 199900,
-          "stockQuantity": 60,
-          "reservedQuantity": 0,
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_btrunk_trio_l",
-          "sku": "BH-TRK-TRIO-L",
+          "_id": "6b058370bcb6b6b43c1325b2",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-M-FOR",
+          "size": "M",
+          "color": {
+            "name": "Forest Moss",
+            "hex": "#2E4D3E"
+          },
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325b4",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-M-EAR",
+          "size": "M",
+          "color": {
+            "name": "Earthy Charcoal",
+            "hex": "#333533"
+          },
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325b6",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-L-NAT",
           "size": "L",
-          "colour": {
-            "name": "Trio Pack (Pine/Moss/Sand)",
-            "hex": "#234938"
+          "color": {
+            "name": "Natural Sand",
+            "hex": "#D9D1C2"
           },
-          "pricePaise": 149900,
-          "compareAtPricePaise": 199900,
-          "stockQuantity": 38,
-          "reservedQuantity": 0,
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_btrunk_trio_xl",
-          "sku": "BH-TRK-TRIO-XL",
+          "_id": "6b058370bcb6b6b43c1325b8",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-L-FOR",
+          "size": "L",
+          "color": {
+            "name": "Forest Moss",
+            "hex": "#2E4D3E"
+          },
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325ba",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-L-EAR",
+          "size": "L",
+          "color": {
+            "name": "Earthy Charcoal",
+            "hex": "#333533"
+          },
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325bc",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-XL-NAT",
           "size": "XL",
-          "colour": {
-            "name": "Trio Pack (Pine/Moss/Sand)",
-            "hex": "#234938"
+          "color": {
+            "name": "Natural Sand",
+            "hex": "#D9D1C2"
           },
-          "pricePaise": 149900,
-          "compareAtPricePaise": 199900,
-          "stockQuantity": 3,
-          "reservedQuantity": 0,
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325be",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-XL-FOR",
+          "size": "XL",
+          "color": {
+            "name": "Forest Moss",
+            "hex": "#2E4D3E"
+          },
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325c0",
+          "productId": "6b05836fbcb6b6b43c1325a8",
+          "sku": "HERITAGE-XL-EAR",
+          "size": "XL",
+          "color": {
+            "name": "Earthy Charcoal",
+            "hex": "#333533"
+          },
+          "mrp": 2299,
+          "price": 1499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         }
       ]
     },
     {
-      "_id": "prod_bamboo_boxer_brief",
-      "name": "BreezeBoo™ Cooling Boxer Brief",
-      "slug": "breezeboo-cooling-boxer-brief",
+      "_id": "6b058370bcb6b6b43c1325c2",
+      "name": "Himalayan Hemp Classic Crew Tee",
+      "slug": "himalayan-hemp-classic-crew",
       "categoryIds": [
-        "cat_mens_innerwear"
+        "6b05836fbcb6b6b43c13253c"
       ],
-      "fabricType": "bamboo",
+      "fabricType": "hemp",
       "fabricComposition": [
         {
-          "fibre": "Organic Bamboo Viscose",
-          "percentage": 92
+          "fibre": "Heritage Hemp",
+          "percentage": 95
         },
         {
-          "fibre": "Spandex",
-          "percentage": 8
+          "fibre": "Elastane",
+          "percentage": 5
         }
       ],
-      "materialDetails": "Micro-perforated bamboo mesh for maximum airflow during workouts and tropical humidity.",
-      "shortDescription": "Mid-thigh boxer brief with active mesh panels and frictionless flatlock seams.",
-      "description": "Our most supportive athletic innerwear. The stay-put leg design prevents bunching under formal trousers or athletic shorts.",
+      "shortDescription": "A classic crew-neck silhouette built for daily heavy rotation. Breathable open-weave hemp structure allows heat dissipation in hot and humid weather.",
+      "description": "A classic crew-neck silhouette built for daily heavy rotation. Breathable open-weave hemp structure allows heat dissipation in hot and humid weather.",
+      "materialDetails": "55% Hemp, 45% Organic Cotton",
       "careInstructions": [
-        "Machine wash warm",
-        "Air dry in shade"
+        "Gentle machine wash cold. Do not wring. Dry flat."
       ],
+      "badge": "Zero Pesticides",
       "images": [
         {
-          "url": "/images/prod-bamboo-boxer-front.jpg",
-          "altText": "BreezeBoo Cooling Boxer Brief Flatlay",
+          "url": "/images/home/hd/green_tee_hd.jpg",
+          "altText": "Himalayan Hemp Classic Crew Tee image 1",
           "isPrimary": true,
           "sortOrder": 0
         },
         {
-          "url": "/images/prod-bamboo-boxer-model.jpg",
-          "altText": "BreezeBoo Cooling Boxer Brief Lifestyle",
+          "url": "/images/home/hd/folded_tees_hd.jpg",
+          "altText": "Himalayan Hemp Classic Crew Tee image 2",
           "isPrimary": false,
           "sortOrder": 1
-        },
-        {
-          "url": "/images/prod-bamboo-boxer-detail.jpg",
-          "altText": "Breathable Mesh Panels Texture",
-          "isPrimary": false,
-          "sortOrder": 2
         }
       ],
-      "tags": [
-        "boxer-brief",
-        "cooling",
-        "athletic"
-      ],
+      "rating": 4.8,
+      "reviewsCount": 112,
       "status": "active",
-      "seo": {
-        "title": "BreezeBoo Cooling Boxer Brief | Bamboo Cool Apparel India",
-        "metaDescription": "Active cooling boxer briefs made from ultra-soft bamboo mesh."
+      "materialStory": {
+        "title": "Pure bast performance.",
+        "content": "Grown naturally in the Himalayan foothills using 70% less water than industrial cotton.",
+        "image": "/images/home/hd/green_tee_hd.jpg"
       },
+      "faqs": [
+        {
+          "q": "How is Himalayan hemp harvested?",
+          "a": "Hand-harvested by local mountain cooperatives in Uttarakhand, utilizing centuries-old dew-retting methods that require zero synthetic chemicals."
+        }
+      ],
       "variants": [
         {
-          "_id": "var_bboxer_blk_m",
-          "sku": "BH-BBX-BLK-M",
-          "size": "M",
-          "colour": {
-            "name": "Charcoal Black",
-            "hex": "#1E231E"
+          "_id": "6b058370bcb6b6b43c1325c4",
+          "productId": "6b058370bcb6b6b43c1325c2",
+          "sku": "HIMALAYA-S-PIN",
+          "size": "S",
+          "color": {
+            "name": "Pine Green",
+            "hex": "#244B3C"
           },
-          "pricePaise": 64900,
-          "compareAtPricePaise": 84900,
-          "stockQuantity": 50,
-          "reservedQuantity": 0,
+          "mrp": 1999,
+          "price": 1399,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_bboxer_blk_l",
-          "sku": "BH-BBX-BLK-L",
+          "_id": "6b058370bcb6b6b43c1325c6",
+          "productId": "6b058370bcb6b6b43c1325c2",
+          "sku": "HIMALAYA-S-RAW",
+          "size": "S",
+          "color": {
+            "name": "Raw Oatmeal",
+            "hex": "#ECE5D8"
+          },
+          "mrp": 1999,
+          "price": 1399,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325c8",
+          "productId": "6b058370bcb6b6b43c1325c2",
+          "sku": "HIMALAYA-M-PIN",
+          "size": "M",
+          "color": {
+            "name": "Pine Green",
+            "hex": "#244B3C"
+          },
+          "mrp": 1999,
+          "price": 1399,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325ca",
+          "productId": "6b058370bcb6b6b43c1325c2",
+          "sku": "HIMALAYA-M-RAW",
+          "size": "M",
+          "color": {
+            "name": "Raw Oatmeal",
+            "hex": "#ECE5D8"
+          },
+          "mrp": 1999,
+          "price": 1399,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325cc",
+          "productId": "6b058370bcb6b6b43c1325c2",
+          "sku": "HIMALAYA-L-PIN",
           "size": "L",
-          "colour": {
-            "name": "Charcoal Black",
-            "hex": "#1E231E"
+          "color": {
+            "name": "Pine Green",
+            "hex": "#244B3C"
           },
-          "pricePaise": 64900,
-          "compareAtPricePaise": 84900,
-          "stockQuantity": 40,
-          "reservedQuantity": 0,
+          "mrp": 1999,
+          "price": 1399,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_bboxer_grn_m",
-          "sku": "BH-BBX-GRN-M",
-          "size": "M",
-          "colour": {
-            "name": "Botanical Green",
-            "hex": "#2A543B"
+          "_id": "6b058370bcb6b6b43c1325ce",
+          "productId": "6b058370bcb6b6b43c1325c2",
+          "sku": "HIMALAYA-L-RAW",
+          "size": "L",
+          "color": {
+            "name": "Raw Oatmeal",
+            "hex": "#ECE5D8"
           },
-          "pricePaise": 64900,
-          "compareAtPricePaise": 84900,
-          "stockQuantity": 28,
-          "reservedQuantity": 0,
+          "mrp": 1999,
+          "price": 1399,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325d0",
+          "productId": "6b058370bcb6b6b43c1325c2",
+          "sku": "HIMALAYA-XL-PIN",
+          "size": "XL",
+          "color": {
+            "name": "Pine Green",
+            "hex": "#244B3C"
+          },
+          "mrp": 1999,
+          "price": 1399,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325d2",
+          "productId": "6b058370bcb6b6b43c1325c2",
+          "sku": "HIMALAYA-XL-RAW",
+          "size": "XL",
+          "color": {
+            "name": "Raw Oatmeal",
+            "hex": "#ECE5D8"
+          },
+          "mrp": 1999,
+          "price": 1399,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325d4",
+          "productId": "6b058370bcb6b6b43c1325c2",
+          "sku": "HIMALAYA-2XL-PIN",
+          "size": "2XL",
+          "color": {
+            "name": "Pine Green",
+            "hex": "#244B3C"
+          },
+          "mrp": 1999,
+          "price": 1399,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325d6",
+          "productId": "6b058370bcb6b6b43c1325c2",
+          "sku": "HIMALAYA-2XL-RAW",
+          "size": "2XL",
+          "color": {
+            "name": "Raw Oatmeal",
+            "hex": "#ECE5D8"
+          },
+          "mrp": 1999,
+          "price": 1399,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         }
       ]
     },
     {
-      "_id": "prod_bamboo_bralette",
-      "name": "Cloud Bamboo Lounge Bralette",
-      "slug": "cloud-bamboo-lounge-bralette",
+      "_id": "6b058370bcb6b6b43c1325d8",
+      "name": "Organic Himalayan Hemp Native Crew T-Shirt",
+      "slug": "organic-hemp-crew-tshirt",
       "categoryIds": [
-        "cat_womens_innerwear"
+        "6b05836fbcb6b6b43c13253c"
+      ],
+      "fabricType": "hemp",
+      "fabricComposition": [
+        {
+          "fibre": "Heritage Hemp",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "Sourced from native Himalayan mountain bast crops. Naturally porous cellular hollow fibers vent heat and moisture 3x faster than cotton, offering UPF ",
+      "description": "Sourced from native Himalayan mountain bast crops. Naturally porous cellular hollow fibers vent heat and moisture 3x faster than cotton, offering UPF 50+ sun protection and getting softer with every single wash.",
+      "materialDetails": "100% Organic Himalayan Bast Hemp (180 GSM)",
+      "careInstructions": [
+        "Cold machine wash gentle with mild plant-based detergent. Line dry in shade. Naturally wrinkle-relaxing."
+      ],
+      "badge": "100% Bast Hemp",
+      "images": [
+        {
+          "url": "/images/products/hemp-organic-hemp-t-shirts-2.webp",
+          "altText": "Organic Himalayan Hemp Native Crew T-Shirt image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/products/hemp-organic-hemp-t-shirts-4.webp",
+          "altText": "Organic Himalayan Hemp Native Crew T-Shirt image 2",
+          "isPrimary": false,
+          "sortOrder": 1
+        }
+      ],
+      "rating": 4.93,
+      "reviewsCount": 168,
+      "status": "active",
+      "materialStory": {
+        "title": "100% Pure Himalayan bast fiber. Zero compromise.",
+        "content": "Grown in high-altitude terrain with rain-fed irrigation. Naturally antibacterial, moisture-wicking, and breathable in warm Indian climates.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
+      },
+      "faqs": [
+        {
+          "q": "Is 100% hemp rough against skin?",
+          "a": "Not at all. We pre-wash our bast fibers with organic bio-enzymes, removing raw stiffness so it feels gentle from the first day."
+        },
+        {
+          "q": "Does hemp protect against the sun?",
+          "a": "Yes. Hemp fiber naturally blocks 98% of harmful ultraviolet rays, conferring UPF 50+ protection without synthetic chemical coatings."
+        },
+        {
+          "q": "How should I wash it?",
+          "a": "Cold gentle machine wash with mild plant detergent. Hang to dry in shade. Naturally relaxes wrinkles without aggressive ironing."
+        },
+        {
+          "q": "What is your exchange policy?",
+          "a": "We provide a 15-day doorstep size exchange across India on all unworn items."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b058370bcb6b6b43c1325da",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--S-EAR",
+          "size": "S",
+          "color": {
+            "name": "Earth Tan",
+            "hex": "#C2A385"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325dc",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--S-DES",
+          "size": "S",
+          "color": {
+            "name": "Desert Dune",
+            "hex": "#D9CEB8"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325de",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--S-MOU",
+          "size": "S",
+          "color": {
+            "name": "Mountain Slate",
+            "hex": "#4A4E51"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325e0",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--M-EAR",
+          "size": "M",
+          "color": {
+            "name": "Earth Tan",
+            "hex": "#C2A385"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325e2",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--M-DES",
+          "size": "M",
+          "color": {
+            "name": "Desert Dune",
+            "hex": "#D9CEB8"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325e4",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--M-MOU",
+          "size": "M",
+          "color": {
+            "name": "Mountain Slate",
+            "hex": "#4A4E51"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325e6",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--L-EAR",
+          "size": "L",
+          "color": {
+            "name": "Earth Tan",
+            "hex": "#C2A385"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325e8",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--L-DES",
+          "size": "L",
+          "color": {
+            "name": "Desert Dune",
+            "hex": "#D9CEB8"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325ea",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--L-MOU",
+          "size": "L",
+          "color": {
+            "name": "Mountain Slate",
+            "hex": "#4A4E51"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325ec",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--XL-EAR",
+          "size": "XL",
+          "color": {
+            "name": "Earth Tan",
+            "hex": "#C2A385"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325ee",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--XL-DES",
+          "size": "XL",
+          "color": {
+            "name": "Desert Dune",
+            "hex": "#D9CEB8"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325f0",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--XL-MOU",
+          "size": "XL",
+          "color": {
+            "name": "Mountain Slate",
+            "hex": "#4A4E51"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325f2",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--2XL-EAR",
+          "size": "2XL",
+          "color": {
+            "name": "Earth Tan",
+            "hex": "#C2A385"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325f4",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--2XL-DES",
+          "size": "2XL",
+          "color": {
+            "name": "Desert Dune",
+            "hex": "#D9CEB8"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325f6",
+          "productId": "6b058370bcb6b6b43c1325d8",
+          "sku": "ORGANIC--2XL-MOU",
+          "size": "2XL",
+          "color": {
+            "name": "Mountain Slate",
+            "hex": "#4A4E51"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b058370bcb6b6b43c1325f8",
+      "name": "Hemp Graphic T-Shirt – Retro Aviator Edition",
+      "slug": "hemp-graphic-tshirt-retro-aviator",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c13253c"
+      ],
+      "fabricType": "hemp",
+      "fabricComposition": [
+        {
+          "fibre": "Heritage Hemp",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "Everyday streetwear ease meets sustainable bast durability. Cut with a modern regular fit from bio-enzyme pre-softened hemp-cotton jersey featuring vi",
+      "description": "Everyday streetwear ease meets sustainable bast durability. Cut with a modern regular fit from bio-enzyme pre-softened hemp-cotton jersey featuring vintage retro sunglasses graphic print.",
+      "materialDetails": "55% Himalayan Bast Hemp, 45% Organic Cotton (190 GSM)",
+      "careInstructions": [
+        "Machine wash cold inside out. Flat or line dry in shade. Warm iron on reverse side of print."
+      ],
+      "badge": "Bio-Enzyme Washed",
+      "images": [
+        {
+          "url": "/images/products/hemp-100-hemp-t-shirts-2.webp",
+          "altText": "Hemp Graphic T-Shirt – Retro Aviator Edition image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/products/hemp-100-hemp-t-shirts-4.webp",
+          "altText": "Hemp Graphic T-Shirt – Retro Aviator Edition image 2",
+          "isPrimary": false,
+          "sortOrder": 1
+        }
+      ],
+      "rating": 4.89,
+      "reviewsCount": 142,
+      "status": "active",
+      "materialStory": {
+        "title": "Hemp durability. Organic cotton softness.",
+        "content": "55% hemp bast provides structural drape and anti-odor longevity, while 45% organic ring-spun cotton delivers immediate everyday comfort.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
+      },
+      "faqs": [
+        {
+          "q": "Will the graphic print crack or peel?",
+          "a": "No. We utilize water-based discharge screen-printing where pigment binds directly to the hemp yarn rather than sitting on top."
+        },
+        {
+          "q": "How should I wash graphic hemp tees?",
+          "a": "Machine wash cold inside out with similar colors. Line dry in shade to preserve color saturation."
+        },
+        {
+          "q": "Is the fabric itchy?",
+          "a": "Not at all. The fabric undergoes a specialized bio-enzyme wash that removes any bast fiber roughness before stitching."
+        },
+        {
+          "q": "Can I exchange for another size?",
+          "a": "Yes, 15-day doorstep size replacement across all regions of India."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b058370bcb6b6b43c1325fa",
+          "productId": "6b058370bcb6b6b43c1325f8",
+          "sku": "HEMP-GRA-S-WAS",
+          "size": "S",
+          "color": {
+            "name": "Washed Black",
+            "hex": "#1C1B1A"
+          },
+          "mrp": 1799,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325fc",
+          "productId": "6b058370bcb6b6b43c1325f8",
+          "sku": "HEMP-GRA-S-VIN",
+          "size": "S",
+          "color": {
+            "name": "Vintage Charcoal",
+            "hex": "#383635"
+          },
+          "mrp": 1799,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1325fe",
+          "productId": "6b058370bcb6b6b43c1325f8",
+          "sku": "HEMP-GRA-M-WAS",
+          "size": "M",
+          "color": {
+            "name": "Washed Black",
+            "hex": "#1C1B1A"
+          },
+          "mrp": 1799,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132600",
+          "productId": "6b058370bcb6b6b43c1325f8",
+          "sku": "HEMP-GRA-M-VIN",
+          "size": "M",
+          "color": {
+            "name": "Vintage Charcoal",
+            "hex": "#383635"
+          },
+          "mrp": 1799,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132602",
+          "productId": "6b058370bcb6b6b43c1325f8",
+          "sku": "HEMP-GRA-L-WAS",
+          "size": "L",
+          "color": {
+            "name": "Washed Black",
+            "hex": "#1C1B1A"
+          },
+          "mrp": 1799,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132604",
+          "productId": "6b058370bcb6b6b43c1325f8",
+          "sku": "HEMP-GRA-L-VIN",
+          "size": "L",
+          "color": {
+            "name": "Vintage Charcoal",
+            "hex": "#383635"
+          },
+          "mrp": 1799,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132606",
+          "productId": "6b058370bcb6b6b43c1325f8",
+          "sku": "HEMP-GRA-XL-WAS",
+          "size": "XL",
+          "color": {
+            "name": "Washed Black",
+            "hex": "#1C1B1A"
+          },
+          "mrp": 1799,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132608",
+          "productId": "6b058370bcb6b6b43c1325f8",
+          "sku": "HEMP-GRA-XL-VIN",
+          "size": "XL",
+          "color": {
+            "name": "Vintage Charcoal",
+            "hex": "#383635"
+          },
+          "mrp": 1799,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13260a",
+          "productId": "6b058370bcb6b6b43c1325f8",
+          "sku": "HEMP-GRA-2XL-WAS",
+          "size": "2XL",
+          "color": {
+            "name": "Washed Black",
+            "hex": "#1C1B1A"
+          },
+          "mrp": 1799,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13260c",
+          "productId": "6b058370bcb6b6b43c1325f8",
+          "sku": "HEMP-GRA-2XL-VIN",
+          "size": "2XL",
+          "color": {
+            "name": "Vintage Charcoal",
+            "hex": "#383635"
+          },
+          "mrp": 1799,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b058370bcb6b6b43c13260e",
+      "name": "Oversized Hemp T-Shirt – Dino Edition",
+      "slug": "eco-friendly-oversized-hemp-tshirt-dino",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c13253c"
+      ],
+      "fabricType": "hemp",
+      "fabricComposition": [
+        {
+          "fibre": "Heritage Hemp",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "A relaxed, drop-shoulder streetwear silhouette crafted from 200 GSM heavy hemp bast jersey. Plays with a playful graphic illustration, double-needle l",
+      "description": "A relaxed, drop-shoulder streetwear silhouette crafted from 200 GSM heavy hemp bast jersey. Plays with a playful graphic illustration, double-needle locked hems, and a non-twisting neck collar.",
+      "materialDetails": "60% Himalayan Hemp, 40% Organic Combed Cotton (200 GSM)",
+      "careInstructions": [
+        "Cold gentle machine wash. Do not tumble dry high. Hang to maintain shape."
+      ],
+      "badge": "Oversized Fit",
+      "images": [
+        {
+          "url": "/images/products/hemp-eco-friendly-oversized-t-shirts-in-hemp-2.webp",
+          "altText": "Oversized Hemp T-Shirt – Dino Edition image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/products/hemp-eco-friendly-oversized-t-shirts-in-hemp-4.webp",
+          "altText": "Oversized Hemp T-Shirt – Dino Edition image 2",
+          "isPrimary": false,
+          "sortOrder": 1
+        }
+      ],
+      "rating": 4.88,
+      "reviewsCount": 96,
+      "status": "active",
+      "materialStory": {
+        "title": "60% Bast Hemp. 200 GSM Heavyweight drape.",
+        "content": "Dense yet breathable open cellular weave that falls straight and boxy, providing superior structural presence without clinging.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
+      },
+      "faqs": [
+        {
+          "q": "Is this tee true to size?",
+          "a": "It is cut intentionally oversized with a 2-inch chest allowance and dropped shoulders. If you prefer a fitted look, select one size smaller."
+        },
+        {
+          "q": "How does the heavyweight fabric feel in warm weather?",
+          "a": "Hemp fibers are hollow and breathable, allowing constant airflow even at 200 GSM weight."
+        },
+        {
+          "q": "Does the white color become see-through?",
+          "a": "No. Thanks to the 200 GSM dense weave, the Cloud White colorway is completely opaque."
+        },
+        {
+          "q": "Can I exchange if size is too big?",
+          "a": "Yes, free doorstep size exchange within 15 days."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b058370bcb6b6b43c132610",
+          "productId": "6b058370bcb6b6b43c13260e",
+          "sku": "ECO-FRIE-S-ONY",
+          "size": "S",
+          "color": {
+            "name": "Onyx Black",
+            "hex": "#151515"
+          },
+          "mrp": 1699,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132612",
+          "productId": "6b058370bcb6b6b43c13260e",
+          "sku": "ECO-FRIE-S-CLO",
+          "size": "S",
+          "color": {
+            "name": "Cloud White",
+            "hex": "#F8F7F4"
+          },
+          "mrp": 1699,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132614",
+          "productId": "6b058370bcb6b6b43c13260e",
+          "sku": "ECO-FRIE-M-ONY",
+          "size": "M",
+          "color": {
+            "name": "Onyx Black",
+            "hex": "#151515"
+          },
+          "mrp": 1699,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132616",
+          "productId": "6b058370bcb6b6b43c13260e",
+          "sku": "ECO-FRIE-M-CLO",
+          "size": "M",
+          "color": {
+            "name": "Cloud White",
+            "hex": "#F8F7F4"
+          },
+          "mrp": 1699,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132618",
+          "productId": "6b058370bcb6b6b43c13260e",
+          "sku": "ECO-FRIE-L-ONY",
+          "size": "L",
+          "color": {
+            "name": "Onyx Black",
+            "hex": "#151515"
+          },
+          "mrp": 1699,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13261a",
+          "productId": "6b058370bcb6b6b43c13260e",
+          "sku": "ECO-FRIE-L-CLO",
+          "size": "L",
+          "color": {
+            "name": "Cloud White",
+            "hex": "#F8F7F4"
+          },
+          "mrp": 1699,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13261c",
+          "productId": "6b058370bcb6b6b43c13260e",
+          "sku": "ECO-FRIE-XL-ONY",
+          "size": "XL",
+          "color": {
+            "name": "Onyx Black",
+            "hex": "#151515"
+          },
+          "mrp": 1699,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13261e",
+          "productId": "6b058370bcb6b6b43c13260e",
+          "sku": "ECO-FRIE-XL-CLO",
+          "size": "XL",
+          "color": {
+            "name": "Cloud White",
+            "hex": "#F8F7F4"
+          },
+          "mrp": 1699,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132620",
+          "productId": "6b058370bcb6b6b43c13260e",
+          "sku": "ECO-FRIE-2XL-ONY",
+          "size": "2XL",
+          "color": {
+            "name": "Onyx Black",
+            "hex": "#151515"
+          },
+          "mrp": 1699,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132622",
+          "productId": "6b058370bcb6b6b43c13260e",
+          "sku": "ECO-FRIE-2XL-CLO",
+          "size": "2XL",
+          "color": {
+            "name": "Cloud White",
+            "hex": "#F8F7F4"
+          },
+          "mrp": 1699,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b058370bcb6b6b43c132624",
+      "name": "Men's Hemp Everyday Crew Tee – Be Strong Edition",
+      "slug": "mens-hemp-round-neck-tshirt-be-strong",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c13253c"
+      ],
+      "fabricType": "hemp",
+      "fabricComposition": [
+        {
+          "fibre": "Heritage Hemp",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "Designed for resilient all-day rotation. Features a signature 'BE STRONG' typography patch across the chest, reinforced ribbed collar, and anti-twist ",
+      "description": "Designed for resilient all-day rotation. Features a signature 'BE STRONG' typography patch across the chest, reinforced ribbed collar, and anti-twist side seams that stay straight after dozens of washes.",
+      "materialDetails": "55% Himalayan Hemp, 45% Organic Ring-Spun Cotton (180 GSM)",
+      "careInstructions": [
+        "Machine wash cold. Do not dry-clean. Hang to dry."
+      ],
+      "badge": "Everyday Classic",
+      "images": [
+        {
+          "url": "/images/products/hemp-men-round-neck-t-shirt-2-2.webp",
+          "altText": "Men's Hemp Everyday Crew Tee – Be Strong Edition image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/products/hemp-men-round-neck-t-shirt-2-4.webp",
+          "altText": "Men's Hemp Everyday Crew Tee – Be Strong Edition image 2",
+          "isPrimary": false,
+          "sortOrder": 1
+        }
+      ],
+      "rating": 4.87,
+      "reviewsCount": 118,
+      "status": "active",
+      "materialStory": {
+        "title": "55% Mountain Hemp. 45% Organic Cotton.",
+        "content": "Natural thermal regulation that keeps skin cool in high humidity. Himalayan hemp bast fibers actively resist odor bacteria.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
+      },
+      "faqs": [
+        {
+          "q": "Is the graphic print breathable?",
+          "a": "Yes, our screenprint uses permeable non-toxic pigments so air moves through the garment freely."
+        },
+        {
+          "q": "Will this tee fade in the sun?",
+          "a": "Our yarns are dyed with high-fastness low-impact reactive dyes that resist UV fading."
+        },
+        {
+          "q": "How should I dry it?",
+          "a": "Hang drying in shade preserves the bast fibers and natural fabric elasticity."
+        },
+        {
+          "q": "Are returns hassle-free?",
+          "a": "Yes, 15-day doorstep returns and size exchanges."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b058370bcb6b6b43c132626",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-S-PIN",
+          "size": "S",
+          "color": {
+            "name": "Pine Green",
+            "hex": "#1E3F35"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132628",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-S-EAR",
+          "size": "S",
+          "color": {
+            "name": "Earth Brown",
+            "hex": "#6A4935"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13262a",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-S-DEE",
+          "size": "S",
+          "color": {
+            "name": "Deep Navy",
+            "hex": "#182236"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13262c",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-M-PIN",
+          "size": "M",
+          "color": {
+            "name": "Pine Green",
+            "hex": "#1E3F35"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13262e",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-M-EAR",
+          "size": "M",
+          "color": {
+            "name": "Earth Brown",
+            "hex": "#6A4935"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132630",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-M-DEE",
+          "size": "M",
+          "color": {
+            "name": "Deep Navy",
+            "hex": "#182236"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132632",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-L-PIN",
+          "size": "L",
+          "color": {
+            "name": "Pine Green",
+            "hex": "#1E3F35"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132634",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-L-EAR",
+          "size": "L",
+          "color": {
+            "name": "Earth Brown",
+            "hex": "#6A4935"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132636",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-L-DEE",
+          "size": "L",
+          "color": {
+            "name": "Deep Navy",
+            "hex": "#182236"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132638",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-XL-PIN",
+          "size": "XL",
+          "color": {
+            "name": "Pine Green",
+            "hex": "#1E3F35"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13263a",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-XL-EAR",
+          "size": "XL",
+          "color": {
+            "name": "Earth Brown",
+            "hex": "#6A4935"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13263c",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-XL-DEE",
+          "size": "XL",
+          "color": {
+            "name": "Deep Navy",
+            "hex": "#182236"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13263e",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-2XL-PIN",
+          "size": "2XL",
+          "color": {
+            "name": "Pine Green",
+            "hex": "#1E3F35"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132640",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-2XL-EAR",
+          "size": "2XL",
+          "color": {
+            "name": "Earth Brown",
+            "hex": "#6A4935"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132642",
+          "productId": "6b058370bcb6b6b43c132624",
+          "sku": "MENS-HEM-2XL-DEE",
+          "size": "2XL",
+          "color": {
+            "name": "Deep Navy",
+            "hex": "#182236"
+          },
+          "mrp": 1699,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b058370bcb6b6b43c132644",
+      "name": "Oversized Hemp Graphic Tee – Japanese Dragon Edition",
+      "slug": "oversized-hemp-japanese-dragon-tshirt",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c13253c"
+      ],
+      "fabricType": "hemp",
+      "fabricComposition": [
+        {
+          "fibre": "Heritage Hemp",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "Showcasing intricate Japanese dragon artwork and solar red motifs on rich plum hemp jersey. Heavyweight boxy drape that hangs effortlessly without sti",
+      "description": "Showcasing intricate Japanese dragon artwork and solar red motifs on rich plum hemp jersey. Heavyweight boxy drape that hangs effortlessly without sticking to skin during humid summers.",
+      "materialDetails": "55% Himalayan Bast Hemp, 45% Organic Cotton (200 GSM)",
+      "careInstructions": [
+        "Machine wash cold with like darks. Iron inside out."
+      ],
+      "badge": "Boxy Fit",
+      "images": [
+        {
+          "url": "/images/products/hemp-oversized-t-shirts-in-organic-cotton-2.webp",
+          "altText": "Oversized Hemp Graphic Tee – Japanese Dragon Edition image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/products/hemp-oversized-t-shirts-in-organic-cotton-4.webp",
+          "altText": "Oversized Hemp Graphic Tee – Japanese Dragon Edition image 2",
+          "isPrimary": false,
+          "sortOrder": 1
+        }
+      ],
+      "rating": 4.91,
+      "reviewsCount": 135,
+      "status": "active",
+      "materialStory": {
+        "title": "Intricate artwork on 200 GSM bast knit.",
+        "content": "Combines high-detail precision illustration with heavy-gauge bast durability. Will not pill or degrade across years of wear.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
+      },
+      "faqs": [
+        {
+          "q": "Is the dragon print durable?",
+          "a": "Yes, our screen printing uses premium flexible inks cured at high temperatures to resist peeling and flaking."
+        },
+        {
+          "q": "How does the plum dye hold up?",
+          "a": "We use reactive eco-dyes with high colorfastness that maintain depth of shade across wash cycles."
+        },
+        {
+          "q": "What size should I choose?",
+          "a": "Choose your normal size for a relaxed oversized look, or size down if you prefer a slimmer profile."
+        },
+        {
+          "q": "Is exchange available?",
+          "a": "Yes, 15-day doorstep exchange across India."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b058370bcb6b6b43c132646",
+          "productId": "6b058370bcb6b6b43c132644",
+          "sku": "OVERSIZE-S-PLU",
+          "size": "S",
+          "color": {
+            "name": "Plum Wine",
+            "hex": "#47333F"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132648",
+          "productId": "6b058370bcb6b6b43c132644",
+          "sku": "OVERSIZE-S-WAS",
+          "size": "S",
+          "color": {
+            "name": "Washed Black",
+            "hex": "#1B1A1A"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13264a",
+          "productId": "6b058370bcb6b6b43c132644",
+          "sku": "OVERSIZE-M-PLU",
+          "size": "M",
+          "color": {
+            "name": "Plum Wine",
+            "hex": "#47333F"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13264c",
+          "productId": "6b058370bcb6b6b43c132644",
+          "sku": "OVERSIZE-M-WAS",
+          "size": "M",
+          "color": {
+            "name": "Washed Black",
+            "hex": "#1B1A1A"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13264e",
+          "productId": "6b058370bcb6b6b43c132644",
+          "sku": "OVERSIZE-L-PLU",
+          "size": "L",
+          "color": {
+            "name": "Plum Wine",
+            "hex": "#47333F"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132650",
+          "productId": "6b058370bcb6b6b43c132644",
+          "sku": "OVERSIZE-L-WAS",
+          "size": "L",
+          "color": {
+            "name": "Washed Black",
+            "hex": "#1B1A1A"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132652",
+          "productId": "6b058370bcb6b6b43c132644",
+          "sku": "OVERSIZE-XL-PLU",
+          "size": "XL",
+          "color": {
+            "name": "Plum Wine",
+            "hex": "#47333F"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132654",
+          "productId": "6b058370bcb6b6b43c132644",
+          "sku": "OVERSIZE-XL-WAS",
+          "size": "XL",
+          "color": {
+            "name": "Washed Black",
+            "hex": "#1B1A1A"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132656",
+          "productId": "6b058370bcb6b6b43c132644",
+          "sku": "OVERSIZE-2XL-PLU",
+          "size": "2XL",
+          "color": {
+            "name": "Plum Wine",
+            "hex": "#47333F"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132658",
+          "productId": "6b058370bcb6b6b43c132644",
+          "sku": "OVERSIZE-2XL-WAS",
+          "size": "2XL",
+          "color": {
+            "name": "Washed Black",
+            "hex": "#1B1A1A"
+          },
+          "mrp": 1899,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b058370bcb6b6b43c13265a",
+      "name": "Oversized Hemp Graphic Tee – Better Days Ahead",
+      "slug": "oversized-unisex-hemp-graphic-tee-better-days",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c13253c"
+      ],
+      "fabricType": "hemp",
+      "fabricComposition": [
+        {
+          "fibre": "Heritage Hemp",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "Streetwear versatility with an uplifting retro graphic. Crafted with drop shoulders and wider sleeve openings for a breezy, relaxed fit that feels wei",
+      "description": "Streetwear versatility with an uplifting retro graphic. Crafted with drop shoulders and wider sleeve openings for a breezy, relaxed fit that feels weightless and stays odor-free.",
+      "materialDetails": "55% Himalayan Hemp, 45% Combed Organic Cotton (195 GSM)",
+      "careInstructions": [
+        "Machine wash cold on gentle. Line dry."
+      ],
+      "badge": "Unisex Fit",
+      "images": [
+        {
+          "url": "/images/products/hemp-cute-oversized-unisex-t-shirts-2.webp",
+          "altText": "Oversized Hemp Graphic Tee – Better Days Ahead image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/products/hemp-cute-oversized-unisex-t-shirts-4.webp",
+          "altText": "Oversized Hemp Graphic Tee – Better Days Ahead image 2",
+          "isPrimary": false,
+          "sortOrder": 1
+        }
+      ],
+      "rating": 4.9,
+      "reviewsCount": 114,
+      "status": "active",
+      "materialStory": {
+        "title": "Unisex silhouette. Regenerative bast blend.",
+        "content": "Designed to be worn by anyone, anywhere. Pre-washed with biodegradable enzymes to ensure maximum softness straight out of the box.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
+      },
+      "faqs": [
+        {
+          "q": "Is this suitable for women too?",
+          "a": "Yes, it is designed with a unisex boxy cut. Women typically take one size down from their standard women's size for the ideal oversized fit."
+        },
+        {
+          "q": "How does the fabric feel against sensitive skin?",
+          "a": "Our eco-enzyme wash removes bast fiber stiffness, leaving it soft, hypoallergenic, and irritation-free."
+        },
+        {
+          "q": "Can it be ironed?",
+          "a": "Yes, warm iron inside out. Hemp naturally relaxes wrinkles quickly."
+        },
+        {
+          "q": "What is your exchange policy?",
+          "a": "15-day doorstep size exchange across all PIN codes in India."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b058370bcb6b6b43c13265c",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-XS-CAR",
+          "size": "XS",
+          "color": {
+            "name": "Caramel Brown",
+            "hex": "#754C29"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13265e",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-XS-DUS",
+          "size": "XS",
+          "color": {
+            "name": "Dusty Olive",
+            "hex": "#4B523E"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132660",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-S-CAR",
+          "size": "S",
+          "color": {
+            "name": "Caramel Brown",
+            "hex": "#754C29"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132662",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-S-DUS",
+          "size": "S",
+          "color": {
+            "name": "Dusty Olive",
+            "hex": "#4B523E"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132664",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-M-CAR",
+          "size": "M",
+          "color": {
+            "name": "Caramel Brown",
+            "hex": "#754C29"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132666",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-M-DUS",
+          "size": "M",
+          "color": {
+            "name": "Dusty Olive",
+            "hex": "#4B523E"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132668",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-L-CAR",
+          "size": "L",
+          "color": {
+            "name": "Caramel Brown",
+            "hex": "#754C29"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13266a",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-L-DUS",
+          "size": "L",
+          "color": {
+            "name": "Dusty Olive",
+            "hex": "#4B523E"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13266c",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-XL-CAR",
+          "size": "XL",
+          "color": {
+            "name": "Caramel Brown",
+            "hex": "#754C29"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13266e",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-XL-DUS",
+          "size": "XL",
+          "color": {
+            "name": "Dusty Olive",
+            "hex": "#4B523E"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132670",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-2XL-CAR",
+          "size": "2XL",
+          "color": {
+            "name": "Caramel Brown",
+            "hex": "#754C29"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132672",
+          "productId": "6b058370bcb6b6b43c13265a",
+          "sku": "OVERSIZE-2XL-DUS",
+          "size": "2XL",
+          "color": {
+            "name": "Dusty Olive",
+            "hex": "#4B523E"
+          },
+          "mrp": 1749,
+          "price": 1249,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b058370bcb6b6b43c132674",
+      "name": "Minimalist Embroidered Hemp-Cotton T-Shirt",
+      "slug": "organic-hemp-cotton-minimalist-tee",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c13253c"
+      ],
+      "fabricType": "hemp",
+      "fabricComposition": [
+        {
+          "fibre": "Heritage Hemp",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "A clean, versatile wardrobe staple featuring a subtle botanical leaf micro-embroidery on the left chest. Soft breathable bast knit designed for warm c",
+      "description": "A clean, versatile wardrobe staple featuring a subtle botanical leaf micro-embroidery on the left chest. Soft breathable bast knit designed for warm climate desk-to-dinner wear.",
+      "materialDetails": "55% Organic Himalayan Hemp, 45% Organic Cotton (180 GSM)",
+      "careInstructions": [
+        "Gentle cold machine wash. Lay flat to dry or hang in shade."
+      ],
+      "badge": "Subtle Embroidery",
+      "images": [
+        {
+          "url": "/images/products/hemp-organic-hemp-cotton-t-shirt-2.webp",
+          "altText": "Minimalist Embroidered Hemp-Cotton T-Shirt image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/products/hemp-organic-hemp-cotton-t-shirt-4.webp",
+          "altText": "Minimalist Embroidered Hemp-Cotton T-Shirt image 2",
+          "isPrimary": false,
+          "sortOrder": 1
+        }
+      ],
+      "rating": 4.86,
+      "reviewsCount": 92,
+      "status": "active",
+      "materialStory": {
+        "title": "Understated elegance. Pure bast breathability.",
+        "content": "Lightweight 180 GSM heather jersey with subtle natural nep texture that shows the organic character of Himalayan hemp.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
+      },
+      "faqs": [
+        {
+          "q": "Does the embroidery itch against bare skin?",
+          "a": "No. The embroidery uses ultra-soft micro-thread with a flat heat-sealed backing that never chafes."
+        },
+        {
+          "q": "Is the oatmeal color sheer?",
+          "a": "No. The 180 GSM yarn density provides full opacity while remaining lightweight and airy."
+        },
+        {
+          "q": "How do I maintain the oatmeal heather shade?",
+          "a": "Wash with mild non-bleach detergent in cold water and dry in shade."
+        },
+        {
+          "q": "What if the size is too snug?",
+          "a": "We offer 15-day free size exchanges."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b058370bcb6b6b43c132676",
+          "productId": "6b058370bcb6b6b43c132674",
+          "sku": "ORGANIC--S-OAT",
+          "size": "S",
+          "color": {
+            "name": "Oatmeal Heather",
+            "hex": "#DDD8CC"
+          },
+          "mrp": 1599,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132678",
+          "productId": "6b058370bcb6b6b43c132674",
+          "sku": "ORGANIC--S-SAG",
+          "size": "S",
+          "color": {
+            "name": "Sage Mist",
+            "hex": "#C2CCBE"
+          },
+          "mrp": 1599,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13267a",
+          "productId": "6b058370bcb6b6b43c132674",
+          "sku": "ORGANIC--M-OAT",
+          "size": "M",
+          "color": {
+            "name": "Oatmeal Heather",
+            "hex": "#DDD8CC"
+          },
+          "mrp": 1599,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13267c",
+          "productId": "6b058370bcb6b6b43c132674",
+          "sku": "ORGANIC--M-SAG",
+          "size": "M",
+          "color": {
+            "name": "Sage Mist",
+            "hex": "#C2CCBE"
+          },
+          "mrp": 1599,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13267e",
+          "productId": "6b058370bcb6b6b43c132674",
+          "sku": "ORGANIC--L-OAT",
+          "size": "L",
+          "color": {
+            "name": "Oatmeal Heather",
+            "hex": "#DDD8CC"
+          },
+          "mrp": 1599,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132680",
+          "productId": "6b058370bcb6b6b43c132674",
+          "sku": "ORGANIC--L-SAG",
+          "size": "L",
+          "color": {
+            "name": "Sage Mist",
+            "hex": "#C2CCBE"
+          },
+          "mrp": 1599,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132682",
+          "productId": "6b058370bcb6b6b43c132674",
+          "sku": "ORGANIC--XL-OAT",
+          "size": "XL",
+          "color": {
+            "name": "Oatmeal Heather",
+            "hex": "#DDD8CC"
+          },
+          "mrp": 1599,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132684",
+          "productId": "6b058370bcb6b6b43c132674",
+          "sku": "ORGANIC--XL-SAG",
+          "size": "XL",
+          "color": {
+            "name": "Sage Mist",
+            "hex": "#C2CCBE"
+          },
+          "mrp": 1599,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132686",
+          "productId": "6b058370bcb6b6b43c132674",
+          "sku": "ORGANIC--2XL-OAT",
+          "size": "2XL",
+          "color": {
+            "name": "Oatmeal Heather",
+            "hex": "#DDD8CC"
+          },
+          "mrp": 1599,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132688",
+          "productId": "6b058370bcb6b6b43c132674",
+          "sku": "ORGANIC--2XL-SAG",
+          "size": "2XL",
+          "color": {
+            "name": "Sage Mist",
+            "hex": "#C2CCBE"
+          },
+          "mrp": 1599,
+          "price": 1199,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b058370bcb6b6b43c13268a",
+      "name": "Heavyweight Hemp Nature Edition T-Shirt",
+      "slug": "heavyweight-hemp-nature-edition-tee",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c13253c"
+      ],
+      "fabricType": "hemp",
+      "fabricComposition": [
+        {
+          "fibre": "Heritage Hemp",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "Substantial 210 GSM hemp bast jersey with 'BE A FORCE OF NATURE' bar-code forest print. Heavy duty durability that stands up to rugged outdoor movemen",
+      "description": "Substantial 210 GSM hemp bast jersey with 'BE A FORCE OF NATURE' bar-code forest print. Heavy duty durability that stands up to rugged outdoor movement while breathing effortlessly.",
+      "materialDetails": "55% Himalayan Bast Hemp, 45% Organic Ring-Spun Cotton (210 GSM)",
+      "careInstructions": [
+        "Machine wash cold. Line dry in shade. Naturally resistant to pilling and snagging."
+      ],
+      "badge": "Heavyweight 210 GSM",
+      "images": [
+        {
+          "url": "/images/products/hemp-premium-quality-organic-hemp-t-shirts-2.webp",
+          "altText": "Heavyweight Hemp Nature Edition T-Shirt image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        },
+        {
+          "url": "/images/products/hemp-premium-quality-organic-hemp-t-shirts-4.webp",
+          "altText": "Heavyweight Hemp Nature Edition T-Shirt image 2",
+          "isPrimary": false,
+          "sortOrder": 1
+        }
+      ],
+      "rating": 4.94,
+      "reviewsCount": 156,
+      "status": "active",
+      "materialStory": {
+        "title": "210 GSM Heavyweight bast. Extreme durability.",
+        "content": "Our densest hemp blend. Built for outdoor expeditions, travel, and rugged daily wear with UPF 50+ ultraviolet protection.",
+        "image": "/images/products/features/fabric_blend_macro.jpg"
+      },
+      "faqs": [
+        {
+          "q": "Is 210 GSM too heavy for summer?",
+          "a": "No. Unlike synthetic fibers, hemp fibers are hollow and breathable, creating micro-ventilation that disperses trapped body heat."
+        },
+        {
+          "q": "Does the fabric pill over time?",
+          "a": "Hemp fibers are exceptionally long and durable, naturally preventing surface pilling and fuzzing."
+        },
+        {
+          "q": "How should I wash it?",
+          "a": "Machine wash cold. Hang dry in shade. Avoid hot tumble drying to preserve fiber resilience."
+        },
+        {
+          "q": "What is your return policy?",
+          "a": "15-day doorstep return and size exchange across India."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b058370bcb6b6b43c13268c",
+          "productId": "6b058370bcb6b6b43c13268a",
+          "sku": "HEAVYWEI-S-CHA",
+          "size": "S",
+          "color": {
+            "name": "Charcoal Heather",
+            "hex": "#363836"
+          },
+          "mrp": 1999,
+          "price": 1349,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13268e",
+          "productId": "6b058370bcb6b6b43c13268a",
+          "sku": "HEAVYWEI-S-DEE",
+          "size": "S",
+          "color": {
+            "name": "Deep Pine",
+            "hex": "#1F3025"
+          },
+          "mrp": 1999,
+          "price": 1349,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132690",
+          "productId": "6b058370bcb6b6b43c13268a",
+          "sku": "HEAVYWEI-M-CHA",
+          "size": "M",
+          "color": {
+            "name": "Charcoal Heather",
+            "hex": "#363836"
+          },
+          "mrp": 1999,
+          "price": 1349,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132692",
+          "productId": "6b058370bcb6b6b43c13268a",
+          "sku": "HEAVYWEI-M-DEE",
+          "size": "M",
+          "color": {
+            "name": "Deep Pine",
+            "hex": "#1F3025"
+          },
+          "mrp": 1999,
+          "price": 1349,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132694",
+          "productId": "6b058370bcb6b6b43c13268a",
+          "sku": "HEAVYWEI-L-CHA",
+          "size": "L",
+          "color": {
+            "name": "Charcoal Heather",
+            "hex": "#363836"
+          },
+          "mrp": 1999,
+          "price": 1349,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132696",
+          "productId": "6b058370bcb6b6b43c13268a",
+          "sku": "HEAVYWEI-L-DEE",
+          "size": "L",
+          "color": {
+            "name": "Deep Pine",
+            "hex": "#1F3025"
+          },
+          "mrp": 1999,
+          "price": 1349,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c132698",
+          "productId": "6b058370bcb6b6b43c13268a",
+          "sku": "HEAVYWEI-XL-CHA",
+          "size": "XL",
+          "color": {
+            "name": "Charcoal Heather",
+            "hex": "#363836"
+          },
+          "mrp": 1999,
+          "price": 1349,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13269a",
+          "productId": "6b058370bcb6b6b43c13268a",
+          "sku": "HEAVYWEI-XL-DEE",
+          "size": "XL",
+          "color": {
+            "name": "Deep Pine",
+            "hex": "#1F3025"
+          },
+          "mrp": 1999,
+          "price": 1349,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13269c",
+          "productId": "6b058370bcb6b6b43c13268a",
+          "sku": "HEAVYWEI-2XL-CHA",
+          "size": "2XL",
+          "color": {
+            "name": "Charcoal Heather",
+            "hex": "#363836"
+          },
+          "mrp": 1999,
+          "price": 1349,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c13269e",
+          "productId": "6b058370bcb6b6b43c13268a",
+          "sku": "HEAVYWEI-2XL-DEE",
+          "size": "2XL",
+          "color": {
+            "name": "Deep Pine",
+            "hex": "#1F3025"
+          },
+          "mrp": 1999,
+          "price": 1349,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b058370bcb6b6b43c1326a0",
+      "name": "Bamboo Underwear Trunk for Men (Pack of 3)",
+      "slug": "bamboo-underwear-trunk-men-pack3",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c13253e"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -693,110 +3355,123 @@
           "percentage": 5
         }
       ],
-      "materialDetails": "Double-layered wireless bamboo cup with gentle ribbed underband.",
-      "shortDescription": "Zero-pressure, wire-free lounge bralette engineered for barely-there everyday comfort.",
-      "description": "Designed to eliminate digging underwires and tight elastic bands. Breathable bamboo fabric conforms to your natural shape with gentle non-constrictive support.",
+      "shortDescription": "Heelium's flagship 3-pack bamboo trunks. Features no-roll cooling waistband, flatlock anti-chafing seams, and natural antibacterial protection.",
+      "description": "Heelium's flagship 3-pack bamboo trunks. Features no-roll cooling waistband, flatlock anti-chafing seams, and natural antibacterial protection.",
+      "materialDetails": "95% Bamboo Viscose, 5% Elastane",
       "careInstructions": [
-        "Hand wash or delicate machine wash cold",
-        "Dry flat",
-        "Do not iron"
+        "Machine wash cold. Air dry or tumble dry delicate."
       ],
+      "badge": "Top Rated",
       "images": [
         {
-          "url": "/images/prod-bamboo-bralette-front.jpg",
-          "altText": "Cloud Bamboo Lounge Bralette Flatlay",
+          "url": "/images/products/heelium-men-trunk-pack3.jpg",
+          "altText": "Bamboo Underwear Trunk for Men (Pack of 3) image 1",
           "isPrimary": true,
           "sortOrder": 0
-        },
-        {
-          "url": "/images/prod-bamboo-bralette-model.jpg",
-          "altText": "Cloud Bamboo Lounge Bralette on Model",
-          "isPrimary": false,
-          "sortOrder": 1
-        },
-        {
-          "url": "/images/prod-bamboo-bralette-detail.jpg",
-          "altText": "Seamless Ribbed Band Detail",
-          "isPrimary": false,
-          "sortOrder": 2
         }
       ],
-      "tags": [
-        "bestseller",
-        "bralette",
-        "wireless",
-        "lounge"
-      ],
+      "rating": 4.88,
+      "reviewsCount": 615,
       "status": "active",
-      "seo": {
-        "title": "Cloud Bamboo Lounge Bralette | Wirefree Bamboo Bra India",
-        "metaDescription": "Wireless soft bamboo lounge bralette. Hypoallergenic and second-skin gentle."
+      "materialStory": {
+        "title": "Micro-vented bamboo knit. Zero friction.",
+        "content": "Pure bamboo viscose delivers 3x the moisture absorption of cotton, paired with 5% elastane for a contoured pouch that never rides up.",
+        "image": "/images/products/heelium-men-trunk-pack3.jpg"
       },
+      "faqs": [
+        {
+          "q": "Does the waistband roll down?",
+          "a": "No. Our waistband is constructed with high-resilience micro-elastic with dual grip channels to stay completely flat."
+        },
+        {
+          "q": "Is bamboo really odor-resistant for underwear?",
+          "a": "Yes. Bamboo kun is a natural antimicrobial bio-agent inherent to bamboo plants that survives processing and inhibits bacteria growth that causes sweat odor."
+        }
+      ],
       "variants": [
         {
-          "_id": "var_bbral_sage_s",
-          "sku": "BH-BBR-SGE-S",
+          "_id": "6b058370bcb6b6b43c1326a2",
+          "productId": "6b058370bcb6b6b43c1326a0",
+          "sku": "BAMBOO-U-S-TRI",
           "size": "S",
-          "colour": {
-            "name": "Sage Green",
-            "hex": "#8BA185"
+          "color": {
+            "name": "Trio Combo (Black/White/Wine)",
+            "hex": "#3A2A2A"
           },
-          "pricePaise": 119900,
-          "compareAtPricePaise": 159900,
-          "stockQuantity": 24,
-          "reservedQuantity": 0,
+          "mrp": 2199,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_bbral_sage_m",
-          "sku": "BH-BBR-SGE-M",
+          "_id": "6b058370bcb6b6b43c1326a4",
+          "productId": "6b058370bcb6b6b43c1326a0",
+          "sku": "BAMBOO-U-M-TRI",
           "size": "M",
-          "colour": {
-            "name": "Sage Green",
-            "hex": "#8BA185"
+          "color": {
+            "name": "Trio Combo (Black/White/Wine)",
+            "hex": "#3A2A2A"
           },
-          "pricePaise": 119900,
-          "compareAtPricePaise": 159900,
-          "stockQuantity": 35,
-          "reservedQuantity": 0,
+          "mrp": 2199,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_bbral_snd_m",
-          "sku": "BH-BBR-SND-M",
-          "size": "M",
-          "colour": {
-            "name": "Warm Cream",
-            "hex": "#EBE6DC"
-          },
-          "pricePaise": 119900,
-          "compareAtPricePaise": 159900,
-          "stockQuantity": 20,
-          "reservedQuantity": 0,
-          "isActive": true
-        },
-        {
-          "_id": "var_bbral_snd_l",
-          "sku": "BH-BBR-SND-L",
+          "_id": "6b058370bcb6b6b43c1326a6",
+          "productId": "6b058370bcb6b6b43c1326a0",
+          "sku": "BAMBOO-U-L-TRI",
           "size": "L",
-          "colour": {
-            "name": "Warm Cream",
-            "hex": "#EBE6DC"
+          "color": {
+            "name": "Trio Combo (Black/White/Wine)",
+            "hex": "#3A2A2A"
           },
-          "pricePaise": 119900,
-          "compareAtPricePaise": 159900,
-          "stockQuantity": 2,
-          "reservedQuantity": 0,
+          "mrp": 2199,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326a8",
+          "productId": "6b058370bcb6b6b43c1326a0",
+          "sku": "BAMBOO-U-XL-TRI",
+          "size": "XL",
+          "color": {
+            "name": "Trio Combo (Black/White/Wine)",
+            "hex": "#3A2A2A"
+          },
+          "mrp": 2199,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326aa",
+          "productId": "6b058370bcb6b6b43c1326a0",
+          "sku": "BAMBOO-U-2XL-TRI",
+          "size": "2XL",
+          "color": {
+            "name": "Trio Combo (Black/White/Wine)",
+            "hex": "#3A2A2A"
+          },
+          "mrp": 2199,
+          "price": 1299,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         }
       ]
     },
     {
-      "_id": "prod_bamboo_briefs_3pk",
-      "name": "Seamless Bamboo Hipster Brief (3-Pack)",
-      "slug": "seamless-bamboo-hipster-brief-3pack",
+      "_id": "6b058370bcb6b6b43c1326ac",
+      "name": "Bamboo Underwear Trunk for Men (Single)",
+      "slug": "bamboo-underwear-trunk-men-pack1",
       "categoryIds": [
-        "cat_womens_innerwear"
+        "6b05836fbcb6b6b43c13253e"
       ],
       "fabricType": "bamboo",
       "fabricComposition": [
@@ -809,85 +3484,363 @@
           "percentage": 5
         }
       ],
-      "materialDetails": "Laser-cut seamless edges with 100% natural bamboo gusset.",
-      "shortDescription": "Invisible panty lines with ultra-breathable, natural antimicrobial bamboo protection.",
-      "description": "No digging, no pinching, and zero panty lines under fitted trousers or leggings. Naturally hypoallergenic and moisture-absorbing.",
+      "shortDescription": "Single bamboo trunk with micro-mesh cooling waistband and ergonomic anti-chafing contour pouch. Ultra-breathable, antimicrobial, and stays in place wi",
+      "description": "Single bamboo trunk with micro-mesh cooling waistband and ergonomic anti-chafing contour pouch. Ultra-breathable, antimicrobial, and stays in place without rolling.",
+      "materialDetails": "95% Bamboo Viscose, 5% Elastane",
       "careInstructions": [
-        "Machine wash cold gentle",
-        "Do not tumble dry"
+        "Machine wash cold gentle cycle. Do not bleach. Air dry."
       ],
+      "badge": "Zero Chafing",
       "images": [
         {
-          "url": "/images/prod-bamboo-briefs-front.jpg",
-          "altText": "Seamless Bamboo Hipster Brief 3-Pack Flatlay",
+          "url": "/images/products/heelium-men-trunk-black.jpg",
+          "altText": "Bamboo Underwear Trunk for Men (Single) image 1",
           "isPrimary": true,
           "sortOrder": 0
-        },
-        {
-          "url": "/images/prod-bamboo-briefs-model.jpg",
-          "altText": "Seamless Bamboo Briefs Trio Set",
-          "isPrimary": false,
-          "sortOrder": 1
-        },
-        {
-          "url": "/images/prod-bamboo-briefs-detail.jpg",
-          "altText": "Laser Cut Edge and Gusset Detail",
-          "isPrimary": false,
-          "sortOrder": 2
         }
       ],
-      "tags": [
-        "multipack",
-        "seamless",
-        "briefs",
-        "innerwear"
-      ],
+      "rating": 4.8,
+      "reviewsCount": 420,
       "status": "active",
-      "seo": {
-        "title": "Seamless Bamboo Hipster Brief (3-Pack) | Bamboo Innerwear",
-        "metaDescription": "Pack of 3 seamless bamboo hipster briefs. Invisible panty lines, hypoallergenic."
+      "materialStory": {
+        "title": "Pure bamboo microfiber knit.",
+        "content": "95% bamboo viscose with 5% elastane. 360° airflow keeps skin cool and dry.",
+        "image": "/images/products/heelium-men-trunk-black.jpg"
       },
+      "faqs": [
+        {
+          "q": "How long do these trunks last?",
+          "a": "Engineered to withstand over 150+ washes without losing shape or pilling when washed in cold water."
+        }
+      ],
       "variants": [
         {
-          "_id": "var_bbrief_trio_s",
-          "sku": "BH-WBR-TRIO-S",
+          "_id": "6b058370bcb6b6b43c1326ae",
+          "productId": "6b058370bcb6b6b43c1326ac",
+          "sku": "BAMBOO-U-S-CLA",
           "size": "S",
-          "colour": {
-            "name": "Neutral Trio (Sage/Cream/Dusty Rose)",
-            "hex": "#8BA185"
+          "color": {
+            "name": "Classic Black",
+            "hex": "#1A1A1A"
           },
-          "pricePaise": 99900,
-          "compareAtPricePaise": 139900,
-          "stockQuantity": 40,
-          "reservedQuantity": 0,
+          "mrp": 799,
+          "price": 499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_bbrief_trio_m",
-          "sku": "BH-WBR-TRIO-M",
+          "_id": "6b058370bcb6b6b43c1326b0",
+          "productId": "6b058370bcb6b6b43c1326ac",
+          "sku": "BAMBOO-U-M-CLA",
           "size": "M",
-          "colour": {
-            "name": "Neutral Trio (Sage/Cream/Dusty Rose)",
-            "hex": "#8BA185"
+          "color": {
+            "name": "Classic Black",
+            "hex": "#1A1A1A"
           },
-          "pricePaise": 99900,
-          "compareAtPricePaise": 139900,
-          "stockQuantity": 55,
-          "reservedQuantity": 0,
+          "mrp": 799,
+          "price": 499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         },
         {
-          "_id": "var_bbrief_trio_l",
-          "sku": "BH-WBR-TRIO-L",
+          "_id": "6b058370bcb6b6b43c1326b2",
+          "productId": "6b058370bcb6b6b43c1326ac",
+          "sku": "BAMBOO-U-L-CLA",
           "size": "L",
-          "colour": {
-            "name": "Neutral Trio (Sage/Cream/Dusty Rose)",
-            "hex": "#8BA185"
+          "color": {
+            "name": "Classic Black",
+            "hex": "#1A1A1A"
           },
-          "pricePaise": 99900,
-          "compareAtPricePaise": 139900,
-          "stockQuantity": 30,
-          "reservedQuantity": 0,
+          "mrp": 799,
+          "price": 499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326b4",
+          "productId": "6b058370bcb6b6b43c1326ac",
+          "sku": "BAMBOO-U-XL-CLA",
+          "size": "XL",
+          "color": {
+            "name": "Classic Black",
+            "hex": "#1A1A1A"
+          },
+          "mrp": 799,
+          "price": 499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326b6",
+          "productId": "6b058370bcb6b6b43c1326ac",
+          "sku": "BAMBOO-U-2XL-CLA",
+          "size": "2XL",
+          "color": {
+            "name": "Classic Black",
+            "hex": "#1A1A1A"
+          },
+          "mrp": 799,
+          "price": 499,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b058370bcb6b6b43c1326b8",
+      "name": "Bamboo Bikini Underwear for Women (Pack of 2)",
+      "slug": "bamboo-bikini-underwear-women-pack2",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c132541"
+      ],
+      "fabricType": "bamboo",
+      "fabricComposition": [
+        {
+          "fibre": "Organic Bamboo Viscose",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "Pack of 2 bamboo bikini panties. Seamless laser-finish edges eliminate panty lines under trousers and dresses.",
+      "description": "Pack of 2 bamboo bikini panties. Seamless laser-finish edges eliminate panty lines under trousers and dresses.",
+      "materialDetails": "95% Bamboo Viscose, 5% Elastane",
+      "careInstructions": [
+        "Machine wash cold gentle. Wash with like colors."
+      ],
+      "badge": "Bestseller",
+      "images": [
+        {
+          "url": "/images/products/heelium-women-bikini-pack2.webp",
+          "altText": "Bamboo Bikini Underwear for Women (Pack of 2) image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        }
+      ],
+      "rating": 4.9,
+      "reviewsCount": 284,
+      "status": "active",
+      "materialStory": {
+        "title": "Weightless second skin. Pure hypoallergenic comfort.",
+        "content": "Silky bamboo viscose protects the most sensitive skin from chafing, moisture buildup, and bacterial irritation.",
+        "image": "/images/products/heelium-women-bikini-pack2.webp"
+      },
+      "faqs": [
+        {
+          "q": "Is the gusset pure bamboo?",
+          "a": "Yes. The inner gusset is 100% bamboo viscose, offering a non-toxic, chemical-free layer for sensitive skin."
+        },
+        {
+          "q": "Will they show panty lines?",
+          "a": "No. The laser-cut edges and ultra-flat seams ensure complete invisibility under leggings, yoga pants, and trousers."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b058370bcb6b6b43c1326ba",
+          "productId": "6b058370bcb6b6b43c1326b8",
+          "sku": "BAMBOO-B-XS-DUO",
+          "size": "XS",
+          "color": {
+            "name": "Duo Pack (Blush & Black)",
+            "hex": "#3A2A2A"
+          },
+          "mrp": 1399,
+          "price": 799,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326bc",
+          "productId": "6b058370bcb6b6b43c1326b8",
+          "sku": "BAMBOO-B-S-DUO",
+          "size": "S",
+          "color": {
+            "name": "Duo Pack (Blush & Black)",
+            "hex": "#3A2A2A"
+          },
+          "mrp": 1399,
+          "price": 799,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326be",
+          "productId": "6b058370bcb6b6b43c1326b8",
+          "sku": "BAMBOO-B-M-DUO",
+          "size": "M",
+          "color": {
+            "name": "Duo Pack (Blush & Black)",
+            "hex": "#3A2A2A"
+          },
+          "mrp": 1399,
+          "price": 799,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326c0",
+          "productId": "6b058370bcb6b6b43c1326b8",
+          "sku": "BAMBOO-B-L-DUO",
+          "size": "L",
+          "color": {
+            "name": "Duo Pack (Blush & Black)",
+            "hex": "#3A2A2A"
+          },
+          "mrp": 1399,
+          "price": 799,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326c2",
+          "productId": "6b058370bcb6b6b43c1326b8",
+          "sku": "BAMBOO-B-XL-DUO",
+          "size": "XL",
+          "color": {
+            "name": "Duo Pack (Blush & Black)",
+            "hex": "#3A2A2A"
+          },
+          "mrp": 1399,
+          "price": 799,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "_id": "6b058370bcb6b6b43c1326c4",
+      "name": "Bamboo Underwear Brief for Women (Pack of 3)",
+      "slug": "bamboo-brief-women-pack3",
+      "categoryIds": [
+        "6b05836fbcb6b6b43c132541"
+      ],
+      "fabricType": "bamboo",
+      "fabricComposition": [
+        {
+          "fibre": "Organic Bamboo Viscose",
+          "percentage": 95
+        },
+        {
+          "fibre": "Elastane",
+          "percentage": 5
+        }
+      ],
+      "shortDescription": "3-pack of breathable bamboo briefs. Naturally hypoallergenic, preventing moisture buildup and keeping you dry throughout active days.",
+      "description": "3-pack of breathable bamboo briefs. Naturally hypoallergenic, preventing moisture buildup and keeping you dry throughout active days.",
+      "materialDetails": "95% Bamboo Viscose, 5% Elastane",
+      "careInstructions": [
+        "Machine wash cold. Dry flat in shade."
+      ],
+      "badge": "Top Rated",
+      "images": [
+        {
+          "url": "/images/products/heelium-women-brief-pack3.webp",
+          "altText": "Bamboo Underwear Brief for Women (Pack of 3) image 1",
+          "isPrimary": true,
+          "sortOrder": 0
+        }
+      ],
+      "rating": 4.9,
+      "reviewsCount": 375,
+      "status": "active",
+      "materialStory": {
+        "title": "Full coverage. Pure cloud softness.",
+        "content": "Designed for all-day comfort with full rear coverage and gentle leg bands that never pinch.",
+        "image": "/images/products/heelium-women-brief-pack3.webp"
+      },
+      "faqs": [
+        {
+          "q": "Is this suitable for sensitive or allergy-prone skin?",
+          "a": "Yes. Bamboo viscose is naturally hypoallergenic, gentle on skin, and non-irritating."
+        }
+      ],
+      "variants": [
+        {
+          "_id": "6b058370bcb6b6b43c1326c6",
+          "productId": "6b058370bcb6b6b43c1326c4",
+          "sku": "BAMBOO-B-XS-EVE",
+          "size": "XS",
+          "color": {
+            "name": "Everyday Trio (Nude/Grey/Black)",
+            "hex": "#2A2A2A"
+          },
+          "mrp": 1899,
+          "price": 1099,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326c8",
+          "productId": "6b058370bcb6b6b43c1326c4",
+          "sku": "BAMBOO-B-S-EVE",
+          "size": "S",
+          "color": {
+            "name": "Everyday Trio (Nude/Grey/Black)",
+            "hex": "#2A2A2A"
+          },
+          "mrp": 1899,
+          "price": 1099,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326ca",
+          "productId": "6b058370bcb6b6b43c1326c4",
+          "sku": "BAMBOO-B-M-EVE",
+          "size": "M",
+          "color": {
+            "name": "Everyday Trio (Nude/Grey/Black)",
+            "hex": "#2A2A2A"
+          },
+          "mrp": 1899,
+          "price": 1099,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326cc",
+          "productId": "6b058370bcb6b6b43c1326c4",
+          "sku": "BAMBOO-B-L-EVE",
+          "size": "L",
+          "color": {
+            "name": "Everyday Trio (Nude/Grey/Black)",
+            "hex": "#2A2A2A"
+          },
+          "mrp": 1899,
+          "price": 1099,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
+          "isActive": true
+        },
+        {
+          "_id": "6b058370bcb6b6b43c1326ce",
+          "productId": "6b058370bcb6b6b43c1326c4",
+          "sku": "BAMBOO-B-XL-EVE",
+          "size": "XL",
+          "color": {
+            "name": "Everyday Trio (Nude/Grey/Black)",
+            "hex": "#2A2A2A"
+          },
+          "mrp": 1899,
+          "price": 1099,
+          "inventoryCount": 60,
+          "lowStockThreshold": 10,
           "isActive": true
         }
       ]
@@ -895,66 +3848,45 @@
   ],
   "users": [
     {
-      "_id": "user_super_admin",
-      "fullName": "Aditya Pratap Singh",
+      "_id": "6b05836fbcb6b6b43c132544",
+      "fullName": "Aditya Yadav (Store Owner)",
       "email": "admin@bamboohemp.com",
-      "normalizedEmail": "admin@bamboohemp.com",
-      "passwordHash": "$2a$10$ogYZ/lfescacjG.1kfaMD.ftSkkUC/vdNLib7A2W4zaaOYztHX5bq",
-      "phone": "+91 98765 43210",
-      "role": "super_admin",
-      "status": "active",
-      "emailVerifiedAt": "2026-11-22T18:44:23.977Z",
-      "createdAt": "2026-11-22T18:44:23.977Z",
-      "addresses": []
-    },
-    {
-      "_id": "user_catalogue_mgr",
-      "fullName": "Catalogue Operations Lead",
-      "email": "catalogue@bamboohemp.com",
-      "normalizedEmail": "catalogue@bamboohemp.com",
-      "passwordHash": "$2a$10$OLT/ZFUDJVUf/JKPsVpqDeeEWsbiaA4iKepen7UM4nF/TnDD2KzLm",
-      "phone": "+91 98765 43211",
-      "role": "catalogue_manager",
-      "status": "active",
-      "emailVerifiedAt": "2026-11-22T18:44:24.085Z",
-      "createdAt": "2026-11-22T18:44:24.085Z",
-      "addresses": []
-    },
-    {
-      "_id": "user_order_mgr",
-      "fullName": "Fulfillment & Logistics Lead",
-      "email": "orders@bamboohemp.com",
-      "normalizedEmail": "orders@bamboohemp.com",
-      "passwordHash": "$2a$10$OYijUHeMg4eFm4SrKDwfaODic13a4p9BpwCai2drkGrDNBvkggKGK",
-      "phone": "+91 98765 43212",
-      "role": "order_manager",
-      "status": "active",
-      "emailVerifiedAt": "2026-11-22T18:44:24.191Z",
-      "createdAt": "2026-11-22T18:44:24.191Z",
-      "addresses": []
-    },
-    {
-      "_id": "user_customer_demo",
-      "fullName": "Rahul Sharma",
-      "email": "customer@example.com",
-      "normalizedEmail": "customer@example.com",
-      "passwordHash": "$2a$10$MuvE0aCgEhFaCUUjkOd9eOJPGPHAaG9AOzSEEiVYrQqMPk3efF9VG",
-      "phone": "+91 91234 56789",
-      "role": "customer",
-      "status": "active",
-      "emailVerifiedAt": "2026-11-22T18:44:24.301Z",
-      "createdAt": "2026-11-22T18:44:24.301Z",
+      "password": "$2a$10$2lF58BIYkZYKEzNShYM49OQ.3edzs0P4c1FYmMy/WPRPuEUUZVZuu",
+      "role": "admin",
+      "phone": "+91 9876543210",
+      "isVerified": true,
       "addresses": [
         {
-          "_id": "addr_1",
-          "recipientName": "Rahul Sharma",
-          "phone": "+91 91234 56789",
-          "addressLine1": "B-402, Green Meadows, Indiranagar",
-          "addressLine2": "100ft Road",
+          "recipientName": "Aditya Yadav",
+          "addressLine1": "Eco Hub, Phase 2",
+          "addressLine2": "Tech Park",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "postalCode": "560100",
+          "country": "India",
+          "phone": "+91 9876543210",
+          "isDefault": true
+        }
+      ]
+    },
+    {
+      "_id": "6b05836fbcb6b6b43c132545",
+      "fullName": "Priya Sharma",
+      "email": "customer@bamboohemp.com",
+      "password": "$2a$10$1w37gw5KO9BfoQCs232LZOwI7znBfAOl/1Wlk2r6SdF2Es/rk8H5K",
+      "role": "customer",
+      "phone": "+91 9123456789",
+      "isVerified": true,
+      "addresses": [
+        {
+          "recipientName": "Priya Sharma",
+          "addressLine1": "42 Lotus Enclave",
+          "addressLine2": "Indiranagar",
           "city": "Bengaluru",
           "state": "Karnataka",
           "postalCode": "560038",
           "country": "India",
+          "phone": "+91 9123456789",
           "isDefault": true
         }
       ]
@@ -962,154 +3894,98 @@
   ],
   "orders": [
     {
-      "_id": "ord_1001",
-      "orderNumber": "BH-2026-9041",
-      "userId": "user_customer_demo",
-      "guestEmail": "customer@example.com",
+      "_id": "ord_1795523910323_sxj5zq",
+      "orderNumber": "BH-2026-5200",
+      "userId": "6b05854621f85d1b70737a2a",
+      "guestEmail": "test_user_1795523909974@bamboohemp.com",
       "itemsSnapshot": [
         {
-          "productId": "prod_bamboo_trunk_3pk",
-          "variantId": "var_btrunk_trio_m",
-          "sku": "BH-TRK-TRIO-M",
-          "name": "Everyday Bamboo Trunk (3-Pack)",
-          "size": "M",
-          "colour": "Trio Pack (Pine/Moss/Sand)",
-          "unitPricePaise": 149900,
-          "quantity": 1,
-          "lineTotalPaise": 149900,
-          "image": "/images/prod-bamboo-trunk-front.jpg"
+          "productId": "6b05836fbcb6b6b43c132546",
+          "variantId": "6b05836fbcb6b6b43c132548",
+          "sku": "BAMBOO-R-S-PIT",
+          "name": "Bamboo Round Neck T-shirt for Men",
+          "size": "S",
+          "colour": "Pitch Black",
+          "unitPriceRupees": 990,
+          "unitPricePaise": 99000,
+          "quantity": 2,
+          "lineTotalRupees": 1980,
+          "lineTotalPaise": 198000,
+          "image": "/images/products/heelium-men-tee-black.png"
         }
       ],
       "addressSnapshot": {
-        "recipientName": "Rahul Sharma",
-        "phone": "+91 91234 56789",
-        "addressLine1": "B-402, Green Meadows, Indiranagar",
+        "recipientName": "Test Developer",
+        "addressLine1": "123 Green Lane",
         "city": "Bengaluru",
         "state": "Karnataka",
-        "postalCode": "560038",
-        "country": "India"
+        "postalCode": "560001",
+        "country": "India",
+        "phone": "+91 9999900000"
       },
-      "subtotalPaise": 149900,
+      "deliveryInstructions": "",
+      "subtotalPaise": 198000,
+      "subtotalRupees": 1980,
       "discountPaise": 0,
+      "discountRupees": 0,
+      "couponCode": null,
       "shippingPaise": 0,
-      "taxPaise": 7495,
-      "totalPaise": 149900,
+      "shippingFeeRupees": 0,
+      "totalPaise": 198000,
+      "totalAmount": 1980,
       "currency": "INR",
-      "paymentStatus": "paid",
-      "orderStatus": "delivered",
-      "trackingNumber": "BD-982341201IN",
+      "paymentStatus": "Paid",
+      "orderStatus": "Placed",
+      "trackingNumber": "BD-579551477IN",
       "courierPartner": "BlueDart Express",
-      "statusHistory": [
-        {
-          "status": "pending_payment",
-          "actor": "customer@example.com",
-          "actorRole": "customer",
-          "timestamp": "2026-11-17T18:44:24.301Z"
-        },
-        {
-          "status": "confirmed",
-          "actor": "system",
-          "actorRole": "system",
-          "timestamp": "2026-11-17T18:44:24.301Z"
-        },
-        {
-          "status": "processing",
-          "actor": "orders@bamboohemp.com",
-          "actorRole": "order_manager",
-          "timestamp": "2026-11-18T18:44:24.301Z"
-        },
-        {
-          "status": "packed",
-          "actor": "orders@bamboohemp.com",
-          "actorRole": "order_manager",
-          "timestamp": "2026-11-19T18:44:24.301Z"
-        },
-        {
-          "status": "shipped",
-          "actor": "orders@bamboohemp.com",
-          "actorRole": "order_manager",
-          "note": "Tracking BD-982341201IN",
-          "timestamp": "2026-11-20T18:44:24.301Z"
-        },
-        {
-          "status": "delivered",
-          "actor": "system",
-          "actorRole": "courier_webhook",
-          "timestamp": "2026-11-21T18:44:24.301Z"
-        }
-      ],
-      "createdAt": "2026-11-17T18:44:24.301Z"
+      "createdAt": "2026-11-24T12:38:30.323Z"
     },
     {
-      "_id": "ord_1002",
-      "orderNumber": "BH-2026-9042",
-      "userId": "user_customer_demo",
-      "guestEmail": "customer@example.com",
+      "_id": "ord_1795523860502_894r4p",
+      "orderNumber": "BH-2026-8725",
+      "userId": null,
+      "guestEmail": "guest@example.com",
       "itemsSnapshot": [
         {
-          "productId": "prod_bamboo_crew",
-          "variantId": "var_bcrew_grn_m",
-          "sku": "BH-BTE-GRN-M",
-          "name": "The Essential Bamboo Crew Neck Tee",
-          "size": "M",
-          "colour": "Forest Green",
-          "unitPricePaise": 129900,
-          "quantity": 1,
-          "lineTotalPaise": 129900,
-          "image": "/images/prod-bamboo-crew-front.jpg"
-        },
-        {
-          "productId": "prod_hemp_boxy",
-          "variantId": "var_hboxy_snd_m",
-          "sku": "BH-HBX-SND-M",
-          "name": "Heritage Hemp Boxy Tee",
-          "size": "M",
-          "colour": "Earthy Sand",
-          "unitPricePaise": 169900,
-          "quantity": 1,
-          "lineTotalPaise": 169900,
-          "image": "/images/prod-hemp-boxy-front.jpg"
+          "productId": "6b05836fbcb6b6b43c132546",
+          "variantId": "6b05836fbcb6b6b43c132548",
+          "sku": "BAMBOO-R-S-PIT",
+          "name": "Bamboo Round Neck T-shirt for Men",
+          "size": "S",
+          "colour": "Pitch Black",
+          "unitPriceRupees": 990,
+          "unitPricePaise": 99000,
+          "quantity": 2,
+          "lineTotalRupees": 1980,
+          "lineTotalPaise": 198000,
+          "image": "/images/products/heelium-men-tee-black.png"
         }
       ],
       "addressSnapshot": {
-        "recipientName": "Rahul Sharma",
-        "phone": "+91 91234 56789",
-        "addressLine1": "B-402, Green Meadows, Indiranagar",
+        "recipientName": "Test Developer",
+        "addressLine1": "123 Green Lane",
         "city": "Bengaluru",
         "state": "Karnataka",
-        "postalCode": "560038",
-        "country": "India"
+        "postalCode": "560001",
+        "country": "India",
+        "phone": "+91 9999900000"
       },
-      "subtotalPaise": 299800,
-      "discountPaise": 29980,
-      "couponCode": "WELCOME10",
+      "deliveryInstructions": "",
+      "subtotalPaise": 198000,
+      "subtotalRupees": 1980,
+      "discountPaise": 0,
+      "discountRupees": 0,
+      "couponCode": null,
       "shippingPaise": 0,
-      "taxPaise": 13491,
-      "totalPaise": 269820,
+      "shippingFeeRupees": 0,
+      "totalPaise": 198000,
+      "totalAmount": 1980,
       "currency": "INR",
-      "paymentStatus": "paid",
-      "orderStatus": "processing",
-      "statusHistory": [
-        {
-          "status": "pending_payment",
-          "actor": "customer@example.com",
-          "actorRole": "customer",
-          "timestamp": "2026-11-22T14:44:24.301Z"
-        },
-        {
-          "status": "confirmed",
-          "actor": "system",
-          "actorRole": "system",
-          "timestamp": "2026-11-22T14:56:24.301Z"
-        },
-        {
-          "status": "processing",
-          "actor": "orders@bamboohemp.com",
-          "actorRole": "order_manager",
-          "timestamp": "2026-11-22T16:44:24.301Z"
-        }
-      ],
-      "createdAt": "2026-11-22T14:44:24.301Z"
+      "paymentStatus": "Paid",
+      "orderStatus": "Placed",
+      "trackingNumber": "BD-537692392IN",
+      "courierPartner": "BlueDart Express",
+      "createdAt": "2026-11-24T12:37:40.502Z"
     }
   ],
   "inventoryMovements": [],
@@ -1127,7 +4003,7 @@
         "totalProducts": 6,
         "totalCategories": 4
       },
-      "createdAt": "2026-11-15T18:44:24.301Z"
+      "createdAt": "2026-11-17T12:37:39.783Z"
     },
     {
       "_id": "audit_2",
@@ -1143,7 +4019,7 @@
       "after": {
         "status": "active"
       },
-      "createdAt": "2026-11-16T18:44:24.301Z"
+      "createdAt": "2026-11-18T12:37:39.783Z"
     }
   ],
   "settings": {

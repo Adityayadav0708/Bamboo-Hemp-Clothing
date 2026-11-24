@@ -6,7 +6,7 @@ const catalogueController = require('../controllers/catalogueController');
 const cartController = require('../controllers/cartController');
 const orderController = require('../controllers/orderController');
 const adminController = require('../controllers/adminController');
-const { requireAuth, requireRole } = require('../middleware/auth');
+const { requireAuth, optionalAuth, requireRole } = require('../middleware/auth');
 
 // ── System / Health Endpoints (Section 53) ──
 router.get('/health', (req, res) => res.json({ success: true, status: 'healthy', timestamp: new Date() }));
@@ -33,11 +33,11 @@ router.delete('/cart/items/:itemId', cartController.removeItem);
 router.delete('/cart', cartController.clearCart);
 
 // ── Checkout & Orders (Section 53) ──
-router.post('/checkout/quote', orderController.quoteCheckout);
-router.post('/checkout/orders', orderController.createOrder);
-router.get('/customer/orders', orderController.getCustomerOrders);
-router.get('/customer/orders/:orderId', orderController.getOrderById);
-router.post('/customer/orders/:orderId/cancel', orderController.cancelOrder);
+router.post('/checkout/quote', optionalAuth, orderController.quoteCheckout);
+router.post('/checkout/orders', optionalAuth, orderController.createOrder);
+router.get('/customer/orders', optionalAuth, orderController.getCustomerOrders);
+router.get('/customer/orders/:orderId', optionalAuth, orderController.getOrderById);
+router.post('/customer/orders/:orderId/cancel', optionalAuth, orderController.cancelOrder);
 
 // ── Admin APIs (Section 50, 53) ──
 // Dashboard KPI

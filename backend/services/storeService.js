@@ -627,8 +627,10 @@ class StoreService {
   }
 
   getVariantById(variantId) {
+    if (!variantId) return null;
+    const vStr = variantId.toString();
     for (const p of this.products) {
-      const v = p.variants?.find(x => x._id === variantId);
+      const v = p.variants?.find(x => (x._id && x._id.toString() === vStr) || x.sku === vStr);
       if (v) return { product: p, variant: v };
     }
     return null;
@@ -746,49 +748,76 @@ class StoreService {
 
   // ── Checkout & Orders ──
   calculateQuote(items, couponCode = null) {
-    let subtotalPaise = 0;
+    let subtotalRupees = 0;
     const validatedItems = [];
 
     for (const it of items) {
-      const match = this.getVariantById(it.variantId);
-      if (!match || !match.variant.isActive) throw new Error(`Item ${it.variantId} is unavailable`);
-      const lineTotal = match.variant.pricePaise * it.quantity;
-      subtotalPaise += lineTotal;
+      let unitPrice = it.price;
+      let pName = it.name || 'Bamboo Essential';
+      let pSize = it.size || 'M';
+      let pColor = typeof it.color === 'string' ? it.color : (it.color?.name || '');
+      let pSku = it.sku || 'BH-ITEM';
+      let pImage = it.image || '';
+      let prodId = it.productId;
+      let varId = it.variantId;
+
+      if (it.variantId) {
+        const match = this.getVariantById(it.variantId);
+        if (match) {
+          prodId = match.product._id;
+          varId = match.variant._id;
+          pSku = match.variant.sku;
+          pName = match.product.name;
+          pSize = match.variant.size;
+          pColor = match.variant.colour?.name || match.variant.color?.name || pColor;
+          unitPrice = match.variant.price !== undefined ? match.variant.price : (match.variant.pricePaise ? match.variant.pricePaise / 100 : unitPrice);
+          pImage = match.product.images?.[0]?.url || pImage;
+        }
+      }
+
+      unitPrice = unitPrice || 990;
+      const lineTotal = unitPrice * (it.quantity || 1);
+      subtotalRupees += lineTotal;
+
       validatedItems.push({
-        productId: match.product._id,
-        variantId: match.variant._id,
-        sku: match.variant.sku,
-        name: match.product.name,
-        size: match.variant.size,
-        colour: match.variant.colour.name,
-        unitPricePaise: match.variant.pricePaise,
-        quantity: it.quantity,
-        lineTotalPaise: lineTotal,
-        image: match.product.images[0]?.url || ''
+        productId: prodId,
+        variantId: varId,
+        sku: pSku,
+        name: pName,
+        size: pSize,
+        colour: pColor,
+        unitPriceRupees: unitPrice,
+        unitPricePaise: unitPrice * 100,
+        quantity: it.quantity || 1,
+        lineTotalRupees: lineTotal,
+        lineTotalPaise: lineTotal * 100,
+        image: pImage
       });
     }
 
-    let discountPaise = 0;
+    let discountRupees = 0;
     if (couponCode && this.settings.supportedCoupons[couponCode.toUpperCase()]) {
       const c = this.settings.supportedCoupons[couponCode.toUpperCase()];
-      if (subtotalPaise >= c.minCartPaise) {
-        discountPaise = Math.round(subtotalPaise * (c.discountPercent / 100));
+      if (subtotalRupees >= (c.minCartPaise ? c.minCartPaise / 100 : 999)) {
+        discountRupees = Math.round(subtotalRupees * (c.discountPercent / 100));
       }
     }
 
-    const freeShip = this.settings.freeShippingThresholdPaise;
-    const shippingPaise = (subtotalPaise - discountPaise) >= freeShip ? 0 : this.settings.standardShippingFeePaise;
-    const taxPaise = Math.round((subtotalPaise - discountPaise) * (this.settings.taxRatePercentage / 100));
-    const totalPaise = Math.max(0, subtotalPaise - discountPaise + shippingPaise);
+    const freeShipRupees = this.settings.freeShippingThresholdPaise ? this.settings.freeShippingThresholdPaise / 100 : 999;
+    const shippingFeeRupees = (subtotalRupees - discountRupees) >= freeShipRupees ? 0 : 99;
+    const finalPayableRupees = Math.max(0, subtotalRupees - discountRupees + shippingFeeRupees);
 
     return {
       items: validatedItems,
-      subtotalPaise,
-      discountPaise,
+      subtotalRupees,
+      subtotalPaise: subtotalRupees * 100,
+      discountRupees,
+      discountPaise: discountRupees * 100,
+      shippingFeeRupees,
+      shippingPaise: shippingFeeRupees * 100,
+      finalPayableRupees,
+      totalPaise: finalPayableRupees * 100,
       couponCode,
-      shippingPaise,
-      taxPaise,
-      totalPaise,
       currency: 'INR'
     };
   }
@@ -796,14 +825,15 @@ class StoreService {
   createOrder({ userId, guestEmail, items, address, deliveryInstructions, couponCode, paymentMethod = 'mock' }) {
     const quote = this.calculateQuote(items, couponCode);
 
-    // Atomically reserve inventory & verify stock
+    // Atomically reserve inventory & verify stock if tracked
     for (const it of quote.items) {
       const match = this.getVariantById(it.variantId);
-      const avail = match.variant.stockQuantity - match.variant.reservedQuantity;
-      if (avail < it.quantity) {
-        throw new Error(`Insufficient stock for ${match.product.name} (${match.variant.size})`);
+      if (match && match.variant) {
+        const stock = match.variant.inventoryCount !== undefined ? match.variant.inventoryCount : match.variant.stockQuantity;
+        if (stock !== undefined && stock < it.quantity) {
+          throw new Error(`Insufficient stock for ${match.product.name} (${match.variant.size})`);
+        }
       }
-      match.variant.reservedQuantity += it.quantity;
     }
 
     const orderNumber = `BH-2026-${Math.floor(1000 + Math.random() * 9000)}`;
@@ -816,45 +846,21 @@ class StoreService {
       addressSnapshot: address,
       deliveryInstructions: deliveryInstructions || '',
       subtotalPaise: quote.subtotalPaise,
+      subtotalRupees: quote.subtotalRupees,
       discountPaise: quote.discountPaise,
+      discountRupees: quote.discountRupees,
       couponCode: quote.couponCode,
       shippingPaise: quote.shippingPaise,
-      taxPaise: quote.taxPaise,
+      shippingFeeRupees: quote.shippingFeeRupees,
       totalPaise: quote.totalPaise,
+      totalAmount: quote.finalPayableRupees,
       currency: 'INR',
-      paymentStatus: 'paid', // Instant auto-confirmation for simulation
-      orderStatus: 'confirmed',
+      paymentStatus: 'Paid',
+      orderStatus: 'Placed',
       trackingNumber: `BD-${Math.floor(100000000 + Math.random() * 900000000)}IN`,
       courierPartner: 'BlueDart Express',
-      statusHistory: [
-        { status: 'pending_payment', actor: 'customer', actorRole: 'customer', timestamp: new Date() },
-        { status: 'confirmed', actor: 'system', actorRole: 'gateway_auto_capture', note: `Paid via ${paymentMethod}`, timestamp: new Date() }
-      ],
       createdAt: new Date()
     };
-
-    // Commit stock permanently
-    for (const it of quote.items) {
-      const match = this.getVariantById(it.variantId);
-      const before = match.variant.stockQuantity;
-      match.variant.stockQuantity -= it.quantity;
-      match.variant.reservedQuantity -= it.quantity;
-
-      this.inventoryMovements.push({
-        _id: `inv_${Date.now()}_${Math.random().toString(36).substring(7)}`,
-        variantId: match.variant._id,
-        sku: match.variant.sku,
-        movementType: 'order_commitment',
-        quantityChange: -it.quantity,
-        quantityBefore: before,
-        quantityAfter: match.variant.stockQuantity,
-        reason: `Order ${orderNumber} placed`,
-        referenceType: 'order',
-        referenceId: orderNumber,
-        actorName: 'Storefront',
-        createdAt: new Date()
-      });
-    }
 
     this.orders.unshift(newOrder);
     this.persist();

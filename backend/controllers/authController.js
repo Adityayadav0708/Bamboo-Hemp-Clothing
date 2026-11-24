@@ -1,10 +1,14 @@
 const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const { User } = require('../models');
 const store = require('../services/storeService');
 const { JWT_SECRET } = require('../middleware/auth');
 
 const signToken = (user) => {
+  const id = user._id ? user._id.toString() : user.id;
   return jwt.sign(
-    { userId: user._id, role: user.role, email: user.email },
+    { userId: id, role: user.role || 'customer', email: user.email },
     JWT_SECRET,
     { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }
   );
@@ -27,7 +31,45 @@ const register = async (req, res, next) => {
       });
     }
 
-    const user = store.createUser({ fullName, email, password, phone });
+    const cleanEmail = email.toLowerCase().trim();
+
+    // 1. Try MongoDB if connected
+    if (mongoose.connection.readyState === 1) {
+      const existing = await User.findOne({ email: cleanEmail });
+      if (existing) {
+        return res.status(409).json({
+          success: false,
+          error: { code: 'ACCOUNT_EXISTS', message: 'An account with this email address already exists.' }
+        });
+      }
+
+      const user = await User.create({
+        fullName: fullName.trim(),
+        email: cleanEmail,
+        password, // Handled by pre-save bcrypt hook in User model
+        phone: phone || '',
+        role: 'customer'
+      });
+
+      const token = signToken(user);
+      return res.status(201).json({
+        success: true,
+        data: {
+          token,
+          user: {
+            _id: user._id.toString(),
+            fullName: user.fullName,
+            email: user.email,
+            role: user.role,
+            phone: user.phone,
+            addresses: user.addresses || []
+          }
+        }
+      });
+    }
+
+    // 2. Fallback to in-memory store
+    const user = store.createUser({ fullName, email: cleanEmail, password, phone });
     const token = signToken(user);
 
     return res.status(201).json({
@@ -39,12 +81,13 @@ const register = async (req, res, next) => {
           fullName: user.fullName,
           email: user.email,
           role: user.role,
-          phone: user.phone
+          phone: user.phone,
+          addresses: user.addresses || []
         }
       }
     });
   } catch (err) {
-    if (err.message.includes('already exists')) {
+    if (err.message && err.message.includes('already exists')) {
       return res.status(409).json({
         success: false,
         error: { code: 'ACCOUNT_EXISTS', message: err.message }
@@ -64,7 +107,35 @@ const login = async (req, res, next) => {
       });
     }
 
-    const user = store.getUserByEmail(email);
+    const cleanEmail = email.toLowerCase().trim();
+
+    // 1. Try MongoDB if connected
+    if (mongoose.connection.readyState === 1) {
+      const user = await User.findOne({ email: cleanEmail });
+      if (user) {
+        const isMatch = await user.comparePassword(password);
+        if (isMatch) {
+          const token = signToken(user);
+          return res.json({
+            success: true,
+            data: {
+              token,
+              user: {
+                _id: user._id.toString(),
+                fullName: user.fullName,
+                email: user.email,
+                role: user.role,
+                phone: user.phone,
+                addresses: user.addresses || []
+              }
+            }
+          });
+        }
+      }
+    }
+
+    // 2. Check fallback store
+    const user = store.getUserByEmail(cleanEmail);
     if (!user) {
       return res.status(401).json({
         success: false,
@@ -72,17 +143,14 @@ const login = async (req, res, next) => {
       });
     }
 
-    const bcrypt = require('bcryptjs');
-    const isMatch = bcrypt.compareSync(password, user.passwordHash);
+    const hash = user.passwordHash || user.password;
+    const isMatch = hash ? bcrypt.compareSync(password, hash) : false;
     if (!isMatch) {
       return res.status(401).json({
         success: false,
         error: { code: 'INVALID_CREDENTIALS', message: 'Invalid email address or password.' }
       });
     }
-
-    user.lastLoginAt = new Date();
-    store.persist();
 
     const token = signToken(user);
     return res.json({
@@ -110,11 +178,11 @@ const getMe = async (req, res) => {
     success: true,
     data: {
       user: {
-        _id: user._id,
+        _id: user._id ? user._id.toString() : user.id,
         fullName: user.fullName,
         email: user.email,
         role: user.role,
-        phone: user.phone,
+        phone: user.phone || '',
         addresses: user.addresses || []
       }
     }
