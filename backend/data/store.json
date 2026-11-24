@@ -133,7 +133,8 @@
           "price": 990,
           "inventoryCount": 60,
           "lowStockThreshold": 10,
-          "isActive": true
+          "isActive": true,
+          "stockQuantity": 50
         },
         {
           "_id": "6b05836fbcb6b6b43c13254a",
@@ -3894,6 +3895,165 @@
   ],
   "orders": [
     {
+      "_id": "ord_1795524725419_q9msk",
+      "orderNumber": "BH-2026-3330",
+      "userId": "6b05836fbcb6b6b43c132545",
+      "guestEmail": "customer@bamboohemp.com",
+      "itemsSnapshot": [
+        {
+          "productId": "6b05836fbcb6b6b43c132546",
+          "variantId": "6b05836fbcb6b6b43c132548",
+          "sku": "BAMBOO-R-S-PIT",
+          "name": "Bamboo Round Neck T-shirt for Men",
+          "size": "S",
+          "colour": "Pitch Black",
+          "unitPriceRupees": 990,
+          "unitPricePaise": 99000,
+          "quantity": 1,
+          "lineTotalRupees": 990,
+          "lineTotalPaise": 99000,
+          "image": "/images/products/heelium-men-tee-black.png"
+        }
+      ],
+      "addressSnapshot": {
+        "recipientName": "Priya Sharma",
+        "addressLine1": "42 Lotus Enclave",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560038",
+        "country": "India",
+        "phone": "+91 9123456789"
+      },
+      "deliveryInstructions": "",
+      "subtotalPaise": 99000,
+      "subtotalRupees": 990,
+      "discountPaise": 0,
+      "discountRupees": 0,
+      "couponCode": null,
+      "shippingPaise": 9900,
+      "shippingFeeRupees": 99,
+      "totalPaise": 108900,
+      "totalAmount": 1089,
+      "currency": "INR",
+      "paymentStatus": "Paid",
+      "orderStatus": "Placed",
+      "trackingNumber": "BD-227405207IN",
+      "courierPartner": "BlueDart Express",
+      "createdAt": "2026-11-24T12:52:05.419Z"
+    },
+    {
+      "_id": "ord_1795524645620_ankkx",
+      "orderNumber": "BH-2026-9455",
+      "userId": "6b05836fbcb6b6b43c132545",
+      "guestEmail": "customer@bamboohemp.com",
+      "itemsSnapshot": [
+        {
+          "productId": "6b05836fbcb6b6b43c132546",
+          "variantId": "6b05836fbcb6b6b43c132548",
+          "sku": "BAMBOO-R-S-PIT",
+          "name": "Bamboo Round Neck T-shirt for Men",
+          "size": "S",
+          "colour": "Pitch Black",
+          "unitPriceRupees": 990,
+          "unitPricePaise": 99000,
+          "quantity": 1,
+          "lineTotalRupees": 990,
+          "lineTotalPaise": 99000,
+          "image": "/images/products/heelium-men-tee-black.png"
+        }
+      ],
+      "addressSnapshot": {
+        "recipientName": "Priya Sharma",
+        "addressLine1": "42 Lotus Enclave",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560038",
+        "country": "India",
+        "phone": "+91 9123456789"
+      },
+      "deliveryInstructions": "",
+      "subtotalPaise": 99000,
+      "subtotalRupees": 990,
+      "discountPaise": 0,
+      "discountRupees": 0,
+      "couponCode": null,
+      "shippingPaise": 9900,
+      "shippingFeeRupees": 99,
+      "totalPaise": 108900,
+      "totalAmount": 1089,
+      "currency": "INR",
+      "paymentStatus": "Paid",
+      "orderStatus": "shipped",
+      "trackingNumber": "BD-475035946IN",
+      "courierPartner": "BlueDart Express",
+      "createdAt": "2026-11-24T12:50:45.620Z",
+      "statusHistory": [
+        {
+          "status": "shipped",
+          "actor": "admin",
+          "actorRole": "order_manager",
+          "note": "Dispatched via BlueDart Express Air",
+          "timestamp": "2026-11-24T12:52:05.316Z"
+        }
+      ]
+    },
+    {
+      "_id": "ord_1795524609599_1gsx8",
+      "orderNumber": "BH-2026-2499",
+      "userId": "6b05836fbcb6b6b43c132545",
+      "guestEmail": "customer@bamboohemp.com",
+      "itemsSnapshot": [
+        {
+          "productId": "6b05836fbcb6b6b43c132546",
+          "variantId": "6b05836fbcb6b6b43c132548",
+          "sku": "BAMBOO-R-S-PIT",
+          "name": "Bamboo Round Neck T-shirt for Men",
+          "size": "S",
+          "colour": "Pitch Black",
+          "unitPriceRupees": 990,
+          "unitPricePaise": 99000,
+          "quantity": 1,
+          "lineTotalRupees": 990,
+          "lineTotalPaise": 99000,
+          "image": "/images/products/heelium-men-tee-black.png"
+        }
+      ],
+      "addressSnapshot": {
+        "recipientName": "Priya Sharma",
+        "addressLine1": "42 Lotus Enclave",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560038",
+        "country": "India",
+        "phone": "+91 9123456789"
+      },
+      "deliveryInstructions": "",
+      "subtotalPaise": 99000,
+      "subtotalRupees": 990,
+      "discountPaise": 0,
+      "discountRupees": 0,
+      "couponCode": null,
+      "shippingPaise": 9900,
+      "shippingFeeRupees": 99,
+      "totalPaise": 108900,
+      "totalAmount": 1089,
+      "currency": "INR",
+      "paymentStatus": "Paid",
+      "orderStatus": "shipped",
+      "trackingNumber": "BD-516281578IN",
+      "courierPartner": "BlueDart Express",
+      "createdAt": "2026-11-24T12:50:09.599Z",
+      "statusHistory": [
+        {
+          "status": "shipped",
+          "actor": "admin",
+          "actorRole": "order_manager",
+          "note": "Dispatched via BlueDart Express Air",
+          "timestamp": "2026-11-24T12:50:45.521Z"
+        }
+      ]
+    },
+    {
       "_id": "ord_1795523910323_sxj5zq",
       "orderNumber": "BH-2026-5200",
       "userId": "6b05854621f85d1b70737a2a",
@@ -3935,7 +4095,7 @@
       "totalAmount": 1980,
       "currency": "INR",
       "paymentStatus": "Paid",
-      "orderStatus": "Placed",
+      "orderStatus": "shipped",
       "trackingNumber": "BD-579551477IN",
       "courierPartner": "BlueDart Express",
       "createdAt": "2026-11-24T12:38:30.323Z"
@@ -3988,8 +4148,120 @@
       "createdAt": "2026-11-24T12:37:40.502Z"
     }
   ],
-  "inventoryMovements": [],
+  "inventoryMovements": [
+    {
+      "_id": "inv_1795524725300_fd3x5p",
+      "variantId": "6b05836fbcb6b6b43c132548",
+      "sku": "BAMBOO-R-S-PIT",
+      "movementType": "purchase_receipt",
+      "quantityChange": 25,
+      "quantityBefore": 25,
+      "quantityAfter": 50,
+      "reason": "purchase_receipt",
+      "referenceType": "admin_adjustment",
+      "actorName": "admin",
+      "createdAt": "2026-11-24T12:52:05.300Z"
+    },
+    {
+      "_id": "inv_1795524645507_rhz28i",
+      "variantId": "6b05836fbcb6b6b43c132548",
+      "sku": "BAMBOO-R-S-PIT",
+      "movementType": "purchase_receipt",
+      "quantityChange": 25,
+      "quantityBefore": null,
+      "quantityAfter": 25,
+      "reason": "purchase_receipt",
+      "referenceType": "admin_adjustment",
+      "actorName": "admin",
+      "createdAt": "2026-11-24T12:50:45.507Z"
+    },
+    {
+      "_id": "inv_1795524609470_fovgnnr",
+      "variantId": "6b05836fbcb6b6b43c132548",
+      "sku": "BAMBOO-R-S-PIT",
+      "movementType": "purchase_receipt",
+      "quantityChange": 25,
+      "quantityAfter": null,
+      "reason": "purchase_receipt",
+      "referenceType": "admin_adjustment",
+      "actorName": "admin",
+      "createdAt": "2026-11-24T12:50:09.470Z"
+    }
+  ],
   "auditLogs": [
+    {
+      "_id": "aud_1795524725316",
+      "actorRole": "order_manager",
+      "action": "order.status_update",
+      "resourceType": "Order",
+      "resourceId": "BH-2026-9455",
+      "before": {
+        "status": "shipped"
+      },
+      "after": {
+        "status": "shipped",
+        "note": "Dispatched via BlueDart Express Air"
+      },
+      "createdAt": "2026-11-24T12:52:05.316Z"
+    },
+    {
+      "_id": "aud_1795524725300",
+      "actorRole": "catalogue_manager",
+      "action": "stock.adjust",
+      "resourceType": "Variant",
+      "resourceId": "BAMBOO-R-S-PIT",
+      "before": {
+        "stockQuantity": 25
+      },
+      "after": {
+        "stockQuantity": 50,
+        "reason": "purchase_receipt"
+      },
+      "createdAt": "2026-11-24T12:52:05.300Z"
+    },
+    {
+      "_id": "aud_1795524645521",
+      "actorRole": "order_manager",
+      "action": "order.status_update",
+      "resourceType": "Order",
+      "resourceId": "BH-2026-2499",
+      "before": {
+        "status": "shipped"
+      },
+      "after": {
+        "status": "shipped",
+        "note": "Dispatched via BlueDart Express Air"
+      },
+      "createdAt": "2026-11-24T12:50:45.521Z"
+    },
+    {
+      "_id": "aud_1795524645507",
+      "actorRole": "catalogue_manager",
+      "action": "stock.adjust",
+      "resourceType": "Variant",
+      "resourceId": "BAMBOO-R-S-PIT",
+      "before": {
+        "stockQuantity": null
+      },
+      "after": {
+        "stockQuantity": 25,
+        "reason": "purchase_receipt"
+      },
+      "createdAt": "2026-11-24T12:50:45.507Z"
+    },
+    {
+      "_id": "aud_1795524609470",
+      "actorRole": "catalogue_manager",
+      "action": "stock.adjust",
+      "resourceType": "Variant",
+      "resourceId": "BAMBOO-R-S-PIT",
+      "before": {},
+      "after": {
+        "stockQuantity": null,
+        "reason": "purchase_receipt"
+      },
+      "createdAt": "2026-11-24T12:50:09.470Z"
+    },
     {
       "_id": "audit_1",
       "actorId": "user_super_admin",

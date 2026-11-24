@@ -888,15 +888,16 @@ class StoreService {
     const lowStockVariants = [];
     for (const p of this.products) {
       for (const v of p.variants || []) {
-        if (v.isActive && v.stockQuantity <= this.settings.lowStockThreshold) {
+        const stock = v.inventoryCount !== undefined ? v.inventoryCount : (v.stockQuantity !== undefined ? v.stockQuantity : 50);
+        if (v.isActive && stock <= this.settings.lowStockThreshold) {
           lowStockVariants.push({
             productId: p._id,
             productName: p.name,
             sku: v.sku,
             size: v.size,
-            colour: v.colour.name,
-            stockQuantity: v.stockQuantity,
-            pricePaise: v.pricePaise
+            colour: v.colour?.name || v.color?.name || (typeof v.colour === 'string' ? v.colour : 'Natural'),
+            stockQuantity: stock,
+            pricePaise: v.pricePaise || (v.price ? v.price * 100 : 99000)
           });
         }
       }
@@ -930,6 +931,7 @@ class StoreService {
 
     if (order.orderStatus !== newStatus) {
       order.orderStatus = newStatus;
+      if (!order.statusHistory) order.statusHistory = [];
       order.statusHistory.push({
         status: newStatus,
         actor,
