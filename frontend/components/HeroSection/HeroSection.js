@@ -28,7 +28,7 @@ export default function HeroSection() {
             Wear That<br />Cares
           </h1>
           <p className={styles.description}>
-            Discover everyday essentials crafted from organic bamboo and heritage hemp — breathable, anti-odor, and built for the Indian climate.
+            Discover everyday essentials crafted from  bamboo and heritage hemp — breathable, anti-odor, and built for the Indian climate.
           </p>
           <div className={styles.ctaGroup}>
             <Link href="/category/bamboo-tshirts" className={styles.primaryBtn}>
